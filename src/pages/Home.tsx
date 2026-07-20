@@ -10,7 +10,9 @@ import IpHot from '@/sections/IpHot'
 import AdaptWatch from '@/sections/AdaptWatch'
 import Announcements from '@/sections/Announcements'
 import Footer from '@/sections/Footer'
-import EasterEgg, { EasterEggTrigger } from '@/sections/EasterEgg'
+import EasterEgg from '@/sections/EasterEgg'
+import ZhiyuWriting from '@/sections/ZhiyuWriting'
+import WriterPersonality from '@/sections/WriterPersonality'
 import { PetalRain } from '@/sections/Stickers'
 
 export default function Home() {
@@ -46,6 +48,7 @@ export default function Home() {
         <Nav updatedAt={data.updatedAt} />
         <Hero data={data} historyDays={history?.days.length ?? 0} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
+          <WriterPersonality />
           <GenreBoard genres={data.genres} />
           <TrendChart history={history} />
           <KeywordClouds keywords={data.keywords} />
@@ -57,9 +60,9 @@ export default function Home() {
               <Announcements items={data.announcements ?? []} />
             </div>
           </div>
+          <ZhiyuWriting />
         </main>
-        <Footer updatedAt={data.updatedAt} />
-        <EasterEggTrigger onActivate={() => setEasterEgg(true)} />
+        <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />
       </div>
       <EasterEgg active={easterEgg} onClose={() => setEasterEgg(false)} />
     </div>
