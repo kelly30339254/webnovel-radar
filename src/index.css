@@ -92,7 +92,19 @@
   88% { opacity: 0.7; }
   100% { transform: translate3d(6vw, 104vh, 0) rotate(320deg); opacity: 0; }
 }
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.12); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.22); }
+  60% { transform: scale(1); }
+}
 
+.heart-beat {
+  animation: heart-beat 1.2s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
 .sticker-float {
   animation: float-soft var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
   will-change: transform;
@@ -127,7 +139,7 @@
 ::-webkit-scrollbar-thumb:hover { background: #fda4af; }
 
 @media (prefers-reduced-motion: reduce) {
-  .sticker-float, .sticker-twinkle, .petal-drift, .rise-in {
+  .sticker-float, .sticker-twinkle, .petal-drift, .rise-in, .heart-beat {
     animation: none !important;
   }
 }

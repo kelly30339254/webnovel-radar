@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 /* 动态贴纸：爱心 / 星星 / 闪光 / 书本 / 花瓣，纯 SVG + CSS 动画 + 轻微鼠标视差 */
 
-function Heart({ size = 24, color = '#fb7185' }: { size?: number; color?: string }) {
+export function Heart({ size = 24, color = '#fb7185' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path

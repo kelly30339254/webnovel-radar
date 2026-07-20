@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useWindData } from '@/hooks/useWindData'
 import Nav from '@/sections/Nav'
 import Hero from '@/sections/Hero'
@@ -9,10 +10,12 @@ import IpHot from '@/sections/IpHot'
 import AdaptWatch from '@/sections/AdaptWatch'
 import Announcements from '@/sections/Announcements'
 import Footer from '@/sections/Footer'
+import EasterEgg, { EasterEggTrigger } from '@/sections/EasterEgg'
 import { PetalRain } from '@/sections/Stickers'
 
 export default function Home() {
   const { data, history, error } = useWindData()
+  const [easterEgg, setEasterEgg] = useState(false)
 
   if (error) {
     return (
@@ -39,7 +42,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-[#fff5f7] text-rose-950 antialiased">
       <PetalRain />
-      <div className="relative z-10">
+      <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
         <Nav updatedAt={data.updatedAt} />
         <Hero data={data} historyDays={history?.days.length ?? 0} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
@@ -56,7 +59,9 @@ export default function Home() {
           </div>
         </main>
         <Footer updatedAt={data.updatedAt} />
+        <EasterEggTrigger onActivate={() => setEasterEgg(true)} />
       </div>
+      <EasterEgg active={easterEgg} onClose={() => setEasterEgg(false)} />
     </div>
   )
 }
