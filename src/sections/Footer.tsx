@@ -1,9 +1,9 @@
 export default function Footer({ updatedAt, onEasterEgg }: { updatedAt: string; onEasterEgg?: () => void }) {
   return (
-    <footer className="mt-16 border-t border-rose-100 bg-gradient-to-r from-rose-50 via-pink-50 to-rose-50">
-      <div className="mx-auto flex max-w-6xl flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-rose-400 sm:flex-row sm:items-center md:px-8">
-        <span className="inline-flex items-center gap-1.5 font-medium text-rose-500">
-          <span className="h-1.5 w-1.5 rounded-full bg-rose-400" />
+    <footer className="mt-16 border-t border-theme-100 bg-gradient-to-r from-theme-50 via-theme-100 to-theme-50">
+      <div className="mx-auto flex max-w-6xl flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-theme-600 sm:flex-row sm:items-center md:px-8">
+        <span className="inline-flex items-center gap-1.5 font-medium text-theme-500">
+          <span className="h-1.5 w-1.5 rounded-full bg-theme-400" />
           网文风向 · Webnovel Radar
         </span>
         <span>每日 07:23（Asia/Shanghai）自动检索更新，本期数据 {updatedAt}</span>
@@ -12,7 +12,7 @@ export default function Footer({ updatedAt, onEasterEgg }: { updatedAt: string; 
           仅供网文创作与选题参考
           <button
             onDoubleClick={onEasterEgg}
-            className="heart-beat inline-flex h-5 w-5 items-center justify-center rounded-full bg-rose-200/60 text-[9px] font-bold text-white opacity-40 transition-all hover:scale-110 hover:opacity-90"
+            className="heart-beat inline-flex h-5 w-5 items-center justify-center rounded-full bg-theme-200/60 text-[9px] font-bold text-white opacity-40 transition-all hover:scale-110 hover:opacity-90"
             title="双击有惊喜"
             aria-label="双击查看彩蛋"
             type="button"

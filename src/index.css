@@ -204,13 +204,13 @@
 }
 
 ::selection {
-  background: #fda4af;
-  color: #4c0519;
+  background: hsl(var(--theme-400));
+  color: hsl(var(--theme-950));
 }
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #fff1f2; }
-::-webkit-scrollbar-thumb { background: #fecdd3; border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #fda4af; }
+::-webkit-scrollbar-track { background: hsl(var(--theme-100)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--theme-300)); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--theme-400)); }
 
 @media (prefers-reduced-motion: reduce) {
   .sticker-float, .sticker-twinkle, .petal-drift, .rise-in, .heart-beat {

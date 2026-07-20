@@ -26,11 +26,11 @@ export default function ZhiyuWriting() {
         target="_blank"
         rel="noreferrer noopener"
         onClick={() => trackEvent('click_zhiyu_writing')}
-        className="card-pink group mt-4 block rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm transition-all hover:border-rose-200 hover:bg-white hover:shadow-md"
+        className="card-pink group mt-4 block rounded-2xl border border-theme-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm transition-all hover:border-theme-200 hover:bg-white hover:shadow-md"
       >
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
           <div className="flex-none">
-            <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-rose-100 bg-gradient-to-br from-rose-50 to-pink-100 p-1 shadow-inner">
+            <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-theme-100 bg-gradient-to-br from-theme-50 to-theme-200 p-1 shadow-inner">
               <img
                 src="/images/zhiyuxiezuo.png"
                 alt="智语写作"
@@ -39,27 +39,27 @@ export default function ZhiyuWriting() {
             </div>
           </div>
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg font-bold text-rose-950">智语写作</h3>
+            <h3 className="text-lg font-bold text-theme-950">智语写作</h3>
             <div className="mt-1.5 flex flex-wrap gap-2">
               {FEATURES.map((f) => (
                 <span
                   key={f.text}
-                  className="inline-flex items-center gap-1 rounded-full bg-rose-50 px-2.5 py-0.5 text-xs font-medium text-rose-600"
+                  className="inline-flex items-center gap-1 rounded-full bg-theme-50 px-2.5 py-0.5 text-xs font-medium text-theme-600"
                 >
                   <f.icon size={10} />
                   {f.text}
                 </span>
               ))}
             </div>
-            <p className="mt-2 text-sm text-rose-400">点击跳转，开启 AI 写作新体验 ↗</p>
+            <p className="mt-2 text-sm text-theme-600">点击跳转，开启 AI 写作新体验 ↗</p>
           </div>
         </div>
 
-        <div className="mt-5 rounded-xl border border-rose-100 bg-rose-50/40 p-4 transition-colors group-hover:bg-rose-50/70">
-          <p className="text-xs font-medium text-rose-400">AI 续写示例</p>
-          <p className="mt-1 text-sm text-rose-700">
+        <div className="mt-5 rounded-xl border border-theme-100 bg-theme-50/40 p-4 transition-colors group-hover:bg-theme-50/70">
+          <p className="text-xs font-medium text-theme-600">AI 续写示例</p>
+          <p className="mt-1 text-sm text-theme-700">
             “{EXAMPLE_TEXT}”
-            <span className="ml-2 inline-flex items-center rounded-full bg-rose-500 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+            <span className="ml-2 inline-flex items-center rounded-full bg-theme-500 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
               去智语看看怎么接
             </span>
           </p>

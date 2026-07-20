@@ -31,11 +31,11 @@ export default function Home() {
 
   if (error) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#fff5f7] px-6">
+      <div className="flex min-h-screen items-center justify-center bg-[hsl(var(--theme-bg))] px-6">
         <div className="max-w-md text-center">
-          <p className="font-serif text-2xl font-bold text-rose-950">数据加载失败</p>
-          <p className="mt-2 text-sm text-rose-400">{error}</p>
-          <p className="mt-4 text-xs text-rose-300">
+          <p className="font-serif text-2xl font-bold text-theme-950">数据加载失败</p>
+          <p className="mt-2 text-sm text-theme-600">{error}</p>
+          <p className="mt-4 text-xs text-theme-500">
             请确认 public/data/wind.json 存在；每日任务运行后会自动刷新该文件
           </p>
         </div>
@@ -45,14 +45,14 @@ export default function Home() {
 
   if (!data) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-[#fff5f7]">
-        <p className="animate-pulse text-sm tracking-widest text-rose-400">风向数据加载中…</p>
+      <div className="flex min-h-screen items-center justify-center bg-[hsl(var(--theme-bg))]">
+        <p className="animate-pulse text-sm tracking-widest text-theme-600">风向数据加载中…</p>
       </div>
     )
   }
 
   return (
-    <div className="relative min-h-screen bg-[#fff5f7] text-rose-950 antialiased">
+    <div className="relative min-h-screen bg-[hsl(var(--theme-bg))] text-theme-950 antialiased">
       <PetalRain />
       <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
         <Nav updatedAt={data.updatedAt} />

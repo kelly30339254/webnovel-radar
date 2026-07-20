@@ -3,7 +3,7 @@ import { Palette } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
 const THEMES: { key: ThemeColor; label: string; dot: string }[] = [
-  { key: 'rose', label: '粉', dot: 'bg-rose-500' },
+  { key: 'rose', label: '粉', dot: 'bg-theme-500' },
   { key: 'blue', label: '蓝', dot: 'bg-blue-500' },
   { key: 'green', label: '绿', dot: 'bg-emerald-500' },
   { key: 'purple', label: '紫', dot: 'bg-violet-500' },

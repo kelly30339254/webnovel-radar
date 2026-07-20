@@ -11,17 +11,17 @@ export default function Announcements({ items }: { items: Announcement[] }) {
         hint="官方征文与扶持计划释放的题材信号"
         footer={<span>来源：番茄小说 / 红果短剧官方公告</span>}
       />
-      <ol className="mt-4 space-y-0 border-l-2 border-rose-200 pl-5">
+      <ol className="mt-4 space-y-0 border-l-2 border-theme-200 pl-5">
         {items.map((a) => (
           <li key={`${a.platform}-${a.title}`} className="relative pb-6 last:pb-0">
-            <span className="absolute -left-[1.65rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-gradient-to-br from-rose-400 to-pink-400 shadow-sm" />
+            <span className="absolute -left-[1.65rem] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-gradient-to-br from-theme-400 to-theme-400 shadow-sm" />
             <div className="flex flex-wrap items-center gap-x-2">
-              <span className="font-mono text-xs text-rose-300">{a.date ?? ''}</span>
-              <span className="rounded-full bg-rose-100 px-2 py-0.5 text-xs text-rose-600">{a.platform}</span>
+              <span className="font-mono text-xs text-theme-500">{a.date ?? ''}</span>
+              <span className="rounded-full bg-theme-100 px-2 py-0.5 text-xs text-theme-600">{a.platform}</span>
               <SourceLink url={a.sourceUrl} />
             </div>
-            <p className="mt-1 font-medium text-rose-950">{a.title}</p>
-            <p className="mt-0.5 text-sm leading-relaxed text-rose-900/60">{a.summary}</p>
+            <p className="mt-1 font-medium text-theme-950">{a.title}</p>
+            <p className="mt-0.5 text-sm leading-relaxed text-theme-900/60">{a.summary}</p>
           </li>
         ))}
       </ol>

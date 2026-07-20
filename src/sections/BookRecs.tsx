@@ -18,18 +18,18 @@ const RECS = {
 
 function RecCard({ item, index }: { item: (typeof RECS.male)[0]; index: number }) {
   return (
-    <div className="card-pink rounded-xl border border-rose-100 bg-white/70 p-4 shadow-sm backdrop-blur-sm transition-all">
+    <div className="card-pink rounded-xl border border-theme-100 bg-white/70 p-4 shadow-sm backdrop-blur-sm transition-all">
       <div className="flex items-center gap-2">
-        <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-rose-100 text-[10px] font-bold text-rose-600">
+        <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-theme-100 text-[10px] font-bold text-theme-600">
           {index + 1}
         </span>
-        <h4 className="text-sm font-bold text-rose-950">{item.title}</h4>
+        <h4 className="text-sm font-bold text-theme-950">{item.title}</h4>
       </div>
       <div className="mt-2 flex flex-wrap gap-2">
-        <span className="rounded-full bg-rose-50 px-2 py-0.5 text-xs text-rose-600">人设：{item.persona}</span>
-        <span className="rounded-full bg-pink-50 px-2 py-0.5 text-xs text-pink-600">套路：{item.trope}</span>
+        <span className="rounded-full bg-theme-50 px-2 py-0.5 text-xs text-theme-600">人设：{item.persona}</span>
+        <span className="rounded-full bg-theme-100 px-2 py-0.5 text-xs text-theme-600">套路：{item.trope}</span>
       </div>
-      <p className="mt-2 text-xs leading-relaxed text-rose-500">{item.reason}</p>
+      <p className="mt-2 text-xs leading-relaxed text-theme-500">{item.reason}</p>
     </div>
   )
 }
@@ -84,38 +84,38 @@ export default function BookRecs() {
           </>
         }
       />
-      <div className="card-pink mb-6 rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
-        <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-rose-950">
+      <div className="card-pink mb-6 rounded-2xl border border-theme-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
+        <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-theme-950">
           <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
           IP 改编风向标（基于红果热播榜）
         </h3>
-        <p className="mb-4 text-xs text-rose-400">
+        <p className="mb-4 text-xs text-theme-600">
           根据红果热播榜的真人剧、漫剧、AI 剧热度，推导小说创作方向：写什么类型、立什么人设、用什么套路更容易被改编。
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {ADAPT_GUIDES.map((g) => (
-            <div key={g.category} className="rounded-xl border border-rose-100 bg-white/80 p-4 transition-all hover:border-rose-200">
-              <span className="inline-block rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">
+            <div key={g.category} className="rounded-xl border border-theme-100 bg-white/80 p-4 transition-all hover:border-theme-200">
+              <span className="inline-block rounded-full bg-theme-50 px-2.5 py-1 text-xs font-semibold text-theme-600">
                 {g.category}
               </span>
-              <p className="mt-3 text-sm font-bold text-rose-950">{g.type}</p>
-              <div className="mt-2 space-y-1 text-xs text-rose-600">
+              <p className="mt-3 text-sm font-bold text-theme-950">{g.type}</p>
+              <div className="mt-2 space-y-1 text-xs text-theme-600">
                 <p>
-                  <span className="text-rose-300">人设：</span>
+                  <span className="text-theme-500">人设：</span>
                   {g.persona}
                 </p>
                 <p>
-                  <span className="text-rose-300">套路：</span>
+                  <span className="text-theme-500">套路：</span>
                   {g.trope}
                 </p>
               </div>
-              <p className="mt-3 text-xs leading-relaxed text-rose-400">{g.tip}</p>
+              <p className="mt-3 text-xs leading-relaxed text-theme-600">{g.tip}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mb-4 inline-flex overflow-hidden rounded-full border border-rose-200 bg-white text-xs shadow-sm">
+      <div className="mb-4 inline-flex overflow-hidden rounded-full border border-theme-200 bg-white text-xs shadow-sm">
         {([
           { key: 'male', label: '男频方向' },
           { key: 'female', label: '女频方向' },
@@ -125,8 +125,8 @@ export default function BookRecs() {
             onClick={() => switchChannel(c.key)}
             className={`px-4 py-1.5 transition-colors ${
               channel === c.key
-                ? 'bg-gradient-to-r from-rose-500 to-pink-400 text-white'
-                : 'text-rose-400 hover:bg-rose-50'
+                ? 'bg-gradient-to-r from-theme-500 to-theme-400 text-white'
+                : 'text-theme-600 hover:bg-theme-50'
             }`}
           >
             {c.label}

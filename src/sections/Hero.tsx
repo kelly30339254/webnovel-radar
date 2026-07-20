@@ -37,49 +37,49 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
   ]
 
   return (
-    <header className="border-b border-rose-100 bg-[#fff9fa]">
+    <header className="border-b border-theme-100 bg-[hsl(var(--theme-50))]">
       <div className="mx-auto max-w-6xl px-5 pb-12 pt-8 md:px-8 md:pb-14 md:pt-12">
-        <div className="rise-in flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-rose-400">
+        <div className="rise-in flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-theme-600">
           <span className="inline-flex items-center gap-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-theme-500" />
             Webnovel Radar · 番茄小说
           </span>
           <span>每日 07:23 自动更新</span>
           <button
             onClick={handleShare}
-            className="ml-auto inline-flex min-h-9 items-center gap-1 rounded-lg border border-rose-200 bg-white px-3 py-1.5 text-[11px] text-rose-600 hover:bg-rose-50"
+            className="ml-auto inline-flex min-h-9 items-center gap-1 rounded-lg border border-theme-200 bg-white px-3 py-1.5 text-[11px] text-theme-600 hover:bg-theme-50"
           >
             <Share2 size={12} />
             {copied ? '已复制' : '分享'}
           </button>
         </div>
         <h1
-          className="rise-in mt-8 font-serif text-5xl font-bold text-rose-950 md:text-7xl"
+          className="rise-in mt-8 font-serif text-5xl font-bold text-theme-950 md:text-7xl"
           style={{ animationDelay: '0.08s' }}
         >
           网文风向
         </h1>
         <p
-          className="rise-in mt-3 text-base font-medium text-rose-500 md:text-lg"
+          className="rise-in mt-3 text-base font-medium text-theme-500 md:text-lg"
           style={{ animationDelay: '0.1s' }}
         >
           网文作者每日选题雷达 · 热榜 · 技巧 · 风向
         </p>
-        <div className="rise-in mt-4 h-1 w-24 bg-rose-500" style={{ animationDelay: '0.14s' }} />
+        <div className="rise-in mt-4 h-1 w-24 bg-theme-500" style={{ animationDelay: '0.14s' }} />
         <p
-          className="rise-in mt-6 max-w-3xl text-xl font-medium leading-relaxed text-rose-950/85 md:text-2xl"
+          className="rise-in mt-6 max-w-3xl text-xl font-medium leading-relaxed text-theme-950/85 md:text-2xl"
           style={{ animationDelay: '0.2s' }}
         >
           {data.verdict}
         </p>
-        <p className="rise-in mt-4 text-sm text-rose-400" style={{ animationDelay: '0.26s' }}>
+        <p className="rise-in mt-4 text-sm text-theme-600" style={{ animationDelay: '0.26s' }}>
           番茄男频 / 女频新书榜 · 题材热度与趋势 · 内容关键词 · IP 改编 · 官方公告 —— 只追新书，不看总榜
         </p>
         <div className="rise-in mt-7 flex flex-wrap gap-3" style={{ animationDelay: '0.3s' }}>
           <Link
             to="/radar"
             onClick={() => trackEvent('hero_radar_click')}
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-rose-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-700"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-theme-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-theme-700"
           >
             <Target size={17} /> 生成我的开书雷达 <ArrowRight size={16} />
           </Link>
@@ -91,14 +91,14 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
             <PenLine size={17} /> 测创作人格
           </Link>
         </div>
-        <div className="rise-in mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rose-100 bg-rose-100 sm:grid-cols-4" style={{ animationDelay: '0.34s' }}>
+        <div className="rise-in mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-theme-100 bg-theme-100 sm:grid-cols-4" style={{ animationDelay: '0.34s' }}>
           {stats.map((s) => (
             <div
               key={s.label}
               className="flex items-baseline gap-1.5 bg-white px-3.5 py-3"
             >
-              <b className="font-mono text-base font-bold tabular-nums text-rose-600">{s.value}</b>
-              <i className="text-xs not-italic text-rose-400">{s.label}</i>
+              <b className="font-mono text-base font-bold tabular-nums text-theme-600">{s.value}</b>
+              <i className="text-xs not-italic text-theme-600">{s.label}</i>
             </div>
           ))}
         </div>
