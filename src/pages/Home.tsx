@@ -56,12 +56,10 @@ export default function Home() {
           <KeywordClouds keywords={data.keywords} />
           <BookRecs />
           <FanqieBoards boards={data.boards} />
+          <IpHot />
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
-            <IpHot />
-            <div>
-              <AdaptWatch items={data.adaptWatch ?? []} />
-              <Announcements items={data.announcements ?? []} />
-            </div>
+            <AdaptWatch items={data.adaptWatch ?? []} />
+            <Announcements items={data.announcements ?? []} />
           </div>
           <FanqieDebut />
           <ZhiyuWriting />
