@@ -14,6 +14,7 @@ import EasterEgg from '@/sections/EasterEgg'
 import ZhiyuWriting from '@/sections/ZhiyuWriting'
 import WriterPersonality from '@/sections/WriterPersonality'
 import FanqieDebut from '@/sections/FanqieDebut'
+import WritingTips from '@/sections/WritingTips'
 import BookRecs from '@/sections/BookRecs'
 import { PetalRain } from '@/sections/Stickers'
 
@@ -62,6 +63,7 @@ export default function Home() {
             <Announcements items={data.announcements ?? []} />
           </div>
           <FanqieDebut />
+          <WritingTips />
           <ZhiyuWriting />
         </main>
         <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />

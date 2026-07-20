@@ -1,0 +1,125 @@
+{
+  "updatedAt": "2026-07-20",
+  "tips": [
+    {
+      "id": "sanfan-sizhen",
+      "title": "三番四震",
+      "category": "节奏",
+      "summary": "三次剧情反转 + 四次情绪冲击，构建高爽感故事的核心框架。",
+      "usage": "第一番在开篇100字内完成，先铺困境再抛反转；第二番在中期升级矛盾，推翻前一轮认知；第三番在结尾揭晓终极真相。配合虐/怒→惊/疑→爽/喜→燃/甜四层情绪，让读者欲罢不能。",
+      "sourceUrl": "https://post.smzdm.com/p/a0vl4orz"
+    },
+    {
+      "id": "three-act",
+      "title": "三幕式结构",
+      "category": "结构",
+      "summary": "把百万字长篇简化为破局、闯关、收局三幕，每一幕再嵌套小三幕。",
+      "usage": "第一幕立目标+触发事件；第二幕用3-5个小副本推进，每个副本都是欲望-阻碍-达成；第三幕回收伏笔、斗倒反派、给出圆满结局。适合玄幻、古言、逆袭等长线题材。",
+      "sourceUrl": "https://zhuanlan.zhihu.com/p/1967861718710457321"
+    },
+    {
+      "id": "banzhu-chihu",
+      "title": "扮猪吃虎",
+      "category": "套路",
+      "summary": "主角实力被低估、被人轻视、终将爆发，且读者知道真相的爽文经典桥段。",
+      "usage": "关键是给主角一个充分理由隐藏实力（保命、卧底、体验人生）；重点笔墨放在'扮猪'阶段，制造强烈对比落差；保密越久、胃口吊得越高，爆发时越爽。可用双重身份/面具增加拉扯空间。",
+      "sourceUrl": "https://www.kancloud.cn/xiaofeiniao/wangwen-3/944181"
+    },
+    {
+      "id": "golden-three",
+      "title": "黄金三章",
+      "category": "开头",
+      "summary": "网文开篇必须在前三章内完成主角亮相、冲突引入、爽点预埋，迅速留住读者。",
+      "usage": "300字内出现主角名字、身份和正在做的事；1000字内出现第一个波澜或小冲突；第一章结尾抛出一个让读者想翻第二章的钩子。忌大段环境、流水账、白板脸。",
+      "sourceUrl": "https://zhuanlan.zhihu.com/p/657132644"
+    },
+    {
+      "id": "pacing-hook",
+      "title": "爽点节奏与章末钩子",
+      "category": "节奏",
+      "summary": "节奏不是快慢，而是给读者奖励的频率；章末钩子决定追读率。",
+      "usage": "每章至少1个小爽点（一句拍手的话、路人惊讶、小反转）；每3-5章1个中爽点（完整打脸、关系突破）；每卷1个大爽点（BOSS战、身份曝光）。章末用悬念式、反转式、情绪炸弹式钩子留住读者。",
+      "sourceUrl": "https://maliangwriter.com/blog/novel-pacing-hook-design-guide/"
+    },
+    {
+      "id": "qi-cheng-zhuan-shuang",
+      "title": "起承转爽",
+      "category": "节奏",
+      "summary": "最通用的单章结构：回顾→冲突升级→转折→反击+钩子。",
+      "usage": "章首500字简要回顾+引出冲突；中间800字压力增大；300字出现转折；最后400字主角反击/真相揭晓+钩子。可套用到大部分打脸、逆袭、解谜章节。",
+      "sourceUrl": "https://maliangwriter.com/blog/novel-pacing-hook-design-guide/"
+    },
+    {
+      "id": "character-setup",
+      "title": "强人设塑造",
+      "category": "人物",
+      "summary": "让人物活起来的关键：独特标签+稳定行为逻辑+反差萌。",
+      "usage": "给主角三个记忆点标签（如摆烂大佬、毒舌学霸、白切黑绿茶）；让TA的每个选择都符合核心性格；再给一个反差（强者怕鬼、冰山爱吃甜），增强真实感和讨论度。",
+      "sourceUrl": "https://zhuanlan.zhihu.com/p/648528143"
+    },
+    {
+      "id": "emotion-pull",
+      "title": "情绪拉扯",
+      "category": "情绪",
+      "summary": "在爆发前先让读者心疼、愤怒或好奇，爽感会成倍放大。",
+      "usage": "震惊前先铺垫主角被压制的委屈；甜前先写误会与试探；燃前先写众叛亲离。核心是'欲扬先抑'，但压抑不要超过2章，中间要穿插小爽点喂读者。",
+      "sourceUrl": "https://post.smzdm.com/p/am9gmp2p"
+    },
+    {
+      "id": "expectation",
+      "title": "期待感营造",
+      "category": "悬念",
+      "summary": "让读者对'接下来会怎样'产生强烈好奇，是追读的核心动力。",
+      "usage": "开篇即给主角一个明确且紧迫的目标（如三日内必须完成任务）；不断设置倒计时、未知身份、未解谜题；在关键节点释放部分信息，但保留最终答案。",
+      "sourceUrl": "https://mp.weixin.qq.com/s?__biz=MzkyMzUxNDQwMA==&mid=2247513723&idx=1&sn=a501afd49616d69ec14d9a6408c06946"
+    },
+    {
+      "id": "foreshadowing",
+      "title": "伏笔与悬念",
+      "category": "悬念",
+      "summary": "好的伏笔像埋下的地雷，回收时让读者拍大腿。",
+      "usage": "伏笔要'草蛇灰线'：早期随手给一个看似无关的细节（戒指、陌生人、旧照片），中期让读者忘记它，后期在高潮时引爆。悬念则需要持续制造信息差，让读者和主角一起猜。",
+      "sourceUrl": "https://www.kancloud.cn/xiaofeiniao/wangwen-3/944181"
+    },
+    {
+      "id": "unit-cycle",
+      "title": "单元剧情循环",
+      "category": "结构",
+      "summary": "把长篇拆成可重复的'单元剧'，每个单元都是起承转合+爽点+钩子。",
+      "usage": "一个单元约1-2万字：主角接到目标→遇到阻碍→解决冲突→获得奖励→引出下一个目标。每完成一个单元就升一次小地图或换一个小副本，保持新鲜感。",
+      "sourceUrl": "https://post.smzdm.com/p/anvzpe60"
+    },
+    {
+      "id": "golden-finger",
+      "title": "金手指设计",
+      "category": "设定",
+      "summary": "金手指是主角的作弊器，决定了一本爽文的天花板。",
+      "usage": "金手指要有'限制'和'成长'：太强会无敌无聊，太弱会不爽。最佳设计是'初期好用但有代价/限制，随着剧情解锁新能力'。同时要让金手指与主角性格绑定，形成独特风格。",
+      "sourceUrl": "https://post.smzdm.com/p/am9gmp2p"
+    },
+    {
+      "id": "contrast-gap",
+      "title": "对比落差",
+      "category": "爽点",
+      "summary": "爽感的本质是'预期'与'现实'之间的巨大反差。",
+      "usage": "先让反派和路人认定主角很弱（身份低微、修为低下、被退婚），再让主角展现出碾压级实力或地位。落差越大、围观者越多、反转越彻底，爽感越强。",
+      "sourceUrl": "https://www.kancloud.cn/xiaofeiniao/wangwen-3/944181"
+    },
+    {
+      "id": "show-dont-tell",
+      "title": "刺激器-反应",
+      "category": "描写",
+      "summary": "调动情绪的基本单位：一个具体事件触发角色的行动+心理反应。",
+      "usage": "不要直接写'他很害怕'，而是写'虫子突然从盒子里窜出来，他猛地跳开，后背瞬间被冷汗浸透'。用动作、神态、生理反应代替直白情绪词，画面感和代入感都会翻倍。",
+      "sourceUrl": "https://www.ttwwq.com/sys-nd/391.html"
+    },
+    {
+      "id": "anti-routine",
+      "title": "反套路",
+      "category": "创新",
+      "summary": "在成熟套路里加入一个反向设计，既能蹭流量又能制造新鲜感。",
+      "usage": "比如'退婚流'写主角其实早就想退婚；'签到流'写主角签到获得的是负面BUFF；'重生流'写主角重生后选择摆烂。关键是颠覆读者预期，但逻辑必须自洽。",
+      "sourceUrl": "https://zhuanlan.zhihu.com/p/717677004"
+    }
+  ]
+}
