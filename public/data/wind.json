@@ -1,69 +1,241 @@
 {
   "updatedAt": "2026-07-20",
-  "verdict": "男频高武系统爽文领跑，女频穿书甜宠财阀霸榜，短剧漫剧改编向种田、大女主与权谋逆袭集中",
+  "verdict": "男频都市高武/灵气复苏、都市脑洞领跑，女频现言脑洞·财阀、宫斗宅斗霸榜，短剧改编向种田脑洞集中",
   "genres": [
-    {"name": "都市高武/灵气复苏（男频）", "heat": 100, "trend": "up", "note": "男频新书榜第1、3名均为都市高武，榜首在读133.5万"},
-    {"name": "现言脑洞·财阀（女频）", "heat": 92, "trend": "up", "note": "女频第2、3名均为财阀穿书，在读60.1万/52.0万"},
-    {"name": "宫斗宅斗（女频）", "heat": 88, "trend": "up", "note": "女频榜首《入宫即高位》65.5万在读，盛夏寻章征文重点赛道"},
-    {"name": "都市脑洞（直播/科研，男频）", "heat": 80, "trend": "flat", "note": "男频第5名直播研发丧尸病毒49.5万在读"},
-    {"name": "青春甜宠（女频）", "heat": 76, "trend": "flat", "note": "女频第4、5名及榜单中段多本青春甜宠在榜"},
-    {"name": "抗战谍战/历史权谋（男频）", "heat": 72, "trend": "up", "note": "男频第2名军阀文58.4万在读；官方7月风向确认历史权谋短剧改编热"},
-    {"name": "同人衍生", "heat": 62, "trend": "new", "note": "男频第6名黑袍同人上榜；官方文启剧燃征文新设创新衍生赛道"},
-    {"name": "年代文（复仇/军婚）", "heat": 58, "trend": "flat", "note": "男频四合院复仇、女频年代军婚随军均在榜"}
+    {
+      "name": "都市高武/灵气复苏（男频）",
+      "heat": 100,
+      "trend": "up",
+      "note": "男频新书榜第1、3名均为都市高武，榜首在读133.5万"
+    },
+    {
+      "name": "现言脑洞·财阀（女频）",
+      "heat": 92,
+      "trend": "up",
+      "note": "女频第2、3名均为财阀穿书，在读60.1万/52.0万"
+    },
+    {
+      "name": "宫斗宅斗（女频）",
+      "heat": 88,
+      "trend": "up",
+      "note": "女频榜首《入宫即高位》65.5万在读，盛夏寻章征文重点赛道"
+    },
+    {
+      "name": "都市脑洞（直播/科研，男频）",
+      "heat": 80,
+      "trend": "flat",
+      "note": "男频第5名直播研发丧尸病毒49.5万在读"
+    },
+    {
+      "name": "青春甜宠（女频）",
+      "heat": 76,
+      "trend": "flat",
+      "note": "女频第4、5名及榜单中段多本青春甜宠在榜"
+    },
+    {
+      "name": "抗战谍战/历史权谋（男频）",
+      "heat": 72,
+      "trend": "up",
+      "note": "男频第2名军阀文58.4万在读；官方7月风向确认历史权谋短剧改编热"
+    },
+    {
+      "name": "同人衍生",
+      "heat": 62,
+      "trend": "new",
+      "note": "男频第6名黑袍同人上榜；官方文启剧燃征文新设创新衍生赛道"
+    },
+    {
+      "name": "年代文（复仇/军婚）",
+      "heat": 58,
+      "trend": "flat",
+      "note": "男频四合院复仇、女频年代军婚随军均在榜"
+    }
   ],
   "keywords": {
     "male": {
       "summary": "系统穿越配无敌流，反套路高密度爽点为王",
       "tags": [
-        {"word": "系统", "weight": 100},
-        {"word": "穿越", "weight": 95},
-        {"word": "爽文", "weight": 92},
-        {"word": "无敌流", "weight": 88},
-        {"word": "杀伐果断", "weight": 85},
-        {"word": "反套路", "weight": 80},
-        {"word": "重生", "weight": 78},
-        {"word": "高武", "weight": 75},
-        {"word": "脑洞", "weight": 72},
-        {"word": "直播", "weight": 68},
-        {"word": "沙雕", "weight": 65},
-        {"word": "同人", "weight": 62},
-        {"word": "年代", "weight": 60},
-        {"word": "复仇", "weight": 58},
-        {"word": "神豪", "weight": 55},
-        {"word": "争霸", "weight": 52},
-        {"word": "民国", "weight": 50},
-        {"word": "灵气复苏", "weight": 48},
-        {"word": "巨兽文", "weight": 45},
-        {"word": "反派", "weight": 42},
-        {"word": "养成", "weight": 40},
-        {"word": "校园", "weight": 38}
+        {
+          "word": "系统",
+          "weight": 100
+        },
+        {
+          "word": "穿越",
+          "weight": 95
+        },
+        {
+          "word": "爽文",
+          "weight": 92
+        },
+        {
+          "word": "无敌流",
+          "weight": 88
+        },
+        {
+          "word": "杀伐果断",
+          "weight": 85
+        },
+        {
+          "word": "反套路",
+          "weight": 80
+        },
+        {
+          "word": "重生",
+          "weight": 78
+        },
+        {
+          "word": "高武",
+          "weight": 75
+        },
+        {
+          "word": "脑洞",
+          "weight": 72
+        },
+        {
+          "word": "直播",
+          "weight": 68
+        },
+        {
+          "word": "沙雕",
+          "weight": 65
+        },
+        {
+          "word": "同人",
+          "weight": 62
+        },
+        {
+          "word": "年代",
+          "weight": 60
+        },
+        {
+          "word": "复仇",
+          "weight": 58
+        },
+        {
+          "word": "神豪",
+          "weight": 55
+        },
+        {
+          "word": "争霸",
+          "weight": 52
+        },
+        {
+          "word": "民国",
+          "weight": 50
+        },
+        {
+          "word": "灵气复苏",
+          "weight": 48
+        },
+        {
+          "word": "巨兽文",
+          "weight": 45
+        },
+        {
+          "word": "反派",
+          "weight": 42
+        },
+        {
+          "word": "养成",
+          "weight": 40
+        },
+        {
+          "word": "校园",
+          "weight": 38
+        }
       ]
     },
     "female": {
       "summary": "穿书甜宠配双洁，疯批强制爱大女主当道",
       "tags": [
-        {"word": "穿书", "weight": 100},
-        {"word": "甜宠", "weight": 96},
-        {"word": "双洁", "weight": 90},
-        {"word": "财阀", "weight": 86},
-        {"word": "强制爱", "weight": 82},
-        {"word": "宫斗宅斗", "weight": 78},
-        {"word": "疯批男主", "weight": 75},
-        {"word": "先婚后爱", "weight": 72},
-        {"word": "大女主", "weight": 70},
-        {"word": "追妻火葬场", "weight": 66},
-        {"word": "快穿", "weight": 62},
-        {"word": "万人迷", "weight": 60},
-        {"word": "修罗场", "weight": 58},
-        {"word": "系统", "weight": 55},
-        {"word": "病娇", "weight": 52},
-        {"word": "逆袭打脸", "weight": 50},
-        {"word": "娱乐圈", "weight": 48},
-        {"word": "古穿今", "weight": 45},
-        {"word": "暗恋", "weight": 42},
-        {"word": "马甲", "weight": 40},
-        {"word": "年代", "weight": 38},
-        {"word": "校园", "weight": 35}
+        {
+          "word": "穿书",
+          "weight": 100
+        },
+        {
+          "word": "甜宠",
+          "weight": 96
+        },
+        {
+          "word": "双洁",
+          "weight": 90
+        },
+        {
+          "word": "财阀",
+          "weight": 86
+        },
+        {
+          "word": "强制爱",
+          "weight": 82
+        },
+        {
+          "word": "宫斗宅斗",
+          "weight": 78
+        },
+        {
+          "word": "疯批男主",
+          "weight": 75
+        },
+        {
+          "word": "先婚后爱",
+          "weight": 72
+        },
+        {
+          "word": "大女主",
+          "weight": 70
+        },
+        {
+          "word": "追妻火葬场",
+          "weight": 66
+        },
+        {
+          "word": "快穿",
+          "weight": 62
+        },
+        {
+          "word": "万人迷",
+          "weight": 60
+        },
+        {
+          "word": "修罗场",
+          "weight": 58
+        },
+        {
+          "word": "系统",
+          "weight": 55
+        },
+        {
+          "word": "病娇",
+          "weight": 52
+        },
+        {
+          "word": "逆袭打脸",
+          "weight": 50
+        },
+        {
+          "word": "娱乐圈",
+          "weight": 48
+        },
+        {
+          "word": "古穿今",
+          "weight": 45
+        },
+        {
+          "word": "暗恋",
+          "weight": 42
+        },
+        {
+          "word": "马甲",
+          "weight": 40
+        },
+        {
+          "word": "年代",
+          "weight": 38
+        },
+        {
+          "word": "校园",
+          "weight": 35
+        }
       ]
     }
   },
@@ -75,14 +247,62 @@
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
       "dataDate": "2026-07-19",
       "books": [
-        {"rank": 1, "title": "嘉豪就变强？操场雨中舞剑开天门", "author": "落叶之刃", "genre": "都市高武", "heat": "133.5万在读"},
-        {"rank": 2, "title": "军阀：大帅义子，前方过境黄桂村", "author": "爱吃饭团团", "genre": "抗战谍战", "heat": "58.4万在读"},
-        {"rank": 3, "title": "我只是化龙，怎么成灭世级了？", "author": "爱说老王", "genre": "都市高武", "heat": "51.9万在读"},
-        {"rank": 4, "title": "开局四选一，我秒选县城婆罗门", "author": "没有梦想的人", "genre": "重生神豪", "heat": "51.3万在读"},
-        {"rank": 5, "title": "直播研发丧尸病毒，吓坏全国网友", "author": "小葱拌豆腐啦", "genre": "都市脑洞", "heat": "49.5万在读"},
-        {"rank": 6, "title": "穿越黑袍，开局成为士兵男孩", "author": "幸运儿小朵", "genre": "男频衍生", "heat": "38.6万在读"},
-        {"rank": 7, "title": "四合院：开局举报轧钢厂", "author": "粮票换糖甜", "genre": "年代", "heat": "37.2万在读"},
-        {"rank": 8, "title": "自律就变帅！高冷校花绷不住了！", "author": "单身狗协会副会长", "genre": "都市系统流", "heat": "35.6万在读"}
+        {
+          "rank": 1,
+          "title": "嘉豪就变强？操场雨中舞剑开天门",
+          "author": "落叶之刃",
+          "genre": "都市高武",
+          "heat": "133.5万在读"
+        },
+        {
+          "rank": 2,
+          "title": "军阀：大帅义子，前方过境黄桂村",
+          "author": "爱吃饭团团",
+          "genre": "抗战谍战",
+          "heat": "58.4万在读"
+        },
+        {
+          "rank": 3,
+          "title": "我只是化龙，怎么成灭世级了？",
+          "author": "爱说老王",
+          "genre": "都市高武",
+          "heat": "51.9万在读"
+        },
+        {
+          "rank": 4,
+          "title": "开局四选一，我秒选县城婆罗门",
+          "author": "没有梦想的人",
+          "genre": "重生神豪",
+          "heat": "51.3万在读"
+        },
+        {
+          "rank": 5,
+          "title": "直播研发丧尸病毒，吓坏全国网友",
+          "author": "小葱拌豆腐啦",
+          "genre": "都市脑洞",
+          "heat": "49.5万在读"
+        },
+        {
+          "rank": 6,
+          "title": "穿越黑袍，开局成为士兵男孩",
+          "author": "幸运儿小朵",
+          "genre": "男频衍生",
+          "heat": "38.6万在读"
+        },
+        {
+          "rank": 7,
+          "title": "四合院：开局举报轧钢厂",
+          "author": "粮票换糖甜",
+          "genre": "年代",
+          "heat": "37.2万在读"
+        },
+        {
+          "rank": 8,
+          "title": "自律就变帅！高冷校花绷不住了！",
+          "author": "单身狗协会副会长",
+          "genre": "都市系统流",
+          "heat": "35.6万在读"
+        }
       ]
     },
     {
@@ -92,32 +312,143 @@
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
       "dataDate": "2026-07-19",
       "books": [
-        {"rank": 1, "title": "入宫即高位，我是陛下表妹我怕谁", "author": "慕年年", "genre": "宫斗宅斗", "heat": "65.5万在读"},
-        {"rank": 2, "title": "小炮灰变美后，抢了财阀太子爷", "author": "草莓糖心", "genre": "现言脑洞", "heat": "60.1万在读"},
-        {"rank": 3, "title": "穿成财阀太子爷的作精前女友", "author": "雀鸣灯", "genre": "现言脑洞", "heat": "52.0万在读"},
-        {"rank": 4, "title": "盛夏青苹果", "author": "桃气乌龙正常糖", "genre": "青春甜宠", "heat": "42.9万在读"},
-        {"rank": 5, "title": "财阀继承人的古董女友", "author": "二月的大白", "genre": "青春甜宠", "heat": "42.3万在读"},
-        {"rank": 6, "title": "脑子一热，强吻了我哥的同窗好友", "author": "摆烂的步履", "genre": "古言脑洞", "heat": "41.4万在读"},
-        {"rank": 7, "title": "万人迷神颜顶流只想演炮灰", "author": "番茄土豆楠", "genre": "星光璀璨", "heat": "29.7万在读"},
-        {"rank": 8, "title": "妹宝假装被催眠，阴湿哥哥上瘾了", "author": "三樱里", "genre": "豪门总裁", "heat": "27.2万在读"}
+        {
+          "rank": 1,
+          "title": "入宫即高位，我是陛下表妹我怕谁",
+          "author": "慕年年",
+          "genre": "宫斗宅斗",
+          "heat": "65.5万在读"
+        },
+        {
+          "rank": 2,
+          "title": "小炮灰变美后，抢了财阀太子爷",
+          "author": "草莓糖心",
+          "genre": "现言脑洞",
+          "heat": "60.1万在读"
+        },
+        {
+          "rank": 3,
+          "title": "穿成财阀太子爷的作精前女友",
+          "author": "雀鸣灯",
+          "genre": "现言脑洞",
+          "heat": "52.0万在读"
+        },
+        {
+          "rank": 4,
+          "title": "盛夏青苹果",
+          "author": "桃气乌龙正常糖",
+          "genre": "青春甜宠",
+          "heat": "42.9万在读"
+        },
+        {
+          "rank": 5,
+          "title": "财阀继承人的古董女友",
+          "author": "二月的大白",
+          "genre": "青春甜宠",
+          "heat": "42.3万在读"
+        },
+        {
+          "rank": 6,
+          "title": "脑子一热，强吻了我哥的同窗好友",
+          "author": "摆烂的步履",
+          "genre": "古言脑洞",
+          "heat": "41.4万在读"
+        },
+        {
+          "rank": 7,
+          "title": "万人迷神颜顶流只想演炮灰",
+          "author": "番茄土豆楠",
+          "genre": "星光璀璨",
+          "heat": "29.7万在读"
+        },
+        {
+          "rank": 8,
+          "title": "妹宝假装被催眠，阴湿哥哥上瘾了",
+          "author": "三樱里",
+          "genre": "豪门总裁",
+          "heat": "27.2万在读"
+        }
       ]
     }
   ],
   "ipHot": [
-    {"title": "发配边关，罪妻开荒养出战神", "genre": "种田脑洞", "form": "漫剧", "note": "官方风向文披露：AI漫剧爆款，红果多季在榜", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"},
-    {"title": "从纨绔到镇北侯我统领天下（原著《大雍异姓王，纨绔世子太凶猛！》）", "genre": "历史权谋", "form": "短剧", "note": "官方风向文披露：纨绔反差人设权谋爆款", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"},
-    {"title": "朝思暮时（原著《顾先生的宠妻日常》）", "genre": "婚后日常", "form": "短剧", "note": "官方风向文披露：反向追夫甜宠爆款", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"},
-    {"title": "逆流重生（原著《重生九六，海钓捞沉船宝藏成首富》）", "genre": "乡村逆袭/年代创业", "form": "漫剧", "note": "官方风向文披露：乡村逆袭漫剧代表", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"}
+    {
+      "title": "发配边关，罪妻开荒养出战神",
+      "genre": "种田脑洞",
+      "form": "漫剧",
+      "note": "官方风向文披露：AI漫剧爆款，红果多季在榜",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+    },
+    {
+      "title": "从纨绔到镇北侯我统领天下（原著《大雍异姓王，纨绔世子太凶猛！》）",
+      "genre": "历史权谋",
+      "form": "短剧",
+      "note": "官方风向文披露：纨绔反差人设权谋爆款",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+    },
+    {
+      "title": "朝思暮时（原著《顾先生的宠妻日常》）",
+      "genre": "婚后日常",
+      "form": "短剧",
+      "note": "官方风向文披露：反向追夫甜宠爆款",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+    },
+    {
+      "title": "逆流重生（原著《重生九六，海钓捞沉船宝藏成首富》）",
+      "genre": "乡村逆袭/年代创业",
+      "form": "漫剧",
+      "note": "官方风向文披露：乡村逆袭漫剧代表",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+    }
   ],
   "announcements": [
-    {"platform": "番茄小说", "date": "2026-07", "title": "番茄小说「盛夏寻章」暑期征文", "summary": "5赛道19分类千万奖池，单书可超百万激励", "sourceUrl": "https://fanqienovel.com/writer/zone"},
-    {"platform": "番茄小说", "date": "2026-05", "title": "2026番茄网文神启计划", "summary": "长篇原创专项激励，覆盖创作宣发与IP改编", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7642986443425447961"},
-    {"platform": "番茄小说", "date": "2026-05", "title": "聚贤纳新·执笔无忧限时招募活动", "summary": "保底直签+分成双通道，保底千字20-5000元", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7644451636479262745"},
-    {"platform": "番茄小说", "date": "2026-03", "title": "改编向中篇IP扶持计划重磅上线", "summary": "中篇IP高优推进短剧漫剧版权售卖与改编", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"}
+    {
+      "platform": "番茄小说",
+      "date": "2026-07",
+      "title": "番茄小说「盛夏寻章」暑期征文",
+      "summary": "5赛道19分类千万奖池，单书可超百万激励",
+      "sourceUrl": "https://fanqienovel.com/writer/zone"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-05",
+      "title": "2026番茄网文神启计划",
+      "summary": "长篇原创专项激励，覆盖创作宣发与IP改编",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7642986443425447961"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-05",
+      "title": "聚贤纳新·执笔无忧限时招募活动",
+      "summary": "保底直签+分成双通道，保底千字20-5000元",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7644451636479262745"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-03",
+      "title": "改编向中篇IP扶持计划重磅上线",
+      "summary": "中篇IP高优推进短剧漫剧版权售卖与改编",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"
+    }
   ],
   "adaptWatch": [
-    {"date": "2026-07", "title": "官方课堂：短剧、漫剧7月改编风向", "summary": "女频两界互穿/婚后日常大女主，男频历史权谋穿越打脸；漫剧种田脑洞、乡村逆袭", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"},
-    {"date": "2026-01", "title": "文启剧燃｜番茄小说x短剧版权中心首届短剧向IP联合征文", "summary": "六大赛道征文，番茄IP改编短剧漫剧累计破9000部", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7595564497767514174"},
-    {"date": "2026-03", "title": "改编向中篇IP扶持计划重磅上线", "summary": "中篇作品短剧漫剧改编专项激励，版权收入分档奖励", "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"}
+    {
+      "date": "2026-07",
+      "title": "官方课堂：短剧、漫剧7月改编风向",
+      "summary": "女频两界互穿/婚后日常大女主，男频历史权谋穿越打脸；漫剧种田脑洞、乡村逆袭",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+    },
+    {
+      "date": "2026-01",
+      "title": "文启剧燃｜番茄小说x短剧版权中心首届短剧向IP联合征文",
+      "summary": "六大赛道征文，番茄IP改编短剧漫剧累计破9000部",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7595564497767514174"
+    },
+    {
+      "date": "2026-03",
+      "title": "改编向中篇IP扶持计划重磅上线",
+      "summary": "中篇作品短剧漫剧改编专项激励，版权收入分档奖励",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"
+    }
   ]
 }
