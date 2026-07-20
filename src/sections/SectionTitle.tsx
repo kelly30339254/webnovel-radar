@@ -12,8 +12,10 @@ export default function SectionTitle({
   right?: ReactNode
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 border-b border-rose-200 pb-2">
-      <svg width="15" height="15" viewBox="0 0 24 24" className="flex-none" aria-hidden="true">
+    <div className="relative flex flex-wrap items-center gap-x-2.5 gap-y-1 pb-3">
+      <div className="absolute bottom-0 left-0 h-0.5 w-16 rounded-full bg-gradient-to-r from-rose-400 to-pink-300" />
+      <div className="absolute bottom-0 left-0 h-px w-full bg-rose-100" />
+      <svg width="16" height="16" viewBox="0 0 24 24" className="flex-none" aria-hidden="true">
         <path
           d="M12 3c.7 4.5 2.5 6.8 8 8-5.5 1.2-7.3 3.5-8 8-.7-4.5-2.5-6.8-8-8 5.5-1.2 7.3-3.5 8-8Z"
           fill="#fb7185"

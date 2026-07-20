@@ -122,11 +122,12 @@
 }
 
 .card-pink {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 .card-pink:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px -12px rgb(225 29 72 / 0.22);
+  box-shadow: 0 16px 40px -14px rgb(225 29 72 / 0.2);
+  border-color: rgb(251 113 133 / 0.35);
 }
 
 ::selection {

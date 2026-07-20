@@ -38,7 +38,7 @@ export default function IpHot() {
   if (!data) return null
 
   return (
-    <section id="ip" aria-labelledby="ip-heading" className="rise-in scroll-mt-24" style={{ animationDelay: '0.3s' }}>
+    <section id="ip" aria-labelledby="ip-heading" className="rise-in mt-20 scroll-mt-24" style={{ animationDelay: '0.3s' }}>
       <SectionTitle id="ip-heading" title="IP 改编热点" hint={`红果短剧热播榜 · ${data.updatedAt}`} />
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
         {data.categories.map((cat) => (
