@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
 
 const RECS = {
@@ -58,14 +59,42 @@ const ADAPT_GUIDES = [
 ]
 
 export default function BookRecs() {
+  const [channel, setChannel] = useState<'male' | 'female'>('male')
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const c = params.get('channel')
+    if (c === 'male' || c === 'female') setChannel(c)
+  }, [])
+
+  const switchChannel = (c: 'male' | 'female') => {
+    setChannel(c)
+    const url = new URL(window.location.href)
+    url.searchParams.set('channel', c)
+    window.history.replaceState({}, '', url.toString())
+  }
+
   return (
     <section className="mt-14">
-      <SectionTitle id="book-recs" title="开书推荐" hint="近期容易出成绩的题材方向" />
+      <SectionTitle
+        id="book-recs"
+        title="开书推荐"
+        hint="近期容易出成绩的题材方向"
+        footer={
+          <>
+            <span>基于今日番茄新书榜与红果热播榜</span>
+            <span>每日 07:23 自动更新</span>
+          </>
+        }
+      />
       <div className="card-pink mb-6 rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
         <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-rose-950">
           <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
           IP 改编风向标（基于红果热播榜）
         </h3>
+        <p className="mb-4 text-xs text-rose-400">
+          根据红果热播榜的真人剧、漫剧、AI 剧热度，推导小说创作方向：写什么类型、立什么人设、用什么套路更容易被改编。
+        </p>
         <div className="grid gap-4 md:grid-cols-3">
           {ADAPT_GUIDES.map((g) => (
             <div key={g.category} className="rounded-xl border border-rose-100 bg-white/80 p-4 transition-all hover:border-rose-200">
@@ -88,29 +117,30 @@ export default function BookRecs() {
           ))}
         </div>
       </div>
-      <div className="mt-4 grid gap-6 lg:grid-cols-2">
-        <div>
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">
-            <span className="h-2 w-2 rounded-full bg-rose-500" />
-            男频方向
-          </h3>
-          <div className="grid gap-3">
-            {RECS.male.map((item, i) => (
-              <RecCard key={item.title} item={item} index={i} />
-            ))}
-          </div>
-        </div>
-        <div>
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">
-            <span className="h-2 w-2 rounded-full bg-pink-500" />
-            女频方向
-          </h3>
-          <div className="grid gap-3">
-            {RECS.female.map((item, i) => (
-              <RecCard key={item.title} item={item} index={i} />
-            ))}
-          </div>
-        </div>
+
+      <div className="mb-4 inline-flex overflow-hidden rounded-full border border-rose-200 bg-white text-xs shadow-sm">
+        {([
+          { key: 'male', label: '男频方向' },
+          { key: 'female', label: '女频方向' },
+        ] as const).map((c) => (
+          <button
+            key={c.key}
+            onClick={() => switchChannel(c.key)}
+            className={`px-4 py-1.5 transition-colors ${
+              channel === c.key
+                ? 'bg-gradient-to-r from-rose-500 to-pink-400 text-white'
+                : 'text-rose-400 hover:bg-rose-50'
+            }`}
+          >
+            {c.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {RECS[channel].map((item, i) => (
+          <RecCard key={item.title} item={item} index={i} />
+        ))}
       </div>
     </section>
   )

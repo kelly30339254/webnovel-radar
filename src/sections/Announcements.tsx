@@ -5,7 +5,12 @@ import SectionTitle from '@/sections/SectionTitle'
 export default function Announcements({ items }: { items: Announcement[] }) {
   return (
     <section id="ann" aria-labelledby="ann-heading" className="rise-in mt-10 scroll-mt-24" style={{ animationDelay: '0.38s' }}>
-      <SectionTitle id="ann-heading" title="官方公告 · 征文" hint="官方征文与扶持计划释放的题材信号" />
+      <SectionTitle
+        id="ann-heading"
+        title="官方公告 · 征文"
+        hint="官方征文与扶持计划释放的题材信号"
+        footer={<span>来源：番茄小说 / 红果短剧官方公告</span>}
+      />
       <ol className="mt-4 space-y-0 border-l-2 border-rose-200 pl-5">
         {items.map((a) => (
           <li key={`${a.platform}-${a.title}`} className="relative pb-6 last:pb-0">

@@ -9,21 +9,6 @@ function BeatHeart({ size = 64, color = '#e11d48' }: { size?: number; color?: st
   )
 }
 
-export function EasterEggTrigger({ onActivate }: { onActivate: () => void }) {
-  return (
-    <div className="flex justify-center pb-10 pt-4">
-      <div
-        className="group relative flex cursor-pointer select-none items-center justify-center"
-        onDoubleClick={onActivate}
-        title="双击查看彩蛋"
-      >
-        <BeatHeart size={88} color="#e11d48" />
-        <span className="absolute z-10 text-2xl font-bold text-white drop-shadow-md">327</span>
-      </div>
-    </div>
-  )
-}
-
 interface EasterEggProps {
   active: boolean
   onClose: () => void

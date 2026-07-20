@@ -1,13 +1,15 @@
 import type { Board } from '@/types/wind'
 import SourceLink from '@/sections/SourceLink'
 import SectionTitle from '@/sections/SectionTitle'
+import ViewMoreLink from '@/components/ViewMoreLink'
+import { freshnessLabel } from '@/lib/freshness'
 
 const CHANNEL_STYLE: Record<string, { chip: string; bar: string }> = {
   男频: { chip: 'bg-rose-900 text-rose-50', bar: 'bg-rose-800' },
   女频: { chip: 'bg-pink-500 text-white', bar: 'bg-pink-400' },
 }
 
-function freshness(dataDate?: string): { text: string; stale: boolean } | null {
+function boardFreshness(dataDate?: string): { text: string; stale: boolean } | null {
   if (!dataDate) return null
   const t = Date.parse(dataDate)
   if (Number.isNaN(t)) return { text: `截止 ${dataDate}`, stale: false }
@@ -16,13 +18,33 @@ function freshness(dataDate?: string): { text: string; stale: boolean } | null {
 }
 
 export default function FanqieBoards({ boards }: { boards: Board[] }) {
+  const latestDate = boards.map((b) => b.dataDate).filter(Boolean).sort().pop()
+  const moduleFresh = freshnessLabel(latestDate)
+
   return (
     <section id="boards" aria-labelledby="boards-heading" className="rise-in mt-14 scroll-mt-24" style={{ animationDelay: '0.24s' }}>
-      <SectionTitle id="boards-heading" title="番茄新书榜" hint="男频 / 女频分频 · 只取新书榜，不含总榜" />
+      <SectionTitle
+        id="boards-heading"
+        title="番茄新书榜"
+        hint="男频 / 女频分频 · 只取新书榜，不含总榜"
+        right={<ViewMoreLink to="/boards" />}
+        footer={
+          <>
+            {moduleFresh && (
+              <span className={moduleFresh.stale ? 'font-medium text-amber-500' : ''}>
+                {moduleFresh.text}
+                {moduleFresh.stale ? ' · 数据偏旧' : ''}
+              </span>
+            )}
+            <span>每日 07:23 自动更新</span>
+            <span>来源：番茄小说官方榜单</span>
+          </>
+        }
+      />
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         {boards.map((b) => {
           const style = CHANNEL_STYLE[b.channel] ?? { chip: 'bg-rose-800 text-white', bar: 'bg-rose-500' }
-          const fresh = freshness(b.dataDate)
+          const fresh = boardFreshness(b.dataDate)
           return (
             <article
               key={`${b.platform}-${b.channel}`}

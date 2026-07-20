@@ -41,10 +41,20 @@ function ChannelPanel({
   )
 }
 
-export default function KeywordClouds({ keywords }: { keywords: Keywords }) {
+export default function KeywordClouds({ keywords, updatedAt }: { keywords: Keywords; updatedAt?: string }) {
   return (
     <section id="keywords" aria-labelledby="kw-heading" className="rise-in mt-14 scroll-mt-24" style={{ animationDelay: '0.18s' }}>
-      <SectionTitle id="kw-heading" title="内容关键词" hint="从新书榜作品标签、分类与书名高频词归纳" />
+      <SectionTitle
+        id="kw-heading"
+        title="内容关键词"
+        hint="从新书榜作品标签、分类与书名高频词归纳"
+        footer={
+          <>
+            {updatedAt && <span>更新于 {updatedAt}</span>}
+            <span>来源：番茄小说新书榜标题与标签</span>
+          </>
+        }
+      />
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <ChannelPanel
           title="番茄男频"

@@ -16,6 +16,7 @@ import WriterPersonality from '@/sections/WriterPersonality'
 import FanqieDebut from '@/sections/FanqieDebut'
 import WritingTips from '@/sections/WritingTips'
 import BookRecs from '@/sections/BookRecs'
+import Subscribe from '@/sections/Subscribe'
 import { PetalRain } from '@/sections/Stickers'
 
 export default function Home() {
@@ -51,11 +52,11 @@ export default function Home() {
         <Nav updatedAt={data.updatedAt} />
         <Hero data={data} historyDays={history?.days.length ?? 0} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
-          <WriterPersonality />
-          <GenreBoard genres={data.genres} />
-          <TrendChart history={history} />
-          <KeywordClouds keywords={data.keywords} />
           <BookRecs />
+          <WriterPersonality />
+          <GenreBoard genres={data.genres} updatedAt={data.updatedAt} />
+          <TrendChart history={history} updatedAt={data.updatedAt} />
+          <KeywordClouds keywords={data.keywords} updatedAt={data.updatedAt} />
           <FanqieBoards boards={data.boards} />
           <IpHot />
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
@@ -65,6 +66,7 @@ export default function Home() {
           <FanqieDebut />
           <WritingTips />
           <ZhiyuWriting />
+          <Subscribe />
         </main>
         <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />
       </div>

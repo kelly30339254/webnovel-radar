@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
 import SourceLink from '@/sections/SourceLink'
+import ViewMoreLink from '@/components/ViewMoreLink'
 
 type Tip = {
   id: string
@@ -48,6 +49,13 @@ export default function WritingTips() {
         id="writing-tips"
         title="网文写作技巧"
         hint={`${data.tips.length} 条干货 · 点击来源查看原文`}
+        right={<ViewMoreLink to="/tips" />}
+        footer={
+          <>
+            <span>更新于 {data.updatedAt}</span>
+            <span>来源：网络公开写作教程与作者经验分享</span>
+          </>
+        }
       />
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data.tips.map((tip, i) => (

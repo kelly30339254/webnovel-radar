@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
 import SourceLink from '@/sections/SourceLink'
+import { freshnessLabel } from '@/lib/freshness'
+
+const SOURCE_URL = 'https://wangwendashuju.com/fq/debut?gender=male'
 
 type Book = {
   rank: number
@@ -26,13 +29,26 @@ export default function FanqieDebut() {
       .catch(() => setBooks([]))
   }, [])
 
+  const moduleFresh = freshnessLabel(updatedAt)
+
   return (
     <section className="mt-14">
       <SectionTitle
         id="fanqie-debut"
         title="番茄首秀榜"
-        hint={updatedAt ? `数据 ${updatedAt}` : undefined}
-        right={<SourceLink url="https://wangwendashuju.com/fq/debut?gender=male" label="网文大数据" />}
+        right={<SourceLink url={SOURCE_URL} label="网文大数据" />}
+        footer={
+          <>
+            {moduleFresh && (
+              <span className={moduleFresh.stale ? 'font-medium text-amber-500' : ''}>
+                {moduleFresh.text}
+                {moduleFresh.stale ? ' · 数据偏旧' : ''}
+              </span>
+            )}
+            <span>每日 07:23 自动更新</span>
+            <span>来源：网文大数据</span>
+          </>
+        }
       />
       <div className="mt-4 grid gap-3">
         {books.map((book) => (

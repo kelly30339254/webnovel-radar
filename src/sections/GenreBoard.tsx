@@ -8,10 +8,21 @@ const TREND_META: Record<Trend, { mark: string; className: string; label: string
   new: { mark: 'NEW', className: 'text-pink-500 font-semibold', label: '新上榜' },
 }
 
-export default function GenreBoard({ genres }: { genres: GenreHeat[] }) {
+export default function GenreBoard({ genres, updatedAt }: { genres: GenreHeat[]; updatedAt?: string }) {
   return (
     <section id="genres" aria-labelledby="genre-heading" className="rise-in mt-12 scroll-mt-24" style={{ animationDelay: '0.1s' }}>
-      <SectionTitle id="genre-heading" title="题材热度" hint="最热 = 100 · 相对热度 · 趋势对比上一周期" />
+      <SectionTitle
+        id="genre-heading"
+        title="题材热度"
+        hint="最热 = 100 · 相对热度 · 趋势对比上一周期"
+        footer={
+          <>
+            {updatedAt && <span>更新于 {updatedAt}</span>}
+            <span>每日 07:23 自动更新</span>
+            <span>来源：番茄小说新书榜</span>
+          </>
+        }
+      />
       <ol className="mt-4 divide-y divide-rose-100/80">
         {genres.map((g, i) => {
           const heat = Math.max(0, Math.min(100, g.heat))
@@ -19,11 +30,11 @@ export default function GenreBoard({ genres }: { genres: GenreHeat[] }) {
           return (
             <li
               key={g.name}
-              className="grid grid-cols-[2rem_minmax(6rem,11rem)_1fr_2.6rem_2.4rem] items-center gap-x-3 rounded-lg px-2 py-3 transition-colors hover:bg-rose-50 md:gap-x-4"
+              className="grid grid-cols-[2rem_1fr_2.6rem_2.4rem] items-center gap-x-2 rounded-lg px-2 py-3 transition-colors hover:bg-rose-50 sm:grid-cols-[2rem_minmax(6rem,11rem)_1fr_2.6rem_2.4rem] sm:gap-x-3 md:gap-x-4"
             >
               <span className="font-mono text-sm text-rose-300">{String(i + 1).padStart(2, '0')}</span>
-              <span className="font-medium text-rose-950">{g.name}</span>
-              <span className="flex items-center gap-3">
+              <span className="truncate font-medium text-rose-950" title={g.name}>{g.name}</span>
+              <span className="hidden sm:flex sm:items-center sm:gap-3">
                 <span className="h-2 flex-1 overflow-hidden rounded-full bg-rose-100" role="img" aria-label={`热度 ${heat}`}>
                   <span
                     className={`block h-full rounded-full ${
@@ -40,7 +51,7 @@ export default function GenreBoard({ genres }: { genres: GenreHeat[] }) {
               </span>
               <span className="text-right font-mono text-sm tabular-nums text-rose-900/70">{heat}</span>
               {g.note && (
-                <span className="col-start-2 col-end-[-1] -mt-1 text-xs text-rose-400/90">{g.note}</span>
+                <span className="col-start-2 col-end-[-1] -mt-1 text-xs text-rose-400/90 sm:col-start-2 sm:col-end-[-1]">{g.note}</span>
               )}
             </li>
           )

@@ -5,7 +5,12 @@ import SectionTitle from '@/sections/SectionTitle'
 export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
   return (
     <section id="adapt" aria-labelledby="adapt-heading" className="rise-in scroll-mt-24" style={{ animationDelay: '0.34s' }}>
-      <SectionTitle id="adapt-heading" title="改编风向标" hint="番茄作家专区官方栏目 · 红果官方公告" />
+      <SectionTitle
+        id="adapt-heading"
+        title="改编风向标"
+        hint="番茄作家专区官方栏目 · 红果官方公告"
+        footer={<span>来源：番茄作家专区 / 红果短剧官方公告</span>}
+      />
       <ul className="mt-4 space-y-3">
         {items.map((it) => (
           <li

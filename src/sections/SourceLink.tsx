@@ -1,3 +1,5 @@
+import { trackEvent } from '@/hooks/useAnalytics'
+
 export default function SourceLink({ url, label = '来源' }: { url?: string; label?: string }) {
   if (!url) return null
   return (
@@ -5,6 +7,7 @@ export default function SourceLink({ url, label = '来源' }: { url?: string; la
       href={url}
       target="_blank"
       rel="noreferrer noopener"
+      onClick={() => trackEvent('click_source', { url, label })}
       className="inline-flex flex-none items-center gap-0.5 rounded-full border border-rose-200 px-2 py-0.5 text-xs text-rose-400 transition-colors hover:border-rose-400 hover:bg-rose-50 hover:text-rose-600"
     >
       {label}

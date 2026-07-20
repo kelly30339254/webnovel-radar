@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
+import ViewMoreLink from '@/components/ViewMoreLink'
 
 type ShortDrama = {
   rank: number
@@ -39,7 +40,19 @@ export default function IpHot() {
 
   return (
     <section id="ip" aria-labelledby="ip-heading" className="rise-in mt-20 scroll-mt-24" style={{ animationDelay: '0.3s' }}>
-      <SectionTitle id="ip-heading" title="IP 改编热点" hint={`红果短剧热播榜 · ${data.updatedAt}`} />
+      <SectionTitle
+        id="ip-heading"
+        title="IP 改编热点"
+        hint="红果短剧热播榜"
+        right={<ViewMoreLink to="/ip" />}
+        footer={
+          <>
+            <span>数据截止 {data.updatedAt}</span>
+            <span>每日 07:23 自动更新</span>
+            <span>来源：红果短剧官方排行榜</span>
+          </>
+        }
+      />
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
         {data.categories.map((cat) => (
           <div
