@@ -5,14 +5,23 @@ on:
     - cron: '23 23 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: daily-update-main
+  cancel-in-progress: false
+
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     permissions:
       contents: write
+    env:
+      TZ: Asia/Shanghai
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -29,8 +38,21 @@ jobs:
       - name: Update data
         run: node scripts/update-data.mjs
 
+      - name: Prepare verified data commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/
+          git diff --cached --quiet || git commit -m "chore: daily data update $(date +%Y-%m-%d)"
+
+      - name: Rebase onto latest main
+        run: git pull --rebase origin main
+
       - name: Build
         run: npm run build
+
+      - name: Push verified data update
+        run: git push origin HEAD:main
 
       - name: Deploy to CloudBase
         env:
@@ -39,11 +61,3 @@ jobs:
         run: |
           tcb login --apiKeyId "$TCB_SECRET_ID" --apiKey "$TCB_SECRET_KEY"
           tcb hosting deploy ./dist -e nailong-d4g922z6h6d9ff59e
-
-      - name: Commit data changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/
-          git diff --cached --quiet || git commit -m "chore: daily data update $(date +%Y-%m-%d)"
-          git push
