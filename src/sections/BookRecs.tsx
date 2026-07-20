@@ -1,22 +1,4 @@
-import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
-
-type ShortDrama = {
-  rank: number
-  title: string
-  heat: string
-  note?: string
-}
-
-type Category = {
-  name: string
-  items: ShortDrama[]
-}
-
-type HongguoData = {
-  updatedAt: string
-  categories: Category[]
-}
 
 const RECS = {
   male: [
@@ -51,53 +33,61 @@ function RecCard({ item, index }: { item: (typeof RECS.male)[0]; index: number }
   )
 }
 
-const ADAPT_REASONS: Record<string, string> = {
-  真人剧: '热播真人短剧验证了情绪爽点，反向改编成长篇小说可放大细节与伏笔。',
-  漫剧: '漫剧自带画面感与粉丝基础，扩写成网文能蹭到原作流量。',
-  AI剧: 'AI剧成本低、题材猎奇，把视觉脑洞转成文字版是降维打击。',
-}
+const ADAPT_GUIDES = [
+  {
+    category: '真人剧',
+    type: '现实向情感 / 都市逆袭 / 年代家庭',
+    persona: '坚韧清醒女主 · 外冷内热男主 · 逆袭型小人物',
+    trope: '情绪拉扯 · 打脸逆袭 · 家庭和解',
+    tip: '真人剧靠真实情绪打动观众，写小说时把短剧的高光片段扩写成细腻的日常与心理戏，强化代入感。',
+  },
+  {
+    category: '漫剧',
+    type: '玄幻修仙 / 热血升级 / 经典IP同人',
+    persona: '天赋异禀但低调的主角 · 反差萌配角 · 亦正亦邪的师父',
+    trope: '金手指 · 宗门争霸 · 师徒情深',
+    tip: '漫剧观众习惯强画面感，小说要把打斗、法术、世界观细节做足，章节结尾留钩子。',
+  },
+  {
+    category: 'AI剧',
+    type: '脑洞大开 / 科幻奇幻 / 女频逆袭',
+    persona: '觉醒型女主 · 反差系统宿主 · 高智商反派',
+    trope: '系统开挂 · 身份反转 · 快节奏打脸',
+    tip: 'AI剧以猎奇和爽感取胜，文字版可以放大脑洞设定，用密集爽点留住读者。',
+  },
+]
 
 export default function BookRecs() {
-  const [ipData, setIpData] = useState<HongguoData | null>(null)
-
-  useEffect(() => {
-    fetch('/data/hongguo-hot.json')
-      .then((r) => r.json())
-      .then((d: HongguoData) => setIpData(d))
-      .catch(() => setIpData(null))
-  }, [])
-
   return (
     <section className="mt-14">
       <SectionTitle id="book-recs" title="开书推荐" hint="近期容易出成绩的题材方向" />
-      {ipData && (
-        <div className="card-pink mb-6 rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
-          <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">
-            <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
-            IP 改编风向标（基于红果热播榜）
-          </h3>
-          <div className="grid gap-4 md:grid-cols-3">
-            {ipData.categories.map((cat) => {
-              const top = cat.items.slice(0, 3)
-              return (
-                <div key={cat.name} className="rounded-xl border border-rose-100 bg-white/80 p-3">
-                  <span className="inline-block rounded-full bg-rose-50 px-2 py-0.5 text-xs font-semibold text-rose-600">
-                    {cat.name}
-                  </span>
-                  <ol className="mt-2 space-y-1.5">
-                    {top.map((it) => (
-                      <li key={it.rank} className="text-xs text-rose-700">
-                        <span className="font-bold text-rose-900">{it.rank}.</span> {it.title}
-                      </li>
-                    ))}
-                  </ol>
-                  <p className="mt-2 text-xs leading-relaxed text-rose-400">{ADAPT_REASONS[cat.name]}</p>
-                </div>
-              )
-            })}
-          </div>
+      <div className="card-pink mb-6 rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
+        <h3 className="mb-4 flex items-center gap-2 text-sm font-bold text-rose-950">
+          <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
+          IP 改编风向标（基于红果热播榜）
+        </h3>
+        <div className="grid gap-4 md:grid-cols-3">
+          {ADAPT_GUIDES.map((g) => (
+            <div key={g.category} className="rounded-xl border border-rose-100 bg-white/80 p-4 transition-all hover:border-rose-200">
+              <span className="inline-block rounded-full bg-rose-50 px-2.5 py-1 text-xs font-semibold text-rose-600">
+                {g.category}
+              </span>
+              <p className="mt-3 text-sm font-bold text-rose-950">{g.type}</p>
+              <div className="mt-2 space-y-1 text-xs text-rose-600">
+                <p>
+                  <span className="text-rose-300">人设：</span>
+                  {g.persona}
+                </p>
+                <p>
+                  <span className="text-rose-300">套路：</span>
+                  {g.trope}
+                </p>
+              </div>
+              <p className="mt-3 text-xs leading-relaxed text-rose-400">{g.tip}</p>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
       <div className="mt-4 grid gap-6 lg:grid-cols-2">
         <div>
           <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">
