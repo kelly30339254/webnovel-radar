@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
 
 const RECS = {
@@ -59,25 +59,16 @@ const ADAPT_GUIDES = [
 ]
 
 export default function BookRecs() {
-  const [channel, setChannel] = useState<'male' | 'female'>('male')
-
-  const readHashParams = () => {
-    const hash = window.location.hash || ''
-    const search = hash.split('?')[1] || ''
-    return new URLSearchParams(search)
-  }
-
-  useEffect(() => {
-    const c = readHashParams().get('channel')
-    if (c === 'male' || c === 'female') setChannel(c)
-  }, [])
+  const [channel, setChannel] = useState<'male' | 'female'>(() => {
+    const value = new URLSearchParams(window.location.search).get('channel')
+    return value === 'female' ? 'female' : 'male'
+  })
 
   const switchChannel = (c: 'male' | 'female') => {
     setChannel(c)
-    const params = readHashParams()
+    const params = new URLSearchParams(window.location.search)
     params.set('channel', c)
-    const hashPath = (window.location.hash || '#').split('?')[0]
-    window.history.replaceState({}, '', `${window.location.origin}/${hashPath}?${params.toString()}`)
+    window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`)
   }
 
   return (

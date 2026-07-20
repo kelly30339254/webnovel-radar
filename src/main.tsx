@@ -1,21 +1,16 @@
-import { StrictMode, useEffect } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter } from 'react-router'
+import { BrowserRouter } from 'react-router'
 import './index.css'
 import App from './App.tsx'
 import { initAnalytics } from '@/hooks/useAnalytics'
 
-function Bootstrap() {
-  useEffect(() => {
-    initAnalytics()
-  }, [])
-  return <App />
-}
+initAnalytics()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HashRouter>
-      <Bootstrap />
-    </HashRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 )

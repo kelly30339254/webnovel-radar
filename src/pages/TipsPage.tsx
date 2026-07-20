@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router'
 import WritingTips from '@/sections/WritingTips'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function TipsPage() {
   const [title, setTitle] = useState('网文写作技巧')
+  usePageMeta({ title: '网文写作技巧', description: '网文结构、节奏、爽点、人设与章末钩子的实用写作方法。', path: '/tips' })
 
   useEffect(() => {
     fetch('/data/writing-tips.json')

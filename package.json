@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "vite --configLoader runner",
+    "build": "tsc -b && vite build --configLoader runner && node scripts/postbuild.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --configLoader runner"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

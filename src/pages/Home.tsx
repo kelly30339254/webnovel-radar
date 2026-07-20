@@ -12,15 +12,22 @@ import Announcements from '@/sections/Announcements'
 import Footer from '@/sections/Footer'
 import EasterEgg from '@/sections/EasterEgg'
 import ZhiyuWriting from '@/sections/ZhiyuWriting'
-import WriterPersonality from '@/sections/WriterPersonality'
+import GrowthTools from '@/sections/GrowthTools'
+import TodayDecisions from '@/sections/TodayDecisions'
 import FanqieDebut from '@/sections/FanqieDebut'
 import WritingTips from '@/sections/WritingTips'
 import BookRecs from '@/sections/BookRecs'
 import { PetalRain } from '@/sections/Stickers'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function Home() {
   const { data, history, error } = useWindData()
   const [easterEgg, setEasterEgg] = useState(false)
+  usePageMeta({
+    title: '网文作者每日选题雷达',
+    description: '每日题材风向、番茄新书榜、IP 改编信号，以及可直接使用的开书雷达和创作人格测试。',
+    path: '/',
+  })
 
   if (error) {
     return (
@@ -51,9 +58,10 @@ export default function Home() {
         <Nav updatedAt={data.updatedAt} />
         <Hero data={data} historyDays={history?.days.length ?? 0} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
+          <GrowthTools />
+          <TodayDecisions genres={data.genres} history={history} boards={data.boards} />
           <BookRecs />
-          <WriterPersonality />
-          <GenreBoard genres={data.genres} updatedAt={data.updatedAt} />
+          <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={data.updatedAt} />
           <TrendChart history={history} updatedAt={data.updatedAt} />
           <KeywordClouds keywords={data.keywords} updatedAt={data.updatedAt} />
           <FanqieBoards boards={data.boards} />

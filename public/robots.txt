@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/sitemap.xml
+Sitemap: https://nailong.zhiyuxiezuo.com/sitemap.xml

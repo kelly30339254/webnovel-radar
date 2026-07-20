@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/</loc>
+    <loc>https://nailong.zhiyuxiezuo.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://nailong.zhiyuxiezuo.com/nbti</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nailong.zhiyuxiezuo.com/radar</loc><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://nailong.zhiyuxiezuo.com/prompt-lab</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url>
-    <loc>https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/nbti</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/tips</loc>
+    <loc>https://nailong.zhiyuxiezuo.com/tips</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/boards</loc>
+    <loc>https://nailong.zhiyuxiezuo.com/boards</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/ip</loc>
+    <loc>https://nailong.zhiyuxiezuo.com/ip</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>

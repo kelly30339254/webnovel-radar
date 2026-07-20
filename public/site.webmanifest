@@ -1,0 +1,11 @@
+{
+  "name": "网文风向",
+  "short_name": "网文风向",
+  "description": "网文作者每日选题雷达、开书工具与题材趋势信号。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff5f7",
+  "theme_color": "#fff5f7",
+  "lang": "zh-CN"
+}
+
