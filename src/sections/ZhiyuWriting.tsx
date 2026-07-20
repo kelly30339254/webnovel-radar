@@ -30,7 +30,7 @@ export default function ZhiyuWriting() {
       >
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
           <div className="flex-none">
-            <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-theme-100 bg-gradient-to-br from-theme-50 to-theme-200 p-1 shadow-inner">
+            <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-theme-100 bg-gradient-to-br from-theme-50 to-pink-100 p-1 shadow-inner">
               <img
                 src="/images/zhiyuxiezuo.png"
                 alt="智语写作"
@@ -51,12 +51,12 @@ export default function ZhiyuWriting() {
                 </span>
               ))}
             </div>
-            <p className="mt-2 text-sm text-theme-600">点击跳转，开启 AI 写作新体验 ↗</p>
+            <p className="mt-2 text-sm text-theme-700">点击跳转，开启 AI 写作新体验 ↗</p>
           </div>
         </div>
 
         <div className="mt-5 rounded-xl border border-theme-100 bg-theme-50/40 p-4 transition-colors group-hover:bg-theme-50/70">
-          <p className="text-xs font-medium text-theme-600">AI 续写示例</p>
+          <p className="text-xs font-medium text-theme-700">AI 续写示例</p>
           <p className="mt-1 text-sm text-theme-700">
             “{EXAMPLE_TEXT}”
             <span className="ml-2 inline-flex items-center rounded-full bg-theme-500 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">

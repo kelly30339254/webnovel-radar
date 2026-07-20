@@ -60,7 +60,7 @@ export default function KeywordClouds({ keywords, updatedAt }: { keywords: Keywo
           title="番茄男频"
           channel={keywords.male}
           palette={{
-            bg: 'bg-gradient-to-br from-theme-100 to-theme-50',
+            bg: 'bg-gradient-to-br from-pink-50 to-theme-50',
             border: 'border-theme-200/70',
             hot: 'text-theme-800',
             warm: 'text-theme-600/85',
@@ -71,11 +71,11 @@ export default function KeywordClouds({ keywords, updatedAt }: { keywords: Keywo
           title="番茄女频"
           channel={keywords.female}
           palette={{
-            bg: 'bg-gradient-to-br from-theme-100/70 to-theme-200/60',
+            bg: 'bg-gradient-to-br from-theme-100/70 to-pink-100/60',
             border: 'border-theme-300/50',
-            hot: 'text-theme-800',
-            warm: 'text-theme-600/85',
-            chip: 'bg-theme-200 text-theme-500',
+            hot: 'text-pink-800',
+            warm: 'text-pink-600/85',
+            chip: 'bg-pink-100 text-pink-500',
           }}
         />
       </div>

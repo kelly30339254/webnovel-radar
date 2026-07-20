@@ -1,8 +1,8 @@
-import { ArrowLeft } from 'lucide-react'
-import { Link, useParams } from 'react-router'
+import { useParams } from 'react-router'
 import NbtiTester from '@/sections/NbtiTester'
 import { isResultKey, NBTI_RESULTS } from '@/lib/nbti'
 import { usePageMeta } from '@/hooks/usePageMeta'
+import PageHeader from '@/components/PageHeader'
 
 export default function NbtiPage() {
   const { result } = useParams()
@@ -14,20 +14,11 @@ export default function NbtiPage() {
   })
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--theme-bg))] px-5 pb-12 pt-6 md:px-8">
-      <div className="mx-auto max-w-3xl">
-        <div className="mb-6 flex items-center gap-3">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1 rounded-full border border-theme-200 bg-white/70 px-3 py-1.5 text-xs text-theme-500 transition-colors hover:bg-white hover:text-theme-600"
-          >
-            <ArrowLeft size={12} />
-            返回首页
-          </Link>
-          <h1 className="font-serif text-xl font-bold text-theme-950">网文十六型人格测试</h1>
-        </div>
+    <div className="min-h-screen bg-theme-bg text-theme-950">
+      <PageHeader title="网文十六型人格测试" hint="20 道题，生成你的四维创作档案" />
+      <main className="mx-auto max-w-3xl px-5 pb-12 pt-8 md:px-8">
         <NbtiTester key={initialResult ?? 'quiz'} standalone initialResult={initialResult} />
-      </div>
+      </main>
     </div>
   )
 }

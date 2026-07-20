@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { HistoryData } from '@/types/wind'
 import SectionTitle from '@/sections/SectionTitle'
 
-const COLORS = ['hsl(var(--theme-600))', '#2563eb', '#0891b2', '#7c3aed', '#ea580c', '#16a34a', '#db2777', '#4f46e5']
+const COLORS = ['#e11d48', '#2563eb', '#0891b2', '#7c3aed', '#ea580c', '#16a34a', '#db2777', '#4f46e5']
 const W = 720
 const H = 300
 const PAD = { left: 36, right: 120, top: 18, bottom: 30 }
@@ -110,7 +110,7 @@ export default function TrendChart({
           key={r}
           onClick={() => setRange(r)}
           className={`px-3 py-1 transition-colors ${
-            range === r ? 'bg-gradient-to-r from-theme-500 to-theme-400 text-white' : 'bg-white text-theme-600 hover:bg-theme-50'
+            range === r ? 'bg-gradient-to-r from-theme-500 to-pink-400 text-white' : 'bg-white text-theme-700 hover:bg-theme-50'
           }`}
         >
           近{r}天
@@ -138,14 +138,14 @@ export default function TrendChart({
       {days.length < 2 ? (
         <div className="mt-6 rounded-2xl border border-dashed border-theme-300 bg-white/80 p-8 text-center">
           <p className="font-medium text-theme-900">趋势数据积累中</p>
-          <p className="mt-1 text-sm text-theme-600">
+          <p className="mt-1 text-sm text-theme-700">
             每日任务会把当天题材热度写入历史归档，积累 2 天以上即自动绘制题材热度曲线。
           </p>
         </div>
       ) : (
         <div className="card-pink mt-6 rounded-2xl border border-theme-200/70 bg-white/90 p-4 shadow-sm shadow-theme-100/60">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <span className="text-xs text-theme-600">
+            <span className="text-xs text-theme-700">
               当前显示 {activeVisible.size} / {allSeries.length} 个题材
             </span>
             <button
@@ -243,11 +243,11 @@ export default function TrendChart({
                   className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs transition-all ${
                     active
                       ? 'border-theme-200 bg-white text-theme-700 shadow-sm'
-                      : 'border-transparent bg-theme-50/60 text-theme-500 hover:text-theme-600'
+                      : 'border-transparent bg-theme-50/60 text-theme-600 hover:text-theme-700'
                   }`}
                   title={s.name}
                 >
-                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : 'hsl(var(--theme-300))' }} />
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : '#fecdd3' }} />
                   <span className="max-w-[6rem] truncate">{shortName(s.name)}</span>
                 </button>
               )

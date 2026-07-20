@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { Heart } from '@/sections/Stickers'
 
-function BeatHeart({ size = 64, color = 'hsl(var(--theme-600))' }: { size?: number; color?: string }) {
+function BeatHeart({ size = 64, color = '#e11d48' }: { size?: number; color?: string }) {
   return (
     <span className="heart-beat inline-block leading-none">
       <Heart size={size} color={color} />
@@ -32,7 +32,7 @@ export default function EasterEgg({ active, onClose }: EasterEggProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[hsl(var(--theme-bg))] px-6 text-center"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-theme-bg px-6 text-center"
       onDoubleClick={onClose}
     >
       <div className="space-y-5 text-theme-950">
@@ -49,7 +49,7 @@ export default function EasterEgg({ active, onClose }: EasterEggProps) {
           <p>要天天开心！</p>
         </div>
       </div>
-      <p className="absolute bottom-8 text-xs text-theme-500">10 秒后自动消失 · 双击或按 ESC 提前返回</p>
+      <p className="absolute bottom-8 text-xs text-theme-600">10 秒后自动消失 · 双击或按 ESC 提前返回</p>
     </div>
   )
 }

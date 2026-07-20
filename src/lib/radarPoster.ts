@@ -28,12 +28,11 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   ctx.fillStyle = hslVar('--theme-bg')
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-  // 顶部渐变条
-  const topGradient = ctx.createLinearGradient(0, 0, canvas.width, 0)
-  topGradient.addColorStop(0, hslVar('--theme-500'))
-  topGradient.addColorStop(1, hslVar('--theme-400'))
-  ctx.fillStyle = topGradient
-  ctx.fillRect(0, 0, canvas.width, 8)
+  // 双品牌色顶栏
+  ctx.fillStyle = hslVar('--theme-500')
+  ctx.fillRect(0, 0, 760, 8)
+  ctx.fillStyle = hslVar('--theme-accent')
+  ctx.fillRect(760, 0, 320, 8)
 
   // 深色顶部信息区
   ctx.fillStyle = hslVar('--theme-900')
@@ -66,9 +65,15 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   ctx.textAlign = 'left'
 
   // 主卡片
+  ctx.save()
+  ctx.shadowColor = 'rgba(15, 23, 42, 0.08)'
+  ctx.shadowBlur = 28
+  ctx.shadowOffsetY = 12
   roundedRect(ctx, 76, 340, 928, 980, 28)
   ctx.fillStyle = '#ffffff'
   ctx.fill()
+  ctx.restore()
+  roundedRect(ctx, 76, 340, 928, 980, 28)
   ctx.strokeStyle = hslVar('--theme-200')
   ctx.lineWidth = 1.5
   ctx.stroke()
@@ -109,27 +114,27 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawTextLines(ctx, data.positioning, 120, 790, 840, 32, 3)
 
   // 首要风险（左侧）
-  roundedRect(ctx, 120, 920, 540, 76, 14)
+  roundedRect(ctx, 120, 915, 540, 88, 14)
   ctx.fillStyle = 'hsl(48 100% 96%)'
   ctx.fill()
   ctx.fillStyle = 'hsl(24 95% 31%)'
   ctx.font = '700 17px "Microsoft YaHei", sans-serif'
   ctx.fillText('首要风险', 144, 950)
   ctx.font = '500 19px "Microsoft YaHei", sans-serif'
-  drawTextLines(ctx, data.risk, 144, 978, 490, 25, 1)
+  drawTextLines(ctx, data.risk, 144, 978, 490, 25, 2)
 
   // 现在就做（左侧）
-  roundedRect(ctx, 120, 1020, 540, 68, 14)
+  roundedRect(ctx, 120, 1025, 540, 82, 14)
   ctx.fillStyle = 'hsl(166 76% 97%)'
   ctx.fill()
   ctx.fillStyle = 'hsl(168 76% 31%)'
   ctx.font = '700 17px "Microsoft YaHei", sans-serif'
-  ctx.fillText('现在就做', 144, 1050)
+  ctx.fillText('现在就做', 144, 1057)
   ctx.font = '500 19px "Microsoft YaHei", sans-serif'
-  drawTextLines(ctx, data.nextStep, 255, 1050, 390, 25, 2)
+  drawTextLines(ctx, data.nextStep, 255, 1057, 390, 25, 2)
 
   // 二维码（右下，与左侧内容水平不重叠）
-  drawSiteQr(ctx, qrImage, 760, 935, 168)
+  drawSiteQr(ctx, qrImage, 760, 930, 168)
 
   // 底部 slogan
   ctx.textAlign = 'center'

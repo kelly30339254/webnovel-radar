@@ -6,7 +6,7 @@ import { freshnessLabel } from '@/lib/freshness'
 
 const CHANNEL_STYLE: Record<string, { chip: string; bar: string }> = {
   男频: { chip: 'bg-theme-900 text-theme-50', bar: 'bg-theme-800' },
-  女频: { chip: 'bg-theme-500 text-white', bar: 'bg-theme-400' },
+  女频: { chip: 'bg-pink-500 text-white', bar: 'bg-pink-400' },
 }
 
 function boardFreshness(dataDate?: string): { text: string; stale: boolean } | null {
@@ -55,7 +55,7 @@ export default function FanqieBoards({ boards }: { boards: Board[] }) {
                 <span className="text-sm font-medium text-theme-950">{b.chartName}</span>
                 <span className="ml-auto flex items-center gap-2">
                   {fresh && (
-                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-500' : 'text-theme-500'}`}>
+                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-500' : 'text-theme-600'}`}>
                       {fresh.text}
                       {fresh.stale ? ' · 偏旧' : ''}
                     </span>
@@ -79,7 +79,7 @@ export default function FanqieBoards({ boards }: { boards: Board[] }) {
                       >
                         {book.title}
                       </a>
-                      <p className="mt-0.5 text-xs text-theme-600">
+                      <p className="mt-0.5 text-xs text-theme-700">
                         {book.author}
                         {book.heat ? ` · ${book.heat}` : ''}
                       </p>

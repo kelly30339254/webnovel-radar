@@ -3,11 +3,11 @@ import { Palette } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
 const THEMES: { key: ThemeColor; label: string; dot: string }[] = [
-  { key: 'rose', label: '粉', dot: 'bg-rose-500' },
-  { key: 'blue', label: '蓝', dot: 'bg-blue-500' },
-  { key: 'green', label: '绿', dot: 'bg-emerald-500' },
-  { key: 'purple', label: '紫', dot: 'bg-violet-500' },
-  { key: 'amber', label: '橙', dot: 'bg-amber-500' },
+  { key: 'rose', label: '蔷薇粉', dot: 'bg-rose-600' },
+  { key: 'blue', label: '海岸蓝', dot: 'bg-blue-600' },
+  { key: 'green', label: '青叶绿', dot: 'bg-emerald-600' },
+  { key: 'purple', label: '墨紫', dot: 'bg-violet-600' },
+  { key: 'amber', label: '暖橙', dot: 'bg-amber-600' },
 ]
 
 export function ThemeSwitcher({ className = '' }: { className?: string }) {
@@ -30,7 +30,7 @@ export function ThemeSwitcher({ className = '' }: { className?: string }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1.5 rounded-full border border-theme-200 bg-white/80 px-2.5 py-1 text-xs text-theme-600 backdrop-blur-sm transition-colors hover:bg-theme-50"
+        className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-theme-300 bg-white px-2.5 py-1 text-xs font-semibold text-theme-800 shadow-sm transition-colors hover:bg-theme-50"
         aria-label="切换主题色"
         aria-expanded={open}
       >
@@ -42,7 +42,7 @@ export function ThemeSwitcher({ className = '' }: { className?: string }) {
         />
       </button>
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 w-28 rounded-xl border border-theme-200 bg-white/95 p-1.5 shadow-lg shadow-theme-900/5 backdrop-blur-md">
+        <div className="absolute right-0 top-full z-50 mt-2 w-36 rounded-lg border border-theme-200 bg-white p-1.5 shadow-xl shadow-theme-950/10">
           {THEMES.map((t) => (
             <button
               key={t.key}
@@ -51,9 +51,10 @@ export function ThemeSwitcher({ className = '' }: { className?: string }) {
                 setTheme(t.key)
                 setOpen(false)
               }}
-              className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-xs transition-colors ${
-                theme === t.key ? 'bg-theme-50 text-theme-700' : 'text-theme-600 hover:bg-theme-50/70'
+              className={`flex min-h-9 w-full items-center gap-2 rounded-md px-2.5 py-1.5 text-left text-xs font-medium transition-colors ${
+                theme === t.key ? 'bg-theme-100 text-theme-950' : 'text-theme-800 hover:bg-theme-50'
               }`}
+              aria-pressed={theme === t.key}
             >
               <span className={`h-3.5 w-3.5 rounded-full ${t.dot}`} aria-hidden="true" />
               <span>{t.label}</span>

@@ -69,7 +69,7 @@ export default function FanqieDebut() {
               >
                 {book.title}
               </a>
-              <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-theme-600">
+              <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-theme-700">
                 <span>{book.author}</span>
                 <span className="rounded-full bg-theme-50 px-1.5 py-0 text-[10px]">{book.genre}</span>
                 <span>{book.words}字</span>

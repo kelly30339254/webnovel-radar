@@ -16,12 +16,11 @@ export async function createPromptPoster(data: PromptPosterData): Promise<Blob> 
   ctx.fillStyle = hslVar('--theme-bg')
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-  // 顶部渐变条
-  const topGradient = ctx.createLinearGradient(0, 0, canvas.width, 0)
-  topGradient.addColorStop(0, hslVar('--theme-500'))
-  topGradient.addColorStop(1, hslVar('--theme-400'))
-  ctx.fillStyle = topGradient
-  ctx.fillRect(0, 0, canvas.width, 8)
+  // 双品牌色顶栏
+  ctx.fillStyle = hslVar('--theme-500')
+  ctx.fillRect(0, 0, 760, 8)
+  ctx.fillStyle = hslVar('--theme-accent')
+  ctx.fillRect(760, 0, 320, 8)
 
   // 标题
   ctx.textAlign = 'left'
@@ -33,9 +32,15 @@ export async function createPromptPoster(data: PromptPosterData): Promise<Blob> 
   ctx.fillText(`NO. ${String(data.number).padStart(3, '0')} · ${data.updatedAt ?? '今日'}`, 78, 104)
 
   // 主卡片
+  ctx.save()
+  ctx.shadowColor = 'rgba(15, 23, 42, 0.08)'
+  ctx.shadowBlur = 28
+  ctx.shadowOffsetY = 12
   roundedRect(ctx, 76, 130, 928, 1180, 28)
   ctx.fillStyle = '#ffffff'
   ctx.fill()
+  ctx.restore()
+  roundedRect(ctx, 76, 130, 928, 1180, 28)
   ctx.strokeStyle = hslVar('--theme-200')
   ctx.lineWidth = 1.5
   ctx.stroke()

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router'
+import PageHeader from '@/components/PageHeader'
 import WritingTips from '@/sections/WritingTips'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
@@ -20,20 +19,11 @@ export default function TipsPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--theme-bg))] px-5 pb-12 pt-6 md:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex items-center gap-3">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1 rounded-full border border-theme-200 bg-white/70 px-3 py-1.5 text-xs text-theme-500 transition-colors hover:bg-white hover:text-theme-600"
-          >
-            <ArrowLeft size={12} />
-            返回首页
-          </Link>
-          <h1 className="font-serif text-xl font-bold text-theme-950">{title}</h1>
-        </div>
-        <WritingTips />
-      </div>
+    <div className="min-h-screen bg-theme-bg text-theme-950">
+      <PageHeader title={title} hint="结构、节奏、人物、爽点与悬念的可执行写作方法" />
+      <main className="mx-auto max-w-6xl px-5 pb-14 pt-2 md:px-8">
+        <WritingTips showMore={false} />
+      </main>
     </div>
   )
 }

@@ -4,25 +4,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --theme-bg: 348 55% 98%;
+    --theme-50: 348 60% 96%;
+    --theme-100: 348 52% 92%;
+    --theme-200: 347 50% 84%;
+    --theme-300: 346 58% 70%;
+    --theme-400: 345 67% 57%;
+    --theme-500: 344 76% 47%;
+    --theme-600: 342 76% 39%;
+    --theme-700: 339 73% 32%;
+    --theme-800: 337 66% 26%;
+    --theme-900: 336 58% 21%;
+    --theme-950: 335 61% 12%;
+    --theme-accent: 173 69% 31%;
+    --theme-accent-soft: 170 54% 94%;
+    --background: var(--theme-bg);
+    --foreground: var(--theme-950);
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: var(--theme-950);
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --popover-foreground: var(--theme-950);
+    --primary: var(--theme-700);
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --secondary: var(--theme-100);
+    --secondary-foreground: var(--theme-900);
+    --muted: var(--theme-50);
+    --muted-foreground: var(--theme-700);
+    --accent: var(--theme-accent-soft);
+    --accent-foreground: var(--theme-950);
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: var(--theme-200);
+    --input: var(--theme-200);
+    --ring: var(--theme-600);
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -32,18 +46,74 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --theme-bg: 355 100% 98%;
-    --theme-50: 356 100% 97%;
-    --theme-100: 356 100% 95%;
-    --theme-200: 353 96% 90%;
-    --theme-300: 353 96% 82%;
-    --theme-400: 351 95% 71%;
-    --theme-500: 350 89% 60%;
-    --theme-600: 347 77% 50%;
-    --theme-700: 345 83% 41%;
-    --theme-800: 343 80% 35%;
-    --theme-900: 342 75% 30%;
-    --theme-950: 343 88% 16%;
+  }
+
+  [data-theme='blue'] {
+    --theme-bg: 210 45% 98%;
+    --theme-50: 210 54% 96%;
+    --theme-100: 210 52% 92%;
+    --theme-200: 211 54% 83%;
+    --theme-300: 212 59% 69%;
+    --theme-400: 214 68% 55%;
+    --theme-500: 217 75% 44%;
+    --theme-600: 220 76% 36%;
+    --theme-700: 223 70% 30%;
+    --theme-800: 224 61% 25%;
+    --theme-900: 225 55% 20%;
+    --theme-950: 227 59% 12%;
+    --theme-accent: 23 88% 45%;
+    --theme-accent-soft: 34 76% 94%;
+  }
+
+  [data-theme='green'] {
+    --theme-bg: 148 36% 98%;
+    --theme-50: 149 43% 96%;
+    --theme-100: 149 39% 91%;
+    --theme-200: 148 42% 80%;
+    --theme-300: 147 46% 64%;
+    --theme-400: 147 53% 46%;
+    --theme-500: 150 64% 34%;
+    --theme-600: 153 67% 28%;
+    --theme-700: 156 62% 23%;
+    --theme-800: 158 56% 19%;
+    --theme-900: 160 51% 16%;
+    --theme-950: 164 56% 9%;
+    --theme-accent: 267 61% 53%;
+    --theme-accent-soft: 270 58% 95%;
+  }
+
+  [data-theme='purple'] {
+    --theme-bg: 275 42% 98%;
+    --theme-50: 275 52% 96%;
+    --theme-100: 274 48% 92%;
+    --theme-200: 274 50% 84%;
+    --theme-300: 273 57% 69%;
+    --theme-400: 272 63% 55%;
+    --theme-500: 270 61% 45%;
+    --theme-600: 269 62% 38%;
+    --theme-700: 268 58% 32%;
+    --theme-800: 267 52% 27%;
+    --theme-900: 266 47% 22%;
+    --theme-950: 265 55% 13%;
+    --theme-accent: 160 69% 31%;
+    --theme-accent-soft: 157 48% 94%;
+  }
+
+  [data-theme='amber'] {
+    --theme-bg: 37 54% 98%;
+    --theme-50: 38 61% 95%;
+    --theme-100: 38 57% 90%;
+    --theme-200: 37 60% 79%;
+    --theme-300: 34 67% 63%;
+    --theme-400: 30 80% 49%;
+    --theme-500: 27 89% 40%;
+    --theme-600: 24 86% 34%;
+    --theme-700: 21 78% 29%;
+    --theme-800: 19 67% 24%;
+    --theme-900: 18 60% 20%;
+    --theme-950: 17 63% 11%;
+    --theme-accent: 218 72% 45%;
+    --theme-accent-soft: 214 67% 95%;
   }
 
   .dark {
@@ -75,79 +145,6 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  /* ===== 主题色变量 ===== */
-  :root,
-  [data-theme="rose"] {
-    --theme-bg: 340 100% 98%;
-    --theme-50: 341 100% 97%;
-    --theme-100: 340 82% 96%;
-    --theme-200: 351 96% 90%;
-    --theme-300: 352 90% 82%;
-    --theme-400: 351 83% 70%;
-    --theme-500: 346 77% 58%;
-    --theme-600: 343 75% 50%;
-    --theme-700: 342 75% 42%;
-    --theme-800: 342 70% 35%;
-    --theme-900: 341 69% 28%;
-    --theme-950: 342 60% 18%;
-  }
-  [data-theme="blue"] {
-    --theme-bg: 210 100% 96%;
-    --theme-50: 213 100% 96%;
-    --theme-100: 214 100% 91%;
-    --theme-200: 213 96% 85%;
-    --theme-300: 212 96% 75%;
-    --theme-400: 213 94% 60%;
-    --theme-500: 217 91% 52%;
-    --theme-600: 221 83% 45%;
-    --theme-700: 224 76% 38%;
-    --theme-800: 226 71% 32%;
-    --theme-900: 224 64% 27%;
-    --theme-950: 226 57% 18%;
-  }
-  [data-theme="green"] {
-    --theme-bg: 150 80% 96%;
-    --theme-50: 152 81% 95%;
-    --theme-100: 149 80% 88%;
-    --theme-200: 152 69% 78%;
-    --theme-300: 156 62% 66%;
-    --theme-400: 158 55% 48%;
-    --theme-500: 160 84% 33%;
-    --theme-600: 161 94% 27%;
-    --theme-700: 163 94% 22%;
-    --theme-800: 163 88% 18%;
-    --theme-900: 164 86% 15%;
-    --theme-950: 166 78% 10%;
-  }
-  [data-theme="purple"] {
-    --theme-bg: 270 100% 96%;
-    --theme-50: 270 100% 97%;
-    --theme-100: 269 100% 90%;
-    --theme-200: 269 100% 84%;
-    --theme-300: 270 97% 74%;
-    --theme-400: 271 91% 62%;
-    --theme-500: 271 91% 55%;
-    --theme-600: 273 67% 45%;
-    --theme-700: 274 66% 37%;
-    --theme-800: 274 66% 30%;
-    --theme-900: 274 66% 24%;
-    --theme-950: 276 61% 16%;
-  }
-  [data-theme="amber"] {
-    --theme-bg: 45 100% 95%;
-    --theme-50: 48 100% 95%;
-    --theme-100: 46 97% 86%;
-    --theme-200: 45 90% 74%;
-    --theme-300: 43 87% 62%;
-    --theme-400: 38 92% 47%;
-    --theme-500: 32 95% 41%;
-    --theme-600: 26 90% 35%;
-    --theme-700: 22 82% 30%;
-    --theme-800: 20 80% 25%;
-    --theme-900: 18 76% 21%;
-    --theme-950: 16 68% 14%;
-  }
 }
 
 @layer base {
@@ -156,9 +153,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    min-width: 320px;
+    transition: background-color 180ms ease, color 180ms ease;
   }
 }
-/* ===== 淡粉主题动效 ===== */
+/* ===== 轻量动效 ===== */
 @keyframes float-soft {
   0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
   50% { transform: translateY(-9px) rotate(calc(var(--r, 0deg) + 4deg)); }
@@ -211,18 +210,18 @@
 }
 .card-pink:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px -14px rgb(225 29 72 / 0.2);
-  border-color: rgb(251 113 133 / 0.35);
+  box-shadow: 0 16px 40px -14px hsl(var(--theme-900) / 0.18);
+  border-color: hsl(var(--theme-400) / 0.55);
 }
 
 ::selection {
-  background: hsl(var(--theme-400));
+  background: hsl(var(--theme-200));
   color: hsl(var(--theme-950));
 }
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: hsl(var(--theme-100)); }
+::-webkit-scrollbar-track { background: hsl(var(--theme-50)); }
 ::-webkit-scrollbar-thumb { background: hsl(var(--theme-300)); border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: hsl(var(--theme-400)); }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--theme-500)); }
 
 @media (prefers-reduced-motion: reduce) {
   .sticker-float, .sticker-twinkle, .petal-drift, .rise-in, .heart-beat {

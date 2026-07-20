@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 
 export type ThemeColor = 'rose' | 'blue' | 'green' | 'purple' | 'amber'
@@ -10,11 +11,13 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 const STORAGE_KEY = 'webnovel-radar-theme'
+const THEMES: ThemeColor[] = ['rose', 'blue', 'green', 'purple', 'amber']
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<ThemeColor>(() => {
     if (typeof window === 'undefined') return 'rose'
-    return (localStorage.getItem(STORAGE_KEY) as ThemeColor) || 'rose'
+    const saved = localStorage.getItem(STORAGE_KEY) as ThemeColor | null
+    return saved && THEMES.includes(saved) ? saved : 'rose'
   })
 
   useEffect(() => {

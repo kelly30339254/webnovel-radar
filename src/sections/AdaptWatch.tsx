@@ -20,7 +20,7 @@ export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
             <div className="flex items-start gap-2.5">
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline gap-x-2">
-                  {it.date && <span className="font-mono text-xs text-theme-500">{it.date}</span>}
+                  {it.date && <span className="font-mono text-xs text-theme-600">{it.date}</span>}
                   <p className="font-medium leading-snug text-theme-950">{it.title}</p>
                 </div>
                 <p className="mt-1.5 text-sm leading-relaxed text-theme-900/60">{it.summary}</p>
