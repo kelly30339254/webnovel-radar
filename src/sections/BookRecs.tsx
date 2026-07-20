@@ -1,4 +1,22 @@
+import { useEffect, useState } from 'react'
 import SectionTitle from '@/sections/SectionTitle'
+
+type ShortDrama = {
+  rank: number
+  title: string
+  heat: string
+  note?: string
+}
+
+type Category = {
+  name: string
+  items: ShortDrama[]
+}
+
+type HongguoData = {
+  updatedAt: string
+  categories: Category[]
+}
 
 const RECS = {
   male: [
@@ -33,10 +51,53 @@ function RecCard({ item, index }: { item: (typeof RECS.male)[0]; index: number }
   )
 }
 
+const ADAPT_REASONS: Record<string, string> = {
+  真人剧: '热播真人短剧验证了情绪爽点，反向改编成长篇小说可放大细节与伏笔。',
+  漫剧: '漫剧自带画面感与粉丝基础，扩写成网文能蹭到原作流量。',
+  AI剧: 'AI剧成本低、题材猎奇，把视觉脑洞转成文字版是降维打击。',
+}
+
 export default function BookRecs() {
+  const [ipData, setIpData] = useState<HongguoData | null>(null)
+
+  useEffect(() => {
+    fetch('/data/hongguo-hot.json')
+      .then((r) => r.json())
+      .then((d: HongguoData) => setIpData(d))
+      .catch(() => setIpData(null))
+  }, [])
+
   return (
     <section className="mt-14">
       <SectionTitle id="book-recs" title="开书推荐" hint="近期容易出成绩的题材方向" />
+      {ipData && (
+        <div className="card-pink mb-6 rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm">
+          <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">
+            <span className="h-2 w-2 rounded-full bg-fuchsia-500" />
+            IP 改编风向标（基于红果热播榜）
+          </h3>
+          <div className="grid gap-4 md:grid-cols-3">
+            {ipData.categories.map((cat) => {
+              const top = cat.items.slice(0, 3)
+              return (
+                <div key={cat.name} className="rounded-xl border border-rose-100 bg-white/80 p-3">
+                  <span className="inline-block rounded-full bg-rose-50 px-2 py-0.5 text-xs font-semibold text-rose-600">
+                    {cat.name}
+                  </span>
+                  <ol className="mt-2 space-y-1.5">
+                    {top.map((it) => (
+                      <li key={it.rank} className="text-xs text-rose-700">
+                        <span className="font-bold text-rose-900">{it.rank}.</span> {it.title}
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-2 text-xs leading-relaxed text-rose-400">{ADAPT_REASONS[cat.name]}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
       <div className="mt-4 grid gap-6 lg:grid-cols-2">
         <div>
           <h3 className="mb-3 flex items-center gap-2 text-sm font-bold text-rose-950">

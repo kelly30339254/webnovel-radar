@@ -57,7 +57,7 @@ export default function Home() {
           <BookRecs />
           <FanqieBoards boards={data.boards} />
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
-            <IpHot items={data.ipHot ?? []} />
+            <IpHot />
             <div>
               <AdaptWatch items={data.adaptWatch ?? []} />
               <Announcements items={data.announcements ?? []} />

@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react'
 import type { HistoryData } from '@/types/wind'
 import SectionTitle from '@/sections/SectionTitle'
 
-const COLORS = ['#e11d48', '#db2777', '#c026d3', '#f59e0b', '#0d9488']
+const COLORS = ['#e11d48', '#2563eb', '#0891b2', '#7c3aed']
 const W = 720
 const H = 300
-const PAD = { left: 36, right: 150, top: 18, bottom: 30 }
+const PAD = { left: 36, right: 120, top: 18, bottom: 30 }
 
 /* 右侧标签用短名，避免长题材名溢出被裁 */
 function shortName(name: string): string {
@@ -24,7 +24,7 @@ export default function TrendChart({ history }: { history: HistoryData | null })
   const series = useMemo(() => {
     if (!days.length) return []
     const latest = days[days.length - 1]
-    const top = [...latest.genres].sort((a, b) => b.heat - a.heat).slice(0, 5).map((g) => g.name)
+    const top = [...latest.genres].sort((a, b) => b.heat - a.heat).slice(0, 4).map((g) => g.name)
     return top.map((name, i) => ({
       name,
       color: COLORS[i % COLORS.length],
@@ -117,19 +117,23 @@ export default function TrendChart({ history }: { history: HistoryData | null })
                 </text>
               </g>
             ))}
-            {days.map((d, i) => (
-              <text
-                key={d.date}
-                x={xOf(i)}
-                y={H - 8}
-                textAnchor="middle"
-                fontSize="10"
-                fill="#f9a8d4"
-                fontFamily="monospace"
-              >
-                {d.date.slice(5)}
-              </text>
-            ))}
+            {days.map((d, i) => {
+              const showLabel = days.length <= 10 || i % 5 === 0 || i === days.length - 1
+              if (!showLabel) return null
+              return (
+                <text
+                  key={d.date}
+                  x={xOf(i)}
+                  y={H - 8}
+                  textAnchor="middle"
+                  fontSize="10"
+                  fill="#f9a8d4"
+                  fontFamily="monospace"
+                >
+                  {d.date.slice(5)}
+                </text>
+              )
+            })}
             {rendered.map(({ s, pts, last }) => {
               const labelX = Math.min(last.x + 8, W - PAD.right + 10)
               const ly = labels.get(s.name) ?? last.y
@@ -141,13 +145,13 @@ export default function TrendChart({ history }: { history: HistoryData | null })
                       points={pts.map((p) => `${p.x},${p.y}`).join(' ')}
                       fill="none"
                       stroke={s.color}
-                      strokeWidth="2"
+                      strokeWidth="1.5"
                       strokeLinejoin="round"
                       strokeLinecap="round"
                     />
                   )}
                   {pts.map((p, i) => (
-                    <circle key={i} cx={p.x} cy={p.y} r="3" fill={s.color} />
+                    <circle key={i} cx={p.x} cy={p.y} r="2.2" fill={s.color} opacity="0.9" />
                   ))}
                   {/* 标签被拉开时画一条虚线牵引线指向终点 */}
                   {shifted && (
@@ -162,7 +166,7 @@ export default function TrendChart({ history }: { history: HistoryData | null })
                       opacity="0.5"
                     />
                   )}
-                  <circle cx={last.x} cy={last.y} r="3.5" fill={s.color} stroke="#fff" strokeWidth="1.5" />
+                  <circle cx={last.x} cy={last.y} r="3" fill={s.color} stroke="#fff" strokeWidth="1.5" />
                   {/* 仅保留数字热度，文字加白色描边光晕 */}
                   <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="#fff" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
                     {last.v}

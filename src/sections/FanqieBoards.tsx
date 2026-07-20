@@ -48,7 +48,15 @@ export default function FanqieBoards({ boards }: { boards: Board[] }) {
                       {book.rank}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="font-medium leading-snug text-rose-950">{book.title}</p>
+                      <a
+                        href={`https://fanqienovel.com/search/${encodeURIComponent(book.title)}`}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="block font-medium leading-snug text-rose-950 hover:text-rose-600"
+                        title={book.title}
+                      >
+                        {book.title}
+                      </a>
                       <p className="mt-0.5 text-xs text-rose-400">
                         {book.author}
                         {book.heat ? ` · ${book.heat}` : ''}
