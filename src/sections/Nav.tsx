@@ -1,9 +1,9 @@
 const LINKS = [
+  { href: '/radar', label: '开书雷达' },
+  { href: '/prompt-lab', label: '命题盲盒' },
   { href: '#genres', label: '题材热度' },
   { href: '#trend', label: '趋势' },
-  { href: '#keywords', label: '关键词' },
-  { href: '#boards', label: '新书榜' },
-  { href: '#ip', label: 'IP 改编' },
+  { href: '/nbti', label: '创作人格' },
 ]
 
 export default function Nav({ updatedAt }: { updatedAt: string }) {

@@ -26,6 +26,12 @@ const FORM_STYLE: Record<string, string> = {
   AI剧: 'bg-fuchsia-100 text-fuchsia-700',
 }
 
+function heatValue(text: string): number {
+  const value = Number.parseFloat(text.replace(/[^\d.]/g, ''))
+  if (Number.isNaN(value)) return 0
+  return text.includes('亿') ? value * 10000 : value
+}
+
 export default function IpHot() {
   const [data, setData] = useState<HongguoData | null>(null)
 
@@ -54,7 +60,9 @@ export default function IpHot() {
         }
       />
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
-        {data.categories.map((cat) => (
+        {data.categories.map((cat) => {
+          const sortedItems = [...cat.items].sort((a, b) => heatValue(b.heat) - heatValue(a.heat))
+          return (
           <div
             key={cat.name}
             className="card-pink rounded-2xl border border-rose-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm"
@@ -65,13 +73,13 @@ export default function IpHot() {
                   {cat.name}
                 </span>
               </h3>
-              <span className="text-xs text-rose-300">热播榜 TOP10</span>
+              <span className="text-xs text-rose-300">按热度降序</span>
             </div>
             <ol className="space-y-3">
-              {cat.items.map((it) => (
-                <li key={`${cat.name}-${it.rank}`} className="group flex items-start gap-3 text-sm">
+              {sortedItems.map((it, index) => (
+                <li key={`${cat.name}-${it.title}`} className="group flex items-start gap-3 text-sm">
                   <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-gradient-to-br from-rose-100 to-pink-100 text-xs font-bold text-rose-600 shadow-sm">
-                    {it.rank}
+                    {index + 1}
                   </span>
                   <div className="min-w-0 flex-1">
                     <a
@@ -92,7 +100,8 @@ export default function IpHot() {
               ))}
             </ol>
           </div>
-        ))}
+          )
+        })}
       </div>
     </section>
   )

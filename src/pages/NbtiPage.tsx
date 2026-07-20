@@ -1,21 +1,17 @@
-import { useEffect, useState } from 'react'
 import { ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router'
+import { Link, useParams } from 'react-router'
 import NbtiTester from '@/sections/NbtiTester'
+import { isResultKey, NBTI_RESULTS } from '@/lib/nbti'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function NbtiPage() {
-  const [initialResult, setInitialResult] = useState<string | null>(null)
-
-  useEffect(() => {
-    // HashRouter 下查询参数在 # 后面，如 #/nbti?r=BSLJ
-    const hash = window.location.hash || ''
-    const search = hash.split('?')[1] || ''
-    const params = new URLSearchParams(search)
-    const r = params.get('r')
-    if (r && /^[BNGS][LS][DQ][DJ]$/.test(r)) {
-      setInitialResult(r)
-    }
-  }, [])
+  const { result } = useParams()
+  const initialResult = isResultKey(result) ? result : null
+  usePageMeta({
+    title: initialResult ? `我的网文创作人格是「${NBTI_RESULTS[initialResult].name}」` : '网文十六型人格测试',
+    description: '20 道题测出你的网文创作人格，并获得适合题材、四维创作画像与分享海报。',
+    path: initialResult ? `/nbti/${initialResult}` : '/nbti',
+  })
 
   return (
     <div className="min-h-screen bg-[#fff5f7] px-5 pb-12 pt-6 md:px-8">
@@ -30,7 +26,7 @@ export default function NbtiPage() {
           </Link>
           <h1 className="font-serif text-xl font-bold text-rose-950">网文十六型人格测试</h1>
         </div>
-        <NbtiTester standalone initialResult={initialResult} />
+        <NbtiTester key={initialResult ?? 'quiz'} standalone initialResult={initialResult} />
       </div>
     </div>
   )

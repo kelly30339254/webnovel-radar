@@ -1,7 +1,8 @@
 import type { WindData } from '@/types/wind'
-import { HeroStickers } from '@/sections/Stickers'
-import { Share2 } from 'lucide-react'
+import { ArrowRight, PenLine, Share2, Target } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router'
+import { trackEvent } from '@/hooks/useAnalytics'
 
 export default function Hero({ data, historyDays = 0 }: { data: WindData; historyDays?: number }) {
   const [copied, setCopied] = useState(false)
@@ -13,6 +14,7 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
       text: data.verdict,
       url: shareUrl,
     }
+    trackEvent('home_share')
     try {
       if (navigator.share) {
         await navigator.share(payload)
@@ -35,17 +37,8 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
   ]
 
   return (
-    <header className="relative overflow-hidden border-b border-rose-100 bg-gradient-to-br from-rose-100 via-pink-50 to-rose-50">
-      <div
-        className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-rose-200/40 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-pink-200/40 blur-3xl"
-        aria-hidden="true"
-      />
-      <HeroStickers />
-      <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-10 md:px-8 md:pt-14">
+    <header className="border-b border-rose-100 bg-[#fff9fa]">
+      <div className="mx-auto max-w-6xl px-5 pb-12 pt-8 md:px-8 md:pb-14 md:pt-12">
         <div className="rise-in flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-widest text-rose-400">
           <span className="inline-flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500" />
@@ -54,14 +47,14 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
           <span>每日 07:23 自动更新</span>
           <button
             onClick={handleShare}
-            className="ml-auto inline-flex items-center gap-1 rounded-full border border-rose-200/80 bg-white/60 px-2.5 py-1 text-[11px] text-rose-500 transition-colors hover:bg-white hover:text-rose-600"
+            className="ml-auto inline-flex min-h-9 items-center gap-1 rounded-lg border border-rose-200 bg-white px-3 py-1.5 text-[11px] text-rose-600 hover:bg-rose-50"
           >
             <Share2 size={12} />
             {copied ? '已复制' : '分享'}
           </button>
         </div>
         <h1
-          className="rise-in mt-8 bg-gradient-to-r from-rose-600 via-pink-500 to-rose-400 bg-clip-text font-serif text-5xl font-bold tracking-tight text-transparent md:text-7xl"
+          className="rise-in mt-8 font-serif text-5xl font-bold text-rose-950 md:text-7xl"
           style={{ animationDelay: '0.08s' }}
         >
           网文风向
@@ -72,7 +65,7 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
         >
           网文作者每日选题雷达 · 热榜 · 技巧 · 风向
         </p>
-        <div className="rise-in mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-rose-400 to-pink-300" style={{ animationDelay: '0.14s' }} />
+        <div className="rise-in mt-4 h-1 w-24 bg-rose-500" style={{ animationDelay: '0.14s' }} />
         <p
           className="rise-in mt-6 max-w-3xl text-xl font-medium leading-relaxed text-rose-950/85 md:text-2xl"
           style={{ animationDelay: '0.2s' }}
@@ -82,15 +75,31 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
         <p className="rise-in mt-4 text-sm text-rose-400" style={{ animationDelay: '0.26s' }}>
           番茄男频 / 女频新书榜 · 题材热度与趋势 · 内容关键词 · IP 改编 · 官方公告 —— 只追新书，不看总榜
         </p>
-        <div className="rise-in mt-7 flex flex-wrap gap-2.5" style={{ animationDelay: '0.32s' }}>
+        <div className="rise-in mt-7 flex flex-wrap gap-3" style={{ animationDelay: '0.3s' }}>
+          <Link
+            to="/radar"
+            onClick={() => trackEvent('hero_radar_click')}
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-rose-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-700"
+          >
+            <Target size={17} /> 生成我的开书雷达 <ArrowRight size={16} />
+          </Link>
+          <Link
+            to="/nbti"
+            onClick={() => trackEvent('hero_nbti_click')}
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-teal-200 bg-teal-50 px-5 py-2.5 text-sm font-semibold text-teal-800 hover:bg-teal-100"
+          >
+            <PenLine size={17} /> 测创作人格
+          </Link>
+        </div>
+        <div className="rise-in mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-rose-100 bg-rose-100 sm:grid-cols-4" style={{ animationDelay: '0.34s' }}>
           {stats.map((s) => (
-            <span
+            <div
               key={s.label}
-              className="inline-flex items-baseline gap-1.5 rounded-full border border-rose-200/80 bg-white/70 px-3.5 py-1.5 shadow-sm backdrop-blur-sm"
+              className="flex items-baseline gap-1.5 bg-white px-3.5 py-3"
             >
               <b className="font-mono text-base font-bold tabular-nums text-rose-600">{s.value}</b>
               <i className="text-xs not-italic text-rose-400">{s.label}</i>
-            </span>
+            </div>
           ))}
         </div>
       </div>

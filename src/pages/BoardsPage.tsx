@@ -3,9 +3,11 @@ import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router'
 import FanqieBoards from '@/sections/FanqieBoards'
 import type { WindData } from '@/types/wind'
+import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function BoardsPage() {
   const [data, setData] = useState<WindData | null>(null)
+  usePageMeta({ title: '番茄新书榜', description: '番茄小说男频与女频新书榜，每日更新，只看新书，不看总榜。', path: '/boards' })
 
   useEffect(() => {
     fetch('/data/wind.json')
