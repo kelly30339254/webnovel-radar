@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import type { HistoryData } from '@/types/wind'
 import SectionTitle from '@/sections/SectionTitle'
 
-const COLORS = ['#e11d48', '#2563eb', '#0891b2', '#7c3aed', '#ea580c', '#16a34a', '#db2777', '#4f46e5']
+const COLORS = ['hsl(var(--theme-600))', '#2563eb', '#0891b2', '#7c3aed', '#ea580c', '#16a34a', '#db2777', '#4f46e5']
 const W = 720
 const H = 300
 const PAD = { left: 36, right: 120, top: 18, bottom: 30 }
@@ -104,13 +104,13 @@ export default function TrendChart({
   }
 
   const toggle = (
-    <span className="inline-flex overflow-hidden rounded-full border border-rose-200 text-xs">
+    <span className="inline-flex overflow-hidden rounded-full border border-theme-200 text-xs">
       {([7, 30] as const).map((r) => (
         <button
           key={r}
           onClick={() => setRange(r)}
           className={`px-3 py-1 transition-colors ${
-            range === r ? 'bg-gradient-to-r from-rose-500 to-pink-400 text-white' : 'bg-white text-rose-400 hover:bg-rose-50'
+            range === r ? 'bg-gradient-to-r from-theme-500 to-theme-400 text-white' : 'bg-white text-theme-600 hover:bg-theme-50'
           }`}
         >
           近{r}天
@@ -136,16 +136,16 @@ export default function TrendChart({
       />
 
       {days.length < 2 ? (
-        <div className="mt-6 rounded-2xl border border-dashed border-rose-300 bg-white/80 p-8 text-center">
-          <p className="font-medium text-rose-900">趋势数据积累中</p>
-          <p className="mt-1 text-sm text-rose-400">
+        <div className="mt-6 rounded-2xl border border-dashed border-theme-300 bg-white/80 p-8 text-center">
+          <p className="font-medium text-theme-900">趋势数据积累中</p>
+          <p className="mt-1 text-sm text-theme-600">
             每日任务会把当天题材热度写入历史归档，积累 2 天以上即自动绘制题材热度曲线。
           </p>
         </div>
       ) : (
-        <div className="card-pink mt-6 rounded-2xl border border-rose-200/70 bg-white/90 p-4 shadow-sm shadow-rose-100/60">
+        <div className="card-pink mt-6 rounded-2xl border border-theme-200/70 bg-white/90 p-4 shadow-sm shadow-theme-100/60">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-            <span className="text-xs text-rose-400">
+            <span className="text-xs text-theme-600">
               当前显示 {activeVisible.size} / {allSeries.length} 个题材
             </span>
             <button
@@ -157,8 +157,8 @@ export default function TrendChart({
               }}
               className={`rounded-full px-3 py-1 text-xs transition-colors ${
                 compareMode
-                  ? 'bg-rose-500 text-white'
-                  : 'border border-rose-200 bg-white text-rose-500 hover:bg-rose-50'
+                  ? 'bg-theme-500 text-white'
+                  : 'border border-theme-200 bg-white text-theme-500 hover:bg-theme-50'
               }`}
             >
               {compareMode ? '退出对比' : '对比模式'}
@@ -242,12 +242,12 @@ export default function TrendChart({
                   onClick={() => toggleSeries(s.name)}
                   className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs transition-all ${
                     active
-                      ? 'border-rose-200 bg-white text-rose-700 shadow-sm'
-                      : 'border-transparent bg-rose-50/60 text-rose-300 hover:text-rose-400'
+                      ? 'border-theme-200 bg-white text-theme-700 shadow-sm'
+                      : 'border-transparent bg-theme-50/60 text-theme-500 hover:text-theme-600'
                   }`}
                   title={s.name}
                 >
-                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : '#fecdd3' }} />
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : 'hsl(var(--theme-300))' }} />
                   <span className="max-w-[6rem] truncate">{shortName(s.name)}</span>
                 </button>
               )

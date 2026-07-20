@@ -54,9 +54,9 @@ export default function FanqieDebut() {
         {books.map((book) => (
           <div
             key={book.rank}
-            className="card-pink flex items-center gap-4 rounded-xl border border-rose-100 bg-white/70 p-3 shadow-sm backdrop-blur-sm transition-all"
+            className="card-pink flex items-center gap-4 rounded-xl border border-theme-100 bg-white/70 p-3 shadow-sm backdrop-blur-sm transition-all"
           >
-            <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-rose-100 text-sm font-bold text-rose-600">
+            <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-theme-100 text-sm font-bold text-theme-600">
               {book.rank}
             </span>
             <div className="min-w-0 flex-1">
@@ -64,14 +64,14 @@ export default function FanqieDebut() {
                 href={book.readUrl}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="block truncate text-sm font-bold text-rose-950 hover:text-rose-600"
+                className="block truncate text-sm font-bold text-theme-950 hover:text-theme-600"
                 title={book.title}
               >
                 {book.title}
               </a>
-              <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-rose-400">
+              <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-theme-600">
                 <span>{book.author}</span>
-                <span className="rounded-full bg-rose-50 px-1.5 py-0 text-[10px]">{book.genre}</span>
+                <span className="rounded-full bg-theme-50 px-1.5 py-0 text-[10px]">{book.genre}</span>
                 <span>{book.words}字</span>
                 <span>在读 {book.readers}</span>
               </div>

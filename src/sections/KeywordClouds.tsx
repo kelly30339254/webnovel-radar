@@ -12,19 +12,19 @@ function ChannelPanel({
 }) {
   const tags = [...channel.tags].sort((a, b) => b.weight - a.weight)
   return (
-    <article className={`card-pink rounded-2xl border p-5 shadow-sm shadow-rose-100/60 ${palette.bg} ${palette.border}`}>
+    <article className={`card-pink rounded-2xl border p-5 shadow-sm shadow-theme-100/60 ${palette.bg} ${palette.border}`}>
       <header className="flex flex-wrap items-baseline gap-x-3">
-        <h3 className="font-serif text-lg font-bold text-rose-950">{title}</h3>
+        <h3 className="font-serif text-lg font-bold text-theme-950">{title}</h3>
         <span className={`rounded-full px-2 py-0.5 text-[11px] ${palette.chip}`}>字号 = 相对热度</span>
       </header>
-      <p className="mt-2 font-serif text-base font-semibold text-rose-900/90 md:text-lg">
+      <p className="mt-2 font-serif text-base font-semibold text-theme-900/90 md:text-lg">
         {channel.summary}
       </p>
       <div className="mt-3 flex flex-wrap items-baseline justify-start gap-x-3 gap-y-1.5">
         {tags.map((t) => {
           const w = Math.max(0, Math.min(100, t.weight))
           const size = 12 + (w / 100) * 20
-          const cls = w >= 80 ? palette.hot : w >= 55 ? palette.warm : 'text-rose-900/50'
+          const cls = w >= 80 ? palette.hot : w >= 55 ? palette.warm : 'text-theme-900/50'
           return (
             <span
               key={t.word}
@@ -60,22 +60,22 @@ export default function KeywordClouds({ keywords, updatedAt }: { keywords: Keywo
           title="番茄男频"
           channel={keywords.male}
           palette={{
-            bg: 'bg-gradient-to-br from-pink-50 to-rose-50',
-            border: 'border-rose-200/70',
-            hot: 'text-rose-800',
-            warm: 'text-rose-600/85',
-            chip: 'bg-rose-100 text-rose-500',
+            bg: 'bg-gradient-to-br from-theme-100 to-theme-50',
+            border: 'border-theme-200/70',
+            hot: 'text-theme-800',
+            warm: 'text-theme-600/85',
+            chip: 'bg-theme-100 text-theme-500',
           }}
         />
         <ChannelPanel
           title="番茄女频"
           channel={keywords.female}
           palette={{
-            bg: 'bg-gradient-to-br from-rose-100/70 to-pink-100/60',
-            border: 'border-rose-300/50',
-            hot: 'text-pink-800',
-            warm: 'text-pink-600/85',
-            chip: 'bg-pink-100 text-pink-500',
+            bg: 'bg-gradient-to-br from-theme-100/70 to-theme-200/60',
+            border: 'border-theme-300/50',
+            hot: 'text-theme-800',
+            warm: 'text-theme-600/85',
+            chip: 'bg-theme-200 text-theme-500',
           }}
         />
       </div>

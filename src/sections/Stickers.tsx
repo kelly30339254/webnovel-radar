@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 /* 动态贴纸：爱心 / 星星 / 闪光 / 书本 / 花瓣，纯 SVG + CSS 动画 + 轻微鼠标视差 */
 
-export function Heart({ size = 24, color = '#fb7185' }: { size?: number; color?: string }) {
+export function Heart({ size = 24, color = 'hsl(var(--theme-400))' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
@@ -32,7 +32,7 @@ function Sparkle({ size = 18, color = '#f472b6' }: { size?: number; color?: stri
   )
 }
 
-function Book({ size = 26, color = '#e11d48' }: { size?: number; color?: string }) {
+function Book({ size = 26, color = 'hsl(var(--theme-600))' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
