@@ -13,6 +13,8 @@ import Footer from '@/sections/Footer'
 import EasterEgg from '@/sections/EasterEgg'
 import ZhiyuWriting from '@/sections/ZhiyuWriting'
 import WriterPersonality from '@/sections/WriterPersonality'
+import FanqieDebut from '@/sections/FanqieDebut'
+import BookRecs from '@/sections/BookRecs'
 import { PetalRain } from '@/sections/Stickers'
 
 export default function Home() {
@@ -52,6 +54,7 @@ export default function Home() {
           <GenreBoard genres={data.genres} />
           <TrendChart history={history} />
           <KeywordClouds keywords={data.keywords} />
+          <BookRecs />
           <FanqieBoards boards={data.boards} />
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
             <IpHot items={data.ipHot ?? []} />
@@ -60,6 +63,7 @@ export default function Home() {
               <Announcements items={data.announcements ?? []} />
             </div>
           </div>
+          <FanqieDebut />
           <ZhiyuWriting />
         </main>
         <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />

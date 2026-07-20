@@ -163,17 +163,25 @@ export default function TrendChart({ history }: { history: HistoryData | null })
                     />
                   )}
                   <circle cx={last.x} cy={last.y} r="3.5" fill={s.color} stroke="#fff" strokeWidth="1.5" />
-                  {/* 文字加白色描边光晕，压在线条/网格上也能读清 */}
-                  <text x={labelX} y={ly} fontSize="11.5" fontWeight="600" fill={s.color} stroke="#fff" strokeWidth="3.5" paintOrder="stroke">
-                    {shortName(s.name)}
-                  </text>
-                  <text x={labelX} y={ly + 13} fontSize="10" fill={s.color} opacity="0.85" fontFamily="monospace" stroke="#fff" strokeWidth="3.5" paintOrder="stroke">
-                    热度 {last.v}
+                  {/* 仅保留数字热度，文字加白色描边光晕 */}
+                  <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="#fff" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
+                    {last.v}
                   </text>
                 </g>
               )
             })}
           </svg>
+          {/* 图例：类型名称放在图表下方 */}
+          <div className="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2 px-2">
+            {series.map((s) => (
+              <div key={s.name} className="flex items-center gap-1.5 text-xs text-rose-700">
+                <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: s.color }} />
+                <span className="max-w-[8rem] truncate" title={s.name}>
+                  {shortName(s.name)}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </section>

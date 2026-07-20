@@ -41,24 +41,24 @@ const QUESTIONS: Question[] = [
   { id: 20, text: '小说写到一半想换主角，你会？', options: [{ text: '不行，大纲不允许', score: { plan: 1 } }, { text: '好主意，这就换', score: { plan: -1 } }] },
 ]
 
-type ResultKey = 'BSDL' | 'BSDJ' | 'BSQL' | 'BSQJ' | 'BNDL' | 'BNDJ' | 'BNQL' | 'BNQJ' | 'GSDL' | 'GSDJ' | 'GSQL' | 'GSQJ' | 'GNDL' | 'GNDJ' | 'GNQL' | 'GNQJ'
+type ResultKey = 'BSLD' | 'BSLJ' | 'BSQD' | 'BSQJ' | 'BNLD' | 'BNLJ' | 'BNQD' | 'BNQJ' | 'GSLD' | 'GSLJ' | 'GSQD' | 'GSQJ' | 'GNLD' | 'GNLJ' | 'GNQD' | 'GNQJ'
 
 const RESULTS: Record<ResultKey, { icon: string; name: string; desc: string }> = {
-  BSDL: { icon: '🤖', name: '人形打字机', desc: '日更两万不眨眼，大纲比正文还长，设定缝合得严丝合缝，读者以为你买了机器人代写。' },
-  BSDJ: { icon: '🚀', name: '灵感喷射机', desc: '爆更靠一时冲动，缝合靠临时起意，逻辑在线但写哪算哪，读者永远猜不到下一章。' },
-  BSQL: { icon: '🏭', name: '狗血流水线', desc: '每天稳定产出车祸、失忆、替身、追妻火葬场，大纲精确到每一滴眼泪。' },
+  BSLD: { icon: '🤖', name: '人形打字机', desc: '日更两万不眨眼，大纲比正文还长，设定缝合得严丝合缝，读者以为你买了机器人代写。' },
+  BSLJ: { icon: '🚀', name: '灵感喷射机', desc: '爆更靠一时冲动，缝合靠临时起意，逻辑在线但写哪算哪，读者永远猜不到下一章。' },
+  BSQD: { icon: '🏭', name: '狗血流水线', desc: '每天稳定产出车祸、失忆、替身、追妻火葬场，大纲精确到每一滴眼泪。' },
   BSQJ: { icon: '🐕', name: '疯狗型创作者', desc: '今天甜明天虐，设定东拼西凑但情绪拉满，读者一边骂一边追更。' },
-  BNDL: { icon: '🧠', name: '设定狂魔', desc: '脑洞大到能装下整个宇宙，大纲写了五十万字，正文还在第一章。' },
-  BNDJ: { icon: '⛲', name: '灵感喷泉', desc: '脑洞一个接一个，更新也快，但每章都在挖坑，读者追着填。' },
-  BNQL: { icon: '🏛️', name: '虐恋建筑师', desc: '天马行空的爱情故事，逻辑严密地刀主角，刀刀致命。' },
+  BNLD: { icon: '🧠', name: '设定狂魔', desc: '脑洞大到能装下整个宇宙，大纲写了五十万字，正文还在第一章。' },
+  BNLJ: { icon: '⛲', name: '灵感喷泉', desc: '脑洞一个接一个，更新也快，但每章都在挖坑，读者追着填。' },
+  BNQD: { icon: '🏛️', name: '虐恋建筑师', desc: '天马行空的爱情故事，逻辑严密地刀主角，刀刀致命。' },
   BNQJ: { icon: '🎢', name: '情绪过山车', desc: '脑洞大、情绪猛、更新猛，但剧情走向全凭手感。' },
-  GSDL: { icon: '🐌', name: '精密拖延症', desc: '大纲完美、设定缝合、逻辑严密，就是一年更三章。' },
-  GSDJ: { icon: '💡', name: '灵光一闪鸽', desc: '平时鸽，一旦灵感来了就爆更，然后继续鸽。' },
-  GSQL: { icon: '🕊️', name: '悲情鸽王', desc: '脑内已经写完三百万字虐文，实际文档空空如也。' },
+  GSLD: { icon: '🐌', name: '精密拖延症', desc: '大纲完美、设定缝合、逻辑严密，就是一年更三章。' },
+  GSLJ: { icon: '💡', name: '灵光一闪鸽', desc: '平时鸽，一旦灵感来了就爆更，然后继续鸽。' },
+  GSQD: { icon: '🕊️', name: '悲情鸽王', desc: '脑内已经写完三百万字虐文，实际文档空空如也。' },
   GSQJ: { icon: '🧘', name: '佛系摆烂型', desc: '写文看缘分，更新看心情，读者等成化石。' },
-  GNDL: { icon: '📝', name: '完美主义鸽', desc: '脑洞超大、大纲超细，但总觉得不够好，永远在改设定。' },
-  GNDJ: { icon: '📚', name: '脑洞收藏鸽', desc: '每天收藏一百个灵感，一个都没写成正文。' },
-  GNQL: { icon: '🌙', name: '深夜 emo 鸽', desc: '半夜灵感爆发写三千字虐文，天亮删了，继续鸽。' },
+  GNLD: { icon: '📝', name: '完美主义鸽', desc: '脑洞超大、大纲超细，但总觉得不够好，永远在改设定。' },
+  GNLJ: { icon: '📚', name: '脑洞收藏鸽', desc: '每天收藏一百个灵感，一个都没写成正文。' },
+  GNQD: { icon: '🌙', name: '深夜 emo 鸽', desc: '半夜灵感爆发写三千字虐文，天亮删了，继续鸽。' },
   GNQJ: { icon: '🛌', name: '彻底躺平型', desc: '脑洞有，情绪有，就是不写。收藏夹里躺着我的十万字大纲。' },
 }
 
@@ -101,7 +101,7 @@ export default function WriterPersonality() {
 
   return (
     <section className="mt-10">
-      <SectionTitle id="writer-personality" title="网文十六型人格" hint="沙雕版 SBTI 测试" />
+      <SectionTitle id="writer-personality" title="网文十六型人格" hint="沙雕版 NBTI 测试" />
       <div className="card-pink mt-4 rounded-2xl border border-rose-100 bg-white/70 p-6 shadow-sm backdrop-blur-sm">
         {!started ? (
           <div className="text-center">
@@ -117,10 +117,21 @@ export default function WriterPersonality() {
           </div>
         ) : result ? (
           <div className="text-center">
-            <p className="text-6xl">{RESULTS[result].icon}</p>
-            <p className="mt-3 text-xs font-medium tracking-widest text-rose-400">{result}</p>
-            <h3 className="mt-1 text-2xl font-bold text-rose-950">{RESULTS[result].name}</h3>
-            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-rose-700">{RESULTS[result].desc}</p>
+            {RESULTS[result] ? (
+              <>
+                <p className="text-6xl">{RESULTS[result].icon}</p>
+                <p className="mt-3 text-xs font-medium tracking-widest text-rose-400">{result}</p>
+                <h3 className="mt-1 text-2xl font-bold text-rose-950">{RESULTS[result].name}</h3>
+                <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-rose-700">{RESULTS[result].desc}</p>
+              </>
+            ) : (
+              <>
+                <p className="text-4xl">🤔</p>
+                <p className="mt-3 text-xs font-medium tracking-widest text-rose-400">{result}</p>
+                <h3 className="mt-1 text-xl font-bold text-rose-950">人格加载失败</h3>
+                <p className="mx-auto mt-3 max-w-md text-sm text-rose-700">这个结果好像走丢啦，请再测一次。</p>
+              </>
+            )}
             <button
               onClick={reset}
               className="mt-5 inline-flex items-center justify-center rounded-full border border-rose-200 bg-rose-50 px-5 py-2 text-sm font-medium text-rose-600 transition-colors hover:bg-rose-100"
