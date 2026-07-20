@@ -7,7 +7,10 @@ export default function NbtiPage() {
   const [initialResult, setInitialResult] = useState<string | null>(null)
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
+    // HashRouter 下查询参数在 # 后面，如 #/nbti?r=BSLJ
+    const hash = window.location.hash || ''
+    const search = hash.split('?')[1] || ''
+    const params = new URLSearchParams(search)
     const r = params.get('r')
     if (r && /^[BNGS][LS][DQ][DJ]$/.test(r)) {
       setInitialResult(r)

@@ -62,9 +62,14 @@ function calculateResult(answers: Record<number, number>): ResultKey {
 }
 
 function shareResultUrl(key: ResultKey) {
-  const url = new URL(window.location.href)
-  url.searchParams.set('r', key)
-  return url.toString()
+  const base = new URL(window.location.href)
+  const origin = base.origin
+  const hash = base.hash || '#/nbti'
+  // 在 hash 路径后追加 / 更新 ?r= 参数
+  const [hashPath, hashSearch = ''] = hash.replace(/^#/, '').split('?')
+  const params = new URLSearchParams(hashSearch)
+  params.set('r', key)
+  return `${origin}/#${hashPath}?${params.toString()}`
 }
 
 export function NbtiResult({ result, onReset }: { result: ResultKey; onReset: () => void }) {
@@ -185,7 +190,7 @@ export default function NbtiTester({ standalone = false, initialResult }: { stan
     setIndex(0)
     setAnswers({})
     setResult(null)
-    window.history.replaceState({}, '', window.location.pathname)
+    window.history.replaceState({}, '', `${window.location.origin}/#/nbti`)
   }
 
   const wrapper = standalone ? 'min-h-[70vh]' : ''

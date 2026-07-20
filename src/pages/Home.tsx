@@ -16,7 +16,6 @@ import WriterPersonality from '@/sections/WriterPersonality'
 import FanqieDebut from '@/sections/FanqieDebut'
 import WritingTips from '@/sections/WritingTips'
 import BookRecs from '@/sections/BookRecs'
-import Subscribe from '@/sections/Subscribe'
 import { PetalRain } from '@/sections/Stickers'
 
 export default function Home() {
@@ -66,7 +65,6 @@ export default function Home() {
           <FanqieDebut />
           <WritingTips />
           <ZhiyuWriting />
-          <Subscribe />
         </main>
         <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />
       </div>

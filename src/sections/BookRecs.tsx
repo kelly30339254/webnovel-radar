@@ -61,17 +61,23 @@ const ADAPT_GUIDES = [
 export default function BookRecs() {
   const [channel, setChannel] = useState<'male' | 'female'>('male')
 
+  const readHashParams = () => {
+    const hash = window.location.hash || ''
+    const search = hash.split('?')[1] || ''
+    return new URLSearchParams(search)
+  }
+
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const c = params.get('channel')
+    const c = readHashParams().get('channel')
     if (c === 'male' || c === 'female') setChannel(c)
   }, [])
 
   const switchChannel = (c: 'male' | 'female') => {
     setChannel(c)
-    const url = new URL(window.location.href)
-    url.searchParams.set('channel', c)
-    window.history.replaceState({}, '', url.toString())
+    const params = readHashParams()
+    params.set('channel', c)
+    const hashPath = (window.location.hash || '#').split('?')[0]
+    window.history.replaceState({}, '', `${window.location.origin}/${hashPath}?${params.toString()}`)
   }
 
   return (
