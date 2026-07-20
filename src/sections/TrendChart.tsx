@@ -124,7 +124,7 @@ export default function TrendChart({
       <SectionTitle
         id="trend-heading"
         title="热度趋势"
-        hint={`每日归档自动积累 · 已积累 ${history?.days.length ?? 0} 天`}
+        hint={`题材热度历史归档 · 已积累 ${history?.days.length ?? 0} 天`}
         right={toggle}
         footer={
           <>
@@ -139,7 +139,7 @@ export default function TrendChart({
         <div className="mt-6 rounded-2xl border border-dashed border-theme-300 bg-white/80 p-8 text-center">
           <p className="font-medium text-theme-900">趋势数据积累中</p>
           <p className="mt-1 text-sm text-theme-700">
-            每日任务会把当天题材热度写入历史归档，积累 2 天以上即自动绘制题材热度曲线。
+            题材热度归档积累 2 天以上后，将自动绘制题材热度曲线。
           </p>
         </div>
       ) : (

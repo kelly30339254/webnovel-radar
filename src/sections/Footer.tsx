@@ -6,8 +6,8 @@ export default function Footer({ updatedAt, onEasterEgg }: { updatedAt: string; 
           <span className="h-1.5 w-1.5 rounded-full bg-theme-400" />
           网文风向 · Webnovel Radar
         </span>
-        <span>每日 07:23（Asia/Shanghai）自动检索更新，本期数据 {updatedAt}</span>
-        <span>来源：番茄小说官方榜单、番茄作家专区官方栏目、红果短剧官方排行榜（各模块附来源链接）</span>
+        <span>每日 07:23（Asia/Shanghai）自动检索并校验，本期核心风向 {updatedAt}</span>
+        <span>来源：网文情报站番茄新书榜、番茄作家专区与红果短剧公开数据（各模块附来源链接）</span>
         <span className="inline-flex items-center gap-2 sm:ml-auto">
           仅供网文创作与选题参考
           <button

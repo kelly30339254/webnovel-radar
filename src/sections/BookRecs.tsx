@@ -80,7 +80,7 @@ export default function BookRecs() {
         footer={
           <>
             <span>基于今日番茄新书榜与红果热播榜</span>
-            <span>每日 07:23 自动更新</span>
+            <span>随已验证的来源数据更新</span>
           </>
         }
       />

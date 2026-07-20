@@ -54,7 +54,7 @@ export default function IpHot() {
         footer={
           <>
             <span>数据截止 {data.updatedAt}</span>
-            <span>每日 07:23 自动更新</span>
+            <span>每日 07:23 校验来源</span>
             <span>来源：红果短剧官方排行榜</span>
           </>
         }

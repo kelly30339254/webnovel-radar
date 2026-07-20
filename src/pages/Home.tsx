@@ -51,6 +51,8 @@ export default function Home() {
     )
   }
 
+  const historyUpdatedAt = history?.days.at(-1)?.date
+
   return (
     <div className="relative min-h-screen bg-theme-bg text-theme-950 antialiased">
       <PetalRain />
@@ -61,8 +63,8 @@ export default function Home() {
           <GrowthTools />
           <TodayDecisions genres={data.genres} history={history} boards={data.boards} />
           <BookRecs />
-          <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={data.updatedAt} />
-          <TrendChart history={history} updatedAt={data.updatedAt} />
+          <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />
+          <TrendChart history={history} updatedAt={historyUpdatedAt ?? data.updatedAt} />
           <KeywordClouds keywords={data.keywords} updatedAt={data.updatedAt} />
           <FanqieBoards boards={data.boards} />
           <IpHot />

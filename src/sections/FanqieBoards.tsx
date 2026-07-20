@@ -37,7 +37,7 @@ export default function FanqieBoards({ boards }: { boards: Board[] }) {
               </span>
             )}
             <span>每日 07:23 自动更新</span>
-            <span>来源：番茄小说官方榜单</span>
+            <span>来源：网文情报站 · 番茄新书榜数据</span>
           </>
         }
       />

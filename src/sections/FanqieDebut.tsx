@@ -45,7 +45,7 @@ export default function FanqieDebut() {
                 {moduleFresh.stale ? ' · 数据偏旧' : ''}
               </span>
             )}
-            <span>每日 07:23 自动更新</span>
+            <span>每日 07:23 校验来源</span>
             <span>来源：网文大数据</span>
           </>
         }

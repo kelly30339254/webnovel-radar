@@ -15,7 +15,7 @@ export default function GenreBoard({ genres, history, boards, updatedAt }: { gen
           <>
             {updatedAt && <span>更新于 {updatedAt}</span>}
             <span>近 7 日历史归档</span>
-            <span>来源：番茄小说新书榜</span>
+            <span>来源：题材历史归档与新书榜样本</span>
           </>
         }
       />

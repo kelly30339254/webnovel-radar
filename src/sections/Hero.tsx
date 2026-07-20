@@ -43,7 +43,7 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-theme-500" />
             Webnovel Radar · 番茄小说
           </span>
-          <span>每日 07:23 自动更新</span>
+          <span>新书榜每日 07:23 校验更新</span>
           <button
             onClick={handleShare}
             className="ml-auto inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-theme-300 bg-white px-3 py-1.5 text-[11px] font-semibold text-theme-800 shadow-sm hover:bg-theme-100"
