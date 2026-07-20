@@ -6,7 +6,7 @@ import { trackEvent } from '@/hooks/useAnalytics'
 
 export default function Hero({ data, historyDays = 0 }: { data: WindData; historyDays?: number }) {
   const [copied, setCopied] = useState(false)
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/'
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://nailong.zhiyuxiezuo.com/'
 
   const handleShare = async () => {
     const payload = {

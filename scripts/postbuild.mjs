@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const DIST_DIR = path.resolve('dist')
-const ORIGIN = process.env.VITE_PUBLIC_ORIGIN || 'https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com'
+const ORIGIN = process.env.VITE_PUBLIC_ORIGIN || 'https://nailong.zhiyuxiezuo.com'
 const DEFAULT_IMAGE = `${ORIGIN}/images/og-cover.png`
 
 const resultNames = {

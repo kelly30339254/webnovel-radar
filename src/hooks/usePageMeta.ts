@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const DEFAULT_ORIGIN = 'https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com'
+const DEFAULT_ORIGIN = 'https://nailong.zhiyuxiezuo.com'
 const DEFAULT_IMAGE = '/images/og-cover.png'
 
 type PageMeta = {
