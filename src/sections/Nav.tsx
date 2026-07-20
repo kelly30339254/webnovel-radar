@@ -19,16 +19,18 @@ export default function Nav({ updatedAt }: { updatedAt: string }) {
           <span className="font-serif text-sm font-bold text-theme-950">网文风向</span>
         </a>
         <span className="hidden font-mono text-[11px] text-theme-500 sm:inline">{updatedAt}</span>
-        <div className="ml-auto flex items-center gap-1 overflow-x-auto">
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="whitespace-nowrap rounded-full px-2.5 py-1 text-xs text-theme-600 transition-colors hover:bg-theme-50 hover:text-theme-600"
-            >
-              {l.label}
-            </a>
-          ))}
+        <div className="ml-auto flex items-center gap-1">
+          <div className="flex items-center gap-1 overflow-x-auto">
+            {LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="whitespace-nowrap rounded-full px-2.5 py-1 text-xs text-theme-600 transition-colors hover:bg-theme-50 hover:text-theme-600"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
           <ThemeSwitcher className="ml-1 shrink-0" />
         </div>
       </div>
