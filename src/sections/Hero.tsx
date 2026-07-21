@@ -69,7 +69,7 @@ export default function Hero({ data, historyDays = 0, updateStatus }: { data: Wi
           className="rise-in mt-3 text-base font-semibold text-theme-600 md:text-lg"
           style={{ animationDelay: '0.1s' }}
         >
-          网文作者每日选题雷达 · 热榜 · 技巧 · 风向
+          看清近期方向，选对下一本书
         </p>
         <div className="rise-in mt-4 h-1 w-24 bg-theme-500" style={{ animationDelay: '0.14s' }} />
         <p
@@ -79,7 +79,7 @@ export default function Hero({ data, historyDays = 0, updateStatus }: { data: Wi
           {data.verdict}
         </p>
         <p className="rise-in mt-4 text-sm font-medium text-theme-700" style={{ animationDelay: '0.26s' }}>
-          番茄男频 / 女频新书榜 · 题材热度与趋势 · 内容关键词 · IP 改编 · 官方公告 —— 只追新书，不看总榜
+          首页只给结论与下一步；完整热度、趋势、榜单和写作资料已分类收进顶部导航
         </p>
         <div className="rise-in mt-4 flex flex-wrap gap-2 text-xs font-medium" style={{ animationDelay: '0.28s' }}>
           <span className="rounded-md border border-theme-200 bg-white px-2.5 py-1.5 text-theme-700">综合风向截止 {data.updatedAt}</span>

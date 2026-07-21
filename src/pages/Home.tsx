@@ -1,23 +1,11 @@
 import { useState } from 'react'
 import { useWindData } from '@/hooks/useWindData'
-import Nav from '@/sections/Nav'
 import Hero from '@/sections/Hero'
-import GenreBoard from '@/sections/GenreBoard'
-import TrendChart from '@/sections/TrendChart'
-import KeywordClouds from '@/sections/KeywordClouds'
-import FanqieBoards from '@/sections/FanqieBoards'
-import IpHot from '@/sections/IpHot'
-import AdaptWatch from '@/sections/AdaptWatch'
-import Announcements from '@/sections/Announcements'
 import Footer from '@/sections/Footer'
 import EasterEgg from '@/sections/EasterEgg'
 import ZhiyuWriting from '@/sections/ZhiyuWriting'
 import GrowthTools from '@/sections/GrowthTools'
 import TodayDecisions from '@/sections/TodayDecisions'
-import FanqieDebut from '@/sections/FanqieDebut'
-import WritingTips from '@/sections/WritingTips'
-import BookRecs from '@/sections/BookRecs'
-import WritingPartners from '@/sections/WritingPartners'
 import { PetalRain } from '@/sections/Stickers'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
@@ -58,7 +46,6 @@ export default function Home() {
     <div className="relative min-h-screen bg-theme-bg text-theme-950 antialiased">
       <PetalRain />
       <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
-        <Nav updatedAt={data.updatedAt} />
         <Hero data={data} historyDays={history?.days.length ?? 0} updateStatus={updateStatus} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
           <TodayDecisions
@@ -70,23 +57,10 @@ export default function Home() {
           />
           <GrowthTools />
           <ZhiyuWriting />
-          <WritingPartners />
-          <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />
-          <TrendChart history={history} updatedAt={historyUpdatedAt ?? data.updatedAt} />
-          <KeywordClouds keywords={data.keywords} updatedAt={data.updatedAt} />
-          <BookRecs />
-          <FanqieBoards boards={data.boards} />
-          <IpHot />
-          <div className="mt-14 grid gap-10 lg:grid-cols-2">
-            <AdaptWatch items={data.adaptWatch ?? []} />
-            <Announcements items={data.announcements ?? []} />
-          </div>
-          <FanqieDebut />
-          <WritingTips />
         </main>
         <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>
-      <EasterEgg active={easterEgg} onClose={() => setEasterEgg(false)} />
+      <EasterEgg active={easterEgg} date={updateStatus?.checkedAt ?? data.updatedAt} onClose={() => setEasterEgg(false)} />
     </div>
   )
 }

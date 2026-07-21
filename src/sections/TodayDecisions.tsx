@@ -119,43 +119,43 @@ export default function TodayDecisions({
       />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_minmax(19rem,0.85fr)]">
-        <article className="relative overflow-hidden rounded-lg bg-theme-600 px-5 py-6 text-white shadow-xl shadow-theme-950/10 sm:px-7 sm:py-7">
-          <div className="absolute inset-y-0 left-0 w-1.5 bg-theme-accent" aria-hidden="true" />
+        <article className="relative overflow-hidden rounded-lg border border-theme-300 bg-theme-100 px-5 py-6 text-theme-950 shadow-lg shadow-theme-950/5 sm:px-7 sm:py-7">
+          <div className="absolute inset-y-0 left-0 w-1.5 bg-theme-500" aria-hidden="true" />
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white">
+            <span className="inline-flex items-center gap-2 rounded-md border border-theme-300 bg-white px-2.5 py-1 text-xs font-semibold text-theme-800">
               <ArrowUpRight size={15} /> 首选窗口
             </span>
             <span className="rounded-md bg-theme-accent-soft px-2.5 py-1 text-xs font-bold text-theme-950">{opportunity.stageLabel}期</span>
           </div>
 
           <div className="mt-7 max-w-2xl">
-            <p className="text-xs font-semibold text-theme-200">本周优先研究</p>
+            <p className="text-xs font-semibold text-theme-600">本周优先研究</p>
             <h3 className="mt-2 font-serif text-3xl font-bold leading-tight sm:text-4xl">{opportunity.name}</h3>
-            <p className="mt-4 text-sm leading-relaxed text-theme-100">{opportunityNote ?? evidenceFor(opportunity)}</p>
+            <p className="mt-4 text-sm leading-relaxed text-theme-800">{opportunityNote ?? evidenceFor(opportunity)}</p>
           </div>
 
-          <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-lg bg-white/15">
+          <div className="mt-6 grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-theme-200 bg-theme-200">
             {[
               { label: '当前热度', value: opportunity.heat },
               { label: '7 日变化', value: formatDelta(opportunity.delta7) },
               { label: '拥挤度', value: opportunity.crowding },
             ].map((metric) => (
-              <div key={metric.label} className="bg-white/10 px-3 py-3 sm:px-4">
-                <b className="block font-mono text-xl tabular-nums text-white">{metric.value}</b>
-                <span className="mt-1 block text-[11px] text-theme-200">{metric.label}</span>
+              <div key={metric.label} className="bg-white px-3 py-3 sm:px-4">
+                <b className="block font-mono text-xl tabular-nums text-theme-800">{metric.value}</b>
+                <span className="mt-1 block text-[11px] text-theme-600">{metric.label}</span>
               </div>
             ))}
           </div>
 
           <div className="mt-6 border-l-2 border-theme-accent pl-4">
-            <p className="text-xs font-semibold text-theme-200">建议切口</p>
-            <p className="mt-1 text-sm leading-relaxed text-white">{actionFor(opportunity)}</p>
+            <p className="text-xs font-semibold text-theme-600">建议切口</p>
+            <p className="mt-1 text-sm leading-relaxed text-theme-950">{actionFor(opportunity)}</p>
           </div>
 
           <Link
             to={radarPath(opportunity.name)}
             onClick={() => trackEvent('direction_to_radar', { genre: opportunity.name })}
-            className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-theme-950 transition-colors hover:bg-theme-50"
+            className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-lg bg-theme-800 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-900"
           >
             带入开书雷达 <ArrowRight size={17} />
           </Link>

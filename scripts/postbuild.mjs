@@ -17,6 +17,8 @@ const routes = [
   { path: '/nbti', title: '网文十六型人格测试', description: '20 道题测出你的网文创作人格、四维画像与适合题材。' },
   { path: '/radar', title: '我的开书雷达', description: '结合实时题材风向、更新能力和改编方向，生成个性化开书建议。' },
   { path: '/prompt-lab', title: '今日开书命题盲盒', description: '用当天热榜题材、关键词和人设生成一张可直接开写的命题卡。' },
+  { path: '/trends', title: '网文风向数据', description: '题材热度、生命周期、趋势、竞争拥挤度与内容关键词。' },
+  { path: '/tools', title: '网文创作工具', description: '开书雷达、命题盲盒、创作人格、创作切口和写作搭子入口。' },
   { path: '/tips', title: '网文写作技巧', description: '网文结构、节奏、爽点、人设和章末钩子的实用方法。' },
   { path: '/boards', title: '番茄新书榜', description: '番茄小说男频与女频新书榜，每日更新。' },
   { path: '/ip', title: 'IP 改编热点', description: '红果短剧、漫剧与 AI 剧热点及网文改编风向。' },
@@ -54,4 +56,3 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${routes.map((route) => `  <url><loc>${ORIGIN}${route.path}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}
 </urlset>\n`
 await writeFile(path.join(DIST_DIR, 'sitemap.xml'), sitemap, 'utf8')
-

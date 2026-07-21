@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ExternalLink } from 'lucide-react'
 import SectionTitle from '@/sections/SectionTitle'
-import ViewMoreLink from '@/components/ViewMoreLink'
-import { trackEvent } from '@/hooks/useAnalytics'
 
 const TIPS_GUIDE_URL = 'https://qcnog55dveec.feishu.cn/wiki/UinlwatmmiwBhTkS9XWchGWMnKh?from=from_copylink'
 
@@ -12,6 +10,7 @@ type Tip = {
   category: string
   summary: string
   usage: string
+  sourceUrl: string
 }
 
 type TipsData = {
@@ -20,7 +19,7 @@ type TipsData = {
 }
 
 const CATEGORY_STYLE: Record<string, string> = {
-  节奏: 'bg-theme-100 text-theme-700',
+  节奏: 'bg-rose-100 text-rose-700',
   结构: 'bg-pink-100 text-pink-700',
   套路: 'bg-fuchsia-100 text-fuchsia-700',
   开头: 'bg-amber-100 text-amber-700',
@@ -33,7 +32,7 @@ const CATEGORY_STYLE: Record<string, string> = {
   创新: 'bg-indigo-100 text-indigo-700',
 }
 
-export default function WritingTips({ showMore = true }: { showMore?: boolean }) {
+export default function WritingTips() {
   const [data, setData] = useState<TipsData | null>(null)
 
   useEffect(() => {
@@ -50,46 +49,45 @@ export default function WritingTips({ showMore = true }: { showMore?: boolean })
       <SectionTitle
         id="writing-tips"
         title="网文写作技巧"
-        hint={`${data.tips.length} 条干货 · 已整理为一份完整手册`}
+        hint={`${data.tips.length} 条实用方法 · 按当前卡点选择`}
         right={
-          <span className="flex flex-wrap items-center justify-end gap-2">
-            {showMore && <ViewMoreLink to="/tips" />}
-            <a
-              href={TIPS_GUIDE_URL}
-              target="_blank"
-              rel="noreferrer noopener"
-              onClick={() => trackEvent('writing_tips_guide')}
-              className="inline-flex min-h-9 items-center gap-1.5 rounded-lg bg-theme-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm hover:bg-theme-800"
-            >
-              查看完整技巧手册 <ExternalLink size={13} />
-            </a>
-          </span>
+          <a
+            href={TIPS_GUIDE_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-theme-200 bg-white px-3 py-1.5 text-xs font-semibold text-theme-700 transition-colors hover:bg-theme-50 hover:text-theme-950"
+          >
+            完整技巧文档 <ExternalLink size={13} />
+          </a>
         }
         footer={
-          <span>更新于 {data.updatedAt}</span>
+          <>
+            <span>更新于 {data.updatedAt}</span>
+            <span>来源：网络公开写作教程与作者经验分享</span>
+          </>
         }
       />
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {data.tips.map((tip, i) => (
           <div
             key={tip.id}
-            className="card-pink flex flex-col rounded-lg border border-theme-200 bg-white p-5 shadow-sm"
+            className="card-pink flex flex-col rounded-2xl border border-rose-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm"
             style={{ animationDelay: `${i * 0.04}s` }}
           >
             <div className="mb-3 flex items-center gap-2">
               <span
                 className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
-                  CATEGORY_STYLE[tip.category] ?? 'bg-theme-50 text-theme-600'
+                  CATEGORY_STYLE[tip.category] ?? 'bg-rose-50 text-rose-600'
                 }`}
               >
                 {tip.category}
               </span>
-              <h3 className="text-base font-bold text-theme-950">{tip.title}</h3>
+              <h3 className="text-base font-bold text-rose-950">{tip.title}</h3>
             </div>
-            <p className="text-sm leading-relaxed text-theme-700">{tip.summary}</p>
-            <div className="mt-3 rounded-lg bg-theme-50 p-3">
-              <p className="text-xs leading-relaxed text-theme-600">
-                <span className="font-semibold text-theme-800">用法：</span>
+            <p className="text-sm leading-relaxed text-rose-700">{tip.summary}</p>
+            <div className="mt-3 rounded-xl bg-rose-50/70 p-3">
+              <p className="text-xs leading-relaxed text-rose-600">
+                <span className="font-semibold text-rose-800">用法：</span>
                 {tip.usage}
               </p>
             </div>

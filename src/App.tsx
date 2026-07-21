@@ -7,6 +7,9 @@ import BoardsPage from './pages/BoardsPage'
 import IpPage from './pages/IpPage'
 import BookRadarPage from './pages/BookRadarPage'
 import PromptLabPage from './pages/PromptLabPage'
+import TrendsPage from './pages/TrendsPage'
+import ToolsPage from './pages/ToolsPage'
+import Nav from '@/sections/Nav'
 import { trackEvent } from '@/hooks/useAnalytics'
 
 function RouteObserver() {
@@ -22,12 +25,15 @@ export default function App() {
   return (
     <>
       <RouteObserver />
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nbti" element={<NbtiPage />} />
         <Route path="/nbti/:result" element={<NbtiPage />} />
         <Route path="/radar" element={<BookRadarPage />} />
         <Route path="/prompt-lab" element={<PromptLabPage />} />
+        <Route path="/trends" element={<TrendsPage />} />
+        <Route path="/tools" element={<ToolsPage />} />
         <Route path="/tips" element={<TipsPage />} />
         <Route path="/boards" element={<BoardsPage />} />
         <Route path="/ip" element={<IpPage />} />

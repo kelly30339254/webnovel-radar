@@ -94,18 +94,18 @@ export default function WritingPartners() {
             </details>
           </div>
 
-          <aside className="order-1 flex flex-col items-center justify-center bg-theme-600 px-6 py-8 text-center text-white lg:order-2 lg:px-8">
-            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-theme-100">
+          <aside className="order-1 flex flex-col items-center justify-center border-b border-theme-200 bg-theme-100 px-6 py-8 text-center text-theme-950 lg:order-2 lg:border-b-0 lg:border-l lg:px-8">
+            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-theme-700 shadow-sm">
               <MessageCircle size={24} />
             </span>
             <p className="mt-5 text-lg font-bold">准备好找同频写手？</p>
-            <p className="mt-2 max-w-52 text-xs leading-relaxed text-theme-200">主动打开群入口，扫码后在群内发布搭子介绍。</p>
+            <p className="mt-2 max-w-52 text-xs leading-relaxed text-theme-700">主动打开群入口，扫码后在群内发布搭子介绍。</p>
             <Dialog>
               <DialogTrigger asChild>
                 <button
                   type="button"
                   onClick={() => trackEvent('partners_qr_open')}
-                  className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-theme-950 transition-colors hover:bg-theme-50"
+                  className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-theme-800 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-900"
                 >
                   <UsersRound size={18} /> 找搭子
                 </button>

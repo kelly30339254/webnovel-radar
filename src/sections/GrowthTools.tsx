@@ -30,19 +30,20 @@ export default function GrowthTools() {
         <Link
           to="/radar"
           onClick={() => trackEvent('home_tool_radar')}
-          className="group relative flex min-h-60 flex-col overflow-hidden rounded-lg bg-theme-600 p-6 text-white shadow-lg shadow-theme-950/10 transition-transform hover:-translate-y-0.5 lg:col-span-6"
+          className="group relative flex min-h-60 flex-col overflow-hidden rounded-lg border border-theme-300 bg-theme-100 p-6 text-theme-950 shadow-lg shadow-theme-950/5 transition-transform hover:-translate-y-0.5 lg:col-span-6"
         >
+          <span className="absolute inset-y-0 left-0 w-1.5 bg-theme-500" aria-hidden="true" />
           <div className="flex items-start justify-between gap-4">
-            <span className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white">
+            <span className="inline-flex items-center gap-2 rounded-md border border-theme-300 bg-white px-2.5 py-1 text-xs font-semibold text-theme-800">
               <Target size={15} /> 首选工具
             </span>
-            <ArrowRight className="transition-transform group-hover:translate-x-1" size={22} />
+            <ArrowRight className="text-theme-700 transition-transform group-hover:translate-x-1" size={22} />
           </div>
           <div className="mt-auto max-w-lg pt-8">
-            <p className="text-xs font-semibold tracking-widest text-theme-200">MARKET DECISION REPORT</p>
+            <p className="text-xs font-semibold tracking-widest text-theme-600">MARKET DECISION REPORT</p>
             <h3 className="mt-2 font-serif text-3xl font-bold">生成我的开书雷达</h3>
-            <p className="mt-3 text-sm leading-relaxed text-theme-100">结合近期题材热度、更新能力和计划篇幅，判断这本书现在值不值得开，并给出 7 天验证路线。</p>
-            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-theme-200">
+            <p className="mt-3 text-sm leading-relaxed text-theme-800">结合近期题材热度、更新能力和计划篇幅，判断这本书现在值不值得开，并给出 7 天验证路线。</p>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-theme-600">
               <span>适配度评分</span><span>突围定位</span><span>风险清单</span>
             </div>
           </div>

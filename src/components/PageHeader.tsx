@@ -1,19 +1,10 @@
-import { ArrowLeft } from 'lucide-react'
-import { Link } from 'react-router'
-import { ThemeSwitcher } from '@/components/ThemeSwitcher'
-
 export default function PageHeader({ title, hint }: { title: string; hint?: string }) {
   return (
-    <header className="border-b border-theme-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center gap-3 px-5 py-4 md:px-8">
-        <Link to="/" className="inline-flex min-h-9 items-center gap-1 rounded-lg border border-theme-300 bg-white px-3 py-1.5 text-xs font-semibold text-theme-800 hover:bg-theme-50">
-          <ArrowLeft size={14} /> 返回首页
-        </Link>
-        <div className="min-w-0">
-          <h1 className="truncate font-serif text-lg font-bold text-theme-950 sm:text-xl">{title}</h1>
-          {hint && <p className="mt-0.5 hidden text-xs font-medium text-theme-700 sm:block">{hint}</p>}
-        </div>
-        <ThemeSwitcher className="ml-auto flex-none" />
+    <header className="border-b border-theme-200 bg-theme-50/70">
+      <div className="mx-auto max-w-7xl px-5 py-7 md:px-8 md:py-9">
+        <p className="text-[11px] font-bold tracking-widest text-theme-500">WEBNOVEL RADAR</p>
+        <h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-theme-950 sm:text-4xl">{title}</h1>
+        {hint && <p className="mt-2 max-w-2xl text-sm leading-relaxed text-theme-700 sm:text-base">{hint}</p>}
       </div>
     </header>
   )
