@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router'
 import {
   AlertTriangle,
   BarChart3,
@@ -35,9 +36,12 @@ function readSavedPersonality(): ResultKey | null {
 }
 
 export default function BookRadarPage() {
+  const [searchParams] = useSearchParams()
   const { data, history, error } = useWindData()
-  const [channel, setChannel] = useState<Channel>('male')
-  const [genreName, setGenreName] = useState('')
+  const requestedChannel = searchParams.get('channel') === 'female' ? 'female' : 'male'
+  const requestedGenre = searchParams.get('genre') ?? ''
+  const [channel, setChannel] = useState<Channel>(requestedChannel)
+  const [genreName, setGenreName] = useState(requestedGenre)
   const [pace, setPace] = useState<RadarPace>('steady')
   const [length, setLength] = useState<RadarLength>('medium')
   const [adaptation, setAdaptation] = useState(true)

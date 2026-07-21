@@ -1,4 +1,6 @@
-export default function Footer({ updatedAt, onEasterEgg }: { updatedAt: string; onEasterEgg?: () => void }) {
+import type { UpdateStatus } from '@/types/wind'
+
+export default function Footer({ updatedAt, updateStatus, onEasterEgg }: { updatedAt: string; updateStatus?: UpdateStatus | null; onEasterEgg?: () => void }) {
   return (
     <footer className="mt-16 border-t border-theme-100 bg-gradient-to-r from-theme-50 via-pink-50 to-theme-50">
       <div className="mx-auto flex max-w-6xl flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-theme-700 sm:flex-row sm:items-center md:px-8">
@@ -6,7 +8,10 @@ export default function Footer({ updatedAt, onEasterEgg }: { updatedAt: string; 
           <span className="h-1.5 w-1.5 rounded-full bg-theme-400" />
           网文风向 · Webnovel Radar
         </span>
-        <span>每日 07:23（Asia/Shanghai）自动检索并校验，本期核心风向 {updatedAt}</span>
+        <span>
+          每日 07:23（Asia/Shanghai）自动检索 · 核心风向 {updatedAt}
+          {updateStatus ? ` · 最近校验 ${updateStatus.checkedAt} · 榜单来源 ${updateStatus.sourceDate}` : ''}
+        </span>
         <span>来源：网文情报站番茄新书榜、番茄作家专区与红果短剧公开数据（各模块附来源链接）</span>
         <span className="inline-flex items-center gap-2 sm:ml-auto">
           仅供网文创作与选题参考

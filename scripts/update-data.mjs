@@ -293,6 +293,24 @@ async function updateWindBoards(boards) {
   return data
 }
 
+async function writeUpdateStatus(boards) {
+  const sourceDate = boards
+    .map((board) => board.dataDate)
+    .filter(Boolean)
+    .sort()
+    .at(-1) ?? ''
+  await writeJson('update-status.json', {
+    checkedAt: today(),
+    sourceDate,
+    status: 'success',
+    boards: boards.map((board) => ({
+      channel: board.channel,
+      count: board.books.length,
+      dataDate: board.dataDate,
+    })),
+  })
+}
+
 async function main() {
   console.log(`开始更新数据: ${today()} ${DRY_RUN ? '[DRY RUN]' : ''}`)
 
@@ -303,8 +321,9 @@ async function main() {
   ])
 
   await updateWindBoards(boards)
+  await writeUpdateStatus(boards)
 
-  console.log('数据更新完成：仅刷新已验证的新书榜；题材、关键词和历史归档保持原值')
+  console.log('数据更新完成：已刷新并记录新书榜校验状态；题材、关键词和历史归档保持原值')
 }
 
 main().catch((err) => {

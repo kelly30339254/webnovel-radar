@@ -1,9 +1,9 @@
-import type { WindData } from '@/types/wind'
-import { Share2 } from 'lucide-react'
+import type { UpdateStatus, WindData } from '@/types/wind'
+import { CheckCircle2, Share2 } from 'lucide-react'
 import { useState } from 'react'
 import { trackEvent } from '@/hooks/useAnalytics'
 
-export default function Hero({ data, historyDays = 0 }: { data: WindData; historyDays?: number }) {
+export default function Hero({ data, historyDays = 0, updateStatus }: { data: WindData; historyDays?: number; updateStatus?: UpdateStatus | null }) {
   const [copied, setCopied] = useState(false)
   const shareUrl = typeof window !== 'undefined' ? window.location.href : 'https://nailong.zhiyuxiezuo.com/'
 
@@ -28,8 +28,9 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
   }
   const bookCount = data.boards.reduce((sum, b) => sum + b.books.length, 0)
   const tagCount = (data.keywords?.male.tags.length ?? 0) + (data.keywords?.female.tags.length ?? 0)
+  const boardSourceDate = updateStatus?.sourceDate ?? data.boards.map((board) => board.dataDate).filter(Boolean).sort().at(-1)
   const stats = [
-    { label: '今日风向题材', value: data.genres.length },
+    { label: '核心风向题材', value: data.genres.length },
     { label: '在榜新书', value: bookCount },
     { label: '内容关键词', value: tagCount },
     { label: '已归档天数', value: historyDays },
@@ -43,7 +44,13 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-theme-500" />
             Webnovel Radar · 番茄小说
           </span>
-          <span>新书榜每日 07:23 校验更新</span>
+          {updateStatus ? (
+            <span className="inline-flex items-center gap-1.5 text-emerald-700">
+              <CheckCircle2 size={13} /> {updateStatus.checkedAt} 校验完成
+            </span>
+          ) : (
+            <span>新书榜每日 07:23 校验更新</span>
+          )}
           <button
             onClick={handleShare}
             className="ml-auto inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-theme-300 bg-white px-3 py-1.5 text-[11px] font-semibold text-theme-800 shadow-sm hover:bg-theme-100"
@@ -74,6 +81,10 @@ export default function Hero({ data, historyDays = 0 }: { data: WindData; histor
         <p className="rise-in mt-4 text-sm font-medium text-theme-700" style={{ animationDelay: '0.26s' }}>
           番茄男频 / 女频新书榜 · 题材热度与趋势 · 内容关键词 · IP 改编 · 官方公告 —— 只追新书，不看总榜
         </p>
+        <div className="rise-in mt-4 flex flex-wrap gap-2 text-xs font-medium" style={{ animationDelay: '0.28s' }}>
+          <span className="rounded-md border border-theme-200 bg-white px-2.5 py-1.5 text-theme-700">综合风向截止 {data.updatedAt}</span>
+          {boardSourceDate && <span className="rounded-md border border-emerald-200 bg-emerald-50 px-2.5 py-1.5 text-emerald-700">新书榜来源截止 {boardSourceDate}</span>}
+        </div>
         <div className="rise-in mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-theme-200 bg-theme-200 shadow-sm sm:grid-cols-4" style={{ animationDelay: '0.3s' }}>
           {stats.map((s) => (
             <div

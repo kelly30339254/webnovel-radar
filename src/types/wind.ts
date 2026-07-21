@@ -81,3 +81,16 @@ export interface HistoryDay {
 export interface HistoryData {
   days: HistoryDay[]
 }
+
+export interface UpdateStatusBoard {
+  channel: string
+  count: number
+  dataDate: string
+}
+
+export interface UpdateStatus {
+  checkedAt: string
+  sourceDate: string
+  status: 'success'
+  boards: UpdateStatusBoard[]
+}

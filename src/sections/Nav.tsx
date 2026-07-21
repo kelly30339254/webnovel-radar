@@ -2,6 +2,7 @@ import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 
 const LINKS = [
   { href: '/radar', label: '开书雷达' },
+  { href: '#direction', label: '近期方向' },
   { href: '/prompt-lab', label: '命题盲盒' },
   { href: '#genres', label: '题材热度' },
   { href: '#trend', label: '趋势' },
@@ -18,7 +19,7 @@ export default function Nav({ updatedAt }: { updatedAt: string }) {
           </span>
           <span className="font-serif text-sm font-bold text-theme-950">网文风向</span>
         </a>
-        <span className="hidden font-mono text-[11px] font-medium text-theme-700 sm:inline">{updatedAt}</span>
+        <span className="hidden font-mono text-[11px] font-medium text-theme-700 sm:inline">风向 {updatedAt}</span>
         <div className="ml-auto flex min-w-0 items-center gap-2">
           <div className="hidden items-center gap-0.5 lg:flex">
             {LINKS.map((l) => (

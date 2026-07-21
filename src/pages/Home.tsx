@@ -21,7 +21,7 @@ import { PetalRain } from '@/sections/Stickers'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function Home() {
-  const { data, history, error } = useWindData()
+  const { data, history, updateStatus, error } = useWindData()
   const [easterEgg, setEasterEgg] = useState(false)
   usePageMeta({
     title: '网文作者每日选题雷达',
@@ -58,10 +58,16 @@ export default function Home() {
       <PetalRain />
       <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
         <Nav updatedAt={data.updatedAt} />
-        <Hero data={data} historyDays={history?.days.length ?? 0} />
+        <Hero data={data} historyDays={history?.days.length ?? 0} updateStatus={updateStatus} />
         <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
+          <TodayDecisions
+            genres={data.genres}
+            history={history}
+            boards={data.boards}
+            updatedAt={historyUpdatedAt ?? data.updatedAt}
+            sourceDate={updateStatus?.sourceDate}
+          />
           <GrowthTools />
-          <TodayDecisions genres={data.genres} history={history} boards={data.boards} />
           <BookRecs />
           <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />
           <TrendChart history={history} updatedAt={historyUpdatedAt ?? data.updatedAt} />
@@ -76,7 +82,7 @@ export default function Home() {
           <WritingTips />
           <ZhiyuWriting />
         </main>
-        <Footer updatedAt={data.updatedAt} onEasterEgg={() => setEasterEgg(true)} />
+        <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>
       <EasterEgg active={easterEgg} onClose={() => setEasterEgg(false)} />
     </div>
