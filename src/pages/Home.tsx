@@ -6,6 +6,7 @@ import EasterEgg from '@/sections/EasterEgg'
 import ZhiyuWriting from '@/sections/ZhiyuWriting'
 import GrowthTools from '@/sections/GrowthTools'
 import TodayDecisions from '@/sections/TodayDecisions'
+import WritingPartners from '@/sections/WritingPartners'
 import { PetalRain } from '@/sections/Stickers'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
@@ -57,6 +58,7 @@ export default function Home() {
           />
           <GrowthTools />
           <ZhiyuWriting />
+          <WritingPartners />
         </main>
         <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>
