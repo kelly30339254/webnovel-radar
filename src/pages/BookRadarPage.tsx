@@ -13,6 +13,7 @@ import {
   TrendingUp,
 } from 'lucide-react'
 import PageHeader from '@/components/PageHeader'
+import ZhiyuNextStep from '@/components/ZhiyuNextStep'
 import { useWindData } from '@/hooks/useWindData'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { trackEvent } from '@/hooks/useAnalytics'
@@ -339,6 +340,11 @@ export default function BookRadarPage() {
                     </button>
                   </div>
                 </footer>
+                <ZhiyuNextStep
+                  title={`把这份「${selected.name}」定位继续写成大纲`}
+                  description="先复制报告，再到智语写作继续拆人物关系、故事主线和章节计划。"
+                  placement="radar_result"
+                />
               </article>
             )}
             {posterError && <p className="mt-3 text-sm text-theme-600">{posterError}</p>}

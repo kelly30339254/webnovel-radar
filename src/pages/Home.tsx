@@ -69,6 +69,7 @@ export default function Home() {
             sourceDate={updateStatus?.sourceDate}
           />
           <GrowthTools />
+          <ZhiyuWriting />
           <WritingPartners />
           <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />
           <TrendChart history={history} updatedAt={historyUpdatedAt ?? data.updatedAt} />
@@ -82,7 +83,6 @@ export default function Home() {
           </div>
           <FanqieDebut />
           <WritingTips />
-          <ZhiyuWriting />
         </main>
         <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>

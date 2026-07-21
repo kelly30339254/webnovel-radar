@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Check, Copy, Dices, Download, Eye, Share2, Target, Users } from 'lucide-react'
 import PageHeader from '@/components/PageHeader'
+import ZhiyuNextStep from '@/components/ZhiyuNextStep'
 import { useWindData } from '@/hooks/useWindData'
 import { usePageMeta } from '@/hooks/usePageMeta'
 import { trackEvent } from '@/hooks/useAnalytics'
@@ -217,6 +218,11 @@ export default function PromptLabPage() {
                     <Download size={16} /> {posterBusy ? '正在生成' : '下载分享海报'}
                   </button>
                 </footer>
+                <ZhiyuNextStep
+                  title={`把《${prompt.title}》继续写成完整大纲`}
+                  description="保留这张命题作为故事起点，继续扩展人物线、冲突升级和章节节拍。"
+                  placement="prompt_result"
+                />
               </article>
             ) : <p className="text-sm text-theme-700">风向数据加载中…</p>}
             {posterError && <p className="mt-3 text-sm text-theme-600">{posterError}</p>}

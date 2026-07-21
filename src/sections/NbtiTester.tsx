@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowRight, Check, Copy, Download, RotateCcw, Share2, Users } from 'lucide-react'
 import SectionTitle from '@/sections/SectionTitle'
+import ZhiyuNextStep from '@/components/ZhiyuNextStep'
 import { trackEvent } from '@/hooks/useAnalytics'
 import {
   NBTI_DIMENSIONS,
@@ -137,6 +138,13 @@ export function NbtiResult({ result, scores, onReset }: { result: ResultKey; sco
           <Users size={16} />
           {feedback === 'challenged' ? '挑战已复制' : '好友挑战'}
         </button>
+      </div>
+      <div className="mt-6 overflow-hidden rounded-lg border border-theme-200">
+        <ZhiyuNextStep
+          title={`按「${info.name}」的创作风格开始一本书`}
+          description={`从适合你的「${info.genres[0]}」出发，继续生成故事主线与章节大纲。`}
+          placement="nbti_result"
+        />
       </div>
       <div className="mt-4 text-center">
         <button onClick={onReset} className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-theme-500 hover:text-theme-700">
