@@ -10,7 +10,7 @@ export default function Footer({ updatedAt, updateStatus, onEasterEgg }: { updat
         </span>
         <span>
           每日 07:23（Asia/Shanghai）自动检索 · 核心风向 {updatedAt}
-          {updateStatus ? ` · 最近校验 ${updateStatus.checkedAt} · 榜单来源 ${updateStatus.sourceDate}` : ''}
+          {updateStatus ? ` · 最近更新 ${updateStatus.checkedAt} · 榜单来源 ${updateStatus.sourceDate}` : ''}
         </span>
         <span>来源：网文情报站番茄新书榜、番茄作家专区与红果短剧公开数据（各模块附来源链接）</span>
         <span className="inline-flex items-center gap-2 sm:ml-auto">

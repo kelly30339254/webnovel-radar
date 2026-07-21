@@ -46,7 +46,7 @@ export default function Hero({ data, historyDays = 0, updateStatus }: { data: Wi
           </span>
           {updateStatus ? (
             <span className="inline-flex items-center gap-1.5 text-emerald-700">
-              <CheckCircle2 size={13} /> {updateStatus.checkedAt} 校验完成
+              <CheckCircle2 size={13} /> {updateStatus.checkedAt} 更新完成
             </span>
           ) : (
             <span>新书榜每日 07:23 校验更新</span>

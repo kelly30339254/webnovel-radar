@@ -119,7 +119,7 @@ export default function TodayDecisions({
       />
 
       <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_minmax(19rem,0.85fr)]">
-        <article className="relative overflow-hidden rounded-lg bg-theme-950 px-5 py-6 text-white shadow-xl shadow-theme-950/15 sm:px-7 sm:py-7">
+        <article className="relative overflow-hidden rounded-lg bg-theme-600 px-5 py-6 text-white shadow-xl shadow-theme-950/10 sm:px-7 sm:py-7">
           <div className="absolute inset-y-0 left-0 w-1.5 bg-theme-accent" aria-hidden="true" />
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white">

@@ -17,6 +17,7 @@ import TodayDecisions from '@/sections/TodayDecisions'
 import FanqieDebut from '@/sections/FanqieDebut'
 import WritingTips from '@/sections/WritingTips'
 import BookRecs from '@/sections/BookRecs'
+import WritingPartners from '@/sections/WritingPartners'
 import { PetalRain } from '@/sections/Stickers'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
@@ -68,10 +69,11 @@ export default function Home() {
             sourceDate={updateStatus?.sourceDate}
           />
           <GrowthTools />
-          <BookRecs />
+          <WritingPartners />
           <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />
           <TrendChart history={history} updatedAt={historyUpdatedAt ?? data.updatedAt} />
           <KeywordClouds keywords={data.keywords} updatedAt={data.updatedAt} />
+          <BookRecs />
           <FanqieBoards boards={data.boards} />
           <IpHot />
           <div className="mt-14 grid gap-10 lg:grid-cols-2">

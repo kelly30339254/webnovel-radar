@@ -24,13 +24,13 @@ const SECONDARY_TOOLS = [
 
 export default function GrowthTools() {
   return (
-    <section className="mt-12" aria-labelledby="growth-tools-title">
-      <SectionTitle id="growth-tools-title" title="现在就做一个决定" hint="从看风向，到马上动笔" />
+    <section id="tools" className="mt-12 scroll-mt-24" aria-labelledby="growth-tools-title">
+      <SectionTitle id="growth-tools-title" title="开书辅助工具" hint="评估选题、生成命题、认识创作偏好" />
       <div className="mt-5 grid gap-3 lg:grid-cols-12">
         <Link
           to="/radar"
           onClick={() => trackEvent('home_tool_radar')}
-          className="group relative flex min-h-60 flex-col overflow-hidden rounded-lg bg-theme-900 p-6 text-white shadow-lg shadow-theme-950/15 transition-transform hover:-translate-y-0.5 lg:col-span-6"
+          className="group relative flex min-h-60 flex-col overflow-hidden rounded-lg bg-theme-600 p-6 text-white shadow-lg shadow-theme-950/10 transition-transform hover:-translate-y-0.5 lg:col-span-6"
         >
           <div className="flex items-start justify-between gap-4">
             <span className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-2.5 py-1 text-xs font-semibold text-white">
@@ -41,7 +41,7 @@ export default function GrowthTools() {
           <div className="mt-auto max-w-lg pt-8">
             <p className="text-xs font-semibold tracking-widest text-theme-200">MARKET DECISION REPORT</p>
             <h3 className="mt-2 font-serif text-3xl font-bold">生成我的开书雷达</h3>
-            <p className="mt-3 text-sm leading-relaxed text-theme-100">结合今日题材热度、更新能力和计划篇幅，判断这本书现在值不值得开，并给出 7 天验证路线。</p>
+            <p className="mt-3 text-sm leading-relaxed text-theme-100">结合近期题材热度、更新能力和计划篇幅，判断这本书现在值不值得开，并给出 7 天验证路线。</p>
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-theme-200">
               <span>适配度评分</span><span>突围定位</span><span>风险清单</span>
             </div>

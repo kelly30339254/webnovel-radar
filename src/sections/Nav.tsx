@@ -3,10 +3,10 @@ import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 const LINKS = [
   { href: '/radar', label: '开书雷达' },
   { href: '#direction', label: '近期方向' },
-  { href: '/prompt-lab', label: '命题盲盒' },
+  { href: '#book-recs', label: '创作切口' },
+  { href: '#partners', label: '找搭子' },
   { href: '#genres', label: '题材热度' },
   { href: '#trend', label: '趋势' },
-  { href: '/nbti', label: '创作人格' },
 ]
 
 export default function Nav({ updatedAt }: { updatedAt: string }) {
