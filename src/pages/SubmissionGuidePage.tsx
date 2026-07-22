@@ -6,8 +6,8 @@ import {
   ChevronRight,
   CircleAlert,
   Copy,
-  ExternalLink,
   FileText,
+  Layers3,
   Mail,
   Search,
   Send,
@@ -37,15 +37,6 @@ const STATUS_OPTIONS: Array<{ value: 'all' | SubmissionStatus; label: string }> 
 ]
 
 type SortKey = 'recommended' | 'platform' | 'name' | 'date'
-
-function getSourceLinks(editor: SubmissionEditor) {
-  const labels = editor.source.split(',').map((item) => item.trim()).filter(Boolean)
-  return editor.source_url
-    .split(',')
-    .map((item) => item.trim())
-    .filter((url) => /^https?:\/\//i.test(url))
-    .map((url, index) => ({ url, label: labels[index] || `来源 ${index + 1}` }))
-}
 
 function statusClasses(status: SubmissionStatus) {
   if (status === '正常收稿') return 'border-emerald-200 bg-emerald-50 text-emerald-700'
@@ -97,7 +88,6 @@ function ContactRow({ label, value, editorId }: { label: string; value: string; 
 
 function EditorDialog({ editor, open, onOpenChange }: { editor: SubmissionEditor | null; open: boolean; onOpenChange: (open: boolean) => void }) {
   if (!editor) return null
-  const sources = getSourceLinks(editor)
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -116,7 +106,7 @@ function EditorDialog({ editor, open, onOpenChange }: { editor: SubmissionEditor
         <div className="space-y-6 px-5 pb-6 sm:px-6">
           <section>
             <h2 className="mb-2 text-xs font-bold tracking-wider text-theme-500">收稿要求</h2>
-            <p className="whitespace-pre-wrap text-sm leading-7 text-theme-900">{editor.requirements || '该来源未提供详细要求，请打开原始来源确认。'}</p>
+            <p className="whitespace-pre-wrap text-sm leading-7 text-theme-900">{editor.requirements || '暂无详细收稿要求，请联系前再次确认。'}</p>
           </section>
 
           {(editor.email || editor.qq || editor.wechat) && (
@@ -130,25 +120,7 @@ function EditorDialog({ editor, open, onOpenChange }: { editor: SubmissionEditor
           <section className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-xs leading-6 text-amber-900">
             <div className="flex items-start gap-2">
               <ShieldCheck className="mt-0.5 flex-none" size={17} />
-              <p>联系方式来自公开渠道，收稿状态可能变化。投稿前请打开来源复核，不支付押金、培训费或任何形式的签约前费用。</p>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="mb-3 text-xs font-bold tracking-wider text-theme-500">公开来源</h2>
-            <div className="flex flex-wrap gap-2">
-              {sources.map((source) => (
-                <a
-                  key={source.url}
-                  href={source.url}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  onClick={() => trackEvent('submission_open_source', { editorId: editor.id, source: source.label })}
-                  className="inline-flex min-h-10 items-center gap-1.5 rounded-md border border-theme-200 bg-white px-3 py-2 text-xs font-bold text-theme-800 transition-colors hover:border-theme-400 hover:text-theme-950"
-                >
-                  {source.label} <ExternalLink size={13} />
-                </a>
-              ))}
+              <p>联系方式来自公开渠道，收稿状态可能变化。投稿前请通过平台官网或官方公告复核，不支付押金、培训费或任何形式的签约前费用。</p>
             </div>
           </section>
         </div>
@@ -171,17 +143,17 @@ export default function SubmissionGuidePage() {
 
   usePageMeta({
     title: '网文投稿导航',
-    description: '按平台、文稿类型与收稿状态筛选公开投稿渠道，查看编辑要求并回到原始来源复核。',
+    description: '按平台、文稿类型与收稿状态筛选公开投稿渠道，查看编辑要求与投稿联系方式。',
     path: '/submissions',
   })
 
   const stats = useMemo(() => {
-    if (!data) return { total: 0, active: 0, email: 0, sourced: 0 }
+    if (!data) return { total: 0, active: 0, email: 0, types: 0 }
     return {
       total: data.length,
       active: data.filter((item) => item.status === '正常收稿').length,
       email: data.filter((item) => item.email).length,
-      sourced: data.filter((item) => getSourceLinks(item).length > 0).length,
+      types: new Set(data.flatMap((item) => item.workTypes)).size,
     }
   }, [data])
 
@@ -240,7 +212,7 @@ export default function SubmissionGuidePage() {
 
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
-      <PageHeader title="投稿导航" hint="先按文稿类型和平台缩小范围，再查看编辑要求；每次投稿前都回到公开来源复核。" />
+      <PageHeader title="投稿导航" hint="先按文稿类型和平台缩小范围，再查看编辑要求与投稿方式。" />
 
       <main className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
         <section className="-mt-px grid grid-cols-2 border-x border-b border-theme-200 bg-white lg:grid-cols-4">
@@ -248,7 +220,7 @@ export default function SubmissionGuidePage() {
             { label: '收录投稿渠道', value: stats.total, icon: FileText },
             { label: '标记正常收稿', value: stats.active, icon: Send },
             { label: '提供公开邮箱', value: stats.email, icon: Mail },
-            { label: '附有公开来源', value: stats.sourced, icon: ShieldCheck },
+            { label: '覆盖文稿类型', value: stats.types, icon: Layers3 },
           ].map((item) => (
             <div key={item.label} className="flex min-h-20 items-center gap-3 border-b border-theme-100 px-4 py-4 [&:nth-child(odd)]:border-r [&:nth-last-child(-n+2)]:border-b-0 lg:min-h-24 lg:border-b-0 lg:border-r lg:px-5 lg:last:border-r-0">
               <item.icon className="text-theme-500" size={20} />
@@ -375,11 +347,11 @@ export default function SubmissionGuidePage() {
                     {editor.workTypes.length > 0 ? editor.workTypes.map((type) => <span key={type} className="rounded bg-theme-50 px-2 py-1 text-[11px] font-semibold text-theme-700">{type}</span>) : <span className="text-xs text-theme-500">类型未标注</span>}
                   </div>
 
-                  <p className="mt-4 line-clamp-3 text-sm leading-6 text-theme-800">{editor.requirements || '来源未提供详细收稿要求，请查看原始页面。'}</p>
+                  <p className="mt-4 line-clamp-3 text-sm leading-6 text-theme-800">{editor.requirements || '暂无详细收稿要求，请联系前再次确认。'}</p>
 
                   <div className="mt-auto flex items-center justify-between gap-3 border-t border-theme-100 pt-4">
                     <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-theme-500">
-                      <ShieldCheck size={14} /> {getSourceLinks(editor).length} 个公开来源
+                      <FileText size={14} /> 收稿要求已整理
                     </span>
                     <button
                       type="button"
