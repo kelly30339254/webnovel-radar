@@ -7,7 +7,7 @@ import { useWindData } from '@/hooks/useWindData'
 
 export default function IpPage() {
   const { data } = useWindData()
-  usePageMeta({ title: 'IP 改编热点', description: '红果短剧、漫剧与 AI 剧热播信号，以及网文改编方向。', path: '/ip' })
+  usePageMeta({ title: 'IP 改编热点', description: '红果官网最新短剧推荐、番茄官方扶持活动与网文改编方向。', path: '/ip' })
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title="改编观察" hint="从短剧热播、官方扶持和征文信号，判断哪些故事更适合被看见。" />

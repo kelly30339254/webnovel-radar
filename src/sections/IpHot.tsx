@@ -26,12 +26,6 @@ const FORM_STYLE: Record<string, string> = {
   AI剧: 'bg-fuchsia-100 text-fuchsia-700',
 }
 
-function heatValue(text: string): number {
-  const value = Number.parseFloat(text.replace(/[^\d.]/g, ''))
-  if (Number.isNaN(value)) return 0
-  return text.includes('亿') ? value * 10000 : value
-}
-
 export default function IpHot({ showViewMore = true }: { showViewMore?: boolean }) {
   const [data, setData] = useState<HongguoData | null>(null)
 
@@ -49,19 +43,18 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
       <SectionTitle
         id="ip-heading"
         title="IP 改编热点"
-        hint="红果短剧热播榜"
+        hint="红果官网首页最新推荐"
         right={showViewMore ? <ViewMoreLink to="/ip" /> : undefined}
         footer={
           <>
             <span>数据截止 {data.updatedAt}</span>
             <span>每日 07:23 自动更新</span>
-            <span>来源：红果短剧官方排行榜</span>
+            <span>来源：红果短剧官网公开推荐</span>
           </>
         }
       />
       <div className="mt-6 grid gap-5 lg:grid-cols-3">
         {data.categories.map((cat) => {
-          const sortedItems = [...cat.items].sort((a, b) => heatValue(b.heat) - heatValue(a.heat))
           return (
           <div
             key={cat.name}
@@ -73,10 +66,10 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
                   {cat.name}
                 </span>
               </h3>
-              <span className="text-xs text-rose-300">按热度降序</span>
+              <span className="text-xs text-rose-300">官网推荐顺序</span>
             </div>
             <ol className="space-y-3">
-              {sortedItems.map((it, index) => (
+              {cat.items.map((it, index) => (
                 <li key={`${cat.name}-${it.title}`} className="group flex items-start gap-3 text-sm">
                   <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-gradient-to-br from-rose-100 to-pink-100 text-xs font-bold text-rose-600 shadow-sm">
                     {index + 1}
@@ -92,7 +85,7 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
                       {it.title}
                     </a>
                     <p className="mt-1 text-xs text-rose-400">
-                      <span className="font-medium text-rose-500">热度 {it.heat}</span>
+                      <span className="font-medium text-rose-500">{it.heat}</span>
                       {it.note ? ` · ${it.note}` : ''}
                     </p>
                   </div>

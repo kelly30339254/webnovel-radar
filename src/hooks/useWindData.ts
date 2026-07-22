@@ -35,7 +35,7 @@ export function useWindData() {
     fetch(`${base}data/update-status.json`, { cache: 'no-store' })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
-        if (alive && json?.status === 'success') setUpdateStatus(json as UpdateStatus)
+        if (alive && (json?.status === 'success' || json?.status === 'partial')) setUpdateStatus(json as UpdateStatus)
       })
       .catch(() => {
         /* 兼容尚未生成状态文件的旧部署 */

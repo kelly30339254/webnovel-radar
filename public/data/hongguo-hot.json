@@ -1,51 +1,189 @@
 {
-  "updatedAt": "2026-07-20",
-  "sourceUrl": "https://wangwendashuju.com/hongguo",
+  "updatedAt": "2026-07-22",
+  "sourceUrl": "https://hongguoduanju.com/",
   "officialBase": "https://hongguoduanju.com/",
   "categories": [
     {
-      "name": "真人剧",
+      "name": "首页精选",
       "items": [
-        { "rank": 1, "title": "以爱为家第二季", "heat": "6674万", "note": "真人情感短剧，家庭羁绊与成长", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 2, "title": "逃离他的岛", "heat": "6330万", "note": "悬疑爱情，海岛求生", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 3, "title": "盛夏来信", "heat": "6208万", "note": "青春治愈，书信往来", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 4, "title": "顾先生，搭个伙", "heat": "6172万", "note": "都市甜宠，契约恋爱", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 5, "title": "放弃家产后，我荣耀归来", "heat": "6108万", "note": "都市逆袭，豪门恩怨", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 6, "title": "家里家外", "heat": "7099万", "note": "方言年代家庭短剧，口碑爆款", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 7, "title": "好一个乖乖女", "heat": "6500万", "note": "女频复仇，爽点密集", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 8, "title": "潜龙出山，有眼不识金镶玉", "heat": "6093万", "note": "都市神医，强势逆袭", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 9, "title": "婚夜", "heat": "6050万", "note": "新婚夜悬疑反转", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 10, "title": "穿书之炮灰变身天道亲闺女", "heat": "6000万", "note": "穿书修仙，团宠逆袭", "playUrl": "https://hongguoduanju.com/" }
+        {
+          "rank": 1,
+          "title": "抱歉我拿的是女主剧本",
+          "heat": "全64集",
+          "note": "爱情 · 都市爱情 · 女性成长",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 2,
+          "title": "好一个乖乖女",
+          "heat": "全88集",
+          "note": "爱情 · 都市爱情 · 女性成长",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 3,
+          "title": "错撩邪王自救指南",
+          "heat": "全80集",
+          "note": "爱情 · 古风爱情 · 穿越",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 4,
+          "title": "大婚当日，总裁亲妈来救场",
+          "heat": "全81集",
+          "note": "都市 · 逆袭翻身 · 揭露阴谋",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 5,
+          "title": "她掌天命",
+          "heat": "全72集",
+          "note": "都市 · 都市玄幻 · 打脸反派",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 6,
+          "title": "余烬生欢",
+          "heat": "全50集",
+          "note": "都市 · 逆袭翻身 · 真相大白",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 7,
+          "title": "一箭穿心",
+          "heat": "全71集",
+          "note": "玄幻 · 都市玄幻 · 逆袭翻身",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 8,
+          "title": "宠女老爹，回国后横扫一切",
+          "heat": "全65集",
+          "note": "都市 · 都市日常 · 揭露阴谋",
+          "playUrl": "https://hongguoduanju.com/"
+        }
       ]
     },
     {
-      "name": "漫剧",
+      "name": "女频改编",
       "items": [
-        { "rank": 1, "title": "开局大帝：我的弟子全是逆天体质", "heat": "6171万", "note": "玄幻漫剧，弟子全员挂逼", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 2, "title": "斗罗大陆外传", "heat": "5800万", "note": "经典IP漫改，情怀加持", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 3, "title": "斗破苍穹番外", "heat": "5700万", "note": "退婚流鼻祖，持续热度", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 4, "title": "完美世界动画版", "heat": "5600万", "note": "独断万古，热血升级", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 5, "title": "神印王座", "heat": "5500万", "note": "唐家三少IP，热血奇幻", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 6, "title": "吞噬星空", "heat": "5400万", "note": "科幻修仙，宇宙冒险", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 7, "title": "仙逆", "heat": "5300万", "note": "凡人流经典，杀伐果断", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 8, "title": "遮天", "heat": "5200万", "note": "九龙拉棺，修仙史诗", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 9, "title": "一念永恒", "heat": "5100万", "note": "轻松修仙，逗比主角", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 10, "title": "凡人修仙传", "heat": "5000万", "note": "稳扎稳打的修仙标杆", "playUrl": "https://hongguoduanju.com/" }
+        {
+          "rank": 1,
+          "title": "抱歉我拿的是女主剧本",
+          "heat": "全64集",
+          "note": "爱情 · 都市爱情 · 女性成长",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 2,
+          "title": "好一个乖乖女",
+          "heat": "全88集",
+          "note": "爱情 · 都市爱情 · 女性成长",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 3,
+          "title": "错撩邪王自救指南",
+          "heat": "全80集",
+          "note": "爱情 · 古风爱情 · 穿越",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 4,
+          "title": "她掌天命",
+          "heat": "全72集",
+          "note": "都市 · 都市玄幻 · 打脸反派",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 5,
+          "title": "出狱后，她被墨少宠上天",
+          "heat": "全83集",
+          "note": "爱情 · 都市爱情 · 日久生情",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 6,
+          "title": "十万铁骑接我登基",
+          "heat": "全68集",
+          "note": "古装 · 女性成长 · 朝堂权谋",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 7,
+          "title": "别惹真千金，她是满级异能大佬",
+          "heat": "全81集",
+          "note": "成长 · 女性成长 · 奇幻爱情",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 8,
+          "title": "七零：空间在手，养崽不愁",
+          "heat": "全80集",
+          "note": "爱情 · 年代爱情 · 女性成长",
+          "playUrl": "https://hongguoduanju.com/"
+        }
       ]
     },
     {
-      "name": "AI剧",
+      "name": "男频改编",
       "items": [
-        { "rank": 1, "title": "发配边关，罪妻开荒养出战神", "heat": "6860万", "note": "AI漫剧，女性逆袭种田", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 2, "title": "发配边关，罪妻开荒养出战神3", "heat": "6633万", "note": "系列第三部，热度延续", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 3, "title": "发配边关，罪妻开荒养出战神2", "heat": "6623万", "note": "系列第二部，稳定输出", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 4, "title": "开局大帝：我的弟子全是逆天体质", "heat": "5989万", "note": "AI漫剧，特效场面多", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 5, "title": "分家只给枯井，我挖出灵泉", "heat": "5963万", "note": "AI剧，种田+金手指", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 6, "title": "菩提临世真人AI版", "heat": "6500万", "note": "首部登顶总榜的AI短剧", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 7, "title": "斩仙台AI真人版", "heat": "6200万", "note": "仙侠AI剧，播放量破亿", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 8, "title": "AI重生之我是豪门千金", "heat": "5800万", "note": "重生复仇，AI制作", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 9, "title": "AI换脸：总裁的小娇妻", "heat": "5700万", "note": "霸总甜宠，AI短剧", "playUrl": "https://hongguoduanju.com/" },
-        { "rank": 10, "title": "我在AI世界当大佬", "heat": "5600万", "note": "科幻AI剧，元宇宙题材", "playUrl": "https://hongguoduanju.com/" }
+        {
+          "rank": 1,
+          "title": "大婚当日，总裁亲妈来救场",
+          "heat": "全81集",
+          "note": "都市 · 逆袭翻身 · 揭露阴谋",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 2,
+          "title": "余烬生欢",
+          "heat": "全50集",
+          "note": "都市 · 逆袭翻身 · 真相大白",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 3,
+          "title": "一箭穿心",
+          "heat": "全71集",
+          "note": "玄幻 · 都市玄幻 · 逆袭翻身",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 4,
+          "title": "宠女老爹，回国后横扫一切",
+          "heat": "全65集",
+          "note": "都市 · 都市日常 · 揭露阴谋",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 5,
+          "title": "归国后，我撕碎妻子的谎言",
+          "heat": "全61集",
+          "note": "都市 · 都市日常 · 隐藏大佬",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 6,
+          "title": "十万铁骑接我登基",
+          "heat": "全68集",
+          "note": "古装 · 女性成长 · 朝堂权谋",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 7,
+          "title": "出族即无敌，诸天哭求我回归",
+          "heat": "全80集",
+          "note": "逆袭 · 都市玄幻 · 强者回归",
+          "playUrl": "https://hongguoduanju.com/"
+        },
+        {
+          "rank": 8,
+          "title": "花出去的钱，都成了我的资产",
+          "heat": "全80集",
+          "note": "都市 · 逆袭翻身 · 系统",
+          "playUrl": "https://hongguoduanju.com/"
+        }
       ]
     }
   ]

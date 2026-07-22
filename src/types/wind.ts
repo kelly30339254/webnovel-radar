@@ -88,9 +88,19 @@ export interface UpdateStatusBoard {
   dataDate: string
 }
 
+export interface UpdateStatusModule {
+  key: string
+  label: string
+  status: 'updated' | 'static'
+  dataDate: string
+  itemCount?: number
+  sourceUrl?: string
+}
+
 export interface UpdateStatus {
   checkedAt: string
   sourceDate: string
-  status: 'success'
+  status: 'success' | 'partial'
   boards: UpdateStatusBoard[]
+  modules?: UpdateStatusModule[]
 }

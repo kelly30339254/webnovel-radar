@@ -3,8 +3,6 @@ import SectionTitle from '@/sections/SectionTitle'
 import SourceLink from '@/sections/SourceLink'
 import { freshnessLabel } from '@/lib/freshness'
 
-const SOURCE_URL = 'https://wangwendashuju.com/fq/debut?gender=male'
-
 type Book = {
   rank: number
   title: string
@@ -18,6 +16,8 @@ type Book = {
 export default function FanqieDebut() {
   const [books, setBooks] = useState<Book[]>([])
   const [updatedAt, setUpdatedAt] = useState('')
+  const [sourceUrl, setSourceUrl] = useState('https://novelcatch.com/rank?gender=m&list=new')
+  const [sourceLabel, setSourceLabel] = useState('新书榜同步观察')
 
   useEffect(() => {
     fetch('/data/fanqie-debut.json')
@@ -25,6 +25,8 @@ export default function FanqieDebut() {
       .then((data) => {
         setBooks(data.books ?? [])
         setUpdatedAt(data.updatedAt ?? '')
+        setSourceUrl(data.sourceUrl ?? 'https://novelcatch.com/rank?gender=m&list=new')
+        setSourceLabel(data.sourceLabel ?? '新书榜同步观察')
       })
       .catch(() => setBooks([]))
   }, [])
@@ -35,8 +37,8 @@ export default function FanqieDebut() {
     <section className="mt-14">
       <SectionTitle
         id="fanqie-debut"
-        title="番茄首秀榜"
-        right={<SourceLink url={SOURCE_URL} label="网文大数据" />}
+        title="番茄首秀观察"
+        right={<SourceLink url={sourceUrl} label="榜单来源" />}
         footer={
           <>
             {moduleFresh && (
@@ -45,8 +47,8 @@ export default function FanqieDebut() {
                 {moduleFresh.stale ? ' · 数据偏旧' : ''}
               </span>
             )}
-            <span>每日 07:23 校验来源</span>
-            <span>来源：网文大数据</span>
+            <span>每日 07:23 自动更新</span>
+            <span>来源：{sourceLabel}</span>
           </>
         }
       />
@@ -72,7 +74,7 @@ export default function FanqieDebut() {
               <div className="mt-0.5 flex flex-wrap gap-x-3 text-xs text-theme-700">
                 <span>{book.author}</span>
                 <span className="rounded-full bg-theme-50 px-1.5 py-0 text-[10px]">{book.genre}</span>
-                <span>{book.words}字</span>
+                <span>{book.words}</span>
                 <span>在读 {book.readers}</span>
               </div>
             </div>

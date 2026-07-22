@@ -1,240 +1,164 @@
 {
-  "updatedAt": "2026-07-20",
-  "verdict": "男频都市高武/灵气复苏、都市脑洞领跑，女频现言脑洞·财阀、宫斗宅斗霸榜，短剧改编向种田脑洞集中",
+  "updatedAt": "2026-07-21",
+  "verdict": "男频都市脑洞领跑，都市提供突围切口；女频宫斗宅斗居前，现言脑洞信号集中",
   "genres": [
     {
-      "name": "都市高武/灵气复苏（男频）",
+      "name": "都市脑洞",
       "heat": 100,
-      "trend": "up",
-      "note": "男频新书榜第1、3名均为都市高武，榜首在读133.5万"
-    },
-    {
-      "name": "现言脑洞·财阀（女频）",
-      "heat": 92,
-      "trend": "up",
-      "note": "女频第2、3名均为财阀穿书，在读60.1万/52.0万"
-    },
-    {
-      "name": "宫斗宅斗（女频）",
-      "heat": 88,
-      "trend": "up",
-      "note": "女频榜首《入宫即高位》65.5万在读，盛夏寻章征文重点赛道"
-    },
-    {
-      "name": "都市脑洞（直播/科研，男频）",
-      "heat": 80,
       "trend": "flat",
-      "note": "男频第5名直播研发丧尸病毒49.5万在读"
+      "note": "男频新书榜出现 5 本，最高第 1；平均在读 50.5万"
     },
     {
-      "name": "青春甜宠（女频）",
-      "heat": 76,
+      "name": "现言脑洞",
+      "heat": 77,
       "trend": "flat",
-      "note": "女频第4、5名及榜单中段多本青春甜宠在榜"
+      "note": "女频新书榜出现 3 本，最高第 2；平均在读 47.9万"
     },
     {
-      "name": "抗战谍战/历史权谋（男频）",
-      "heat": 72,
-      "trend": "up",
-      "note": "男频第2名军阀文58.4万在读；官方7月风向确认历史权谋短剧改编热"
+      "name": "青春甜宠",
+      "heat": 70,
+      "trend": "flat",
+      "note": "女频新书榜出现 3 本，最高第 6；平均在读 35.9万"
     },
     {
-      "name": "同人衍生",
+      "name": "都市高武",
       "heat": 62,
-      "trend": "new",
-      "note": "男频第6名黑袍同人上榜；官方文启剧燃征文新设创新衍生赛道"
+      "trend": "flat",
+      "note": "男频新书榜出现 2 本，最高第 6；平均在读 40.5万"
     },
     {
-      "name": "年代文（复仇/军婚）",
-      "heat": 58,
+      "name": "宫斗宅斗",
+      "heat": 59,
       "trend": "flat",
-      "note": "男频四合院复仇、女频年代军婚随军均在榜"
+      "note": "女频新书榜出现 1 本，最高第 1；平均在读 61.1万"
+    },
+    {
+      "name": "玄幻脑洞",
+      "heat": 57,
+      "trend": "flat",
+      "note": "男频新书榜出现 1 本，最高第 3；平均在读 53.2万"
+    },
+    {
+      "name": "豪门总裁",
+      "heat": 56,
+      "trend": "flat",
+      "note": "女频新书榜出现 1 本，最高第 4；平均在读 49.0万"
+    },
+    {
+      "name": "古言脑洞",
+      "heat": 56,
+      "trend": "flat",
+      "note": "女频新书榜出现 1 本，最高第 5；平均在读 47.8万"
     }
   ],
   "keywords": {
     "male": {
-      "summary": "系统穿越配无敌流，反套路高密度爽点为王",
+      "summary": "都市脑洞、都市、脑洞、都市高武成为当日新书高频信号",
       "tags": [
         {
-          "word": "系统",
+          "word": "都市脑洞",
           "weight": 100
         },
         {
-          "word": "穿越",
-          "weight": 95
-        },
-        {
-          "word": "爽文",
-          "weight": 92
-        },
-        {
-          "word": "无敌流",
-          "weight": 88
-        },
-        {
-          "word": "杀伐果断",
-          "weight": 85
-        },
-        {
-          "word": "反套路",
-          "weight": 80
-        },
-        {
-          "word": "重生",
-          "weight": 78
-        },
-        {
-          "word": "高武",
-          "weight": 75
-        },
-        {
-          "word": "脑洞",
-          "weight": 72
-        },
-        {
-          "word": "直播",
+          "word": "都市",
           "weight": 68
         },
         {
-          "word": "沙雕",
-          "weight": 65
-        },
-        {
-          "word": "同人",
+          "word": "脑洞",
           "weight": 62
         },
         {
-          "word": "年代",
-          "weight": 60
-        },
-        {
-          "word": "复仇",
-          "weight": 58
-        },
-        {
-          "word": "神豪",
-          "weight": 55
-        },
-        {
-          "word": "争霸",
+          "word": "都市高武",
           "weight": 52
         },
         {
-          "word": "民国",
+          "word": "玄幻脑洞",
           "weight": 50
         },
         {
-          "word": "灵气复苏",
-          "weight": 48
+          "word": "都市日常",
+          "weight": 44
         },
         {
-          "word": "巨兽文",
-          "weight": 45
+          "word": "都市修真",
+          "weight": 43
         },
         {
-          "word": "反派",
-          "weight": 42
+          "word": "穿书",
+          "weight": 41
         },
         {
-          "word": "养成",
+          "word": "高武",
+          "weight": 41
+        },
+        {
+          "word": "玄幻",
           "weight": 40
         },
         {
-          "word": "校园",
+          "word": "系统",
+          "weight": 39
+        },
+        {
+          "word": "日常",
           "weight": 38
         }
       ]
     },
     "female": {
-      "summary": "穿书甜宠配双洁，疯批强制爱大女主当道",
+      "summary": "现言脑洞、财阀、青春甜宠、宫斗宅斗成为当日新书高频信号",
       "tags": [
         {
-          "word": "穿书",
+          "word": "现言脑洞",
           "weight": 100
         },
         {
-          "word": "甜宠",
-          "weight": 96
-        },
-        {
-          "word": "双洁",
-          "weight": 90
-        },
-        {
           "word": "财阀",
-          "weight": 86
-        },
-        {
-          "word": "强制爱",
           "weight": 82
         },
         {
+          "word": "青春甜宠",
+          "weight": 77
+        },
+        {
           "word": "宫斗宅斗",
-          "weight": 78
-        },
-        {
-          "word": "疯批男主",
-          "weight": 75
-        },
-        {
-          "word": "先婚后爱",
-          "weight": 72
-        },
-        {
-          "word": "大女主",
-          "weight": 70
-        },
-        {
-          "word": "追妻火葬场",
           "weight": 66
         },
         {
-          "word": "快穿",
-          "weight": 62
+          "word": "脑洞",
+          "weight": 64
         },
         {
-          "word": "万人迷",
-          "weight": 60
-        },
-        {
-          "word": "修罗场",
+          "word": "豪门总裁",
           "weight": 58
         },
         {
-          "word": "系统",
-          "weight": 55
+          "word": "古言脑洞",
+          "weight": 56
         },
         {
-          "word": "病娇",
-          "weight": 52
+          "word": "甜宠",
+          "weight": 49
         },
         {
-          "word": "逆袭打脸",
-          "weight": 50
-        },
-        {
-          "word": "娱乐圈",
+          "word": "星光璀璨",
           "weight": 48
         },
         {
-          "word": "古穿今",
+          "word": "宫斗",
           "weight": 45
         },
         {
-          "word": "暗恋",
-          "weight": 42
+          "word": "宅斗",
+          "weight": 45
         },
         {
-          "word": "马甲",
-          "weight": 40
+          "word": "豪门",
+          "weight": 43
         },
         {
-          "word": "年代",
-          "weight": 38
-        },
-        {
-          "word": "校园",
-          "weight": 35
+          "word": "总裁",
+          "weight": 43
         }
       ]
     }
@@ -401,82 +325,110 @@
   ],
   "ipHot": [
     {
-      "title": "发配边关，罪妻开荒养出战神",
-      "genre": "种田脑洞",
-      "form": "漫剧",
-      "note": "官方风向文披露：AI漫剧爆款，红果多季在榜",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
-    },
-    {
-      "title": "从纨绔到镇北侯我统领天下（原著《大雍异姓王，纨绔世子太凶猛！》）",
-      "genre": "历史权谋",
+      "title": "抱歉我拿的是女主剧本",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "官方风向文披露：纨绔反差人设权谋爆款",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 女性成长",
+      "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "朝思暮时（原著《顾先生的宠妻日常》）",
-      "genre": "婚后日常",
+      "title": "好一个乖乖女",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "官方风向文披露：反向追夫甜宠爆款",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 女性成长",
+      "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "逆流重生（原著《重生九六，海钓捞沉船宝藏成首富》）",
-      "genre": "乡村逆袭/年代创业",
-      "form": "漫剧",
-      "note": "官方风向文披露：乡村逆袭漫剧代表",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
+      "title": "错撩邪王自救指南",
+      "genre": "爱情 / 古风爱情",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 爱情 · 古风爱情 · 穿越",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "大婚当日，总裁亲妈来救场",
+      "genre": "都市 / 逆袭翻身",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 揭露阴谋",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "她掌天命",
+      "genre": "都市 / 都市玄幻",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 都市 · 都市玄幻 · 打脸反派",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "余烬生欢",
+      "genre": "都市 / 逆袭翻身",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 真相大白",
+      "sourceUrl": "https://hongguoduanju.com/"
     }
   ],
   "announcements": [
     {
       "platform": "番茄小说",
-      "date": "2026-07",
-      "title": "番茄小说「盛夏寻章」暑期征文",
-      "summary": "5赛道19分类千万奖池，单书可超百万激励",
-      "sourceUrl": "https://fanqienovel.com/writer/zone"
+      "date": "2026-07-01 至 2026-08-31",
+      "title": "番茄小说「盛夏寻章」暑期征文来袭，单书可超百万激励",
+      "summary": "盛夏赴文约，提笔著华章。番茄小说2026 年「盛夏寻章」暑期征文活动正式启动！",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7656711777119387673"
     },
     {
       "platform": "番茄小说",
-      "date": "2026-05",
-      "title": "2026番茄网文神启计划",
-      "summary": "长篇原创专项激励，覆盖创作宣发与IP改编",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7642986443425447961"
+      "date": "2026-07-01 至 2026-07-31",
+      "title": "番茄短故事｜西方题材「哥伦布计划」7月激励活动上线",
+      "summary": "番茄短故事全新西方题材赛道「哥伦布计划」激励活动上线！250万元+稿费池等你来瓜分！ 征稿方向：以狼人吸血鬼、未来科幻、西幻魔法、西方团体、欧美社会等经典设定为基底，融合短篇热门框架与趣味创作梗，诚邀你落笔生花，编织独属于西式氛围感的短篇故…",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7656664134284492862"
     },
     {
       "platform": "番茄小说",
-      "date": "2026-05",
-      "title": "聚贤纳新·执笔无忧限时招募活动",
-      "summary": "保底直签+分成双通道，保底千字20-5000元",
+      "date": "2026-06-25 至 2026-08-31",
+      "title": "灵感返场·故事重燃｜限时完结活动",
+      "summary": "这个夏天，让我们重新拾起未完的篇章，给故事一个圆满的结局。为确保优秀作品的完整性，让读者获得更佳的阅读体验，平台将于6月起邀请部分作品参与限时完结活动，最高可得8万元奖金！",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7654918814202593304"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-06-21 至 2026-09-30",
+      "title": "番茄短故事｜「IP金品共创计划」激励活动全新升级",
+      "summary": "短故事「IP金品共创计划」，深耕IP重点品类，开放创作激励！ 本期聚焦14种热门品类：男频脑洞、女频脑洞、悬疑惊悚、玄幻仙侠、青春虐恋、古言虐恋、历史古代、都市日常、宫斗宅斗、现言甜宠、古言甜宠、民国旧影、年代、女性成长",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7652619664643588158"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-06-21 至 2026-09-30",
+      "title": "番茄短故事2026「千字万金」五百万激励计划第三期上线",
+      "summary": "番茄小说持续加大多元化原创内容建设力度，短故事创作「千字万金」激励计划第三期上线！500万元+奖金池等你来瓜分！ 稿费翻倍：短故事分成持续10:0，作者10！ 保底升级：超短 80-500+元/千字｜中短 100-700+元/千字（大神作者…",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7652616530726764606"
+    },
+    {
+      "platform": "番茄小说",
+      "date": "2026-05-28 至 2026-08-31",
+      "title": "聚贤纳新·执笔无忧｜限时招募活动",
+      "summary": "还在担心好故事被埋没吗？番茄小说正式启动“聚贤纳新·执笔无忧”限时招募活动！",
       "sourceUrl": "https://fanqienovel.com/writer/zone/article/7644451636479262745"
-    },
-    {
-      "platform": "番茄小说",
-      "date": "2026-03",
-      "title": "改编向中篇IP扶持计划重磅上线",
-      "summary": "中篇IP高优推进短剧漫剧版权售卖与改编",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"
     }
   ],
   "adaptWatch": [
     {
-      "date": "2026-07",
-      "title": "官方课堂：短剧、漫剧7月改编风向",
-      "summary": "女频两界互穿/婚后日常大女主，男频历史权谋穿越打脸；漫剧种田脑洞、乡村逆袭",
+      "date": "2026-07-17",
+      "title": "7月改编风向标｜人设×叙事：爆款拆解",
+      "summary": "课程内容：短剧、漫剧7月改编风向 适用对象：所有品类 学习时长：10分钟 一、短剧改编方向 （一）女频 近期爆款女频改编真人短剧，题材类型主要集中于 两界互穿 和 婚后日常 ，内容元素以 反向追夫，娱乐圈逆袭，大女主觉醒 为主，人设偏爱 清…",
       "sourceUrl": "https://fanqienovel.com/writer/zone/article/7663067164164751384"
     },
     {
-      "date": "2026-01",
-      "title": "文启剧燃｜番茄小说x短剧版权中心首届短剧向IP联合征文",
-      "summary": "六大赛道征文，番茄IP改编短剧漫剧累计破9000部",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7595564497767514174"
+      "date": "2026-07-15",
+      "title": "脑洞类短故事怎么写才抓人？一起来避开这几个问题！",
+      "summary": "各位番茄短故事作者大家好，欢迎来到第二十九期的作家课堂~ 本期 聚焦脑洞类短故事的创作常见误区与优化创作指南 ，围绕 人物塑造/情节布局 两个核心方向拆解问题，帮 助大家更高效地打磨设定、把控节奏，写出更具看点的脑洞短故事 ！ 避坑指南—「…",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7662567314256035902"
     },
     {
-      "date": "2026-03",
-      "title": "改编向中篇IP扶持计划重磅上线",
-      "summary": "中篇作品短剧漫剧改编专项激励，版权收入分档奖励",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7616329109932605465"
+      "date": "2026-07-10",
+      "title": "快来一键解锁热门古代女频短故事创作指南",
+      "summary": "各位番茄短故事作者大家好，欢迎来到第二十八期的作家课堂~ 本期将从 古风世情 与 古言虐恋 两个维度出发，带大家深入拆解 女频古代爆款短故事共性。 希望通过本期内容的学习，你能更熟练地运用创作技巧，让故事真正击中读者内心，收获更多喜爱与关注…",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7660072238174978110"
     }
   ]
 }
