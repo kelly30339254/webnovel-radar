@@ -214,6 +214,14 @@
   border-color: hsl(var(--theme-400) / 0.55);
 }
 
+.nav-scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.nav-scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 ::selection {
   background: hsl(var(--theme-200));
   color: hsl(var(--theme-950));

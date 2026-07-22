@@ -11,6 +11,7 @@ const LINKS = [
   { to: '/boards', label: '新书榜', mobileLabel: '榜单', summary: '男频与女频榜单' },
   { to: '/tips', label: '写作技巧', mobileLabel: '技巧', summary: '结构、节奏与爽点' },
   { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与找搭子' },
+  { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },
   { to: '/ip', label: '改编观察', mobileLabel: '改编', summary: '短剧与官方信号' },
 ] as const
 
@@ -100,7 +101,7 @@ export default function Nav() {
       )}
 
       <div className="border-t border-theme-100 bg-white lg:hidden" aria-label="内容快捷导航">
-        <div className="mx-auto grid max-w-7xl grid-cols-6 px-2">
+        <div className="nav-scrollbar-hidden mx-auto flex max-w-7xl overflow-x-auto px-2">
           {LINKS.map((item) => (
             <NavLink
               key={`mobile-quick-${item.to}`}
@@ -108,7 +109,7 @@ export default function Nav() {
               end={item.to === '/'}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `relative flex min-h-10 items-center justify-center px-1 text-[11px] font-bold transition-colors ${
+                `relative flex min-h-10 min-w-[3.25rem] flex-1 items-center justify-center px-1 text-[11px] font-bold transition-colors ${
                   isActive ? 'text-theme-950' : 'text-theme-600 hover:bg-theme-50 hover:text-theme-950'
                 }`
               }

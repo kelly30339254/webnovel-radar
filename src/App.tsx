@@ -9,6 +9,7 @@ import BookRadarPage from './pages/BookRadarPage'
 import PromptLabPage from './pages/PromptLabPage'
 import TrendsPage from './pages/TrendsPage'
 import ToolsPage from './pages/ToolsPage'
+import SubmissionGuidePage from './pages/SubmissionGuidePage'
 import Nav from '@/sections/Nav'
 import { trackEvent } from '@/hooks/useAnalytics'
 
@@ -37,6 +38,7 @@ export default function App() {
         <Route path="/tips" element={<TipsPage />} />
         <Route path="/boards" element={<BoardsPage />} />
         <Route path="/ip" element={<IpPage />} />
+        <Route path="/submissions" element={<SubmissionGuidePage />} />
       </Routes>
     </>
   )
