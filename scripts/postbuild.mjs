@@ -21,6 +21,7 @@ const routes = [
   { path: '/tools', title: '网文创作工具', description: '开书雷达、命题盲盒、创作人格、创作切口和写作搭子入口。' },
   { path: '/tips', title: '网文写作技巧', description: '网文结构、节奏、爽点、人设和章末钩子的实用方法。' },
   { path: '/boards', title: '番茄新书榜', description: '番茄小说男频与女频新书榜，每日更新。' },
+  { path: '/submissions', title: '网文投稿导航', description: '按平台、文稿类型与收稿状态筛选公开投稿渠道，并回到原始来源复核。' },
   { path: '/ip', title: 'IP 改编热点', description: '红果短剧、漫剧与 AI 剧热点及网文改编风向。' },
   ...Object.entries(resultNames).map(([key, name]) => ({
     path: `/nbti/${key}`,
