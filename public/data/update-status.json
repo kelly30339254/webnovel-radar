@@ -1,17 +1,17 @@
 {
-  "checkedAt": "2026-07-21",
-  "sourceDate": "2026-07-20",
+  "checkedAt": "2026-07-22",
+  "sourceDate": "2026-07-21",
   "status": "success",
   "boards": [
     {
       "channel": "男频",
       "count": 10,
-      "dataDate": "2026-07-20"
+      "dataDate": "2026-07-21"
     },
     {
       "channel": "女频",
       "count": 10,
-      "dataDate": "2026-07-20"
+      "dataDate": "2026-07-21"
     }
   ]
 }
