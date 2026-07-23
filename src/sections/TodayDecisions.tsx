@@ -17,7 +17,7 @@ import {
 import { trackEvent } from '@/hooks/useAnalytics'
 import { buildGenreSignals, formatDelta } from '@/lib/genreSignals'
 import type { GenreSignal } from '@/lib/genreSignals'
-import type { Board, GenreHeat, HistoryData } from '@/types/wind'
+import type { Board, GenreHeat, HistoryData, Keywords } from '@/types/wind'
 
 function radarPath(name: string): string {
   const channel = /现言|青春|甜宠|宫斗|宅斗|豪门|古言|女频/.test(name) ? 'female' : 'male'
@@ -74,12 +74,14 @@ export default function TodayDecisions({
   genres,
   history,
   boards,
+  keywords,
   updatedAt,
   sourceDate,
 }: {
   genres: GenreHeat[]
   history: HistoryData | null
   boards: Board[]
+  keywords: Keywords
   updatedAt?: string
   sourceDate?: string
 }) {
@@ -101,6 +103,10 @@ export default function TodayDecisions({
   const reliableCount = signals.filter((signal) => signal.confidence !== '低').length
   const observationCount = signals.length - reliableCount
   const opportunityNote = genres.find((genre) => genre.name === opportunity.name)?.note
+  const maleBoard = boards.find((board) => board.channel === '男频')
+  const femaleBoard = boards.find((board) => board.channel === '女频')
+  const maleDailyWords = keywords.male.tags.slice(0, 4).map((tag) => tag.word)
+  const femaleDailyWords = keywords.female.tags.slice(0, 4).map((tag) => tag.word)
 
   const featured = [
     {
@@ -254,11 +260,14 @@ export default function TodayDecisions({
       </section>
 
       <section className="mt-14" aria-labelledby="writing-title">
-        <EditorialTitle id="writing-title" title="书名和简介怎么写" hint="先告诉读者发生了什么，再解释世界设定" />
+        <EditorialTitle id="writing-title" title="书名和简介怎么写" hint={`今日参考随 ${updatedAt ?? '最新'} 榜单更新，写作方法保持稳定`} />
         <div className="mt-7 grid gap-5 lg:grid-cols-2">
           {[
             {
               channel: '男频表达公式', icon: Quote, tone: 'text-theme-700', formula: '现实节点 + 反常动作 + 可见结果',
+              dailyWords: maleDailyWords,
+              dailyBooks: maleBoard?.books.slice(0, 2).map((book) => book.title) ?? [],
+              dailyAdvice: `今天男频常见的是“${maleDailyWords[0] ?? opportunity.name}”。书名先写具体事件，简介前三句尽快写出能力带来的结果和代价。`,
               titles: ['我在____当天，突然能____', '别人还在____，我已经____', '被迫接手____后，我让____'],
               intro: ['第一句：主角今天必须完成什么现实目标。', '第二句：新能力如何第一次改变局面。', '第三句：这次使用会付出什么代价。'],
               chapters: ['第1章在具体现场得到能力。', '第2章用能力解决一次小难题。', '第3章让读者看到结果，同时出现更大的限制。'],
@@ -266,6 +275,9 @@ export default function TodayDecisions({
             },
             {
               channel: '女频表达公式', icon: Feather, tone: 'text-[#174c43]', formula: '身份落差 + 关系越界 + 情绪后果',
+              dailyWords: femaleDailyWords,
+              dailyBooks: femaleBoard?.books.slice(0, 2).map((book) => book.title) ?? [],
+              dailyAdvice: `今天女频常见的是“${femaleDailyWords[0] ?? crowded.name}”。书名先写人物处境或关系变化，简介再说明谁先做选择、带来什么后果。`,
               titles: ['离开____后，____却失控了', '误入____，我成了____唯一例外', '所有人等我低头，____先替我撑腰'],
               intro: ['第一句：人物正在承受怎样的关系困境。', '第二句：谁做了一个越界但不可逆的选择。', '第三句：这次选择改变了谁的处境与情绪。'],
               chapters: ['第1章把关系矛盾放到公开现场。', '第2章用一次选择改变双方位置。', '第3章给甜点或爽点，再留下新误解。'],
@@ -277,9 +289,20 @@ export default function TodayDecisions({
               <article key={item.channel} className="border border-stone-300 bg-white/60 p-6">
                 <div className={`flex items-center gap-2 ${item.tone}`}><Icon size={19} /><h3 className="font-serif text-xl font-bold">{item.channel}</h3></div>
                 <p className="mt-4 border-y border-stone-200 py-3 font-serif text-lg font-bold leading-8 text-theme-950">{item.formula}</p>
+                <div className="mt-4 border-l-2 border-theme-500 bg-theme-50/70 px-4 py-3">
+                  <p className="text-xs font-bold tracking-[0.12em] text-theme-700">今天榜单里常见</p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-theme-950">{item.dailyWords.join(' · ') || '等待今日数据更新'}</p>
+                  <p className="mt-2 text-xs leading-6 text-stone-600">{item.dailyAdvice}</p>
+                </div>
                 <div className="mt-4 grid gap-5 sm:grid-cols-2">
                   <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">书名模板</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{item.titles.map((line, index) => <li key={line}>{index + 1}. {line}</li>)}</ol></div>
                   <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">简介前三句</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{item.intro.map((line) => <li key={line}>{line}</li>)}</ol></div>
+                </div>
+                <div className="mt-5 border-t border-stone-200 pt-4">
+                  <h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">今天榜首书名参考</h4>
+                  <ul className="mt-2 space-y-1 text-sm leading-6 text-stone-700">
+                    {item.dailyBooks.map((title) => <li key={title}>· {title}</li>)}
+                  </ul>
                 </div>
                 <div className="mt-5 border-l-2 border-[#174c43] pl-4"><h4 className="text-xs font-bold tracking-[0.12em] text-[#174c43]">前三章结构</h4><ul className="mt-2 space-y-1 text-sm leading-6 text-stone-700">{item.chapters.map((line) => <li key={line}>· {line}</li>)}</ul></div>
                 <p className="mt-4 text-xs leading-6 text-stone-500"><b>避坑：</b>{item.avoid}</p>

@@ -50,6 +50,7 @@ export default function Home() {
             genres={data.genres}
             history={history}
             boards={data.boards}
+            keywords={data.keywords}
             updatedAt={historyUpdatedAt ?? data.updatedAt}
             sourceDate={updateStatus?.sourceDate}
           />

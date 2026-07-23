@@ -3,7 +3,7 @@
  * 每日全量数据更新脚本。
  *
  * 核心原则：
- * - 新书榜、题材、关键词、趋势、工具输入使用同一批榜单数据生成。
+ * - 新书榜、题材、关键词、趋势、首页分析、书名简介参考与工具输入使用同一批榜单数据生成。
  * - 公告、征文、改编与短剧只读取番茄/红果公开页面。
  * - 任一必需来源失败时整次退出，所有文件均保持上一版，避免混合新旧数据。
  * - writing-tips.json 为人工整理资料，不参与每日更新。
@@ -503,6 +503,7 @@ async function main() {
     modules: [
       { key: 'boards', label: '番茄新书榜', status: 'updated', dataDate: sourceDate, itemCount: boards.flatMap((board) => board.books).length, sourceUrl: SOURCES.maleBoard },
       { key: 'trends', label: '题材、关键词与趋势', status: 'updated', dataDate: sourceDate, itemCount: genres.length + keywords.male.tags.length + keywords.female.tags.length },
+      { key: 'daily-analysis', label: '首页分析、热门书解析与书名简介参考', status: 'updated', dataDate: sourceDate, itemCount: genres.length + boards.flatMap((board) => board.books).length + keywords.male.tags.length + keywords.female.tags.length },
       { key: 'debut', label: '首秀观察', status: 'updated', dataDate: sourceDate, itemCount: debut.books.length, sourceUrl: debut.sourceUrl },
       { key: 'hongguo', label: '红果改编热点', status: 'updated', dataDate: hongguoData.updatedAt, itemCount: hongguoData.categories.flatMap((category) => category.items).length, sourceUrl: SOURCES.hongguo },
       { key: 'official', label: '官方公告与改编风向', status: 'updated', dataDate: today(), itemCount: official.announcements.length + official.adaptWatch.length, sourceUrl: SOURCES.notices },
