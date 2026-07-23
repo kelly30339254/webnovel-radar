@@ -1,17 +1,17 @@
 {
-  "checkedAt": "2026-07-22",
-  "sourceDate": "2026-07-21",
+  "checkedAt": "2026-07-23",
+  "sourceDate": "2026-07-22",
   "status": "success",
   "boards": [
     {
       "channel": "男频",
       "count": 10,
-      "dataDate": "2026-07-21"
+      "dataDate": "2026-07-22"
     },
     {
       "channel": "女频",
       "count": 10,
-      "dataDate": "2026-07-21"
+      "dataDate": "2026-07-22"
     }
   ],
   "modules": [
@@ -19,7 +19,7 @@
       "key": "boards",
       "label": "番茄新书榜",
       "status": "updated",
-      "dataDate": "2026-07-21",
+      "dataDate": "2026-07-22",
       "itemCount": 20,
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new"
     },
@@ -27,14 +27,14 @@
       "key": "trends",
       "label": "题材、关键词与趋势",
       "status": "updated",
-      "dataDate": "2026-07-21",
+      "dataDate": "2026-07-22",
       "itemCount": 33
     },
     {
       "key": "debut",
       "label": "首秀观察",
       "status": "updated",
-      "dataDate": "2026-07-21",
+      "dataDate": "2026-07-22",
       "itemCount": 10,
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new"
     },
@@ -42,7 +42,7 @@
       "key": "hongguo",
       "label": "红果改编热点",
       "status": "updated",
-      "dataDate": "2026-07-22",
+      "dataDate": "2026-07-23",
       "itemCount": 24,
       "sourceUrl": "https://hongguoduanju.com/"
     },
@@ -50,7 +50,7 @@
       "key": "official",
       "label": "官方公告与改编风向",
       "status": "updated",
-      "dataDate": "2026-07-22",
+      "dataDate": "2026-07-23",
       "itemCount": 9,
       "sourceUrl": "https://fanqienovel.com/writer/zone/notice"
     },
@@ -58,7 +58,7 @@
       "key": "tools",
       "label": "开书雷达与命题盲盒输入",
       "status": "updated",
-      "dataDate": "2026-07-21",
+      "dataDate": "2026-07-22",
       "itemCount": 33
     },
     {
