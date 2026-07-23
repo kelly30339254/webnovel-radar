@@ -37,8 +37,6 @@ export default function Hero({
   const [posterBusy, setPosterBusy] = useState(false)
   const [posterReady, setPosterReady] = useState(false)
   const lines = useMemo(() => verdictLines(data.verdict), [data.verdict])
-  const primaryGenre = data.genres[0]?.name ?? '题材风向'
-  const crowdedGenre = [...data.genres].sort((a, b) => b.heat - a.heat)[0]?.name ?? primaryGenre
   const sourceDate = updateStatus?.sourceDate ?? data.boards.map((board) => board.dataDate).filter(Boolean).sort().at(-1)
 
   const handleShare = async () => {
@@ -67,7 +65,13 @@ export default function Hero({
     setPosterBusy(true)
     trackEvent('daily_brief_poster_download', { date: data.updatedAt })
     try {
-      await downloadDailyBriefPoster({ date: data.updatedAt, verdict: data.verdict, primaryGenre, crowdedGenre })
+      await downloadDailyBriefPoster({
+        date: data.updatedAt,
+        verdict: data.verdict,
+        genres: data.genres,
+        boards: data.boards,
+        historyDays,
+      })
       setPosterReady(true)
       window.setTimeout(() => setPosterReady(false), 5000)
     } finally {
@@ -128,21 +132,26 @@ export default function Hero({
         <div className="rise-in mx-auto w-full max-w-[460px]" style={{ animationDelay: '0.1s' }}>
           <div className="relative aspect-[3/4]">
             <span className="absolute inset-3 translate-x-4 translate-y-3 border border-stone-300 bg-[#eee8dc] shadow-lg" aria-hidden="true" />
-            <article className="absolute inset-0 overflow-hidden border border-stone-300 bg-[#f8f4ec] p-5 shadow-2xl shadow-stone-900/20 sm:p-6" aria-label="今日网文风向海报预览">
+            <article className="absolute inset-0 flex flex-col overflow-hidden border border-stone-300 bg-[#f8f4ec] p-5 shadow-2xl shadow-stone-900/20 sm:p-6" aria-label="今日网文风向海报预览">
               <div className="flex items-start justify-between border-b border-theme-400/70 pb-3">
                 <img src="/assets/webnovel-radar-seal.png" alt="网文风向" className="h-12 w-12 object-cover" />
                 <time className="pt-2 font-serif text-lg text-stone-800" dateTime={data.updatedAt}>{data.updatedAt}</time>
               </div>
-              <div className="relative z-10 mt-5 border border-theme-300/70 px-4 pb-[52%] pt-4">
-                <h2 className="whitespace-nowrap font-serif text-[clamp(1.75rem,3vw,2.7rem)] font-black tracking-[-0.06em] text-[#111]">
-                  <span className="text-theme-600">今日</span>网文风向
-                </h2>
-                <p className="mt-2 border-y border-stone-300 py-2 text-center font-serif text-[10px] tracking-[0.28em] text-stone-600">圈速览 · 趋势洞察 · 创作参考</p>
-                <p className="mt-4 font-serif text-lg font-bold leading-relaxed text-stone-900 sm:text-xl">{data.verdict}</p>
+              <div className="relative z-10 mt-5 flex min-h-0 flex-1 flex-col overflow-hidden border border-theme-300/70">
+                <div className="px-4 pt-4">
+                  <h2 className="whitespace-nowrap font-serif text-[clamp(1.75rem,3vw,2.7rem)] font-black tracking-[-0.06em] text-[#111]">
+                    <span className="text-theme-600">今日</span>网文风向
+                  </h2>
+                  <p className="mt-2 border-y border-stone-300 py-2 text-center font-serif text-[10px] tracking-[0.28em] text-stone-600">圈速览 · 趋势洞察 · 创作参考</p>
+                  <p className="mt-4 line-clamp-4 font-serif text-base font-bold leading-relaxed text-stone-900 sm:text-lg">{data.verdict}</p>
+                  <div className="mt-3 grid grid-cols-3 border-y border-stone-300 py-2 text-center text-[9px] text-stone-600">
+                    <span>{historyDays} 天趋势</span><span>{data.genres.length} 个题材</span><span>{data.boards.reduce((sum, board) => sum + board.books.length, 0)} 本新书</span>
+                  </div>
+                </div>
                 <img
                   src="/assets/daily-report-poster-art.png"
                   alt="城市、楼阁与书卷构成的网文日刊插画"
-                  className="absolute inset-x-0 bottom-0 h-[54%] w-full object-cover object-bottom"
+                  className="mt-auto h-[42%] w-full flex-none object-cover object-bottom"
                 />
               </div>
             </article>

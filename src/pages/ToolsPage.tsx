@@ -14,7 +14,7 @@ export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title="创作工具" hint="从选题评估、故事生成到找搭子，把想法推进成可执行的开书计划。" />
-      <main className="mx-auto max-w-6xl px-5 pb-14 md:px-8">
+      <main className="mx-auto max-w-[1440px] px-5 pb-14 md:px-8">
         <GrowthTools />
         <BookRecs />
         <WritingPartners />

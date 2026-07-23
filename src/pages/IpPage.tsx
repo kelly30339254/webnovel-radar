@@ -11,7 +11,7 @@ export default function IpPage() {
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title="改编观察" hint="从短剧热播、官方扶持和征文信号，判断哪些故事更适合被看见。" />
-      <main className="mx-auto max-w-6xl px-5 pb-14 md:px-8">
+      <main className="mx-auto max-w-[1440px] px-5 pb-14 md:px-8">
         <IpHot showViewMore={false} />
         {data && (
           <div className="mt-14 grid gap-10 lg:grid-cols-2">

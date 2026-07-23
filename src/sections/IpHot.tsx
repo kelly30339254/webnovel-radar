@@ -21,9 +21,9 @@ type HongguoData = {
 }
 
 const FORM_STYLE: Record<string, string> = {
-  真人剧: 'bg-rose-100 text-rose-700',
-  漫剧: 'bg-pink-100 text-pink-700',
-  AI剧: 'bg-fuchsia-100 text-fuchsia-700',
+  真人剧: 'border-theme-600 text-theme-700',
+  漫剧: 'border-[#174c43] text-[#174c43]',
+  AI剧: 'border-stone-500 text-stone-700',
 }
 
 export default function IpHot({ showViewMore = true }: { showViewMore?: boolean }) {
@@ -58,20 +58,20 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
           return (
           <div
             key={cat.name}
-            className="card-pink rounded-2xl border border-rose-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm"
+            className="border border-stone-300 bg-white/65 p-5"
           >
-            <div className="mb-4 flex items-center justify-between border-b border-rose-50 pb-3">
-              <h3 className="flex items-center gap-2 text-base font-bold text-rose-950">
-                <span className={`rounded-full px-2.5 py-1 text-xs ${FORM_STYLE[cat.name] ?? 'bg-rose-50 text-rose-600'}`}>
+            <div className="mb-4 flex items-center justify-between border-b border-stone-200 pb-3">
+              <h3 className="flex items-center gap-2 font-serif text-base font-bold text-theme-950">
+                <span className={`border px-2.5 py-1 text-xs ${FORM_STYLE[cat.name] ?? 'border-theme-600 text-theme-700'}`}>
                   {cat.name}
                 </span>
               </h3>
-              <span className="text-xs text-rose-300">官网推荐顺序</span>
+              <span className="text-xs text-stone-400">官网推荐顺序</span>
             </div>
             <ol className="space-y-3">
               {cat.items.map((it, index) => (
                 <li key={`${cat.name}-${it.title}`} className="group flex items-start gap-3 text-sm">
-                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-lg bg-gradient-to-br from-rose-100 to-pink-100 text-xs font-bold text-rose-600 shadow-sm">
+                  <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center bg-theme-800 text-xs font-bold text-white">
                     {index + 1}
                   </span>
                   <div className="min-w-0 flex-1">
@@ -79,13 +79,13 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
                       href={it.playUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="block truncate text-base font-medium text-rose-950 transition-colors group-hover:text-rose-600"
+                      className="block truncate font-serif text-base font-bold text-theme-950 transition-colors group-hover:text-theme-700"
                       title={it.title}
                     >
                       {it.title}
                     </a>
-                    <p className="mt-1 text-xs text-rose-400">
-                      <span className="font-medium text-rose-500">{it.heat}</span>
+                    <p className="mt-1 text-xs text-stone-500">
+                      <span className="font-medium text-theme-700">{it.heat}</span>
                       {it.note ? ` · ${it.note}` : ''}
                     </p>
                   </div>

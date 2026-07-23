@@ -4,6 +4,8 @@ import Hero from '@/sections/Hero'
 import Footer from '@/sections/Footer'
 import EasterEgg from '@/sections/EasterEgg'
 import TodayDecisions from '@/sections/TodayDecisions'
+import GrowthTools from '@/sections/GrowthTools'
+import WritingPartners from '@/sections/WritingPartners'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function Home() {
@@ -51,6 +53,8 @@ export default function Home() {
             updatedAt={historyUpdatedAt ?? data.updatedAt}
             sourceDate={updateStatus?.sourceDate}
           />
+          <GrowthTools />
+          <WritingPartners />
         </main>
         <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>

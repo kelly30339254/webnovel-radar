@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { Sparkles } from 'lucide-react'
+import { Feather } from 'lucide-react'
 
 export default function SectionTitle({
   id,
@@ -15,18 +15,20 @@ export default function SectionTitle({
   footer?: ReactNode
 }) {
   return (
-    <div className="relative pb-3">
-      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1">
-        <div className="absolute bottom-0 left-0 h-0.5 w-16 rounded-full bg-theme-500" />
-        <div className="absolute bottom-0 left-0 h-px w-full bg-theme-200" />
-        <Sparkles size={17} className="flex-none text-theme-500" aria-hidden="true" />
-        <h2 id={id} className="font-serif text-2xl font-bold text-theme-950">
-          {title}
-        </h2>
-        {hint && <span className="text-xs font-medium text-theme-700">{hint}</span>}
-        {right && <span className="ml-auto">{right}</span>}
+    <div className="relative pb-4">
+      <div className="flex items-center gap-4">
+        <span className="h-px flex-1 bg-theme-400/70" aria-hidden="true" />
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2">
+            <h2 id={id} className="font-serif text-2xl font-black tracking-[0.08em] text-theme-700 sm:text-3xl">{title}</h2>
+            <Feather size={20} className="hidden text-theme-700 sm:block" aria-hidden="true" />
+          </div>
+          {hint && <p className="mt-1 text-[11px] tracking-[0.12em] text-stone-500">{hint}</p>}
+        </div>
+        <span className="h-px flex-1 bg-theme-400/70" aria-hidden="true" />
       </div>
-      {footer && <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-theme-700">{footer}</div>}
+      {right && <div className="mt-3 flex justify-center sm:absolute sm:right-0 sm:top-0 sm:mt-0">{right}</div>}
+      {footer && <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-stone-500">{footer}</div>}
     </div>
   )
 }

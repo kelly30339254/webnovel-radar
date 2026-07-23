@@ -61,8 +61,8 @@ type CreativeCut = (typeof CREATIVE_CUTS.male)[number]
 
 function CreativeCutCard({ item }: { item: CreativeCut }) {
   return (
-    <article className="card-pink flex h-full flex-col rounded-lg border border-theme-200 bg-white p-5 shadow-sm">
-      <h3 className="text-base font-bold text-theme-950">{item.title}</h3>
+    <article className="flex h-full flex-col border border-stone-300 bg-white/65 p-5">
+      <h3 className="font-serif text-lg font-bold text-theme-950">{item.title}</h3>
       <div className="mt-4 space-y-3 text-xs leading-relaxed">
         <div className="flex items-start gap-2">
           <UserRound className="mt-0.5 flex-none text-theme-500" size={15} />
@@ -73,7 +73,7 @@ function CreativeCutCard({ item }: { item: CreativeCut }) {
           <p><span className="font-semibold text-theme-800">冲突机制：</span><span className="text-theme-700">{item.conflict}</span></p>
         </div>
       </div>
-      <div className="mt-5 border-t border-theme-100 pt-4">
+      <div className="mt-5 border-t border-stone-200 pt-4">
         <p className="text-[11px] font-semibold text-theme-500">开篇钩子</p>
         <p className="mt-1.5 text-sm leading-relaxed text-theme-950">{item.hook}</p>
       </div>
@@ -133,7 +133,7 @@ export default function BookRecs() {
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-theme-950">
           <Lightbulb size={17} className="text-theme-600" /> 下一步：组合一个人设核、一组冲突机制和一句开篇钩子
         </span>
-        <div className="inline-flex overflow-hidden rounded-lg border border-theme-200 bg-white text-xs shadow-sm" aria-label="创作频道">
+        <div className="inline-flex overflow-hidden border border-theme-300 bg-white text-xs" aria-label="创作频道">
           {([
             { key: 'male', label: '男频切口' },
             { key: 'female', label: '女频切口' },
@@ -162,9 +162,9 @@ export default function BookRecs() {
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           {ADAPTATION_PATTERNS.map((pattern) => (
-            <article key={pattern.category} className="rounded-lg border border-theme-200 bg-white p-5 shadow-sm">
+            <article key={pattern.category} className="border-t-2 border-theme-500 bg-white/65 p-5">
               <div className="flex items-center justify-between gap-3">
-                <span className="rounded-md bg-theme-950 px-2.5 py-1 text-xs font-bold text-white">{pattern.category}</span>
+                <span className="border border-theme-800 px-2.5 py-1 text-xs font-bold text-theme-800">{pattern.category}</span>
                 <Sparkles size={16} className="text-theme-400" />
               </div>
               <p className="mt-4 text-sm font-bold text-theme-950">{pattern.focus}</p>

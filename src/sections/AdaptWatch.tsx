@@ -11,19 +11,19 @@ export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
         hint="番茄作家专区官方栏目 · 红果官方公告"
         footer={<span>来源：番茄作家专区 / 红果短剧官方公告</span>}
       />
-      <ul className="mt-4 space-y-3">
+      <ul className="mt-4 grid gap-px bg-stone-300 md:grid-cols-2">
         {items.map((it) => (
           <li
             key={it.title}
-            className="card-pink rounded-2xl border border-theme-200/70 bg-white/90 p-4 shadow-sm shadow-theme-100/60"
+            className="bg-theme-bg p-5"
           >
             <div className="flex items-start gap-2.5">
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline gap-x-2">
                   {it.date && <span className="font-mono text-xs text-theme-600">{it.date}</span>}
-                  <p className="font-medium leading-snug text-theme-950">{it.title}</p>
+                  <p className="font-serif font-bold leading-snug text-theme-950">{it.title}</p>
                 </div>
-                <p className="mt-1.5 text-sm leading-relaxed text-theme-900/60">{it.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-stone-600">{it.summary}</p>
               </div>
               <SourceLink url={it.sourceUrl} />
             </div>

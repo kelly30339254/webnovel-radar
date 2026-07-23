@@ -5,8 +5,8 @@ import ViewMoreLink from '@/components/ViewMoreLink'
 import { freshnessLabel } from '@/lib/freshness'
 
 const CHANNEL_STYLE: Record<string, { chip: string; bar: string }> = {
-  男频: { chip: 'bg-rose-900 text-rose-50', bar: 'bg-rose-800' },
-  女频: { chip: 'bg-pink-500 text-white', bar: 'bg-pink-400' },
+  男频: { chip: 'border-theme-700 text-theme-800', bar: 'bg-theme-800' },
+  女频: { chip: 'border-[#174c43] text-[#174c43]', bar: 'bg-[#174c43]' },
 }
 
 function boardFreshness(dataDate?: string): { text: string; stale: boolean } | null {
@@ -43,19 +43,19 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
       />
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         {boards.map((b) => {
-          const style = CHANNEL_STYLE[b.channel] ?? { chip: 'bg-rose-800 text-white', bar: 'bg-rose-500' }
+          const style = CHANNEL_STYLE[b.channel] ?? { chip: 'border-theme-700 text-theme-800', bar: 'bg-theme-700' }
           const fresh = boardFreshness(b.dataDate)
           return (
             <article
               key={`${b.platform}-${b.channel}`}
-              className="card-pink overflow-hidden rounded-2xl border border-rose-200/70 bg-white/90 shadow-sm shadow-rose-100/60"
+              className="overflow-hidden border border-stone-300 bg-white/65"
             >
-              <header className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-b border-rose-100 px-5 py-4">
-                <span className={`rounded-md px-2 py-0.5 text-xs font-semibold ${style.chip}`}>{b.channel}</span>
-                <span className="text-sm font-medium text-rose-950">{b.chartName}</span>
+              <header className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-b border-stone-300 px-5 py-4">
+                <span className={`border px-2 py-0.5 text-xs font-semibold ${style.chip}`}>{b.channel}</span>
+                <span className="font-serif text-base font-bold text-theme-950">{b.chartName}</span>
                 <span className="ml-auto flex items-center gap-2">
                   {fresh && (
-                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-500' : 'text-rose-300'}`}>
+                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-600' : 'text-stone-400'}`}>
                       {fresh.text}
                       {fresh.stale ? ' · 偏旧' : ''}
                     </span>
@@ -63,10 +63,10 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
                   <SourceLink url={b.sourceUrl} />
                 </span>
               </header>
-              <ol className="divide-y divide-rose-50 px-5">
+              <ol className="divide-y divide-stone-200 px-5">
                 {b.books.map((book) => (
                   <li key={`${b.channel}-${book.rank}-${book.title}`} className="flex items-start gap-3 py-3">
-                    <span className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-lg font-mono text-xs font-bold text-white shadow-sm ${style.bar}`}>
+                    <span className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center font-mono text-xs font-bold text-white ${style.bar}`}>
                       {book.rank}
                     </span>
                     <div className="min-w-0 flex-1">
@@ -74,17 +74,17 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
                         href={`https://fanqienovel.com/search/${encodeURIComponent(book.title)}`}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="block font-medium leading-snug text-rose-950 hover:text-rose-600"
+                        className="block font-serif font-bold leading-snug text-theme-950 hover:text-theme-700"
                         title={book.title}
                       >
                         {book.title}
                       </a>
-                      <p className="mt-0.5 text-xs text-rose-400">
+                      <p className="mt-0.5 text-xs text-stone-500">
                         {book.author}
                         {book.heat ? ` · ${book.heat}` : ''}
                       </p>
                     </div>
-                    <span className="mt-0.5 flex-none rounded-full bg-rose-50 px-2 py-0.5 text-xs text-rose-500">
+                    <span className="mt-0.5 flex-none border-l border-theme-400 pl-2 text-xs text-theme-700">
                       {book.genre}
                     </span>
                   </li>

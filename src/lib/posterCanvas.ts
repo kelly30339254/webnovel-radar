@@ -2,7 +2,9 @@ export const POSTER_WIDTH = 1080
 export const POSTER_HEIGHT = 1440
 
 const SITE_QR_SRC = '/images/site-qr.png'
+const POSTER_SEAL_SRC = '/assets/webnovel-radar-seal.png'
 let siteQrPromise: Promise<HTMLImageElement> | null = null
+let posterSealPromise: Promise<HTMLImageElement> | null = null
 
 export function roundedRect(
   ctx: CanvasRenderingContext2D,
@@ -57,6 +59,57 @@ export function loadSiteQr(): Promise<HTMLImageElement> {
   return siteQrPromise
 }
 
+export function loadPosterSeal(): Promise<HTMLImageElement> {
+  if (posterSealPromise) return posterSealPromise
+  posterSealPromise = new Promise((resolve, reject) => {
+    const image = new Image()
+    image.onload = () => resolve(image)
+    image.onerror = () => reject(new Error('品牌印章加载失败'))
+    image.src = POSTER_SEAL_SRC
+  })
+  return posterSealPromise
+}
+
+export function drawEditorialBase(ctx: CanvasRenderingContext2D, seal: HTMLImageElement, section: string, date = '今日') {
+  ctx.fillStyle = '#f7f2ea'
+  ctx.fillRect(0, 0, POSTER_WIDTH, POSTER_HEIGHT)
+  ctx.strokeStyle = 'rgba(121, 94, 68, 0.07)'
+  ctx.lineWidth = 1
+  for (let y = 10; y < POSTER_HEIGHT; y += 18) {
+    ctx.beginPath()
+    ctx.moveTo(0, y)
+    ctx.lineTo(POSTER_WIDTH, y)
+    ctx.stroke()
+  }
+  ctx.strokeStyle = '#9e1220'
+  ctx.lineWidth = 2
+  ctx.strokeRect(42, 34, POSTER_WIDTH - 84, POSTER_HEIGHT - 68)
+  ctx.strokeRect(52, 44, POSTER_WIDTH - 104, POSTER_HEIGHT - 88)
+  ctx.drawImage(seal, 72, 66, 72, 72)
+  ctx.fillStyle = '#8f101c'
+  ctx.font = '700 30px "STSong", "SimSun", serif'
+  ctx.fillText('奶龙数据站', 164, 95)
+  ctx.fillStyle = '#403833'
+  ctx.font = '500 16px "Georgia", serif'
+  ctx.fillText('NAILONG DATA STATION', 164, 125)
+  ctx.textAlign = 'right'
+  ctx.fillStyle = '#8f101c'
+  ctx.font = '600 18px "Microsoft YaHei", sans-serif'
+  ctx.fillText(`${section}  ·  ${date}`, 1008, 102)
+  ctx.textAlign = 'left'
+  ctx.strokeStyle = '#9e1220'
+  ctx.lineWidth = 3
+  ctx.beginPath()
+  ctx.moveTo(72, 154)
+  ctx.lineTo(1008, 154)
+  ctx.stroke()
+  ctx.lineWidth = 1
+  ctx.beginPath()
+  ctx.moveTo(72, 162)
+  ctx.lineTo(1008, 162)
+  ctx.stroke()
+}
+
 export function drawSiteQr(
   ctx: CanvasRenderingContext2D,
   image: HTMLImageElement,
@@ -69,12 +122,11 @@ export function drawSiteQr(
   const width = qrSize + padding * 2
   const height = qrSize + padding * 2 + labelHeight
 
-  roundedRect(ctx, x, y, width, height, 14)
   ctx.fillStyle = '#ffffff'
-  ctx.fill()
-  ctx.strokeStyle = hslVar('--theme-300')
+  ctx.fillRect(x, y, width, height)
+  ctx.strokeStyle = '#8f101c'
   ctx.lineWidth = 1.5
-  ctx.stroke()
+  ctx.strokeRect(x, y, width, height)
 
   const smoothing = ctx.imageSmoothingEnabled
   ctx.imageSmoothingEnabled = false
@@ -82,7 +134,7 @@ export function drawSiteQr(
   ctx.imageSmoothingEnabled = smoothing
 
   ctx.textAlign = 'center'
-  ctx.fillStyle = hslVar('--theme-700')
+  ctx.fillStyle = '#8f101c'
   ctx.font = '600 18px "Microsoft YaHei", sans-serif'
   ctx.fillText('扫码进入网站', x + width / 2, y + qrSize + padding + 25)
   ctx.textAlign = 'left'

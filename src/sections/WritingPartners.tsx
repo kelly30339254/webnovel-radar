@@ -45,10 +45,10 @@ export default function WritingPartners() {
         }
       />
 
-      <div className="mt-5 overflow-hidden rounded-lg border border-theme-200 bg-white shadow-lg shadow-theme-950/5">
+      <div className="mt-5 overflow-hidden border-y border-stone-300 bg-white/65">
         <div className="grid lg:grid-cols-[minmax(0,1fr)_20rem]">
           <div className="order-2 p-5 sm:p-7 lg:order-1 lg:p-8">
-            <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-theme-accent-soft text-theme-700">
+            <div className="flex h-11 w-11 items-center justify-center border border-theme-400 bg-white text-theme-700">
               <UsersRound size={23} />
             </div>
             <p className="mt-6 text-xs font-semibold text-theme-600">WRITING PARTNER COMMUNITY</p>
@@ -76,7 +76,7 @@ export default function WritingPartners() {
               <button
                 type="button"
                 onClick={copyTemplate}
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-theme-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-theme-800"
+                className="inline-flex min-h-11 items-center gap-2 border border-theme-800 bg-theme-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-theme-800"
               >
                 {copied ? <Check size={17} /> : <Clipboard size={17} />}
                 <span aria-live="polite">{copied ? '模板已复制' : '复制搭子介绍模板'}</span>
@@ -94,8 +94,8 @@ export default function WritingPartners() {
             </details>
           </div>
 
-          <aside className="order-1 flex flex-col items-center justify-center border-b border-theme-200 bg-theme-100 px-6 py-8 text-center text-theme-950 lg:order-2 lg:border-b-0 lg:border-l lg:px-8">
-            <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-theme-700 shadow-sm">
+          <aside className="order-1 flex flex-col items-center justify-center border-b border-stone-300 bg-[#edf3ef] px-6 py-8 text-center text-theme-950 lg:order-2 lg:border-b-0 lg:border-l lg:px-8">
+            <span className="flex h-12 w-12 items-center justify-center border border-[#174c43] bg-white text-[#174c43]">
               <MessageCircle size={24} />
             </span>
             <p className="mt-5 text-lg font-bold">准备好找同频写手？</p>
@@ -105,7 +105,7 @@ export default function WritingPartners() {
                 <button
                   type="button"
                   onClick={() => trackEvent('partners_qr_open')}
-                  className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg bg-theme-800 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-900"
+                  className="mt-6 inline-flex min-h-11 items-center gap-2 border border-[#174c43] bg-[#174c43] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#0f382f]"
                 >
                   <UsersRound size={18} /> 找搭子
                 </button>

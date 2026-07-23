@@ -214,7 +214,7 @@ export default function SubmissionGuidePage() {
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title="投稿导航" hint="先按文稿类型和平台缩小范围，再查看编辑要求与投稿方式。" />
 
-      <main className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+      <main className="mx-auto max-w-[1440px] px-5 pb-16 md:px-8">
         <section className="-mt-px grid grid-cols-2 border-x border-b border-theme-200 bg-white lg:grid-cols-4">
           {[
             { label: '收录投稿渠道', value: stats.total, icon: FileText },
@@ -334,7 +334,7 @@ export default function SubmissionGuidePage() {
           {data && pageItems.length > 0 && (
             <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {pageItems.map((editor) => (
-                <article key={editor.id} className="card-pink flex min-h-64 flex-col rounded-lg border border-theme-200 bg-white p-5 shadow-sm">
+                <article key={editor.id} className="flex min-h-64 flex-col border-t-2 border-theme-500 bg-white/65 p-5">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
                       <p className="truncate text-xs font-bold text-theme-500">{editor.platform || '平台未标注'}</p>

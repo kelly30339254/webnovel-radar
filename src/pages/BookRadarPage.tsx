@@ -142,8 +142,10 @@ export default function BookRadarPage() {
         strategyName: report.strategyName,
         marketEvidence: report.marketEvidence,
         positioning: report.positioning,
-        risk: report.risks[0],
-        nextStep: report.plan[0].task,
+        differentiators: report.differentiators,
+        risks: report.risks,
+        plan: report.plan,
+        productionProfile: report.productionProfile,
         factors: report.factors,
         updatedAt: data?.updatedAt,
       })

@@ -21,7 +21,7 @@ export default function TipsPage() {
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title={title} hint="按开头、结构、节奏、人物与爽点分类查找，直接解决当前写作卡点。" />
-      <main className="mx-auto max-w-6xl px-5 pb-14 md:px-8">
+      <main className="mx-auto max-w-[1440px] px-5 pb-14 md:px-8">
         <WritingTips />
       </main>
     </div>

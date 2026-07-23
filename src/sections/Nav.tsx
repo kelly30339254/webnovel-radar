@@ -29,11 +29,11 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 bg-theme-bg/95 backdrop-blur-xl">
       <div className="mx-auto max-w-[1440px] px-5 pt-3 md:px-8 md:pt-5">
         <div className="flex min-h-16 items-center gap-4 pb-3 lg:gap-8">
-          <Link to="/" className="group flex flex-none items-center gap-3" aria-label="网文风向首页">
+          <Link to="/" className="group flex flex-none items-center gap-3" aria-label="奶龙数据站首页">
             <img src="/assets/webnovel-radar-seal.png" alt="" className="h-12 w-12 border border-theme-700 object-cover sm:h-14 sm:w-14" />
             <span>
-              <span className="block font-serif text-xl font-black leading-none tracking-[0.08em] text-theme-950 sm:text-2xl">网文风向</span>
-              <span className="mt-1.5 hidden font-serif text-[9px] tracking-[0.3em] text-stone-700 sm:block">WEBNOVEL RADAR</span>
+              <span className="block font-serif text-xl font-black leading-none tracking-[0.08em] text-theme-950 sm:text-2xl">奶龙数据站</span>
+              <span className="mt-1.5 hidden font-serif text-[9px] tracking-[0.3em] text-stone-700 sm:block">NAILONG DATA STATION</span>
             </span>
           </Link>
 

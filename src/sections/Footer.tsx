@@ -2,11 +2,11 @@ import type { UpdateStatus } from '@/types/wind'
 
 export default function Footer({ updatedAt, updateStatus, onEasterEgg }: { updatedAt: string; updateStatus?: UpdateStatus | null; onEasterEgg?: () => void }) {
   return (
-    <footer className="mt-16 border-t border-theme-100 bg-gradient-to-r from-theme-50 via-pink-50 to-theme-50">
-      <div className="mx-auto flex max-w-6xl flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-theme-700 sm:flex-row sm:items-center md:px-8">
+    <footer className="mt-16 border-t border-stone-300 bg-theme-bg">
+      <div className="mx-auto flex max-w-[1440px] flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-stone-600 sm:flex-row sm:items-center md:px-8">
         <span className="inline-flex items-center gap-1.5 font-medium text-theme-500">
           <span className="h-1.5 w-1.5 rounded-full bg-theme-400" />
-          网文风向 · Webnovel Radar
+          奶龙数据站 · Webnovel Radar
         </span>
         <span>
           每日 07:23（Asia/Shanghai）自动检索 · 核心风向 {updatedAt}
