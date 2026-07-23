@@ -1,6 +1,6 @@
 import type { Board, GenreHeat, HistoryData } from '@/types/wind'
 
-export type GenreStage = 'new' | 'surging' | 'rising' | 'crowded' | 'steady' | 'cooling'
+export type GenreStage = 'new' | 'surging' | 'rising' | 'crowded' | 'steady' | 'cooling' | 'insufficient'
 
 export type GenreSignal = {
   name: string
@@ -22,6 +22,7 @@ const STAGE_META: Record<GenreStage, { label: string; advice: string }> = {
   crowded: { label: '拥挤', advice: '热度高但竞争强，不建议直接照抄榜首' },
   steady: { label: '稳定', advice: '稳定赛道，胜负更取决于人设与节奏' },
   cooling: { label: '退潮', advice: '谨慎追高，除非已有明显差异化切口' },
+  insufficient: { label: '样本不足', advice: '只作观察，不用单日热度直接判断趋势' },
 }
 
 function average(values: number[]): number {
@@ -44,8 +45,9 @@ function countCompetingBooks(name: string, boards: Board[]): number {
   }).length
 }
 
-function stageFor(genre: GenreHeat, delta7: number, acceleration: number): GenreStage {
+function stageFor(genre: GenreHeat, delta7: number, acceleration: number, samples: number): GenreStage {
   if (genre.trend === 'new') return 'new'
+  if (samples < 4) return 'insufficient'
   if (delta7 <= -6) return 'cooling'
   if (delta7 >= 8 && acceleration >= 1) return 'surging'
   if (delta7 >= 4) return 'rising'
@@ -63,12 +65,14 @@ export function buildGenreSignals(genres: GenreHeat[], history: HistoryData | nu
     const delta7 = points.length > 1 ? current - points[0] : 0
     const recent = points.slice(-3)
     const previous = points.slice(-6, -3)
-    const acceleration = Math.round(average(recent) - average(previous))
+    const acceleration = recent.length >= 3 && previous.length >= 1
+      ? Math.round(average(recent) - average(previous))
+      : 0
     const competingBooks = countCompetingBooks(genre.name, boards)
     const crowding = Math.min(100, Math.round(current * 0.5 + competingBooks * 14))
     const range = points.length ? Math.max(...points) - Math.min(...points) : 0
     const confidence = points.length >= 7 && range <= 25 ? '高' : points.length >= 4 ? '中' : '低'
-    const stage = stageFor(genre, delta7, acceleration)
+    const stage = stageFor(genre, delta7, acceleration, points.length)
     return {
       name: genre.name,
       heat: current,
@@ -89,6 +93,7 @@ export function signalTone(stage: GenreStage): string {
   if (stage === 'cooling') return 'bg-slate-100 text-slate-600 border-slate-200'
   if (stage === 'crowded') return 'bg-amber-50 text-amber-800 border-amber-200'
   if (stage === 'new') return 'bg-teal-50 text-teal-700 border-teal-200'
+  if (stage === 'insufficient') return 'bg-stone-100 text-stone-600 border-stone-200'
   return 'bg-blue-50 text-blue-700 border-blue-200'
 }
 
@@ -96,4 +101,3 @@ export function formatDelta(value: number): string {
   if (value > 0) return `+${value}`
   return String(value)
 }
-

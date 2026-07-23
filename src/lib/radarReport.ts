@@ -66,13 +66,18 @@ export function buildRadarReport({
   variationSeed,
 }: RadarReportInput): RadarReport {
   const paceBase = pace === 'sprint' ? 90 : pace === 'steady' ? 76 : 58
-  const stagePaceFit = signal.stage === 'surging' ? (pace === 'sprint' ? 8 : pace === 'slow' ? -15 : 0) : 3
+  const stagePaceFit = signal.stage === 'insufficient'
+    ? -12
+    : signal.stage === 'surging'
+      ? (pace === 'sprint' ? 8 : pace === 'slow' ? -15 : 0)
+      : 3
   const lengthFit = length === 'short'
     ? (signal.stage === 'surging' || signal.stage === 'new' ? 8 : 2)
     : length === 'long'
       ? (signal.stage === 'steady' ? 7 : signal.stage === 'surging' ? -9 : 0)
       : 5
-  const windowScore = clamp(signal.heat * 0.68 + signal.delta7 * 1.45 + signal.acceleration * 1.8)
+  const confidencePenalty = signal.confidence === '低' ? 18 : signal.confidence === '中' ? 5 : 0
+  const windowScore = clamp(signal.heat * 0.68 + signal.delta7 * 1.45 + signal.acceleration * 1.8 - confidencePenalty)
   const executionScore = clamp(paceBase + stagePaceFit + lengthFit)
   const differentiationScore = clamp(112 - signal.crowding + (keywords.length >= 3 ? 4 : 0))
   const score = clamp(windowScore * 0.46 + executionScore * 0.31 + differentiationScore * 0.23, 35, 95)
@@ -101,7 +106,9 @@ export function buildRadarReport({
       : `赛道拥挤度 ${signal.crowding}，机会尚在，但必须让核心机制在前三章可被读者复述。`,
     signal.stage === 'surging' && pace === 'slow'
       ? '题材处于加速期，但你的更新节奏偏慢，成稿时可能已经错过窗口。'
-      : signal.stage === 'cooling'
+      : signal.stage === 'insufficient'
+        ? '历史样本不足，当前得分已降权；不要把单日高热误判为趋势窗口。'
+        : signal.stage === 'cooling'
         ? '热度已经转弱，不宜用长篇成本押注，应先用短样测试真实反馈。'
         : `当前处于${signal.stageLabel}期，最大风险不是没有流量，而是卖点兑现速度与榜单预期不匹配。`,
     length === 'long'

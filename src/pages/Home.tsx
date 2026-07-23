@@ -3,19 +3,15 @@ import { useWindData } from '@/hooks/useWindData'
 import Hero from '@/sections/Hero'
 import Footer from '@/sections/Footer'
 import EasterEgg from '@/sections/EasterEgg'
-import ZhiyuWriting from '@/sections/ZhiyuWriting'
-import GrowthTools from '@/sections/GrowthTools'
 import TodayDecisions from '@/sections/TodayDecisions'
-import WritingPartners from '@/sections/WritingPartners'
-import { PetalRain } from '@/sections/Stickers'
 import { usePageMeta } from '@/hooks/usePageMeta'
 
 export default function Home() {
   const { data, history, updateStatus, error } = useWindData()
   const [easterEgg, setEasterEgg] = useState(false)
   usePageMeta({
-    title: '网文作者每日选题雷达',
-    description: '每日题材风向、番茄新书榜、IP 改编信号，以及可直接使用的开书雷达和创作人格测试。',
+    title: '今日网文风向｜作者决策简报',
+    description: '把每日题材热度、新书榜样本与趋势数据，翻译成适配判断、突围样本和 7 天写作行动。',
     path: '/',
   })
 
@@ -45,10 +41,9 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-theme-bg text-theme-950 antialiased">
-      <PetalRain />
       <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
         <Hero data={data} historyDays={history?.days.length ?? 0} updateStatus={updateStatus} />
-        <main className="mx-auto max-w-6xl px-5 pb-4 md:px-8">
+        <main className="mx-auto max-w-[1440px] px-5 pb-4 md:px-8">
           <TodayDecisions
             genres={data.genres}
             history={history}
@@ -56,9 +51,6 @@ export default function Home() {
             updatedAt={historyUpdatedAt ?? data.updatedAt}
             sourceDate={updateStatus?.sourceDate}
           />
-          <GrowthTools />
-          <ZhiyuWriting />
-          <WritingPartners />
         </main>
         <Footer updatedAt={data.updatedAt} updateStatus={updateStatus} onEasterEgg={() => setEasterEgg(true)} />
       </div>
