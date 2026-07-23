@@ -11,11 +11,11 @@ export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
         hint="番茄作家专区官方栏目 · 红果官方公告"
         footer={<span>来源：番茄作家专区 / 红果短剧官方公告</span>}
       />
-      <ul className="mt-4 grid gap-px bg-stone-300 md:grid-cols-2">
+      <ul className="mt-4 grid gap-4 md:grid-cols-2">
         {items.map((it) => (
           <li
             key={it.title}
-            className="bg-theme-bg p-5"
+            className="border border-stone-300 bg-white/65 p-5"
           >
             <div className="flex items-start gap-2.5">
               <div className="min-w-0 flex-1">
