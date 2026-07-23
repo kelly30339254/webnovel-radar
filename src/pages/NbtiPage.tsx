@@ -9,7 +9,7 @@ export default function NbtiPage() {
   const initialResult = isResultKey(result) ? result : null
   usePageMeta({
     title: initialResult ? `我的网文创作人格是「${NBTI_RESULTS[initialResult].name}」` : '网文十六型人格测试',
-    description: '20 道题测出你的网文创作人格，并获得适合题材、四维创作画像与分享海报。',
+    description: '用 20 道题看看你的网文写作习惯，并获得适合题材、具体建议和分享海报。',
     path: initialResult ? `/nbti/${initialResult}` : '/nbti',
   })
 

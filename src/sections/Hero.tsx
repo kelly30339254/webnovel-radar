@@ -45,8 +45,8 @@ export default function Hero({
       '【网文风向 · 今日作者决策简报】',
       data.verdict,
       `数据截止：${data.updatedAt}`,
-      `样本：番茄男/女频新书榜 ${data.boards.reduce((sum, board) => sum + board.books.length, 0)} 本，历史归档 ${historyDays} 天`,
-      '说明：趋势仅作选题参考，样本不足的题材不参与窗口判断。',
+      `参考数据：番茄男/女频新书榜 ${data.boards.reduce((sum, board) => sum + board.books.length, 0)} 本，查看了最近 ${historyDays} 天`,
+      '说明：最近变化只帮助选题；记录天数太少的题材不会被推荐。',
     ].join('\n')
     trackEvent('home_share')
     try {
@@ -125,7 +125,7 @@ export default function Hero({
           </div>
 
           <p className="mt-4 text-xs leading-relaxed text-stone-500">
-            样本口径：番茄男/女频新书榜与站内近 {historyDays} 天归档；低样本题材仅作观察，不作为追涨依据。
+            数据来源：番茄男/女频新书榜和站内最近 {historyDays} 天记录；记录太少的题材只展示，不会因为某一天突然变热就被推荐。
           </p>
         </div>
 

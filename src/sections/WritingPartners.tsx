@@ -63,7 +63,7 @@ export default function WritingPartners() {
               {[
                 { title: '日更打卡', text: '互报目标与完成字数' },
                 { title: '开篇互评', text: '聚焦前三章和留存钩子' },
-                { title: '大纲讨论', text: '一起拆冲突与兑现节奏' },
+                { title: '大纲讨论', text: '一起看主要矛盾和每几章该给什么结果' },
               ].map((item) => (
                 <div key={item.title} className="border-l-2 border-theme-300 pl-3">
                   <p className="text-sm font-bold text-theme-950">{item.title}</p>

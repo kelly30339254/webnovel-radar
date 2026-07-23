@@ -70,7 +70,7 @@ function CreativeCutCard({ item }: { item: CreativeCut }) {
         </div>
         <div className="flex items-start gap-2">
           <Zap className="mt-0.5 flex-none text-amber-600" size={15} />
-          <p><span className="font-semibold text-theme-800">冲突机制：</span><span className="text-theme-700">{item.conflict}</span></p>
+          <p><span className="font-semibold text-theme-800">主要矛盾：</span><span className="text-theme-700">{item.conflict}</span></p>
         </div>
       </div>
       <div className="mt-5 border-t border-stone-200 pt-4">
@@ -131,7 +131,7 @@ export default function BookRecs() {
 
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-l-4 border-theme-accent bg-theme-accent-soft px-4 py-3">
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-theme-950">
-          <Lightbulb size={17} className="text-theme-600" /> 下一步：组合一个人设核、一组冲突机制和一句开篇钩子
+          <Lightbulb size={17} className="text-theme-600" /> 下一步：组合一个鲜明人物、一组主要矛盾和一句让人想读下去的开头
         </span>
         <div className="inline-flex overflow-hidden border border-theme-300 bg-white text-xs" aria-label="创作频道">
           {([

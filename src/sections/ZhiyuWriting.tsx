@@ -6,7 +6,7 @@ import SectionTitle from '@/sections/SectionTitle'
 const OUTPUTS = [
   { icon: GitBranch, title: '故事主线', text: '把核心设定拆成可持续推进的矛盾链' },
   { icon: Layers3, title: '章节节拍', text: '安排阶段目标、升级节点和章末钩子' },
-  { icon: BookOpen, title: '人物关系', text: '明确角色目标、关系变化和情绪兑现' },
+  { icon: BookOpen, title: '人物关系', text: '明确人物想要什么、关系怎么变、情绪落到什么结果' },
 ]
 
 export default function ZhiyuWriting() {

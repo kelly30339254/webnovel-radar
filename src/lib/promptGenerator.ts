@@ -214,7 +214,7 @@ export function buildStoryPrompt({ channel, seed, genre, keyword }: BuildStoryPr
       },
       {
         label: '第三章 · 小胜大坑',
-        beat: `让“${keyword}”完成一次看得见的小胜，兑现读者预期，同时付出不可逆代价。`,
+        beat: `让“${keyword}”带来一次看得见的小胜，同时让主角付出无法收回的代价。`,
         cliffhanger: `章末揭示：${secret}。`,
       },
     ],

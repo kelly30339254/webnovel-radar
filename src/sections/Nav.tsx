@@ -8,7 +8,7 @@ import { zhiyuUrl } from '@/lib/zhiyu'
 const LINKS = [
   { to: '/', label: '今日风向', mobileLabel: '今日', summary: '今日判断与作者行动' },
   { to: '/trends', label: '风向数据', mobileLabel: '风向', summary: '热度、趋势与关键词' },
-  { to: '/boards', label: '新书榜', mobileLabel: '榜单', summary: '男频与女频新书样本' },
+  { to: '/boards', label: '新书榜', mobileLabel: '榜单', summary: '男频与女频热门新书' },
   { to: '/tips', label: '写作技巧', mobileLabel: '技巧', summary: '结构、节奏与爽点' },
   { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与找搭子' },
   { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },

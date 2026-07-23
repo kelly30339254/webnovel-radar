@@ -105,17 +105,17 @@ export default function BookRadarPage() {
   }
 
   const reportText = report && selected ? [
-    '【我的开书雷达 · 专业决策报告】',
+    '【我的开书雷达 · 开书建议】',
     `题材：${selected.name}`,
     `结论：${report.score} / 100（${report.verdict}）`,
-    `策略版本：${report.strategyName}`,
-    `市场证据：${report.marketEvidence}`,
-    `突围定位：${report.positioning}`,
-    `差异化：${report.differentiators.join('；')}`,
-    `风险：${report.risks.join('；')}`,
-    `产能方案：${report.productionProfile}`,
-    `结构方案：${report.adaptationStrategy}`,
-    `7 天验证：${report.plan.map((step) => `${step.phase} ${step.task}`).join('；')}`,
+    `建议写法：${report.strategyName}`,
+    `为什么这样判断：${report.marketEvidence}`,
+    `怎么写得不一样：${report.positioning}`,
+    `三个写法建议：${report.differentiators.join('；')}`,
+    `容易踩的坑：${report.risks.join('；')}`,
+    `怎么安排写作：${report.productionProfile}`,
+    `故事怎么安排：${report.adaptationStrategy}`,
+    `7 天怎么试：${report.plan.map((step) => `${step.phase} ${step.task}`).join('；')}`,
   ].join('\n') : ''
 
   const handleCopy = async () => {
@@ -160,12 +160,12 @@ export default function BookRadarPage() {
 
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
-      <PageHeader title="我的开书雷达" hint="把实时风向变成你的下一步创作决策" />
+      <PageHeader title="我的开书雷达" hint="看看这个题材现在值不值得写、该怎么写" />
       <main className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
         <div className="grid gap-8 lg:grid-cols-[21rem_minmax(0,1fr)] xl:gap-10">
           <section aria-labelledby="radar-form-title">
             <p className="text-xs font-semibold text-theme-500">PERSONAL BOOK RADAR</p>
-            <h2 id="radar-form-title" className="mt-2 text-2xl font-bold text-theme-950">先确定你的创作约束</h2>
+            <h2 id="radar-form-title" className="mt-2 text-2xl font-bold text-theme-950">先说说你准备怎么写</h2>
             <p className="mt-2 text-sm leading-relaxed text-theme-500">雷达只使用站内每日榜单和历史归档，不会上传你的创作内容。</p>
 
             <div className="mt-7 space-y-6">
@@ -214,7 +214,7 @@ export default function BookRadarPage() {
 
               <button type="button" onClick={handleGenerate} disabled={!selected} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-theme-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-theme-700 disabled:opacity-50">
                 {generated ? <RefreshCw size={18} /> : <Target size={18} />}
-                {generated ? '切换下一版策略' : '生成专业决策报告'}
+                {generated ? '换一种写法建议' : '看看这本书值不值得写'}
               </button>
             </div>
           </section>
@@ -224,8 +224,8 @@ export default function BookRadarPage() {
               <div className="flex min-h-[34rem] items-center justify-center border border-dashed border-theme-200 bg-white/50 p-8 text-center">
                 <div>
                   <Gauge className="mx-auto text-theme-600" size={38} />
-                  <h2 className="mt-4 text-lg font-bold">专业报告会显示在这里</h2>
-                  <p className="mt-2 max-w-sm text-sm leading-relaxed text-theme-700">选择题材和创作约束后生成。</p>
+                  <h2 className="mt-4 text-lg font-bold">结果会显示在这里</h2>
+                  <p className="mt-2 max-w-sm text-sm leading-relaxed text-theme-700">选好题材、更新速度和篇幅后，就能看到具体建议。</p>
                 </div>
               </div>
             ) : (
@@ -241,7 +241,7 @@ export default function BookRadarPage() {
                   </div>
                   <div className="shrink-0 text-right">
                     <p className="font-mono text-5xl font-bold text-theme-600">{report.score}</p>
-                    <p className="text-xs text-theme-700">开书适配度 / 100</p>
+                    <p className="text-xs text-theme-700">适合开写程度 / 100</p>
                     <p className="mt-2 text-sm font-semibold text-teal-700">{report.verdict}</p>
                   </div>
                 </header>
@@ -250,7 +250,7 @@ export default function BookRadarPage() {
                   <section>
                     <div className="flex items-center gap-2">
                       <BarChart3 className="text-theme-500" size={18} />
-                      <h3 className="text-base font-bold">市场证据与三项评分</h3>
+                      <h3 className="text-base font-bold">为什么这样判断</h3>
                     </div>
                     <p className="mt-3 text-sm leading-relaxed text-theme-700">{report.marketEvidence}</p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -272,7 +272,7 @@ export default function BookRadarPage() {
                   <section className="mt-7 border-t border-theme-100 pt-6">
                     <div className="flex items-center gap-2">
                       <Sparkles className="text-blue-600" size={18} />
-                      <h3 className="text-base font-bold">本版突围定位</h3>
+                      <h3 className="text-base font-bold">怎么写得不一样</h3>
                     </div>
                     <p className="mt-3 text-sm leading-relaxed text-theme-800">{report.positioning}</p>
                     <ul className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -288,7 +288,7 @@ export default function BookRadarPage() {
                   <section className="mt-7 border-t border-theme-100 pt-6">
                     <div className="flex items-center gap-2">
                       <AlertTriangle className="text-amber-600" size={18} />
-                      <h3 className="text-base font-bold">风险清单</h3>
+                      <h3 className="text-base font-bold">最容易踩的坑</h3>
                     </div>
                     <ul className="mt-3 space-y-2">
                       {report.risks.map((risk) => (
@@ -303,7 +303,7 @@ export default function BookRadarPage() {
                   <section className="mt-7 border-t border-theme-100 pt-6">
                     <div className="flex items-center gap-2">
                       <TrendingUp className="text-emerald-600" size={18} />
-                      <h3 className="text-base font-bold">7 天验证路线</h3>
+                      <h3 className="text-base font-bold">7 天怎么试</h3>
                     </div>
                     <ol className="mt-4 divide-y divide-emerald-100 border-y border-emerald-100">
                       {report.plan.map((step) => (
@@ -311,7 +311,7 @@ export default function BookRadarPage() {
                           <p className="text-sm font-bold text-emerald-700">{step.phase}</p>
                           <div>
                             <p className="text-sm leading-relaxed text-theme-900">{step.task}</p>
-                            <p className="mt-1 text-xs leading-relaxed text-theme-500">验收：{step.check}</p>
+                            <p className="mt-1 text-xs leading-relaxed text-theme-500">看看是否做到：{step.check}</p>
                           </div>
                         </li>
                       ))}
@@ -320,11 +320,11 @@ export default function BookRadarPage() {
 
                   <section className="mt-7 grid gap-5 border-t border-theme-100 pt-6 md:grid-cols-2">
                     <div>
-                      <h3 className="text-sm font-bold text-teal-800">产能方案</h3>
+                      <h3 className="text-sm font-bold text-teal-800">怎么安排写作</h3>
                       <p className="mt-2 text-sm leading-relaxed text-theme-700">{report.productionProfile}</p>
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-teal-800">结构方案</h3>
+                      <h3 className="text-sm font-bold text-teal-800">故事怎么安排</h3>
                       <p className="mt-2 text-sm leading-relaxed text-theme-700">{report.adaptationStrategy}</p>
                       {report.personaName && <p className="mt-2 text-xs font-medium text-teal-700">已结合创作人格：{report.personaName}</p>}
                     </div>
@@ -332,7 +332,7 @@ export default function BookRadarPage() {
                 </div>
 
                 <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-theme-100 bg-theme-50/70 px-5 py-4 sm:px-7">
-                  <p className="text-xs text-theme-700">样本：近 {selected.samples} 日归档 · 置信度 {selected.confidence}</p>
+                  <p className="text-xs text-theme-700">参考了近 {selected.samples} 天数据 · {selected.confidence === '高' ? '数据比较稳' : selected.confidence === '中' ? '数据可作参考' : '数据还太少'}</p>
                   <div className="flex flex-wrap gap-2">
                     <button type="button" onClick={handleCopy} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-theme-200 bg-white px-4 py-2 text-sm font-medium text-theme-700 hover:bg-theme-50">
                       {copied ? <Check size={16} /> : <Clipboard size={16} />} {copied ? '报告已复制' : '复制报告'}

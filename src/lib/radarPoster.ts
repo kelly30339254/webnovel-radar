@@ -55,7 +55,7 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawTextLines(ctx, data.genre, 72, 292, 670, 62, 1)
   ctx.fillStyle = '#49413b'
   ctx.font = '500 19px "Microsoft YaHei", sans-serif'
-  ctx.fillText(`${data.stageLabel}期 · ${data.strategyName} · 7日 ${data.delta7} · 加速度 ${data.acceleration}`, 74, 330)
+  ctx.fillText(`${data.stageLabel} · ${data.strategyName} · 一周 ${data.delta7} · 最近 ${data.acceleration}`, 74, 330)
 
   ctx.textAlign = 'right'
   ctx.fillStyle = '#8f101c'
@@ -63,7 +63,7 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   ctx.fillText(String(data.score), 1006, 286)
   ctx.fillStyle = '#49413b'
   ctx.font = '600 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('开书适配度 / 100', 1004, 324)
+  ctx.fillText('适合开写程度 / 100', 1004, 324)
   ctx.textAlign = 'left'
 
   ctx.fillStyle = '#8f101c'
@@ -95,14 +95,14 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawRule(ctx, 606)
   ctx.fillStyle = '#8f101c'
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('01  市场证据', 72, 640)
+  ctx.fillText('01  为什么这样判断', 72, 640)
   ctx.fillStyle = '#332e2a'
   ctx.font = '500 21px "Microsoft YaHei", sans-serif'
   drawTextLines(ctx, data.marketEvidence, 72, 675, 936, 30, 3)
 
   ctx.fillStyle = '#174c43'
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('02  本版突围定位', 72, 790)
+  ctx.fillText('02  怎么写得不一样', 72, 790)
   ctx.fillStyle = '#211d1a'
   ctx.font = '700 23px "STSong", "SimSun", serif'
   drawTextLines(ctx, data.positioning, 72, 826, 936, 32, 3)
@@ -110,7 +110,7 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawRule(ctx, 922)
   ctx.fillStyle = '#8f101c'
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('03  三个差异化抓手', 72, 958)
+  ctx.fillText('03  三个写法建议', 72, 958)
   data.differentiators.slice(0, 3).forEach((item, index) => {
     const y = 994 + index * 48
     ctx.fillStyle = index === 1 ? '#174c43' : '#8f101c'
@@ -124,7 +124,7 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawRule(ctx, 1142)
   ctx.fillStyle = '#8f101c'
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('04  风险与七天验证', 72, 1178)
+  ctx.fillText('04  容易踩的坑和 7 天试写', 72, 1178)
   data.risks.slice(0, 2).forEach((risk, index) => {
     ctx.fillStyle = '#3d3732'
     ctx.font = '500 16px "Microsoft YaHei", sans-serif'
@@ -142,7 +142,7 @@ export async function createRadarPoster(data: RadarPosterData): Promise<Blob> {
   drawSiteQr(ctx, qrImage, 790, 1174, 140)
   ctx.fillStyle = '#756b63'
   ctx.font = '500 13px "Microsoft YaHei", sans-serif'
-  ctx.fillText(`拥挤度 ${data.crowding} · 扫码进入奶龙数据站生成你的详细报告`, 704, 1390)
+  ctx.fillText(`同类书多少 ${data.crowding} · 扫码进入奶龙数据站查看完整建议`, 704, 1390)
 
   return canvasToPng(canvas)
 }

@@ -16,13 +16,13 @@ export type GenreSignal = {
 }
 
 const STAGE_META: Record<GenreStage, { label: string; advice: string }> = {
-  new: { label: '新兴', advice: '适合小步试写，先验证读者反馈' },
-  surging: { label: '加速', advice: '适合快速跟进，开篇必须做出差异' },
-  rising: { label: '上升', advice: '可以跟进，用新人设避开同质化' },
-  crowded: { label: '拥挤', advice: '热度高但竞争强，不建议直接照抄榜首' },
-  steady: { label: '稳定', advice: '稳定赛道，胜负更取决于人设与节奏' },
-  cooling: { label: '退潮', advice: '谨慎追高，除非已有明显差异化切口' },
-  insufficient: { label: '样本不足', advice: '只作观察，不用单日热度直接判断趋势' },
+  new: { label: '刚出现', advice: '可以先写一小段，看看读者有没有兴趣' },
+  surging: { label: '涨得很快', advice: '可以趁热试写，但开头一定要和别人不一样' },
+  rising: { label: '正在变热', advice: '可以跟进，不过人物和开头不要照搬热门书' },
+  crowded: { label: '同类很多', advice: '题材很火，但同类书也多，不要直接照抄榜首' },
+  steady: { label: '比较稳定', advice: '这类书一直有人看，关键看人物和节奏' },
+  cooling: { label: '正在变冷', advice: '先别急着跟，除非你已经想好不同写法' },
+  insufficient: { label: '数据太少', advice: '再观察几天，不要因为一天很火就马上跟' },
 }
 
 function average(values: number[]): number {

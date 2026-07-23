@@ -9,13 +9,13 @@ export default function GenreBoard({ genres, history, boards, updatedAt }: { gen
     <section id="genres" aria-labelledby="genre-heading" className="rise-in mt-12 scroll-mt-24" style={{ animationDelay: '0.1s' }}>
       <SectionTitle
         id="genre-heading"
-        title="题材决策信号"
-        hint="热度 · 生命周期 · 7 日变化 · 竞争拥挤度"
+        title="题材现在怎么样"
+        hint="现在有多火 · 最近涨跌 · 同类书多不多"
         footer={
           <>
             {updatedAt && <span>更新于 {updatedAt}</span>}
             <span>近 7 日历史归档</span>
-            <span>来源：题材历史归档与新书榜样本</span>
+            <span>来源：过去几天的记录和新书榜</span>
           </>
         }
       />
@@ -37,20 +37,20 @@ export default function GenreBoard({ genres, history, boards, updatedAt }: { gen
                 </span>
               </div>
               <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-theme-900">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日</p></div>
-              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">拥挤度</p></div>
-              <div className="text-right"><p className="font-mono text-base font-bold text-theme-700">{signal.heat}</p><p className="text-[10px] text-theme-700">热度</p></div>
+              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
+              <div className="text-right"><p className="font-mono text-base font-bold text-theme-700">{signal.heat}</p><p className="text-[10px] text-theme-700">有多火</p></div>
               <div className="col-start-2 col-end-[-1] mt-2 grid grid-cols-3 gap-px bg-theme-100 sm:hidden">
                 <div className="bg-white py-2"><p className="font-mono text-sm font-semibold text-emerald-700">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日变化</p></div>
-                <div className="bg-white py-2 text-center"><p className="font-mono text-sm font-semibold text-blue-700">{formatDelta(signal.acceleration)}</p><p className="text-[10px] text-theme-700">加速度</p></div>
-                <div className="bg-white py-2 text-right"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">拥挤度</p></div>
+                <div className="bg-white py-2 text-center"><p className="font-mono text-sm font-semibold text-blue-700">{formatDelta(signal.acceleration)}</p><p className="text-[10px] text-theme-700">最近还在涨吗</p></div>
+                <div className="bg-white py-2 text-right"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
               </div>
             </div>
           </li>
         ))}
       </ol>
       <details className="mt-3 text-xs text-theme-500">
-        <summary className="cursor-pointer font-medium text-theme-600">查看指标口径</summary>
-        <p className="mt-2 max-w-3xl leading-relaxed">生命周期结合当前热度、7 日变化和最近 3 日加速度判断；拥挤度结合题材热度与当前新书榜同类作品数量估算。所有指标用于选题比较，不代表平台官方预测。</p>
+        <summary className="cursor-pointer font-medium text-theme-600">这些数字怎么看</summary>
+        <p className="mt-2 max-w-3xl leading-relaxed">“最近还在涨吗”会比较最近几天和前几天；“同类书”会参考题材热度和新书榜里相似作品的数量。这些数字只帮助你比较题材，不是平台的官方预测。</p>
       </details>
     </section>
   )

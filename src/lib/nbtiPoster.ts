@@ -12,8 +12,8 @@ import {
 
 function profileAdvice(key: ResultKey): string[] {
   return [
-    key[0] === 'B' ? '产能优势：把爆更拆成固定交付节点，预留一次修文缓冲。' : '产能策略：使用短周期和小目标，每次只承诺下一章。',
-    key[1] === 'S' ? '选题策略：熟悉类型中替换一个关键规则，避免只做套路换皮。' : '选题策略：先用一句话讲清脑洞，再删除不影响冲突的设定。',
+    key[0] === 'B' ? '更新建议：把爆更拆成几个固定节点，并留出一次修改时间。' : '更新建议：把目标拆小，每次先认真写好下一章。',
+    key[1] === 'S' ? '选题建议：在熟悉的类型里换一条关键规则，别只给老套路换名字。' : '选题建议：先用一句话讲清新点子，再删掉不影响矛盾的设定。',
     key[2] === 'L' ? '阅读体验：在逻辑闭环之外，每三章补一次人物情绪回报。' : '阅读体验：保留情绪爆点，同时让每次反转都能找到前置证据。',
     key[3] === 'D' ? '推进方式：大纲写到阶段目标即可，避免用规划代替正文。' : '推进方式：即兴前先锁定本章目标、阻力与章末状态。',
   ]
@@ -48,7 +48,7 @@ export async function createNbtiPoster(info: NbtiResultInfo, key: ResultKey, sco
   ctx.stroke()
   ctx.fillStyle = '#8f101c'
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
-  ctx.fillText('四维创作画像', 72, 426)
+  ctx.fillText('四个写作习惯', 72, 426)
 
   let y = 466
   NBTI_DIMENSIONS.forEach((dimension, index) => {
@@ -107,7 +107,7 @@ export async function createNbtiPoster(info: NbtiResultInfo, key: ResultKey, sco
   ctx.font = '800 18px "Microsoft YaHei", sans-serif'
   ctx.fillText('未来 7 天行动清单', 72, 1218)
   const plan = [
-    '第 1 天：选一个适配题材，写出一句话卖点与三种书名。',
+    '第 1 天：选一个适合自己的题材，写出一句话亮点和三种书名。',
     '第 2—4 天：完成前三章，每章只解决一个关键问题。',
     '第 5—7 天：找目标读者复述卖点，按反馈只改最弱一项。',
   ]

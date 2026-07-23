@@ -11,13 +11,13 @@ export default function TrendsPage() {
 
   usePageMeta({
     title: '网文风向数据',
-    description: '题材热度、生命周期、近 7 日趋势、竞争拥挤度与男频女频内容关键词。',
+    description: '用大白话查看题材现在有多火、最近涨跌、同类书多少，以及男频女频常见关键词。',
     path: '/trends',
   })
 
   return (
     <div className="min-h-screen bg-theme-bg text-theme-950">
-      <PageHeader title="风向数据" hint="先比较题材生命周期和拥挤度，再查看趋势与内容关键词。" />
+      <PageHeader title="风向数据" hint="先看题材现在有多火、最近涨还是跌，再看大家都在写什么。" />
       <main className="mx-auto max-w-6xl px-5 pb-14 md:px-8">
         {error && <p className="mt-10 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">数据加载失败：{error}</p>}
         {data ? (

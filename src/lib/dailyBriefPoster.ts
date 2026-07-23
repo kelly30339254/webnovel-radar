@@ -85,13 +85,13 @@ export async function downloadDailyBriefPoster({
   ctx.font = '700 29px "Songti SC", "STSong", serif'
   drawTextLines(ctx, verdict, 82, 326, 910, 40, 2)
 
-  drawMetric(ctx, 82, '历史趋势样本', `${historyDays} 天`)
-  drawMetric(ctx, 364, '跟踪题材', `${genres.length} 个`)
-  drawMetric(ctx, 646, '在榜新书样本', `${books.length} 本`)
+  drawMetric(ctx, 82, '看了多少天', `${historyDays} 天`)
+  drawMetric(ctx, 364, '对比了多少题材', `${genres.length} 个`)
+  drawMetric(ctx, 646, '看了多少本新书', `${books.length} 本`)
 
   ctx.fillStyle = '#8f151b'
   ctx.font = '700 24px "Songti SC", "STSong", serif'
-  ctx.fillText('赛道速览', 82, 518)
+  ctx.fillText('题材一眼看懂', 82, 518)
   drawRule(ctx, 535)
   genres.slice(0, 4).forEach((genre, index) => {
     const y = 574 + index * 72
@@ -107,12 +107,12 @@ export async function downloadDailyBriefPoster({
     ctx.fillText(String(genre.heat), 716, y)
     ctx.fillStyle = '#6b625b'
     ctx.font = '500 16px "Microsoft YaHei", sans-serif'
-    drawTextLines(ctx, genre.note ?? '持续观察榜单样本与读者反馈。', 770, y, 220, 23, 2)
+    drawTextLines(ctx, genre.note ?? '继续看看榜单和读者反应。', 770, y, 220, 23, 2)
   })
 
   ctx.fillStyle = '#8f151b'
   ctx.font = '700 24px "Songti SC", "STSong", serif'
-  ctx.fillText('榜首样本', 82, 868)
+  ctx.fillText('榜首新书', 82, 868)
   drawRule(ctx, 885)
   const samples = [
     { label: '男频', book: topMale },
@@ -127,7 +127,7 @@ export async function downloadDailyBriefPoster({
     ctx.fillText(`${sample.label} #1 · ${sample.book?.genre ?? '—'}`, x + 20, 944)
     ctx.fillStyle = '#201a17'
     ctx.font = '700 21px "Songti SC", "STSong", serif'
-    drawTextLines(ctx, sample.book?.title ?? '暂无榜单样本', x + 20, 978, 420, 29, 2)
+    drawTextLines(ctx, sample.book?.title ?? '榜单暂时没有数据', x + 20, 978, 420, 29, 2)
     ctx.fillStyle = '#8f151b'
     ctx.font = '500 16px "Microsoft YaHei", sans-serif'
     ctx.fillText(sample.book?.heat ?? '等待更新', x + 20, 1016)
@@ -143,9 +143,9 @@ export async function downloadDailyBriefPoster({
   ctx.font = '500 18px "Microsoft YaHei", sans-serif'
   const primary = genres[0]?.name ?? '核心题材'
   const actions = [
-    `围绕“${primary}”写 3 个不同职业、机制与关系组合。`,
-    '首章给承诺，第三章必须完成一次看得见的兑现。',
-    '只在点击、三章追读、有效评论两项正向后扩大存稿。',
+    `围绕“${primary}”写 3 个不同职业、特殊能力和人物关系。`,
+    '第一章告诉读者会看到什么，第三章必须给一次明确结果。',
+    '点击、三章追读、有效评论至少两项不错，再多准备存稿。',
   ]
   actions.forEach((action, index) => ctx.fillText(`${index + 1}. ${action}`, 110, 1134 + index * 31))
 

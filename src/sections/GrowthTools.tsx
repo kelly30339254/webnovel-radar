@@ -19,7 +19,7 @@ const SECONDARY_TOOLS = [
     to: '/nbti',
     icon: PenLine,
     title: '网文十六型人格',
-    description: '60 秒测出创作画像，保存专属结果海报。',
+    description: '60 秒看看你的写作习惯，保存专属结果海报。',
     surface: 'border-[#b89247] bg-[#efe4cd] text-theme-950',
     iconTone: 'border-[#b89247] bg-white/55 text-[#8b641d]',
     muted: 'text-stone-600',
@@ -31,7 +31,7 @@ const SECONDARY_TOOLS = [
 export default function GrowthTools() {
   return (
     <section id="tools" className="mt-12 scroll-mt-24" aria-labelledby="growth-tools-title">
-      <SectionTitle id="growth-tools-title" title="开书辅助工具" hint="评估选题、生成命题、认识创作偏好" />
+      <SectionTitle id="growth-tools-title" title="开书辅助工具" hint="判断值不值得写、找故事灵感、了解自己的写作习惯" />
       <div className="mt-6 grid gap-4 lg:grid-cols-12">
         <Link
           to="/radar"
@@ -49,11 +49,11 @@ export default function GrowthTools() {
             </span>
           </div>
           <div className="mt-auto max-w-lg pt-8">
-            <p className="text-xs font-semibold tracking-[0.2em] text-theme-200">开书决策报告 · MARKET DECISION</p>
+            <p className="text-xs font-semibold tracking-[0.2em] text-theme-200">开书前先判断 · BOOK CHECK</p>
             <h3 className="mt-3 font-serif text-4xl font-black">生成我的开书雷达</h3>
-            <p className="mt-4 text-sm leading-7 text-white/75">结合近期题材热度、更新能力和计划篇幅，判断这本书现在值不值得开，并给出 7 天验证路线。</p>
+            <p className="mt-4 text-sm leading-7 text-white/75">结合最近题材热度、你的更新速度和准备写多长，告诉你这本书现在值不值得写，以及接下来 7 天怎么试。</p>
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/20 pt-4 text-xs font-bold text-theme-200">
-              <span>适配度评分</span><span>突围定位</span><span>风险清单</span>
+              <span>适不适合写</span><span>怎么写出不同</span><span>容易踩什么坑</span>
             </div>
           </div>
         </Link>
@@ -70,7 +70,7 @@ export default function GrowthTools() {
                 <span className={`mt-3 block text-sm leading-7 ${tool.muted}`}>{tool.description}</span>
               </span>
               <span className={`mt-5 flex items-center justify-between border-t pt-4 text-xs font-bold ${tool.divider}`}>
-                <span>{tool.to === '/prompt-lab' ? '书名 · 人设 · 黄金三章' : '四维画像 · 题材建议 · 海报'}</span>
+                <span>{tool.to === '/prompt-lab' ? '书名 · 人物 · 前三章' : '写作习惯 · 题材建议 · 海报'}</span>
                 <ArrowRight className="flex-none transition-transform group-hover:translate-x-1" size={17} />
               </span>
             </Link>

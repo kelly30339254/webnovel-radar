@@ -13,7 +13,7 @@ export default function Home() {
   const [easterEgg, setEasterEgg] = useState(false)
   usePageMeta({
     title: '今日网文风向｜作者决策简报',
-    description: '把每日题材热度、新书榜样本与趋势数据，翻译成适配判断、突围样本和 7 天写作行动。',
+    description: '把每日题材热度、新书榜和最近变化说成大白话，告诉你什么值得写、怎么写、今天先做什么。',
     path: '/',
   })
 
