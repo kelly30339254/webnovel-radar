@@ -1,59 +1,59 @@
 {
-  "updatedAt": "2026-07-22",
-  "verdict": "男频都市脑洞领跑，都市提供突围切口；女频宫斗宅斗居前，青春甜宠信号集中",
+  "updatedAt": "2026-07-23",
+  "verdict": "男频都市脑洞领跑，都市提供突围切口；女频豪门总裁居前，现言脑洞信号集中",
   "genres": [
     {
       "name": "都市脑洞",
       "heat": 100,
       "trend": "flat",
-      "note": "男频新书榜出现 5 本，最高第 1；平均在读 50.3万"
+      "note": "男频新书榜出现 5 本，最高第 1；平均在读 50.4万"
     },
     {
       "name": "青春甜宠",
-      "heat": 71,
+      "heat": 70,
       "trend": "flat",
-      "note": "女频新书榜出现 3 本，最高第 4；平均在读 36.6万"
+      "note": "女频新书榜出现 3 本，最高第 4；平均在读 36.7万"
     },
     {
       "name": "现言脑洞",
-      "heat": 66,
-      "trend": "down",
-      "note": "女频新书榜出现 2 本，最高第 2；平均在读 46.1万"
+      "heat": 68,
+      "trend": "flat",
+      "note": "女频新书榜出现 2 本，最高第 2；平均在读 48.3万"
     },
     {
       "name": "豪门总裁",
-      "heat": 63,
+      "heat": 67,
       "trend": "up",
-      "note": "女频新书榜出现 2 本，最高第 3；平均在读 42.3万"
-    },
-    {
-      "name": "宫斗宅斗",
-      "heat": 59,
-      "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 1；平均在读 60.2万"
-    },
-    {
-      "name": "玄幻脑洞",
-      "heat": 56,
-      "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 4；平均在读 47.9万"
-    },
-    {
-      "name": "古言脑洞",
-      "heat": 55,
-      "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 5；平均在读 49.8万"
+      "note": "女频新书榜出现 2 本，最高第 1；平均在读 50.1万"
     },
     {
       "name": "都市日常",
+      "heat": 64,
+      "trend": "up",
+      "note": "男频新书榜出现 2 本，最高第 4；平均在读 44.5万"
+    },
+    {
+      "name": "宫斗宅斗",
+      "heat": 57,
+      "trend": "flat",
+      "note": "女频新书榜出现 1 本，最高第 3；平均在读 59.4万"
+    },
+    {
+      "name": "古言脑洞",
+      "heat": 56,
+      "trend": "flat",
+      "note": "女频新书榜出现 1 本，最高第 5；平均在读 51.7万"
+    },
+    {
+      "name": "都市高武",
       "heat": 55,
       "trend": "new",
-      "note": "男频新书榜出现 1 本，最高第 5；平均在读 46.1万"
+      "note": "男频新书榜出现 1 本，最高第 5；平均在读 44.4万"
     }
   ],
   "keywords": {
     "male": {
-      "summary": "都市脑洞、都市、脑洞、玄幻脑洞成为当日新书高频信号",
+      "summary": "都市脑洞、都市、脑洞、都市日常成为当日新书高频信号",
       "tags": [
         {
           "word": "都市脑洞",
@@ -61,76 +61,72 @@
         },
         {
           "word": "都市",
-          "weight": 66
+          "weight": 70
         },
         {
           "word": "脑洞",
-          "weight": 61
-        },
-        {
-          "word": "玄幻脑洞",
-          "weight": 48
+          "weight": 60
         },
         {
           "word": "都市日常",
-          "weight": 47
+          "weight": 56
         },
         {
           "word": "都市高武",
-          "weight": 44
+          "weight": 47
         },
         {
           "word": "穿书",
-          "weight": 43
+          "weight": 44
         },
         {
-          "word": "都市修真",
-          "weight": 42
-        },
-        {
-          "word": "玄幻",
-          "weight": 39
-        },
-        {
-          "word": "抗战谍战",
-          "weight": 39
+          "word": "玄幻脑洞",
+          "weight": 44
         },
         {
           "word": "日常",
-          "weight": 39
+          "weight": 42
+        },
+        {
+          "word": "都市修真",
+          "weight": 41
         },
         {
           "word": "高武",
+          "weight": 39
+        },
+        {
+          "word": "玄幻",
           "weight": 38
         }
       ]
     },
     "female": {
-      "summary": "青春甜宠、现言脑洞、豪门总裁、宫斗宅斗成为当日新书高频信号",
+      "summary": "现言脑洞、豪门总裁、青春甜宠、宫斗宅斗成为当日新书高频信号",
       "tags": [
         {
-          "word": "青春甜宠",
+          "word": "现言脑洞",
           "weight": 100
         },
         {
-          "word": "现言脑洞",
+          "word": "豪门总裁",
           "weight": 96
         },
         {
-          "word": "豪门总裁",
-          "weight": 82
+          "word": "青春甜宠",
+          "weight": 93
         },
         {
           "word": "宫斗宅斗",
-          "weight": 78
+          "weight": 71
         },
         {
           "word": "财阀",
-          "weight": 74
+          "weight": 69
         },
         {
           "word": "脑洞",
-          "weight": 65
+          "weight": 66
         },
         {
           "word": "古言脑洞",
@@ -138,27 +134,27 @@
         },
         {
           "word": "星光璀璨",
-          "weight": 60
-        },
-        {
-          "word": "甜宠",
           "weight": 57
         },
         {
           "word": "豪门",
-          "weight": 51
+          "weight": 55
         },
         {
           "word": "总裁",
-          "weight": 51
+          "weight": 55
+        },
+        {
+          "word": "甜宠",
+          "weight": 54
         },
         {
           "word": "宫斗",
-          "weight": 49
+          "weight": 47
         },
         {
           "word": "宅斗",
-          "weight": 49
+          "weight": 47
         }
       ]
     }
@@ -169,7 +165,7 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-07-22",
+      "dataDate": "2026-07-23",
       "books": [
         {
           "rank": 1,
@@ -183,63 +179,63 @@
           "title": "高考出分前一晚，兑换北大录取书",
           "author": "西瓜要涨价",
           "genre": "都市脑洞",
-          "heat": "56.7万在读"
+          "heat": "58.1万在读"
         },
         {
           "rank": 3,
           "title": "高考分手后，带校花房车旅游暴富",
           "author": "远大前陈",
           "genre": "都市脑洞",
-          "heat": "49.7万在读"
+          "heat": "50.6万在读"
         },
         {
           "rank": 4,
-          "title": "从成为一只白鹿开始的传说",
-          "author": "早醒的天蝎",
-          "genre": "玄幻脑洞",
-          "heat": "47.9万在读"
-        },
-        {
-          "rank": 5,
           "title": "穿书反派，把阴湿女主养成病娇了",
           "author": "二次元的猫",
           "genre": "都市日常",
-          "heat": "46.1万在读"
+          "heat": "49.8万在读"
+        },
+        {
+          "rank": 5,
+          "title": "我都宇宙之主了，你们还在地球？",
+          "author": "吒牛",
+          "genre": "都市高武",
+          "heat": "44.4万在读"
         },
         {
           "rank": 6,
           "title": "实习教出金牌班，家长要换班主任",
           "author": "碧水红潮",
           "genre": "都市脑洞",
-          "heat": "45.1万在读"
+          "heat": "42.0万在读"
         },
         {
           "rank": 7,
-          "title": "我都宇宙之主了，你们还在地球？",
-          "author": "吒牛",
-          "genre": "都市高武",
-          "heat": "43.6万在读"
+          "title": "从成为一只白鹿开始的传说",
+          "author": "早醒的天蝎",
+          "genre": "玄幻脑洞",
+          "heat": "40.8万在读"
         },
         {
           "rank": 8,
-          "title": "路遇黄皮子讨封，封它当玉皇大帝",
-          "author": "新夜z",
-          "genre": "都市修真",
-          "heat": "37.9万在读"
+          "title": "刚上大学，睡出了个绝美教授老婆",
+          "author": "梦醉长安",
+          "genre": "都市日常",
+          "heat": "39.2万在读"
         },
         {
           "rank": 9,
-          "title": "什么叫高考满分，但人失踪了？",
-          "author": "核动力打窝仙人",
-          "genre": "都市脑洞",
-          "heat": "35.1万在读"
+          "title": "路遇黄皮子讨封，封它当玉皇大帝",
+          "author": "新夜z",
+          "genre": "都市修真",
+          "heat": "37.1万在读"
         },
         {
           "rank": 10,
-          "title": "辽东沦丧前夜，率军兵谏少帅",
-          "author": "吃鱼的小狗",
-          "genre": "抗战谍战",
-          "heat": "33.5万在读"
+          "title": "什么叫高考满分，但人失踪了？",
+          "author": "核动力打窝仙人",
+          "genre": "都市脑洞",
+          "heat": "36.5万在读"
         }
       ]
     },
@@ -248,122 +244,122 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-07-22",
+      "dataDate": "2026-07-23",
       "books": [
         {
           "rank": 1,
-          "title": "入宫即高位，我是陛下表妹我怕谁",
-          "author": "慕年年",
-          "genre": "宫斗宅斗",
-          "heat": "60.2万在读"
+          "title": "妹宝假装被催眠，阴湿哥哥上瘾了",
+          "author": "三樱里",
+          "genre": "豪门总裁",
+          "heat": "68.6万在读"
         },
         {
           "rank": 2,
           "title": "小炮灰变美后，抢了财阀太子爷",
           "author": "草莓糖心",
           "genre": "现言脑洞",
-          "heat": "59.4万在读"
+          "heat": "59.8万在读"
         },
         {
           "rank": 3,
-          "title": "妹宝假装被催眠，阴湿哥哥上瘾了",
-          "author": "三樱里",
-          "genre": "豪门总裁",
-          "heat": "58.9万在读"
+          "title": "入宫即高位，我是陛下表妹我怕谁",
+          "author": "慕年年",
+          "genre": "宫斗宅斗",
+          "heat": "59.4万在读"
         },
         {
           "rank": 4,
           "title": "盛夏青苹果",
           "author": "桃气乌龙正常糖",
           "genre": "青春甜宠",
-          "heat": "50.3万在读"
+          "heat": "51.9万在读"
         },
         {
           "rank": 5,
           "title": "脑子一热，强吻了我哥的同窗好友",
           "author": "摆烂的步履",
           "genre": "古言脑洞",
-          "heat": "49.8万在读"
+          "heat": "51.7万在读"
         },
         {
           "rank": 6,
-          "title": "万人迷神颜顶流只想演炮灰",
-          "author": "番茄土豆楠",
-          "genre": "星光璀璨",
-          "heat": "35.3万在读"
-        },
-        {
-          "rank": 7,
           "title": "看见弹幕时白月光回国了",
           "author": "妖精幸运猫",
           "genre": "现言脑洞",
-          "heat": "32.8万在读"
+          "heat": "36.7万在读"
+        },
+        {
+          "rank": 7,
+          "title": "万人迷神颜顶流只想演炮灰",
+          "author": "番茄土豆楠",
+          "genre": "星光璀璨",
+          "heat": "36.4万在读"
         },
         {
           "rank": 8,
-          "title": "财阀继承人的古董女友",
-          "author": "二月的大白",
-          "genre": "青春甜宠",
-          "heat": "30.0万在读"
+          "title": "吾妻小我十二岁",
+          "author": "瀚堡先生",
+          "genre": "豪门总裁",
+          "heat": "31.7万在读"
         },
         {
           "rank": 9,
           "title": "私占蝴蝶",
           "author": "暗中讨饭的三三",
           "genre": "青春甜宠",
-          "heat": "29.4万在读"
+          "heat": "31.2万在读"
         },
         {
           "rank": 10,
-          "title": "吾妻小我十二岁",
-          "author": "瀚堡先生",
-          "genre": "豪门总裁",
-          "heat": "25.6万在读"
+          "title": "财阀继承人的古董女友",
+          "author": "二月的大白",
+          "genre": "青春甜宠",
+          "heat": "27.0万在读"
         }
       ]
     }
   ],
   "ipHot": [
     {
-      "title": "一箭穿心",
-      "genre": "玄幻 / 都市玄幻",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 玄幻 · 都市玄幻 · 逆袭翻身",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "横扫大院，谍战七零",
-      "genre": "爱情 / 年代爱情",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 年代爱情 · 双穿越",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "娇缠",
-      "genre": "成长 / 女性成长",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 成长 · 女性成长 · 宫斗宅斗",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "南城待月归",
+      "title": "联姻五年后，她重生了",
       "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 家族恩怨",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 女性成长",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "你要走，我不留",
-      "genre": "家庭 / 家庭伦理",
+      "title": "槿乔",
+      "genre": "逆袭 / 女性成长",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 家庭 · 家庭伦理 · 马甲文",
+      "note": "红果官网首页推荐 · 逆袭 · 女性成长 · 替身文学",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "夜色将明",
-      "genre": "成长 / 女性成长",
+      "title": "我是傻白甜可打脸也很疼啊",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 成长 · 女性成长 · 婚姻生活",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 闪婚",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "离婚即巅峰，我有系统不装了",
+      "genre": "都市 / 逆袭翻身",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 打脸反派",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "流放路上，我带全家炫火锅",
+      "genre": "逆袭 / 奇幻脑洞",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 逆袭 · 奇幻脑洞 · 朝堂权谋",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "陆沉渊，你老婆是神仙",
+      "genre": "爱情 / 奇幻爱情",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 爱情 · 奇幻爱情 · 破镜重圆",
       "sourceUrl": "https://hongguoduanju.com/"
     }
   ],
