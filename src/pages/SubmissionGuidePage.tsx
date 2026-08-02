@@ -222,7 +222,7 @@ export default function SubmissionGuidePage() {
             <p className="mt-1 text-xs leading-5 text-theme-600">本地运行的投稿辅助工具，无需安装，下载解压后双击即可使用（约 51 MB，仅支持 Windows）。</p>
           </div>
           <a
-            href="/downloads/nailong-tougao.zip"
+            href="https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/downloads/nailong-tougao.zip"
             download="奶龙投稿助手.zip"
             onClick={() => trackEvent('submission_download_tool', { placement: 'submissions_page' })}
             className="inline-flex min-h-11 flex-none items-center justify-center gap-2 rounded-md bg-theme-950 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-800"
