@@ -6,6 +6,7 @@ import {
   ChevronRight,
   CircleAlert,
   Copy,
+  Download,
   FileText,
   Layers3,
   Mail,
@@ -215,6 +216,20 @@ export default function SubmissionGuidePage() {
       <PageHeader title="投稿导航" hint="先按文稿类型和平台缩小范围，再查看编辑要求与投稿方式。" />
 
       <main className="mx-auto max-w-[1440px] px-5 pb-16 md:px-8">
+        <section className="-mt-px flex flex-col gap-4 border-x border-b border-theme-200 bg-white px-5 py-5 sm:flex-row sm:items-center sm:justify-between md:px-6" aria-label="奶龙投稿助手下载">
+          <div className="min-w-0">
+            <h2 className="font-serif text-xl font-bold text-theme-950">奶龙投稿助手 · Windows 版</h2>
+            <p className="mt-1 text-xs leading-5 text-theme-600">本地运行的投稿辅助工具，无需安装，下载后双击即可使用（约 51 MB，仅支持 Windows）。</p>
+          </div>
+          <a
+            href="https://nailong-d4g922z6h6d9ff59e-1455870789.tcloudbaseapp.com/downloads/nailong-tougao.exe"
+            download="奶龙投稿助手.exe"
+            onClick={() => trackEvent('submission_download_tool', { placement: 'submissions_page' })}
+            className="inline-flex min-h-11 flex-none items-center justify-center gap-2 rounded-md bg-theme-950 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-800"
+          >
+            <Download size={16} /> 一键下载
+          </a>
+        </section>
         <section className="-mt-px grid grid-cols-2 border-x border-b border-theme-200 bg-white lg:grid-cols-4">
           {[
             { label: '收录投稿渠道', value: stats.total, icon: FileText },

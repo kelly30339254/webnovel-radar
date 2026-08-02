@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router'
 import Home from './pages/Home'
 import NbtiPage from './pages/NbtiPage'
@@ -11,13 +11,18 @@ import TrendsPage from './pages/TrendsPage'
 import ToolsPage from './pages/ToolsPage'
 import SubmissionGuidePage from './pages/SubmissionGuidePage'
 import Nav from '@/sections/Nav'
-import { trackEvent } from '@/hooks/useAnalytics'
+import { trackPageView } from '@/hooks/useAnalytics'
 
 function RouteObserver() {
   const location = useLocation()
+  const firstPageView = useRef(true)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' })
-    trackEvent('page_view', { path: location.pathname })
+    if (firstPageView.current) {
+      firstPageView.current = false
+    } else {
+      trackPageView(location.pathname)
+    }
   }, [location.pathname])
   return null
 }

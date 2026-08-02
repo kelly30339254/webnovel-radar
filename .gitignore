@@ -2,3 +2,7 @@ node_modules
 dist
 *.local
 .tmp-*
+
+# 投稿助手 exe 体积大，不进 git；本地保留，部署时随 dist 上传
+public/downloads/
+短篇投稿助手_分发版/
