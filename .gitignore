@@ -3,6 +3,6 @@ dist
 *.local
 .tmp-*
 
-# 投稿助手 exe 体积大，不进 git；本地保留，部署时随 dist 上传
-public/downloads/
+# 投稿助手 exe 体积大，不进 git；本地保留，部署时随 dist 上传（zip 版需进 git 供 EdgeOne 构建）
+public/downloads/nailong-tougao.exe
 短篇投稿助手_分发版/
