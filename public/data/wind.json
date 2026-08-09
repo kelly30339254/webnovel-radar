@@ -1,42 +1,42 @@
 {
-  "updatedAt": "2026-08-08",
+  "updatedAt": "2026-08-09",
   "verdict": "男频玄幻脑洞领跑，都市脑洞提供突围切口；女频豪门总裁居前，现言脑洞信号集中",
   "genres": [
     {
       "name": "豪门总裁",
       "heat": 100,
-      "trend": "up",
-      "note": "女频新书榜出现 5 本，最高第 1；平均在读 45.9万"
+      "trend": "flat",
+      "note": "女频新书榜出现 5 本，最高第 1；平均在读 46.2万"
     },
     {
       "name": "都市脑洞",
-      "heat": 86,
+      "heat": 83,
       "trend": "down",
       "note": "男频新书榜出现 3 本，最高第 2；平均在读 61.7万"
     },
     {
       "name": "都市高武",
-      "heat": 74,
-      "trend": "up",
+      "heat": 73,
+      "trend": "flat",
       "note": "男频新书榜出现 3 本，最高第 5；平均在读 41.4万"
     },
     {
       "name": "现言脑洞",
-      "heat": 72,
-      "trend": "down",
+      "heat": 71,
+      "trend": "flat",
       "note": "女频新书榜出现 2 本，最高第 2；平均在读 54.9万"
     },
     {
       "name": "玄幻脑洞",
-      "heat": 61,
+      "heat": 60,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 1；平均在读 89.9万"
+      "note": "男频新书榜出现 1 本，最高第 1；平均在读 95.3万"
     },
     {
-      "name": "古言脑洞",
-      "heat": 59,
+      "name": "宫斗宅斗",
+      "heat": 58,
       "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 3；平均在读 54.1万"
+      "note": "女频新书榜出现 1 本，最高第 3；平均在读 51.8万"
     },
     {
       "name": "都市日常",
@@ -45,10 +45,10 @@
       "note": "男频新书榜出现 1 本，最高第 4；平均在读 65.3万"
     },
     {
-      "name": "宫斗宅斗",
-      "heat": 58,
-      "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 4；平均在读 51.8万"
+      "name": "星光璀璨",
+      "heat": 55,
+      "trend": "new",
+      "note": "女频新书榜出现 1 本，最高第 7；平均在读 38.8万"
     }
   ],
   "keywords": {
@@ -122,7 +122,7 @@
         },
         {
           "word": "现言脑洞",
-          "weight": 70
+          "weight": 68
         },
         {
           "word": "豪门",
@@ -133,24 +133,20 @@
           "weight": 57
         },
         {
-          "word": "古言脑洞",
-          "weight": 55
-        },
-        {
-          "word": "脑洞",
-          "weight": 53
-        },
-        {
           "word": "宫斗宅斗",
           "weight": 53
         },
         {
           "word": "财阀",
-          "weight": 49
+          "weight": 48
+        },
+        {
+          "word": "脑洞",
+          "weight": 46
         },
         {
           "word": "星光璀璨",
-          "weight": 45
+          "weight": 46
         },
         {
           "word": "宫斗",
@@ -159,6 +155,18 @@
         {
           "word": "宅斗",
           "weight": 41
+        },
+        {
+          "word": "女频衍生",
+          "weight": 40
+        },
+        {
+          "word": "重生",
+          "weight": 39
+        },
+        {
+          "word": "衍生",
+          "weight": 37
         }
       ]
     }
@@ -169,14 +177,14 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-08-08",
+      "dataDate": "2026-08-09",
       "books": [
         {
           "rank": 1,
           "title": "刚证道混沌天帝，让我身化禁区？",
           "author": "钰珏玉予",
           "genre": "玄幻脑洞",
-          "heat": "89.9万在读"
+          "heat": "95.3万在读"
         },
         {
           "rank": 2,
@@ -248,7 +256,7 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-08-08",
+      "dataDate": "2026-08-09",
       "books": [
         {
           "rank": 1,
@@ -266,58 +274,58 @@
         },
         {
           "rank": 3,
-          "title": "脑子一热，强吻了我哥的同窗好友",
-          "author": "摆烂的步履",
-          "genre": "古言脑洞",
-          "heat": "54.1万在读"
-        },
-        {
-          "rank": 4,
           "title": "入宫即高位，我是陛下表妹我怕谁",
           "author": "慕年年",
           "genre": "宫斗宅斗",
           "heat": "51.8万在读"
         },
         {
-          "rank": 5,
+          "rank": 4,
           "title": "作精不吸血后，重欲糙汉追着亲",
           "author": "肆月六",
           "genre": "豪门总裁",
           "heat": "45.4万在读"
         },
         {
-          "rank": 6,
+          "rank": 5,
           "title": "秩序外第38064秒",
           "author": "妖精幸运猫",
           "genre": "现言脑洞",
           "heat": "45.2万在读"
         },
         {
-          "rank": 7,
+          "rank": 6,
           "title": "闺蜜你的男友喜欢我呢",
           "author": "阳渡惊梦",
           "genre": "豪门总裁",
           "heat": "40.7万在读"
         },
         {
-          "rank": 8,
+          "rank": 7,
           "title": "万人迷神颜顶流只想演炮灰",
           "author": "番茄土豆楠",
           "genre": "星光璀璨",
           "heat": "38.8万在读"
         },
         {
-          "rank": 9,
+          "rank": 8,
           "title": "吾妻小我十二岁",
           "author": "瀚堡先生",
           "genre": "豪门总裁",
           "heat": "36.1万在读"
         },
         {
-          "rank": 10,
+          "rank": 9,
           "title": "网恋骗了太子爷，四胞胎瞒不住了",
           "author": "慌慌",
           "genre": "豪门总裁",
+          "heat": "34.9万在读"
+        },
+        {
+          "rank": 10,
+          "title": "南部档案：重生后全演上了",
+          "author": "鹤顶红加冰",
+          "genre": "女频衍生",
           "heat": "33.5万在读"
         }
       ]
@@ -325,45 +333,45 @@
   ],
   "ipHot": [
     {
-      "title": "开局被鸽，我签到领个女总裁",
-      "genre": "都市 / 逆袭翻身",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 系统",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "老祖心声有点野",
-      "genre": "爱情 / 奇幻爱情",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 奇幻爱情 · 玄学",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "心动倒计时！妈咪被钻石爹地宠上天",
+      "title": "叮！我的隐婚老公已上线",
       "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 日久生情",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 先婚后爱",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "全家偷听养子心声，重生后我笑了",
-      "genre": "都市 / 逆袭翻身",
+      "title": "月落繁星江叙白",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 读心术",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 闪婚",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "她不好惹",
-      "genre": "都市 / 女性成长",
+      "title": "全家靠我心声逆天改命",
+      "genre": "古装 / 女性成长",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 女性成长 · 打脸反派",
+      "note": "红果官网首页推荐 · 古装 · 女性成长 · 奇幻脑洞",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "女子监狱出真龙",
-      "genre": "都市 / 逆袭翻身",
+      "title": "强势锁婚九爷你出局了",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 都市玄幻",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 追妻",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "被伤三年后，真千金不再忍耐",
+      "genre": "成长 / 女性成长",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 成长 · 女性成长 · 真相大白",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "婚色焚心",
+      "genre": "爱情 / 都市爱情",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 追妻",
       "sourceUrl": "https://hongguoduanju.com/"
     }
   ],
