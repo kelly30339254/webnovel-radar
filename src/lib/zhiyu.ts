@@ -1,4 +1,4 @@
-export type ZhiyuPlacement = 'home_bridge' | 'radar_result' | 'prompt_result' | 'nbti_result' | 'site_nav'
+export type ZhiyuPlacement = 'home_bridge' | 'radar_result' | 'prompt_result' | 'nbti_result' | 'site_nav' | 'site_banner'
 
 const ZHIYU_BASE_URL = 'https://zhiyuxiezuo.com/login?invited=HKMLyO'
 

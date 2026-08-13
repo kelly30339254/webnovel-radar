@@ -18,7 +18,7 @@ const routes = [
   { path: '/radar', title: '我的开书雷达', description: '结合实时题材风向、更新能力和改编方向，生成个性化开书建议。' },
   { path: '/prompt-lab', title: '今日开书命题盲盒', description: '用当天热榜题材、关键词和人设生成一张可直接开写的命题卡。' },
   { path: '/trends', title: '网文风向数据', description: '题材热度、生命周期、趋势、竞争拥挤度与内容关键词。' },
-  { path: '/tools', title: '网文创作工具', description: '开书雷达、命题盲盒、创作人格、创作切口和写作搭子入口。' },
+  { path: '/tools', title: '网文创作工具', description: '开书雷达、命题盲盒、创作人格和创作切口入口。' },
   { path: '/tips', title: '网文写作技巧', description: '网文结构、节奏、爽点、人设和章末钩子的实用方法。' },
   { path: '/boards', title: '番茄新书榜', description: '番茄小说男频与女频新书榜，每日更新。' },
   { path: '/submissions', title: '网文投稿导航', description: '按平台、文稿类型与收稿状态筛选公开投稿渠道，查看编辑要求与投稿联系方式。' },

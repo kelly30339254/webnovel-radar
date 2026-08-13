@@ -10,7 +10,7 @@ const LINKS = [
   { to: '/trends', label: '风向数据', mobileLabel: '风向', summary: '热度、趋势与关键词' },
   { to: '/boards', label: '新书榜', mobileLabel: '榜单', summary: '男频与女频热门新书' },
   { to: '/tips', label: '写作技巧', mobileLabel: '技巧', summary: '结构、节奏与爽点' },
-  { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与找搭子' },
+  { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与创作人格' },
   { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },
   { to: '/ip', label: '改编观察', mobileLabel: '改编', summary: '短剧与官方信号' },
 ] as const
@@ -55,6 +55,15 @@ export default function Nav() {
           </div>
 
           <div className="ml-auto flex items-center gap-2">
+            <a
+              href={targetUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={() => trackEvent('click_zhiyu_writing', { placement: 'site_nav' })}
+              className="inline-flex min-h-11 items-center gap-2 border border-theme-800 bg-theme-800 px-3 font-serif text-sm font-bold text-white transition-colors hover:bg-theme-700 sm:px-4"
+            >
+              <Sparkles size={16} /> 智语写作
+            </a>
             <div className="hidden items-center gap-3 border-l border-stone-300 pl-7 text-theme-700 lg:flex">
               <CalendarDays size={21} />
               <time className="font-serif text-lg font-bold" dateTime={today}>{today}</time>
@@ -95,6 +104,21 @@ export default function Nav() {
               )}
             </NavLink>
           ))}
+        </div>
+      </div>
+
+      <div className="border-b border-theme-700 bg-theme-800 text-white">
+        <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-x-3 gap-y-1.5 px-5 py-2 md:px-8">
+          <span className="text-xs font-semibold sm:text-sm">更多网文长篇短篇风向信息可在智语写作查看</span>
+          <a
+            href={zhiyuUrl('site_banner')}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => trackEvent('click_zhiyu_writing', { placement: 'site_banner' })}
+            className="inline-flex items-center gap-1 bg-white px-2.5 py-1 text-xs font-bold text-theme-800 transition-colors hover:bg-theme-bg"
+          >
+            前往智语写作 <ExternalLink size={12} />
+          </a>
         </div>
       </div>
 

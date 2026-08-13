@@ -9,6 +9,7 @@ import {
   FileText,
   Layers3,
   Mail,
+  MessageCircle,
   Search,
   Send,
   ShieldCheck,
@@ -55,6 +56,44 @@ function copyText(value: string) {
   document.execCommand('copy')
   input.remove()
   return Promise.resolve()
+}
+
+function PromoBanner() {
+  const [copied, setCopied] = useState(false)
+
+  const copyWechat = async () => {
+    await copyText('nailong327')
+    setCopied(true)
+    trackEvent('submission_promo_wechat_copy')
+    window.setTimeout(() => setCopied(false), 1600)
+  }
+
+  return (
+    <section
+      aria-label="一键自动投稿软件宣传"
+      className="mt-8 flex flex-col gap-5 border border-theme-700 bg-gradient-to-r from-theme-800 via-theme-700 to-theme-800 px-5 py-6 text-white sm:flex-row sm:items-center sm:justify-between sm:px-7"
+    >
+      <div className="flex items-start gap-4 sm:items-center">
+        <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-white/15">
+          <MessageCircle size={24} />
+        </span>
+        <div>
+          <p className="font-serif text-xl font-bold sm:text-2xl">一键自动投稿软件</p>
+          <p className="mt-1 text-sm leading-relaxed text-white/85 sm:text-base">
+            内置编辑两千多位，收稿信息每天更新。咨询请添加微信：<strong className="text-lg font-bold tracking-wide text-white">nailong327</strong>
+          </p>
+        </div>
+      </div>
+      <button
+        type="button"
+        onClick={copyWechat}
+        className="inline-flex min-h-11 flex-none items-center justify-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-theme-800 transition-colors hover:bg-theme-bg"
+      >
+        {copied ? <Check size={17} /> : <Copy size={17} />}
+        <span aria-live="polite">{copied ? '微信号已复制' : '复制微信号咨询'}</span>
+      </button>
+    </section>
+  )
 }
 
 function ContactRow({ label, value, editorId }: { label: string; value: string; editorId: number }) {
@@ -231,6 +270,8 @@ export default function SubmissionGuidePage() {
             </div>
           ))}
         </section>
+
+        <PromoBanner />
 
         <section className="mt-8 border-y border-theme-200 py-6" aria-labelledby="work-type-heading">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
