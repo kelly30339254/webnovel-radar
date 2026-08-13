@@ -398,7 +398,11 @@ async function fetchOfficialContent() {
   const relevant = notices
     .filter((notice) => /改编|短剧|漫剧|IP|版权|题材|创作指南|脑洞/.test(String(notice.title)))
     .slice(0, 5)
-  if (relevant.length < 3) throw new Error('番茄改编风向公告数量不足')
+  // 公告列表本身已通过解析校验；符合改编风向筛选的条目数量会随官方发布节奏波动。
+  // 该可选板块为空或不足 3 条时不应阻断榜单、题材等每日数据的更新。
+  if (relevant.length < 3) {
+    console.warn(`番茄改编风向公告仅 ${relevant.length} 条，本次按实际数量更新`)
+  }
 
   const summaries = await Promise.all(relevant.map((notice) => fetchArticleSummary(notice.url, notice.abstract ?? '番茄作家专区最新创作信号')))
   const adaptWatch = relevant.map((notice, index) => ({
