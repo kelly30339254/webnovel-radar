@@ -218,3 +218,102 @@
     display: none;
   }
 }
+
+/* ===== 奶龙投稿助手 · 自动投稿流程演示动效（10s 总循环，错相位 stagger） ===== */
+@keyframes assistant-mail-glow {
+  0%, 100% {
+    border-color: rgb(255 255 255 / 0.10);
+    box-shadow: 0 0 0 0 hsl(348 82% 62% / 0);
+  }
+  6% {
+    border-color: hsl(348 85% 72% / 0.85);
+    box-shadow: 0 0 20px 2px hsl(348 82% 62% / 0.45);
+  }
+  18% {
+    border-color: hsl(348 85% 72% / 0.45);
+    box-shadow: 0 0 14px 1px hsl(348 82% 62% / 0.22);
+  }
+  26% {
+    border-color: rgb(255 255 255 / 0.10);
+    box-shadow: 0 0 0 0 hsl(348 82% 62% / 0);
+  }
+}
+.assistant-mail-glow {
+  animation: assistant-mail-glow 10s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+@keyframes assistant-dot-fly-x {
+  0% { left: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  48% { left: 94%; opacity: 1; }
+  56%, 100% { left: 94%; opacity: 0; }
+}
+.assistant-dot-x {
+  animation: assistant-dot-fly-x 10s linear infinite;
+}
+
+@keyframes assistant-dot-fly-y {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  48% { top: 92%; opacity: 1; }
+  56%, 100% { top: 92%; opacity: 0; }
+}
+.assistant-dot-y {
+  animation: assistant-dot-fly-y 10s linear infinite;
+}
+
+@keyframes assistant-letter-in {
+  0%, 6% { opacity: 0; transform: translateY(6px) scale(0.96); }
+  12% { opacity: 1; transform: translateY(0) scale(1); }
+  82% { opacity: 1; }
+  92%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+}
+.assistant-letter-in {
+  animation: assistant-letter-in 10s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@keyframes assistant-badge-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 0);
+  }
+  7% {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 18px 1px currentColor;
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px 0 currentColor;
+  }
+  30% {
+    opacity: 0.35;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 0);
+  }
+}
+.assistant-badge-pulse {
+  animation: assistant-badge-pulse 10s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .assistant-mail-glow,
+  .assistant-dot-x,
+  .assistant-dot-y,
+  .assistant-letter-in,
+  .assistant-badge-pulse {
+    animation: none !important;
+  }
+  .assistant-letter-in {
+    opacity: 1;
+    transform: none;
+  }
+  .assistant-badge-pulse {
+    opacity: 1;
+  }
+}

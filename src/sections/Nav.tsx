@@ -12,6 +12,7 @@ const LINKS = [
   { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与创作人格' },
   { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },
   { to: '/ip', label: '改编观察', mobileLabel: '改编', summary: '短剧与官方信号' },
+  { to: '/assistant', label: '投稿助手', mobileLabel: '助手', summary: '邮箱批量自动投稿软件' },
   { to: '/workbench', label: '作者工作台', mobileLabel: '工作台', summary: '画布为核心的写作软件' },
 ] as const
 

@@ -15,6 +15,7 @@ import {
   ShieldCheck,
   X,
 } from 'lucide-react'
+import { Link } from 'react-router'
 import PageHeader from '@/components/PageHeader'
 import {
   Dialog,
@@ -84,14 +85,23 @@ function PromoBanner() {
           </p>
         </div>
       </div>
-      <button
-        type="button"
-        onClick={copyWechat}
-        className="inline-flex min-h-11 flex-none items-center justify-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-theme-800 transition-colors hover:bg-theme-bg"
-      >
-        {copied ? <Check size={17} /> : <Copy size={17} />}
-        <span aria-live="polite">{copied ? '微信号已复制' : '复制微信号咨询'}</span>
-      </button>
+      <div className="flex flex-none flex-col gap-3 sm:flex-row sm:items-center">
+        <Link
+          to="/assistant"
+          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white/20"
+        >
+          <Send size={16} />
+          了解投稿助手
+        </Link>
+        <button
+          type="button"
+          onClick={copyWechat}
+          className="inline-flex min-h-11 flex-none items-center justify-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-bold text-theme-800 transition-colors hover:bg-theme-bg"
+        >
+          {copied ? <Check size={17} /> : <Copy size={17} />}
+          <span aria-live="polite">{copied ? '微信号已复制' : '复制微信号咨询'}</span>
+        </button>
+      </div>
     </section>
   )
 }

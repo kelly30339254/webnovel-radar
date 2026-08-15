@@ -11,6 +11,7 @@ import TrendsPage from './pages/TrendsPage'
 import ToolsPage from './pages/ToolsPage'
 import SubmissionGuidePage from './pages/SubmissionGuidePage'
 import WorkbenchPage from './pages/WorkbenchPage'
+import AssistantPage from './pages/AssistantPage'
 import Nav from '@/sections/Nav'
 import { trackPageView } from '@/hooks/useAnalytics'
 
@@ -46,6 +47,7 @@ export default function App() {
         <Route path="/ip" element={<IpPage />} />
         <Route path="/submissions" element={<SubmissionGuidePage />} />
         <Route path="/workbench" element={<WorkbenchPage />} />
+        <Route path="/assistant" element={<AssistantPage />} />
       </Routes>
     </>
   )

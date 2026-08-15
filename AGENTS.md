@@ -186,7 +186,7 @@ npm run preview    # 预览 dist/ 产物
   - 动态效果必须适配 `prefers-reduced-motion: reduce`（已有 `@media` 覆盖；新动画用 `motion-safe:` 前缀）。
   - 禁止新增硬编码浅色类（`bg-white`、`text-stone-*`、`border-stone-*` 等）；深色下的映射约定：卡片底用 `.glass`/`bg-white/5`，正文次要文本用 `text-slate-300/400`，边框用 `border-white/10`。
 - **SVG 趋势图**：`TrendChart` 手写 SVG，右侧标签需保留：短名 ≤8 字、两行排列、纵向防重叠算法、描边光晕（深底下描边色为 `#0d0a14`）。重绘时不要丢失这些特性。
-- **路由**：多页应用，路由集中在 `src/App.tsx`（`/`、`/trends`、`/boards`、`/tips`、`/tools`、`/submissions`、`/ip`、`/nbti`、`/radar`、`/prompt-lab`、`/workbench`）。`/workbench` 是「奶龙作者工作台」宣传页（`src/pages/WorkbenchPage.tsx` + `src/components/workbench/`），深色玻璃风、含可交互迷你画布 demo，不消费 wind.json。
+- **路由**：多页应用，路由集中在 `src/App.tsx`（`/`、`/trends`、`/boards`、`/tips`、`/tools`、`/submissions`、`/ip`、`/nbti`、`/radar`、`/prompt-lab`、`/workbench`、`/assistant`）。`/workbench` 是「奶龙作者工作台」宣传页（`src/pages/WorkbenchPage.tsx` + `src/components/workbench/`），`/assistant` 是「奶龙投稿助手」宣传页（`src/pages/AssistantPage.tsx` + `src/components/assistant/`，含自动投稿流程动画与卡密购买微信引导），均为深色玻璃风产品介绍页，不消费 wind.json。
 
 ## 测试策略
 
