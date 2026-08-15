@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CalendarDays, ExternalLink, Menu, Sparkles, X } from 'lucide-react'
+import { CalendarDays, Download, ExternalLink, Menu, Sparkles, X } from 'lucide-react'
 import { Link, NavLink } from 'react-router'
 import { ThemeSwitcher } from '@/components/ThemeSwitcher'
 import { trackEvent } from '@/hooks/useAnalytics'
@@ -14,6 +14,9 @@ const LINKS = [
   { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },
   { to: '/ip', label: '改编观察', mobileLabel: '改编', summary: '短剧与官方信号' },
 ] as const
+
+// 作者工作台（奶龙写作软件）下载地址，占位，待替换为真实夸克网盘链接
+const WORKBENCH_DOWNLOAD_URL = 'https://pan.quark.cn/s/e26eb632dfa9'
 
 const today = new Intl.DateTimeFormat('zh-CN', {
   year: 'numeric',
@@ -63,6 +66,14 @@ export default function Nav() {
               className="inline-flex min-h-11 items-center gap-2 border border-theme-800 bg-theme-800 px-3 font-serif text-sm font-bold text-white transition-colors hover:bg-theme-700 sm:px-4"
             >
               <Sparkles size={16} /> 智语写作
+            </a>
+            <a
+              href={WORKBENCH_DOWNLOAD_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex min-h-11 items-center gap-2 border border-theme-800 px-3 font-serif text-sm font-bold text-theme-800 transition-colors hover:bg-theme-800 hover:text-white sm:px-4"
+            >
+              <Download size={16} /> 作者工作台
             </a>
             <div className="hidden items-center gap-3 border-l border-stone-300 pl-7 text-theme-700 lg:flex">
               <CalendarDays size={21} />
@@ -148,6 +159,15 @@ export default function Nav() {
               className="flex min-h-12 items-center justify-center gap-2 bg-theme-800 px-4 py-3 text-sm font-bold text-white"
             >
               <Sparkles size={16} /> 打开智语写作 <ExternalLink size={14} />
+            </a>
+            <a
+              href={WORKBENCH_DOWNLOAD_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              onClick={() => setOpen(false)}
+              className="flex min-h-12 items-center justify-center gap-2 border border-theme-800 px-4 py-3 text-sm font-bold text-theme-800 transition-colors hover:bg-theme-800 hover:text-white"
+            >
+              <Download size={16} /> 下载作者工作台 <ExternalLink size={14} />
             </a>
           </div>
         </div>
