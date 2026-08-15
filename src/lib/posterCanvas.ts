@@ -2,9 +2,9 @@ export const POSTER_WIDTH = 1080
 export const POSTER_HEIGHT = 1440
 
 const SITE_QR_SRC = '/images/site-qr.png'
-const POSTER_SEAL_SRC = '/assets/webnovel-radar-seal.png'
-let siteQrPromise: Promise<HTMLImageElement> | null = null
-let posterSealPromise: Promise<HTMLImageElement> | null = null
+const POSTER_SEAL_SRC = '/assets/nailong-logo.svg'
+let siteQrPromise: Promise<HTMLImageElement | null> | null = null
+let posterSealPromise: Promise<HTMLImageElement | null> | null = null
 
 export function roundedRect(
   ctx: CanvasRenderingContext2D,
@@ -48,32 +48,32 @@ export function drawTextLines(
   return y + Math.max(0, lines.length - 1) * lineHeight
 }
 
-export function loadSiteQr(): Promise<HTMLImageElement> {
+export function loadSiteQr(): Promise<HTMLImageElement | null> {
   if (siteQrPromise) return siteQrPromise
-  siteQrPromise = new Promise((resolve, reject) => {
+  siteQrPromise = new Promise((resolve) => {
     const image = new Image()
     image.onload = () => resolve(image)
-    image.onerror = () => reject(new Error('网站二维码加载失败'))
+    image.onerror = () => resolve(null)
     image.src = SITE_QR_SRC
   })
   return siteQrPromise
 }
 
-export function loadPosterSeal(): Promise<HTMLImageElement> {
+export function loadPosterSeal(): Promise<HTMLImageElement | null> {
   if (posterSealPromise) return posterSealPromise
-  posterSealPromise = new Promise((resolve, reject) => {
+  posterSealPromise = new Promise((resolve) => {
     const image = new Image()
     image.onload = () => resolve(image)
-    image.onerror = () => reject(new Error('品牌印章加载失败'))
+    image.onerror = () => resolve(null)
     image.src = POSTER_SEAL_SRC
   })
   return posterSealPromise
 }
 
-export function drawEditorialBase(ctx: CanvasRenderingContext2D, seal: HTMLImageElement, section: string, date = '今日') {
-  ctx.fillStyle = '#f7f2ea'
+export function drawEditorialBase(ctx: CanvasRenderingContext2D, seal: HTMLImageElement | null, section: string, date = '今日') {
+  ctx.fillStyle = '#14101d'
   ctx.fillRect(0, 0, POSTER_WIDTH, POSTER_HEIGHT)
-  ctx.strokeStyle = 'rgba(121, 94, 68, 0.07)'
+  ctx.strokeStyle = 'rgba(255,255,255,0.08)'
   ctx.lineWidth = 1
   for (let y = 10; y < POSTER_HEIGHT; y += 18) {
     ctx.beginPath()
@@ -81,23 +81,23 @@ export function drawEditorialBase(ctx: CanvasRenderingContext2D, seal: HTMLImage
     ctx.lineTo(POSTER_WIDTH, y)
     ctx.stroke()
   }
-  ctx.strokeStyle = '#9e1220'
+  ctx.strokeStyle = '#e0485f'
   ctx.lineWidth = 2
   ctx.strokeRect(42, 34, POSTER_WIDTH - 84, POSTER_HEIGHT - 68)
   ctx.strokeRect(52, 44, POSTER_WIDTH - 104, POSTER_HEIGHT - 88)
-  ctx.drawImage(seal, 72, 66, 72, 72)
-  ctx.fillStyle = '#8f101c'
+  if (seal) ctx.drawImage(seal, 72, 66, 72, 72)
+  ctx.fillStyle = '#e0485f'
   ctx.font = '700 30px "STSong", "SimSun", serif'
   ctx.fillText('奶龙数据站', 164, 95)
-  ctx.fillStyle = '#403833'
+  ctx.fillStyle = '#a89fb8'
   ctx.font = '500 16px "Georgia", serif'
   ctx.fillText('NAILONG DATA STATION', 164, 125)
   ctx.textAlign = 'right'
-  ctx.fillStyle = '#8f101c'
+  ctx.fillStyle = '#e0485f'
   ctx.font = '600 18px "Microsoft YaHei", sans-serif'
   ctx.fillText(`${section}  ·  ${date}`, 1008, 102)
   ctx.textAlign = 'left'
-  ctx.strokeStyle = '#9e1220'
+  ctx.strokeStyle = '#e0485f'
   ctx.lineWidth = 3
   ctx.beginPath()
   ctx.moveTo(72, 154)
@@ -112,7 +112,7 @@ export function drawEditorialBase(ctx: CanvasRenderingContext2D, seal: HTMLImage
 
 export function drawSiteQr(
   ctx: CanvasRenderingContext2D,
-  image: HTMLImageElement,
+  image: HTMLImageElement | null,
   x: number,
   y: number,
   qrSize: number,
@@ -122,19 +122,21 @@ export function drawSiteQr(
   const width = qrSize + padding * 2
   const height = qrSize + padding * 2 + labelHeight
 
-  ctx.fillStyle = '#ffffff'
+  ctx.fillStyle = '#1b1626'
   ctx.fillRect(x, y, width, height)
-  ctx.strokeStyle = '#8f101c'
+  ctx.strokeStyle = 'rgba(255,255,255,0.14)'
   ctx.lineWidth = 1.5
   ctx.strokeRect(x, y, width, height)
 
-  const smoothing = ctx.imageSmoothingEnabled
-  ctx.imageSmoothingEnabled = false
-  ctx.drawImage(image, x + padding, y + padding, qrSize, qrSize)
-  ctx.imageSmoothingEnabled = smoothing
+  if (image) {
+    const smoothing = ctx.imageSmoothingEnabled
+    ctx.imageSmoothingEnabled = false
+    ctx.drawImage(image, x + padding, y + padding, qrSize, qrSize)
+    ctx.imageSmoothingEnabled = smoothing
+  }
 
   ctx.textAlign = 'center'
-  ctx.fillStyle = '#8f101c'
+  ctx.fillStyle = '#e0485f'
   ctx.font = '600 18px "Microsoft YaHei", sans-serif'
   ctx.fillText('扫码进入网站', x + width / 2, y + qrSize + padding + 25)
   ctx.textAlign = 'left'

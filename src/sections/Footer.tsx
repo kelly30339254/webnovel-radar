@@ -2,8 +2,8 @@ import type { UpdateStatus } from '@/types/wind'
 
 export default function Footer({ updatedAt, updateStatus, onEasterEgg }: { updatedAt: string; updateStatus?: UpdateStatus | null; onEasterEgg?: () => void }) {
   return (
-    <footer className="mt-16 border-t border-stone-300 bg-theme-bg">
-      <div className="mx-auto flex max-w-[1440px] flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-stone-600 sm:flex-row sm:items-center md:px-8">
+    <footer className="mt-16 border-t border-white/10 bg-theme-bg">
+      <div className="mx-auto flex max-w-[1440px] flex-col flex-wrap items-start gap-x-8 gap-y-2 px-5 py-6 text-xs text-slate-400 sm:flex-row sm:items-center md:px-8">
         <span className="inline-flex items-center gap-1.5 font-medium text-theme-500">
           <span className="h-1.5 w-1.5 rounded-full bg-theme-400" />
           奶龙数据站 · Webnovel Radar
@@ -17,7 +17,7 @@ export default function Footer({ updatedAt, updateStatus, onEasterEgg }: { updat
           仅供网文创作与选题参考
           <button
             onDoubleClick={onEasterEgg}
-            className="heart-beat inline-flex h-5 w-5 items-center justify-center rounded-full bg-theme-200/60 text-[9px] font-bold text-white opacity-40 transition-all hover:scale-110 hover:opacity-90"
+            className="heart-beat inline-flex h-5 w-5 items-center justify-center rounded-full bg-theme-600/50 text-[9px] font-bold text-white opacity-40 transition-all hover:scale-110 hover:opacity-90"
             title="双击有惊喜"
             aria-label="双击查看彩蛋"
             type="button"

@@ -61,19 +61,19 @@ type CreativeCut = (typeof CREATIVE_CUTS.male)[number]
 
 function CreativeCutCard({ item }: { item: CreativeCut }) {
   return (
-    <article className="flex h-full flex-col border border-stone-300 bg-white/65 p-5">
+    <article className="glass flex h-full flex-col rounded-2xl p-5">
       <h3 className="font-serif text-lg font-bold text-theme-950">{item.title}</h3>
       <div className="mt-4 space-y-3 text-xs leading-relaxed">
         <div className="flex items-start gap-2">
           <UserRound className="mt-0.5 flex-none text-theme-500" size={15} />
-          <p><span className="font-semibold text-theme-800">人设核：</span><span className="text-theme-700">{item.persona}</span></p>
+          <p><span className="font-semibold text-theme-700">人设核：</span><span className="text-slate-300">{item.persona}</span></p>
         </div>
         <div className="flex items-start gap-2">
-          <Zap className="mt-0.5 flex-none text-amber-600" size={15} />
-          <p><span className="font-semibold text-theme-800">主要矛盾：</span><span className="text-theme-700">{item.conflict}</span></p>
+          <Zap className="mt-0.5 flex-none text-amber-400" size={15} />
+          <p><span className="font-semibold text-theme-700">主要矛盾：</span><span className="text-slate-300">{item.conflict}</span></p>
         </div>
       </div>
-      <div className="mt-5 border-t border-stone-200 pt-4">
+      <div className="mt-5 border-t border-white/10 pt-4">
         <p className="text-[11px] font-semibold text-theme-500">开篇钩子</p>
         <p className="mt-1.5 text-sm leading-relaxed text-theme-950">{item.hook}</p>
       </div>
@@ -133,7 +133,7 @@ export default function BookRecs() {
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-theme-950">
           <Lightbulb size={17} className="text-theme-600" /> 下一步：组合一个鲜明人物、一组主要矛盾和一句让人想读下去的开头
         </span>
-        <div className="inline-flex overflow-hidden border border-theme-300 bg-white text-xs" aria-label="创作频道">
+        <div className="inline-flex overflow-hidden rounded-lg border border-white/15 bg-white/5 text-xs" aria-label="创作频道">
           {([
             { key: 'male', label: '男频切口' },
             { key: 'female', label: '女频切口' },
@@ -142,7 +142,7 @@ export default function BookRecs() {
               key={item.key}
               type="button"
               onClick={() => switchChannel(item.key)}
-              className={`min-h-9 px-4 font-semibold transition-colors ${channel === item.key ? 'bg-theme-700 text-white' : 'text-theme-700 hover:bg-theme-50'}`}
+              className={`min-h-9 px-4 font-semibold transition-colors ${channel === item.key ? 'bg-theme-800 text-white' : 'text-theme-700 hover:bg-white/10'}`}
             >
               {item.label}
             </button>
@@ -162,9 +162,9 @@ export default function BookRecs() {
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           {ADAPTATION_PATTERNS.map((pattern) => (
-            <article key={pattern.category} className="border-t-2 border-theme-500 bg-white/65 p-5">
+            <article key={pattern.category} className="glass rounded-2xl border-t-2 border-t-theme-500 p-5">
               <div className="flex items-center justify-between gap-3">
-                <span className="border border-theme-800 px-2.5 py-1 text-xs font-bold text-theme-800">{pattern.category}</span>
+                <span className="border border-theme-600 px-2.5 py-1 text-xs font-bold text-theme-700">{pattern.category}</span>
                 <Sparkles size={16} className="text-theme-400" />
               </div>
               <p className="mt-4 text-sm font-bold text-theme-950">{pattern.focus}</p>

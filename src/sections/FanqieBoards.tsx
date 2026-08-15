@@ -5,8 +5,8 @@ import ViewMoreLink from '@/components/ViewMoreLink'
 import { freshnessLabel } from '@/lib/freshness'
 
 const CHANNEL_STYLE: Record<string, { chip: string; bar: string }> = {
-  男频: { chip: 'border-theme-700 text-theme-800', bar: 'bg-theme-800' },
-  女频: { chip: 'border-[#174c43] text-[#174c43]', bar: 'bg-[#174c43]' },
+  男频: { chip: 'border-theme-400/60 text-theme-400', bar: 'bg-theme-800' },
+  女频: { chip: 'border-emerald-300/50 text-emerald-300', bar: 'bg-emerald-700' },
 }
 
 function boardFreshness(dataDate?: string): { text: string; stale: boolean } | null {
@@ -43,19 +43,19 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
       />
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         {boards.map((b) => {
-          const style = CHANNEL_STYLE[b.channel] ?? { chip: 'border-theme-700 text-theme-800', bar: 'bg-theme-700' }
+          const style = CHANNEL_STYLE[b.channel] ?? { chip: 'border-theme-400/60 text-theme-400', bar: 'bg-theme-800' }
           const fresh = boardFreshness(b.dataDate)
           return (
             <article
               key={`${b.platform}-${b.channel}`}
-              className="overflow-hidden border border-stone-300 bg-white/65"
+              className="glass overflow-hidden rounded-2xl"
             >
-              <header className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-b border-stone-300 px-5 py-4">
+              <header className="flex flex-wrap items-center gap-x-2.5 gap-y-1.5 border-b border-white/10 px-5 py-4">
                 <span className={`border px-2 py-0.5 text-xs font-semibold ${style.chip}`}>{b.channel}</span>
                 <span className="font-serif text-base font-bold text-theme-950">{b.chartName}</span>
                 <span className="ml-auto flex items-center gap-2">
                   {fresh && (
-                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-600' : 'text-stone-400'}`}>
+                    <span className={`text-xs ${fresh.stale ? 'font-medium text-amber-400' : 'text-slate-400'}`}>
                       {fresh.text}
                       {fresh.stale ? ' · 偏旧' : ''}
                     </span>
@@ -63,7 +63,7 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
                   <SourceLink url={b.sourceUrl} />
                 </span>
               </header>
-              <ol className="divide-y divide-stone-200 px-5">
+              <ol className="divide-y divide-white/10 px-5">
                 {b.books.map((book) => (
                   <li key={`${b.channel}-${book.rank}-${book.title}`} className="flex items-start gap-3 py-3">
                     <span className={`mt-0.5 flex h-6 w-6 flex-none items-center justify-center font-mono text-xs font-bold text-white ${style.bar}`}>
@@ -79,7 +79,7 @@ export default function FanqieBoards({ boards, showViewMore = true }: { boards: 
                       >
                         {book.title}
                       </a>
-                      <p className="mt-0.5 text-xs text-stone-500">
+                      <p className="mt-0.5 text-xs text-slate-400">
                         {book.author}
                         {book.heat ? ` · ${book.heat}` : ''}
                       </p>

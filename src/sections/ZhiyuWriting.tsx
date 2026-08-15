@@ -26,7 +26,7 @@ export default function ZhiyuWriting() {
         }
       />
 
-      <div className="mt-5 overflow-hidden border-y border-theme-200 bg-white shadow-sm">
+      <div className="mt-5 overflow-hidden rounded-2xl glass">
         <div className="grid lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)]">
           <div className="order-2 px-5 py-7 sm:px-7 sm:py-8 lg:order-1">
             <p className="text-xs font-semibold text-theme-600">NEXT STEP · OUTLINE</p>
@@ -60,7 +60,7 @@ export default function ZhiyuWriting() {
 
           <aside className="order-1 flex flex-col justify-center bg-theme-accent-soft px-6 py-7 sm:px-7 lg:order-2 lg:py-8">
             <div className="flex items-center gap-3">
-              <img src={`${import.meta.env.BASE_URL}images/zhiyuxiezuo.png`} alt="智语写作" className="h-11 w-11 rounded-lg object-cover shadow-sm" />
+              <img src={`${import.meta.env.BASE_URL}images/zhiyuxiezuo.png`} alt="智语写作" className="h-11 w-11 rounded-lg object-cover shadow-lg shadow-black/40" />
               <div>
                 <p className="text-sm font-bold text-theme-950">智语写作</p>
                 <p className="text-xs text-theme-600">AI 辅助创作工具</p>
@@ -72,7 +72,7 @@ export default function ZhiyuWriting() {
               target="_blank"
               rel="noreferrer noopener"
               onClick={() => trackEvent('click_zhiyu_writing', { placement: 'home_bridge' })}
-              className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-theme-700 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-800"
+              className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-theme-800 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-theme-700"
             >
               <Wand2 size={18} /> 免费生成一个大纲 <ExternalLink size={15} />
             </a>

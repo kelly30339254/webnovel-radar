@@ -26,7 +26,7 @@ function DimensionProfile({ scores }: { scores: NbtiScores }) {
         const score = scores[dimension.key]
         return (
           <div key={dimension.key}>
-            <div className="flex items-center justify-between text-xs font-medium text-theme-900">
+            <div className="flex items-center justify-between text-xs font-medium text-theme-950">
               <span>{dimension.left} {score}%</span>
               <span className="text-theme-700">{100 - score}% {dimension.right}</span>
             </div>
@@ -105,18 +105,18 @@ export function NbtiResult({ result, scores, onReset }: { result: ResultKey; sco
       <DimensionProfile scores={scores} />
 
       <div className="mt-6 border-t border-theme-100 pt-5">
-        <p className="text-xs font-semibold text-theme-800">适合题材</p>
+        <p className="text-xs font-semibold text-theme-700">适合题材</p>
         <div className="mt-2 flex flex-wrap gap-2">
           {info.genres.map((genre, index) => (
             <span
               key={genre}
-              className={`rounded-full px-2.5 py-1 text-xs font-medium ${index === 1 ? 'bg-teal-50 text-teal-700' : index === 2 ? 'bg-amber-50 text-amber-700' : 'bg-theme-50 text-theme-700'}`}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium ${index === 1 ? 'bg-teal-400/15 text-teal-300' : index === 2 ? 'bg-amber-400/15 text-amber-300' : 'bg-white/10 text-theme-700'}`}
             >
               {genre}
             </span>
           ))}
         </div>
-        <p className="mt-4 text-xs font-semibold text-theme-800">参考爆款</p>
+        <p className="mt-4 text-xs font-semibold text-theme-700">参考爆款</p>
         <ul className="mt-2 grid gap-1 text-xs text-theme-600 sm:grid-cols-2">
           {info.examples.map((example) => <li key={example}>{example}</li>)}
         </ul>
@@ -130,16 +130,16 @@ export function NbtiResult({ result, scores, onReset }: { result: ResultKey; sco
         <button onClick={handleShare} className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-800">
           <Share2 size={16} /> 分享结果
         </button>
-        <button onClick={handleCopy} className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg border border-theme-200 bg-white px-4 py-2 text-sm font-medium text-theme-700 hover:bg-theme-50">
+        <button onClick={handleCopy} className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-theme-700 hover:bg-white/10">
           {feedback === 'copied' ? <Check size={16} /> : <Copy size={16} />}
           {feedback === 'copied' ? '文案已复制' : '复制文案'}
         </button>
-        <button onClick={handleChallenge} className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-medium text-amber-800 hover:bg-amber-100">
+        <button onClick={handleChallenge} className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg border border-amber-400/40 bg-amber-400/10 px-4 py-2 text-sm font-medium text-amber-300 hover:bg-amber-400/20">
           <Users size={16} />
           {feedback === 'challenged' ? '挑战已复制' : '好友挑战'}
         </button>
       </div>
-      <div className="mt-6 overflow-hidden rounded-lg border border-theme-200">
+      <div className="mt-6 overflow-hidden rounded-lg border border-white/10">
         <ZhiyuNextStep
           title={`按「${info.name}」的创作风格开始一本书`}
           description={`从适合你的「${info.genres[0]}」出发，继续生成故事主线与章节大纲。`}
@@ -192,7 +192,7 @@ export default function NbtiTester({ standalone = false, initialResult }: { stan
   return (
     <section className={`${standalone ? 'min-h-[70vh] py-4' : 'mt-10'}`}>
       {!standalone && <SectionTitle id="writer-personality" title="网文十六型人格" hint="创作人格测试" />}
-      <div className={`card-pink border border-theme-100 bg-white/80 p-5 shadow-sm backdrop-blur-sm sm:p-7 ${standalone ? 'mx-auto max-w-2xl rounded-lg' : 'mt-4 rounded-lg'}`}>
+      <div className={`card-pink glass p-5 sm:p-7 ${standalone ? 'mx-auto max-w-2xl rounded-lg' : 'mt-4 rounded-lg'}`}>
         {!started ? (
           <div className="py-3 text-center">
             <p className="text-4xl">📝</p>
@@ -225,7 +225,7 @@ export default function NbtiTester({ standalone = false, initialResult }: { stan
                 <button
                   key={option}
                   onClick={() => handleAnswer(optionIndex)}
-                  className="min-h-12 rounded-lg border border-theme-100 bg-white px-4 py-3 text-left text-sm text-theme-800 shadow-sm hover:border-theme-300 hover:bg-theme-50"
+                  className="min-h-12 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-left text-sm text-theme-950 transition-colors hover:border-white/20 hover:bg-white/10"
                 >
                   {option}
                 </button>

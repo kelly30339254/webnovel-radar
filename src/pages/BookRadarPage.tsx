@@ -171,9 +171,9 @@ export default function BookRadarPage() {
             <div className="mt-7 space-y-6">
               <fieldset>
                 <legend className="text-sm font-semibold">目标频道</legend>
-                <div className="mt-2 inline-flex overflow-hidden rounded-lg border border-theme-200 bg-white">
+                <div className="mt-2 inline-flex overflow-hidden rounded-lg border border-white/10 bg-white/5">
                   {([{ key: 'male', label: '男频' }, { key: 'female', label: '女频' }] as const).map((item) => (
-                    <button key={item.key} type="button" onClick={() => { setChannel(item.key); setGenreName(''); resetReport() }} className={`min-h-10 px-5 text-sm ${channel === item.key ? 'bg-theme-600 text-white' : 'text-theme-600 hover:bg-theme-50'}`}>
+                    <button key={item.key} type="button" onClick={() => { setChannel(item.key); setGenreName(''); resetReport() }} className={`min-h-10 px-5 text-sm ${channel === item.key ? 'bg-theme-600 text-white' : 'text-slate-300 hover:bg-white/10'}`}>
                       {item.label}
                     </button>
                   ))}
@@ -182,7 +182,7 @@ export default function BookRadarPage() {
 
               <label className="block text-sm font-semibold">
                 想写的题材
-                <select value={selectedName} onChange={(event) => { setGenreName(event.target.value); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-theme-200 bg-white px-3 text-sm font-normal text-theme-900 outline-none focus:border-theme-400">
+                <select value={selectedName} onChange={(event) => { setGenreName(event.target.value); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
                   {channelGenres.map((signal) => <option key={signal.name} value={signal.name}>{signal.name}</option>)}
                 </select>
               </label>
@@ -191,7 +191,7 @@ export default function BookRadarPage() {
                 <legend className="text-sm font-semibold">更新能力</legend>
                 <div className="mt-2 grid grid-cols-3 gap-2">
                   {([{ key: 'sprint', label: '冲刺型' }, { key: 'steady', label: '稳定型' }, { key: 'slow', label: '慢工型' }] as const).map((item) => (
-                    <button key={item.key} type="button" onClick={() => { setPace(item.key); resetReport() }} className={`min-h-10 rounded-lg border px-2 text-sm ${pace === item.key ? 'border-teal-700 bg-teal-700 text-white' : 'border-theme-200 bg-white text-theme-600 hover:bg-theme-50'}`}>
+                    <button key={item.key} type="button" onClick={() => { setPace(item.key); resetReport() }} className={`min-h-10 rounded-lg border px-2 text-sm ${pace === item.key ? 'border-teal-500 bg-teal-600 text-white' : 'border-white/10 bg-white/5 text-slate-300 hover:bg-white/10'}`}>
                       {item.label}
                     </button>
                   ))}
@@ -200,7 +200,7 @@ export default function BookRadarPage() {
 
               <label className="block text-sm font-semibold">
                 计划篇幅
-                <select value={length} onChange={(event) => { setLength(event.target.value as RadarLength); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-theme-200 bg-white px-3 text-sm font-normal text-theme-900 outline-none focus:border-theme-400">
+                <select value={length} onChange={(event) => { setLength(event.target.value as RadarLength); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
                   <option value="short">中短篇 / 快速验证</option>
                   <option value="medium">50-100 万字</option>
                   <option value="long">百万字长篇</option>
@@ -212,16 +212,16 @@ export default function BookRadarPage() {
                 考虑短剧 / 漫剧改编
               </label>
 
-              <button type="button" onClick={handleGenerate} disabled={!selected} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-theme-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-theme-700 disabled:opacity-50">
+              <button type="button" onClick={handleGenerate} disabled={!selected} className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-theme-800 px-5 py-2.5 text-sm font-semibold text-white hover:bg-theme-600 disabled:opacity-50">
                 {generated ? <RefreshCw size={18} /> : <Target size={18} />}
                 {generated ? '换一种写法建议' : '看看这本书值不值得写'}
               </button>
             </div>
           </section>
 
-          <section aria-live="polite" className="min-w-0 border-l-0 border-theme-100 lg:border-l lg:pl-8">
+          <section aria-live="polite" className="min-w-0 border-l-0 border-white/10 lg:border-l lg:pl-8">
             {!generated || !report || !selected ? (
-              <div className="flex min-h-[34rem] items-center justify-center border border-dashed border-theme-200 bg-white/50 p-8 text-center">
+              <div className="flex min-h-[34rem] items-center justify-center border border-dashed border-white/15 bg-white/5 p-8 text-center">
                 <div>
                   <Gauge className="mx-auto text-theme-600" size={38} />
                   <h2 className="mt-4 text-lg font-bold">结果会显示在这里</h2>
@@ -229,12 +229,12 @@ export default function BookRadarPage() {
                 </div>
               </div>
             ) : (
-              <article className="border border-theme-100 bg-white shadow-sm">
-                <header className="flex flex-wrap items-start justify-between gap-5 border-b border-theme-100 px-5 py-6 sm:px-7">
+              <article className="glass">
+                <header className="flex flex-wrap items-start justify-between gap-5 border-b border-white/10 px-5 py-6 sm:px-7">
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className={`inline-flex rounded-full border px-2.5 py-1 text-xs font-semibold ${signalTone(selected.stage)}`}>{selected.stageLabel}期</span>
-                      <span className="inline-flex rounded-full bg-theme-100 px-2.5 py-1 text-xs font-semibold text-theme-700">{report.strategyName}</span>
+                      <span className="inline-flex rounded-full bg-white/10 px-2.5 py-1 text-xs font-semibold text-theme-700">{report.strategyName}</span>
                     </div>
                     <h2 className="mt-3 text-2xl font-bold leading-snug sm:text-3xl">{selected.name}</h2>
                     <p className="mt-2 max-w-2xl text-sm leading-relaxed text-theme-600">{report.verdictSummary}</p>
@@ -242,7 +242,7 @@ export default function BookRadarPage() {
                   <div className="shrink-0 text-right">
                     <p className="font-mono text-5xl font-bold text-theme-600">{report.score}</p>
                     <p className="text-xs text-theme-700">适合开写程度 / 100</p>
-                    <p className="mt-2 text-sm font-semibold text-teal-700">{report.verdict}</p>
+                    <p className="mt-2 text-sm font-semibold text-teal-300">{report.verdict}</p>
                   </div>
                 </header>
 
@@ -255,12 +255,12 @@ export default function BookRadarPage() {
                     <p className="mt-3 text-sm leading-relaxed text-theme-700">{report.marketEvidence}</p>
                     <div className="mt-4 grid gap-3 sm:grid-cols-3">
                       {report.factors.map((factor) => (
-                        <div key={factor.label} className="border-t-2 border-theme-200 bg-theme-50/60 px-4 py-4">
+                        <div key={factor.label} className="border-t-2 border-theme-500/60 bg-white/5 px-4 py-4">
                           <div className="flex items-baseline justify-between gap-3">
                             <p className="text-sm font-semibold">{factor.label}</p>
                             <p className="font-mono text-2xl font-bold text-theme-600">{factor.score}</p>
                           </div>
-                          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-theme-100">
+                          <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
                             <div className="h-full rounded-full bg-theme-500" style={{ width: `${factor.score}%` }} />
                           </div>
                           <p className="mt-2 text-xs leading-relaxed text-theme-500">{factor.note}</p>
@@ -269,30 +269,30 @@ export default function BookRadarPage() {
                     </div>
                   </section>
 
-                  <section className="mt-7 border-t border-theme-100 pt-6">
+                  <section className="mt-7 border-t border-white/10 pt-6">
                     <div className="flex items-center gap-2">
-                      <Sparkles className="text-blue-600" size={18} />
+                      <Sparkles className="text-blue-400" size={18} />
                       <h3 className="text-base font-bold">怎么写得不一样</h3>
                     </div>
-                    <p className="mt-3 text-sm leading-relaxed text-theme-800">{report.positioning}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-300">{report.positioning}</p>
                     <ul className="mt-4 grid gap-3 sm:grid-cols-3">
                       {report.differentiators.map((item, index) => (
-                        <li key={item} className="flex gap-3 bg-blue-50/70 px-4 py-4 text-sm leading-relaxed text-blue-950">
-                          <span className="font-mono font-bold text-blue-600">0{index + 1}</span>
+                        <li key={item} className="flex gap-3 bg-blue-400/10 px-4 py-4 text-sm leading-relaxed text-blue-100">
+                          <span className="font-mono font-bold text-blue-300">0{index + 1}</span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </section>
 
-                  <section className="mt-7 border-t border-theme-100 pt-6">
+                  <section className="mt-7 border-t border-white/10 pt-6">
                     <div className="flex items-center gap-2">
-                      <AlertTriangle className="text-amber-600" size={18} />
+                      <AlertTriangle className="text-amber-400" size={18} />
                       <h3 className="text-base font-bold">最容易踩的坑</h3>
                     </div>
                     <ul className="mt-3 space-y-2">
                       {report.risks.map((risk) => (
-                        <li key={risk} className="flex gap-3 text-sm leading-relaxed text-theme-800">
+                        <li key={risk} className="flex gap-3 text-sm leading-relaxed text-slate-300">
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
                           <span>{risk}</span>
                         </li>
@@ -300,17 +300,17 @@ export default function BookRadarPage() {
                     </ul>
                   </section>
 
-                  <section className="mt-7 border-t border-theme-100 pt-6">
+                  <section className="mt-7 border-t border-white/10 pt-6">
                     <div className="flex items-center gap-2">
-                      <TrendingUp className="text-emerald-600" size={18} />
+                      <TrendingUp className="text-emerald-400" size={18} />
                       <h3 className="text-base font-bold">7 天怎么试</h3>
                     </div>
-                    <ol className="mt-4 divide-y divide-emerald-100 border-y border-emerald-100">
+                    <ol className="mt-4 divide-y divide-emerald-400/15 border-y border-emerald-400/15">
                       {report.plan.map((step) => (
                         <li key={step.phase} className="grid gap-2 py-4 sm:grid-cols-[7rem_minmax(0,1fr)]">
-                          <p className="text-sm font-bold text-emerald-700">{step.phase}</p>
+                          <p className="text-sm font-bold text-emerald-300">{step.phase}</p>
                           <div>
-                            <p className="text-sm leading-relaxed text-theme-900">{step.task}</p>
+                            <p className="text-sm leading-relaxed text-theme-950">{step.task}</p>
                             <p className="mt-1 text-xs leading-relaxed text-theme-500">看看是否做到：{step.check}</p>
                           </div>
                         </li>
@@ -318,26 +318,26 @@ export default function BookRadarPage() {
                     </ol>
                   </section>
 
-                  <section className="mt-7 grid gap-5 border-t border-theme-100 pt-6 md:grid-cols-2">
+                  <section className="mt-7 grid gap-5 border-t border-white/10 pt-6 md:grid-cols-2">
                     <div>
-                      <h3 className="text-sm font-bold text-teal-800">怎么安排写作</h3>
+                      <h3 className="text-sm font-bold text-teal-300">怎么安排写作</h3>
                       <p className="mt-2 text-sm leading-relaxed text-theme-700">{report.productionProfile}</p>
                     </div>
                     <div>
-                      <h3 className="text-sm font-bold text-teal-800">故事怎么安排</h3>
+                      <h3 className="text-sm font-bold text-teal-300">故事怎么安排</h3>
                       <p className="mt-2 text-sm leading-relaxed text-theme-700">{report.adaptationStrategy}</p>
-                      {report.personaName && <p className="mt-2 text-xs font-medium text-teal-700">已结合创作人格：{report.personaName}</p>}
+                      {report.personaName && <p className="mt-2 text-xs font-medium text-teal-300">已结合创作人格：{report.personaName}</p>}
                     </div>
                   </section>
                 </div>
 
-                <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-theme-100 bg-theme-50/70 px-5 py-4 sm:px-7">
+                <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-white/5 px-5 py-4 sm:px-7">
                   <p className="text-xs text-theme-700">参考了近 {selected.samples} 天数据 · {selected.confidence === '高' ? '数据比较稳' : selected.confidence === '中' ? '数据可作参考' : '数据还太少'}</p>
                   <div className="flex flex-wrap gap-2">
-                    <button type="button" onClick={handleCopy} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-theme-200 bg-white px-4 py-2 text-sm font-medium text-theme-700 hover:bg-theme-50">
+                    <button type="button" onClick={handleCopy} className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-theme-700 hover:bg-white/10">
                       {copied ? <Check size={16} /> : <Clipboard size={16} />} {copied ? '报告已复制' : '复制报告'}
                     </button>
-                    <button type="button" onClick={handlePoster} disabled={posterBusy} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-800 disabled:opacity-60">
+                    <button type="button" onClick={handlePoster} disabled={posterBusy} className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-teal-700 px-4 py-2 text-sm font-medium text-white hover:bg-teal-600 disabled:opacity-60">
                       <Download size={16} /> {posterBusy ? '正在生成' : '下载分享海报'}
                     </button>
                   </div>

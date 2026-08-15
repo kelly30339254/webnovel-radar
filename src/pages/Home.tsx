@@ -33,7 +33,7 @@ export default function Home() {
   if (!data) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-theme-bg">
-        <p className="animate-pulse text-sm tracking-widest text-theme-700">风向数据加载中…</p>
+        <p className="text-sm tracking-widest text-theme-700 motion-safe:animate-pulse">风向数据加载中…</p>
       </div>
     )
   }
@@ -44,7 +44,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-theme-bg text-theme-950 antialiased">
       <div className={`relative z-10 ${easterEgg ? 'hidden' : ''}`}>
         <Hero data={data} historyDays={history?.days.length ?? 0} updateStatus={updateStatus} />
-        <main className="mx-auto max-w-[1440px] px-5 pb-4 md:px-8">
+        <main className="mx-auto max-w-[1440px] px-5 pb-16 md:px-8">
           <TodayDecisions
             genres={data.genres}
             history={history}

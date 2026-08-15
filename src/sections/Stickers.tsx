@@ -32,7 +32,7 @@ function Sparkle({ size = 18, color = '#f472b6' }: { size?: number; color?: stri
   )
 }
 
-function Book({ size = 26, color = '#e11d48' }: { size?: number; color?: string }) {
+function Book({ size = 26, color = '#fb7185' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path

@@ -179,11 +179,14 @@ npm run preview    # 预览 dist/ 产物
   - 新板块优先复用 `SectionTitle`（玫瑰闪光图标 + hint + 右侧槽位）。
   - 任何展示外部数据的模块都要提供 `sourceUrl`，并通过 `SourceLink` 渲染可点击来源。
 - **样式**：
-  - 主色调为 rose / pink 系，背景 `#fff5f7`。
-  - 卡片悬停统一使用 `card-pink` 类（定义在 `src/index.css`）。
+  - 全站为**深色玻璃拟态**设计，主题固定、无换肤功能：`--theme-*` CSS 变量（`src/index.css`）为深色档，页面底为深紫黑（`--theme-bg` ≈ `#0d0a14`），主文本 `--theme-950` 为近白色，强调色为 rose 系（`--theme-700` 亮玫瑰文本、`--theme-800` 实心按钮底配白字）。站点 logo 为手绘 SVG `public/assets/nailong-logo.svg`（奶龙形象，导航 / 海报共用）。
+  - 玻璃卡片统一使用 `.glass` / `.glass-soft` 工具类（需自并 `rounded-2xl` 等圆角），hover 反光掠过用 `.glass-sheen`，均定义在 `src/index.css`；body 自带固定的玫瑰/紫环境光晕。
+  - 卡片悬停统一使用 `card-pink` 类（玫瑰辉光投影，定义在 `src/index.css`）。
   - 入场动画使用 `rise-in` 类，并配合 `animationDelay` 形成错落。
-  - 动态效果必须适配 `prefers-reduced-motion: reduce`（已有 `@media` 覆盖）。
-- **SVG 趋势图**：`TrendChart` 手写 SVG，右侧标签需保留：短名 ≤8 字、两行排列、纵向防重叠算法、白色描边光晕。重绘时不要丢失这些特性。
+  - 动态效果必须适配 `prefers-reduced-motion: reduce`（已有 `@media` 覆盖；新动画用 `motion-safe:` 前缀）。
+  - 禁止新增硬编码浅色类（`bg-white`、`text-stone-*`、`border-stone-*` 等）；深色下的映射约定：卡片底用 `.glass`/`bg-white/5`，正文次要文本用 `text-slate-300/400`，边框用 `border-white/10`。
+- **SVG 趋势图**：`TrendChart` 手写 SVG，右侧标签需保留：短名 ≤8 字、两行排列、纵向防重叠算法、描边光晕（深底下描边色为 `#0d0a14`）。重绘时不要丢失这些特性。
+- **路由**：多页应用，路由集中在 `src/App.tsx`（`/`、`/trends`、`/boards`、`/tips`、`/tools`、`/submissions`、`/ip`、`/nbti`、`/radar`、`/prompt-lab`、`/workbench`）。`/workbench` 是「奶龙作者工作台」宣传页（`src/pages/WorkbenchPage.tsx` + `src/components/workbench/`），深色玻璃风、含可交互迷你画布 demo，不消费 wind.json。
 
 ## 测试策略
 

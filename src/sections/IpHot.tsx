@@ -22,8 +22,8 @@ type HongguoData = {
 
 const FORM_STYLE: Record<string, string> = {
   真人剧: 'border-theme-600 text-theme-700',
-  漫剧: 'border-[#174c43] text-[#174c43]',
-  AI剧: 'border-stone-500 text-stone-700',
+  漫剧: 'border-teal-400/50 text-teal-300',
+  AI剧: 'border-white/20 text-slate-400',
 }
 
 export default function IpHot({ showViewMore = true }: { showViewMore?: boolean }) {
@@ -58,15 +58,15 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
           return (
           <div
             key={cat.name}
-            className="border border-stone-300 bg-white/65 p-5"
+            className="glass rounded-2xl p-5"
           >
-            <div className="mb-4 flex items-center justify-between border-b border-stone-200 pb-3">
+            <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3">
               <h3 className="flex items-center gap-2 font-serif text-base font-bold text-theme-950">
                 <span className={`border px-2.5 py-1 text-xs ${FORM_STYLE[cat.name] ?? 'border-theme-600 text-theme-700'}`}>
                   {cat.name}
                 </span>
               </h3>
-              <span className="text-xs text-stone-400">官网推荐顺序</span>
+              <span className="text-xs text-slate-500">官网推荐顺序</span>
             </div>
             <ol className="space-y-3">
               {cat.items.map((it, index) => (
@@ -84,7 +84,7 @@ export default function IpHot({ showViewMore = true }: { showViewMore?: boolean 
                     >
                       {it.title}
                     </a>
-                    <p className="mt-1 text-xs text-stone-500">
+                    <p className="mt-1 text-xs text-slate-400">
                       <span className="font-medium text-theme-700">{it.heat}</span>
                       {it.note ? ` · ${it.note}` : ''}
                     </p>

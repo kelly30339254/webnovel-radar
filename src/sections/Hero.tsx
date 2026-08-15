@@ -80,10 +80,15 @@ export default function Hero({
   }
 
   return (
-    <header className="border-b border-theme-200/80 bg-theme-bg">
-      <div className="mx-auto grid max-w-[1440px] gap-10 px-5 pb-12 pt-10 md:px-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.72fr)] lg:items-center lg:gap-16 lg:pb-16 lg:pt-12">
+    <header className="relative overflow-hidden border-b border-white/10 bg-theme-bg">
+      {/* 大标题下的渐变光晕装饰层 */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute -top-28 left-[10%] h-72 w-[38rem] rounded-full bg-theme-500/15 blur-3xl motion-safe:animate-pulse" style={{ animationDuration: '9s' }} />
+        <div className="absolute right-[6%] top-1/4 h-80 w-80 rounded-full bg-violet-500/15 blur-3xl motion-safe:animate-pulse" style={{ animationDuration: '12s', animationDelay: '1.5s' }} />
+      </div>
+      <div className="relative mx-auto grid max-w-[1440px] gap-10 px-5 pb-12 pt-14 md:px-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.72fr)] lg:items-center lg:gap-16 lg:pb-20 lg:pt-20">
         <div className="rise-in">
-          <h1 className="font-serif text-[clamp(3.6rem,7.2vw,7.25rem)] font-black leading-[0.92] tracking-[-0.06em] text-[#111]">
+          <h1 className="font-serif text-[clamp(3.6rem,7.2vw,7.25rem)] font-black leading-[0.92] tracking-[-0.06em] text-theme-950">
             <span className="text-theme-600">今日</span>网文风向
           </h1>
           <div className="mt-7 flex items-center gap-2" aria-hidden="true">
@@ -91,17 +96,17 @@ export default function Hero({
             <span className="h-px w-32 bg-theme-600" />
           </div>
 
-          <blockquote className="relative mt-8 max-w-3xl pl-12 font-serif text-[clamp(1.8rem,3.4vw,3.25rem)] font-bold leading-[1.34] tracking-[-0.03em] text-[#171513] sm:pl-20">
-            <span className="absolute left-0 top-[-0.3em] font-serif text-8xl font-black leading-none text-stone-200" aria-hidden="true">“</span>
+          <blockquote className="relative mt-8 max-w-3xl pl-12 font-serif text-[clamp(1.8rem,3.4vw,3.25rem)] font-bold leading-[1.34] tracking-[-0.03em] text-theme-950 sm:pl-20">
+            <span className="absolute left-0 top-[-0.3em] font-serif text-8xl font-black leading-none text-white/20" aria-hidden="true">“</span>
             {lines.map((line) => <span key={line} className="block">{line}{line === lines.at(-1) ? '' : '，'}</span>)}
-            <span className="ml-2 text-stone-200" aria-hidden="true">”</span>
+            <span className="ml-2 text-white/20" aria-hidden="true">”</span>
           </blockquote>
 
-          <div className="mt-7 flex items-center gap-4 text-sm font-medium tracking-wide text-stone-700">
+          <div className="mt-7 flex items-center gap-4 text-sm font-medium tracking-wide text-slate-300">
             <span className="h-1 w-12 bg-theme-600" aria-hidden="true" />
             <CalendarDays size={18} className="text-theme-600" />
             <time dateTime={data.updatedAt}>{data.updatedAt}</time>
-            {sourceDate && <span className="hidden text-xs text-stone-500 sm:inline">新书榜截止 {sourceDate}</span>}
+            {sourceDate && <span className="hidden text-xs text-slate-500 sm:inline">新书榜截止 {sourceDate}</span>}
           </div>
 
           <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-2">
@@ -109,7 +114,7 @@ export default function Hero({
               type="button"
               onClick={handlePoster}
               disabled={posterBusy}
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-theme-600 px-5 py-3 text-base font-bold text-white shadow-sm transition-colors hover:bg-theme-700 disabled:cursor-wait disabled:opacity-70"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md bg-theme-800 px-5 py-3 text-base font-bold text-white shadow-lg shadow-rose-500/25 transition-colors hover:bg-theme-700 disabled:cursor-wait disabled:opacity-70"
             >
               {posterBusy ? <LoaderCircle size={21} className="animate-spin" /> : posterReady ? <Check size={21} /> : <FileDown size={21} />}
               {posterBusy ? '正在生成海报' : posterReady ? '海报已生成' : '生成今日风向海报'}
@@ -117,42 +122,54 @@ export default function Hero({
             <button
               type="button"
               onClick={handleShare}
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md border border-theme-500 bg-transparent px-5 py-3 text-base font-bold text-theme-700 transition-colors hover:bg-white"
+              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-md border border-theme-500/70 bg-white/5 px-5 py-3 text-base font-bold text-theme-700 transition-colors hover:bg-white/10"
             >
               {shared ? <Check size={21} /> : <FileText size={21} />}
               <span aria-live="polite">{shared ? '简报已复制' : '分享文字简报'}</span>
             </button>
           </div>
 
-          <p className="mt-4 text-xs leading-relaxed text-stone-500">
+          <p className="mt-4 text-xs leading-relaxed text-slate-500">
             数据来源：番茄男/女频新书榜和站内最近 {historyDays} 天记录；记录太少的题材只展示，不会因为某一天突然变热就被推荐。
           </p>
         </div>
 
         <div className="rise-in mx-auto w-full max-w-[460px]" style={{ animationDelay: '0.1s' }}>
           <div className="relative aspect-[3/4]">
-            <span className="absolute inset-3 translate-x-4 translate-y-3 border border-stone-300 bg-[#eee8dc] shadow-lg" aria-hidden="true" />
-            <article className="absolute inset-0 flex flex-col overflow-hidden border border-stone-300 bg-[#f8f4ec] p-5 shadow-2xl shadow-stone-900/20 sm:p-6" aria-label="今日网文风向海报预览">
+            <span className="absolute inset-3 translate-x-4 translate-y-3 border border-white/10 bg-white/5 shadow-lg shadow-black/40" aria-hidden="true" />
+            <article className="glass absolute inset-0 flex flex-col overflow-hidden p-5 sm:p-6" aria-label="今日网文风向海报预览">
               <div className="flex items-start justify-between border-b border-theme-400/70 pb-3">
-                <img src="/assets/webnovel-radar-seal.png" alt="网文风向" className="h-12 w-12 object-cover" />
-                <time className="pt-2 font-serif text-lg text-stone-800" dateTime={data.updatedAt}>{data.updatedAt}</time>
+                <img src="/assets/nailong-logo.svg" alt="奶龙数据站" className="h-12 w-12 rounded-xl" />
+                <time className="pt-2 font-serif text-lg text-theme-950" dateTime={data.updatedAt}>{data.updatedAt}</time>
               </div>
-              <div className="relative z-10 mt-5 flex min-h-0 flex-1 flex-col overflow-hidden border border-theme-300/70">
+              <div className="relative z-10 mt-5 flex min-h-0 flex-1 flex-col overflow-hidden border border-white/15">
                 <div className="px-4 pt-4">
-                  <h2 className="whitespace-nowrap font-serif text-[clamp(1.75rem,3vw,2.7rem)] font-black tracking-[-0.06em] text-[#111]">
+                  <h2 className="whitespace-nowrap font-serif text-[clamp(1.75rem,3vw,2.7rem)] font-black tracking-[-0.06em] text-theme-950">
                     <span className="text-theme-600">今日</span>网文风向
                   </h2>
-                  <p className="mt-2 border-y border-stone-300 py-2 text-center font-serif text-[10px] tracking-[0.28em] text-stone-600">圈速览 · 趋势洞察 · 创作参考</p>
-                  <p className="mt-4 line-clamp-4 font-serif text-base font-bold leading-relaxed text-stone-900 sm:text-lg">{data.verdict}</p>
-                  <div className="mt-3 grid grid-cols-3 border-y border-stone-300 py-2 text-center text-[9px] text-stone-600">
+                  <p className="mt-2 border-y border-white/15 py-2 text-center font-serif text-[10px] tracking-[0.28em] text-slate-400">圈速览 · 趋势洞察 · 创作参考</p>
+                  <p className="mt-4 line-clamp-4 font-serif text-base font-bold leading-relaxed text-theme-950 sm:text-lg">{data.verdict}</p>
+                  <div className="mt-3 grid grid-cols-3 border-y border-white/15 py-2 text-center text-[9px] text-slate-400">
                     <span>{historyDays} 天趋势</span><span>{data.genres.length} 个题材</span><span>{data.boards.reduce((sum, board) => sum + board.books.length, 0)} 本新书</span>
                   </div>
                 </div>
-                <img
-                  src="/assets/daily-report-poster-art.png"
-                  alt="城市、楼阁与书卷构成的网文日刊插画"
-                  className="mt-auto h-[42%] w-full flex-none object-cover object-bottom"
-                />
+                <div
+                  aria-hidden="true"
+                  className="relative mt-auto h-[42%] w-full flex-none overflow-hidden"
+                >
+                  {/* 深色渐变 + 网格 + 光晕装饰，替代原浅色水墨插画 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-theme-900/60 via-[#171223] to-transparent" />
+                  <div
+                    className="absolute inset-0 opacity-60"
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
+                      backgroundSize: '26px 26px',
+                    }}
+                  />
+                  <div className="absolute -bottom-10 left-1/2 h-32 w-72 -translate-x-1/2 rounded-full bg-theme-500/25 blur-3xl" />
+                  <div className="absolute bottom-6 right-8 h-16 w-16 rounded-full bg-violet-500/20 blur-2xl" />
+                </div>
               </div>
             </article>
           </div>

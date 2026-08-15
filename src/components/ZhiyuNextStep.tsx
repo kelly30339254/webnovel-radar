@@ -15,7 +15,7 @@ export default function ZhiyuNextStep({
   return (
     <aside className="flex flex-col gap-4 border-t border-theme-200 bg-theme-accent-soft px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-7">
       <div className="flex min-w-0 items-start gap-3">
-        <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-white text-theme-700 shadow-sm">
+        <span className="flex h-9 w-9 flex-none items-center justify-center rounded-lg bg-white/10 text-theme-700 shadow-lg shadow-black/30">
           <Wand2 size={18} />
         </span>
         <div>
@@ -29,7 +29,7 @@ export default function ZhiyuNextStep({
         target="_blank"
         rel="noreferrer noopener"
         onClick={() => trackEvent('click_zhiyu_writing', { placement })}
-        className="inline-flex min-h-10 flex-none items-center justify-center gap-2 rounded-lg bg-theme-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-theme-800"
+        className="inline-flex min-h-10 flex-none items-center justify-center gap-2 rounded-lg bg-theme-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-theme-700"
       >
         免费生成大纲 <ExternalLink size={15} />
       </a>

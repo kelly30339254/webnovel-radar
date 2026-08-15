@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { CalendarDays, X } from 'lucide-react'
 import { Heart } from '@/sections/Stickers'
 
-function BeatHeart({ size = 64, color = '#e11d48' }: { size?: number; color?: string }) {
+function BeatHeart({ size = 64, color = '#fb7185' }: { size?: number; color?: string }) {
   return (
     <span className="heart-beat inline-block leading-none">
       <Heart size={size} color={color} />
@@ -140,7 +140,7 @@ export default function EasterEgg({ active, onClose, date }: EasterEggProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] overflow-y-auto bg-[#fff7f8] px-5 text-center text-rose-950"
+      className="fixed inset-0 z-[100] overflow-y-auto bg-[#160b14] px-5 text-center text-rose-50"
       role="dialog"
       aria-modal="true"
       aria-label="今日彩蛋"
@@ -148,14 +148,14 @@ export default function EasterEgg({ active, onClose, date }: EasterEggProps) {
       <button
         type="button"
         onClick={onClose}
-        className="fixed right-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-rose-200 bg-white/90 text-rose-700 shadow-sm transition-colors hover:bg-rose-50"
+        className="fixed right-5 top-5 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-rose-200 shadow-sm backdrop-blur-xl transition-colors hover:bg-white/20"
         aria-label="关闭彩蛋"
       >
         <X size={20} />
       </button>
 
       <div className="mx-auto flex min-h-screen max-w-4xl flex-col items-center justify-center py-16">
-        <p className="rise-in inline-flex items-center gap-2 border-b border-rose-200 pb-3 text-xs font-bold tracking-[0.2em] text-rose-500">
+        <p className="rise-in inline-flex items-center gap-2 border-b border-white/15 pb-3 text-xs font-bold tracking-[0.2em] text-rose-300">
           <CalendarDays size={14} /> {displayDate(date)} · 今日份小纸条
         </p>
 
@@ -168,11 +168,11 @@ export default function EasterEgg({ active, onClose, date }: EasterEggProps) {
           <p className="mt-3 pl-[0.25em] font-serif text-3xl font-bold tracking-[0.25em] sm:text-5xl">FOEVER</p>
         </div>
 
-        <div className="mt-10 w-full border-y border-rose-200 bg-white/70 px-5 py-7 sm:px-10 sm:py-9">
+        <div className="mt-10 w-full border-y border-white/10 bg-white/5 px-5 py-7 backdrop-blur-xl sm:px-10 sm:py-9">
           {lines.map((line, index) => (
             <p
               key={line}
-              className="rise-in text-base font-medium leading-relaxed text-rose-800 sm:text-xl"
+              className="rise-in text-base font-medium leading-relaxed text-rose-100 sm:text-xl"
               style={{ animationDelay: `${0.16 + index * 0.08}s` }}
             >
               {line}
@@ -180,11 +180,11 @@ export default function EasterEgg({ active, onClose, date }: EasterEggProps) {
           ))}
         </div>
 
-        <p className="rise-in mt-8 font-serif text-sm font-bold text-rose-500 sm:text-base" style={{ animationDelay: '0.5s' }}>
+        <p className="rise-in mt-8 font-serif text-sm font-bold text-rose-300 sm:text-base" style={{ animationDelay: '0.5s' }}>
           今天也要好好吃饭，好好生活，好好开心。
         </p>
       </div>
-      <p className="fixed bottom-4 left-0 right-0 text-[11px] text-rose-300">16 秒后自动返回 · 按 ESC 或点右上角关闭</p>
+      <p className="fixed bottom-4 left-0 right-0 text-[11px] text-rose-200/70">16 秒后自动返回 · 按 ESC 或点右上角关闭</p>
     </div>
   )
 }

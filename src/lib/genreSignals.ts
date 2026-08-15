@@ -89,12 +89,12 @@ export function buildGenreSignals(genres: GenreHeat[], history: HistoryData | nu
 }
 
 export function signalTone(stage: GenreStage): string {
-  if (stage === 'surging' || stage === 'rising') return 'bg-emerald-50 text-emerald-700 border-emerald-200'
-  if (stage === 'cooling') return 'bg-slate-100 text-slate-600 border-slate-200'
-  if (stage === 'crowded') return 'bg-amber-50 text-amber-800 border-amber-200'
-  if (stage === 'new') return 'bg-teal-50 text-teal-700 border-teal-200'
-  if (stage === 'insufficient') return 'bg-stone-100 text-stone-600 border-stone-200'
-  return 'bg-blue-50 text-blue-700 border-blue-200'
+  if (stage === 'surging' || stage === 'rising') return 'bg-emerald-400/15 text-emerald-300 border-emerald-400/30'
+  if (stage === 'cooling') return 'bg-slate-400/10 text-slate-400 border-slate-400/25'
+  if (stage === 'crowded') return 'bg-amber-400/15 text-amber-300 border-amber-400/30'
+  if (stage === 'new') return 'bg-teal-400/15 text-teal-300 border-teal-400/30'
+  if (stage === 'insufficient') return 'bg-white/5 text-slate-400 border-white/10'
+  return 'bg-blue-400/15 text-blue-300 border-blue-400/30'
 }
 
 export function formatDelta(value: number): string {

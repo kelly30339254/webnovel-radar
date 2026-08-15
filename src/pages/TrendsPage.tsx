@@ -19,7 +19,7 @@ export default function TrendsPage() {
     <div className="min-h-screen bg-theme-bg text-theme-950">
       <PageHeader title="风向数据" hint="先看题材现在有多火、最近涨还是跌，再看大家都在写什么。" />
       <main className="mx-auto max-w-6xl px-5 pb-14 md:px-8">
-        {error && <p className="mt-10 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">数据加载失败：{error}</p>}
+        {error && <p className="mt-10 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">数据加载失败：{error}</p>}
         {data ? (
           <>
             <GenreBoard genres={data.genres} history={history} boards={data.boards} updatedAt={historyUpdatedAt ?? data.updatedAt} />

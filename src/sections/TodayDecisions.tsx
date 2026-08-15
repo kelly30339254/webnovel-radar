@@ -59,7 +59,7 @@ function EditorialTitle({ id, title, hint }: { id: string; title: string; hint: 
       <span className="h-px flex-1 bg-theme-400/70" aria-hidden="true" />
       <div className="text-center">
         <h2 id={id} className="font-serif text-3xl font-black tracking-[0.12em] text-theme-700">{title}</h2>
-        <p className="mt-1 text-[11px] tracking-[0.18em] text-stone-500">{hint}</p>
+        <p className="mt-1 text-[11px] tracking-[0.18em] text-slate-500">{hint}</p>
       </div>
       <span className="h-px flex-1 bg-theme-400/70" aria-hidden="true" />
     </div>
@@ -125,7 +125,7 @@ export default function TodayDecisions({
       label: '很火，但同类书很多',
       signal: crowded,
       icon: CircleAlert,
-      color: 'text-[#174c43] border-[#5a867e]',
+      color: 'text-emerald-300 border-emerald-300/50',
       summary: genres.find((genre) => genre.name === crowded.name)?.note ?? '读者一眼能看懂，但人物或特殊能力必须有明显不同。',
       analysis: [
         `为什么：现在有多火 ${crowded.heat}、同类书多少 ${crowded.crowding}，相似作品已经很多。`,
@@ -145,24 +145,24 @@ export default function TodayDecisions({
   ]
 
   return (
-    <div className="pb-14">
+    <div className="pb-20">
       <section id="direction" className="scroll-mt-28 pt-10" aria-labelledby="featured-title">
         <EditorialTitle id="featured-title" title="今天先看什么" hint="先看结论，再决定今天写什么" />
-        <div className="mt-7 grid border-y border-stone-300 lg:grid-cols-2 lg:divide-x lg:divide-stone-300">
+        <div className="mt-7 grid border-y border-white/10 lg:grid-cols-2 lg:divide-x lg:divide-white/10">
           {featured.map((item) => {
             const Icon = item.icon
             return (
-              <article key={item.label} className="grid gap-5 border-b border-stone-300 px-2 py-7 last:border-b-0 sm:grid-cols-[8rem_1fr] sm:px-6 lg:border-b-0">
+              <article key={item.label} className="grid gap-5 border-b border-white/10 px-2 py-7 last:border-b-0 sm:grid-cols-[8rem_1fr] sm:px-6 lg:border-b-0">
                 <div className="flex items-start justify-center pt-2">
                   <div className={`flex h-28 w-28 items-center justify-center rounded-full border ${item.color}`}><Icon size={42} strokeWidth={1.25} /></div>
                 </div>
                 <div>
                   <p className={`text-xs font-bold tracking-[0.22em] ${item.color.split(' ')[0]}`}>{item.label}</p>
                   <h3 className="mt-2 font-serif text-3xl font-black text-theme-950">{item.signal.name}</h3>
-                  <p className="mt-2 font-mono text-xs text-stone-500">{metric(item.signal)} · 数据{item.signal.confidence === '高' ? '比较稳' : item.signal.confidence === '中' ? '可作参考' : '还太少'}</p>
-                  <p className="mt-3 text-sm leading-7 text-stone-700">{item.summary}</p>
-                  <p className="mt-2 text-sm font-semibold leading-7 text-theme-900">{actionFor(item.signal)}</p>
-                  <ul className="mt-4 space-y-2 border-t border-stone-200 pt-4 text-xs leading-6 text-stone-600">
+                  <p className="mt-2 font-mono text-xs text-slate-400">{metric(item.signal)} · 数据{item.signal.confidence === '高' ? '比较稳' : item.signal.confidence === '中' ? '可作参考' : '还太少'}</p>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">{item.summary}</p>
+                  <p className="mt-2 text-sm font-semibold leading-7 text-theme-950">{actionFor(item.signal)}</p>
+                  <ul className="mt-4 space-y-2 border-t border-white/10 pt-4 text-xs leading-6 text-slate-400">
                     {item.analysis.map((line) => <li key={line} className="flex gap-2"><span className="text-theme-600">◆</span><span>{line}</span></li>)}
                   </ul>
                   <Link to={radarPath(item.signal.name)} onClick={() => trackEvent('direction_to_radar', { genre: item.signal.name })} className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-theme-700 hover:text-theme-950">
@@ -175,12 +175,12 @@ export default function TodayDecisions({
         </div>
       </section>
 
-      <section className="mt-14" aria-labelledby="fit-title">
+      <section className="mt-20" aria-labelledby="fit-title">
         <EditorialTitle id="fit-title" title="这个题材适不适合你" hint="不只看题材火不火，也要看你能不能写好" />
         <div className="mt-7 grid gap-5 lg:grid-cols-2">
-          <article className="border-t-2 border-[#174c43] bg-white/70 p-6">
-            <div className="flex items-center gap-2 text-[#174c43]"><ShieldCheck size={20} /><h3 className="font-serif text-xl font-bold">更适合这样的作者</h3></div>
-            <ul className="mt-4 grid gap-x-6 gap-y-3 text-sm leading-7 text-stone-700 sm:grid-cols-2">
+          <article className="glass rounded-2xl border-t-2 border-emerald-400/60 p-6">
+            <div className="flex items-center gap-2 text-emerald-300"><ShieldCheck size={20} /><h3 className="font-serif text-xl font-bold">更适合这样的作者</h3></div>
+            <ul className="mt-4 grid gap-x-6 gap-y-3 text-sm leading-7 text-slate-300 sm:grid-cols-2">
               {[
                 '能在前三章讲清一条新规则，并至少展示两次效果。',
                 '愿意先写 1.5—3 万字，用点击、追读和评论看看读者反应。',
@@ -188,12 +188,12 @@ export default function TodayDecisions({
                 '能连续 7 天稳定更新，并预留至少两轮开篇修改时间。',
                 '能说出自己的故事和同题材榜首至少有哪两点不同。',
                 '愿意看读者真实反应，而不是只凭自己喜欢不喜欢来判断。',
-              ].map((line) => <li key={line} className="flex gap-2"><span className="text-[#174c43]">✓</span><span>{line}</span></li>)}
+              ].map((line) => <li key={line} className="flex gap-2"><span className="text-emerald-300">✓</span><span>{line}</span></li>)}
             </ul>
           </article>
-          <article className="border-t-2 border-theme-600 bg-white/70 p-6">
+          <article className="glass rounded-2xl border-t-2 border-theme-500 p-6">
             <div className="flex items-center gap-2 text-theme-700"><CircleAlert size={20} /><h3 className="font-serif text-xl font-bold">谨慎进入的情况</h3></div>
-            <ul className="mt-4 grid gap-x-6 gap-y-3 text-sm leading-7 text-stone-700 sm:grid-cols-2">
+            <ul className="mt-4 grid gap-x-6 gap-y-3 text-sm leading-7 text-slate-300 sm:grid-cols-2">
               {[
                 '只能复制榜首书名，还没想好主角为什么要一直往前走。',
                 '更新节奏偏慢，却准备直接押注快速变化的热点。',
@@ -207,51 +207,51 @@ export default function TodayDecisions({
         </div>
       </section>
 
-      <section className="mt-14" aria-labelledby="radar-title">
+      <section className="mt-20" aria-labelledby="radar-title">
         <EditorialTitle id="radar-title" title="题材怎么选" hint="现在有多火 × 最近涨跌 × 同类书多少 × 数据够不够" />
-        <div className="mt-7 overflow-hidden border-y border-stone-300 bg-white/55">
+        <div className="glass-soft mt-7 overflow-hidden rounded-2xl">
           {signals.map((signal, index) => (
-            <article key={signal.name} className={`grid items-center gap-4 px-4 py-4 sm:grid-cols-[10rem_minmax(0,1fr)_5rem_8rem] ${index ? 'border-t border-stone-200' : ''}`}>
-              <div><h3 className="font-serif text-lg font-bold text-theme-950">{signal.name}</h3><p className="mt-1 text-[11px] text-stone-500">{signal.stageLabel} · 看了 {signal.samples} 天</p></div>
-              <div><div className="h-1.5 bg-stone-200"><div className="h-full bg-[#206b5d]" style={{ width: `${signal.heat}%` }} /></div><p className="mt-2 text-xs leading-5 text-stone-600">{actionFor(signal)}</p></div>
+            <article key={signal.name} className={`grid items-center gap-4 px-4 py-4 sm:grid-cols-[10rem_minmax(0,1fr)_5rem_8rem] ${index ? 'border-t border-white/10' : ''}`}>
+              <div><h3 className="font-serif text-lg font-bold text-theme-950">{signal.name}</h3><p className="mt-1 text-[11px] text-slate-400">{signal.stageLabel} · 看了 {signal.samples} 天</p></div>
+              <div><div className="h-1.5 bg-white/10"><div className="h-full bg-emerald-400/80" style={{ width: `${signal.heat}%` }} /></div><p className="mt-2 text-xs leading-5 text-slate-400">{actionFor(signal)}</p></div>
               <div className="font-mono text-sm text-theme-700">{formatDelta(signal.delta7)}</div>
-              <div className="text-right text-xs text-stone-600">同类书 {signal.crowding}<br /><b className="text-theme-900">数据{signal.confidence === '高' ? '较稳' : signal.confidence === '中' ? '可参考' : '太少'}</b></div>
+              <div className="text-right text-xs text-slate-400">同类书 {signal.crowding}<br /><b className="text-theme-950">数据{signal.confidence === '高' ? '较稳' : signal.confidence === '中' ? '可参考' : '太少'}</b></div>
             </article>
           ))}
         </div>
-        <p className="mt-3 text-right text-xs text-stone-500">比较看得准 {reliableCount} 个 · 还要再观察 {observationCount} 个</p>
+        <p className="mt-3 text-right text-xs text-slate-400">比较看得准 {reliableCount} 个 · 还要再观察 {observationCount} 个</p>
       </section>
 
-      <section className="mt-14" aria-labelledby="signal-title">
+      <section className="mt-20" aria-labelledby="signal-title">
         <EditorialTitle id="signal-title" title="最近有什么变化" hint="把数字说成人话，告诉你下一步怎么做" />
         <div className="mt-7 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {trendSignals.map((item) => {
             const Icon = item.icon
             return (
-              <article key={item.label} className="border border-stone-300 bg-white/70 p-5">
+              <article key={item.label} className="glass rounded-2xl p-5">
                 <div className="flex items-center gap-2 text-theme-700"><Icon size={18} /><span className="text-xs font-bold tracking-[0.16em]">{item.label}</span></div>
                 <h3 className="mt-4 font-serif text-xl font-bold text-theme-950">{item.title}</h3>
-                <p className="mt-3 text-xs leading-6 text-stone-500">为什么这样说｜{item.evidence}</p>
-                <p className="mt-2 border-l-2 border-theme-500 pl-3 text-sm font-medium leading-7 text-stone-700">你可以这样做｜{item.action}</p>
+                <p className="mt-3 text-xs leading-6 text-slate-400">为什么这样说｜{item.evidence}</p>
+                <p className="mt-2 border-l-2 border-theme-500 pl-3 text-sm font-medium leading-7 text-slate-300">你可以这样做｜{item.action}</p>
               </article>
             )
           })}
         </div>
       </section>
 
-      <section className="mt-14" aria-labelledby="sample-title">
+      <section className="mt-20" aria-labelledby="sample-title">
         <EditorialTitle id="sample-title" title="热门书为什么能火" hint="看书名为什么想点、前三章怎么留人、哪里不能照抄" />
         <div className="mt-7 grid gap-5 md:grid-cols-2">
           {topBooks.map((book) => (
-            <article key={`${book.channel}-${book.rank}`} className="border border-stone-300 bg-white/60 p-5">
-              <div className="flex items-start justify-between gap-4 border-b border-stone-200 pb-3">
+            <article key={`${book.channel}-${book.rank}`} className="glass rounded-2xl p-5">
+              <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-3">
                 <div><p className="text-[11px] font-bold tracking-[0.14em] text-theme-700">{book.channel} #{book.rank} · {book.genre}</p><h3 className="mt-2 font-serif text-lg font-bold leading-7 text-theme-950">{book.title}</h3></div>
-                <span className="whitespace-nowrap font-mono text-xs text-stone-500">{book.heat}</span>
+                <span className="whitespace-nowrap font-mono text-xs text-slate-400">{book.heat}</span>
               </div>
-              <dl className="mt-4 grid gap-3 text-sm leading-6 text-stone-700">
+              <dl className="mt-4 grid gap-3 text-sm leading-6 text-slate-300">
                 <div><dt className="text-xs font-bold text-theme-700">书名为什么想点</dt><dd>{sampleInsight(book.title)}</dd></div>
-                <div><dt className="text-xs font-bold text-[#174c43]">前三章怎么留人</dt><dd>{openingMove(book.title)}</dd></div>
-                <div><dt className="text-xs font-bold text-stone-500">哪里不能照抄</dt><dd>{copyRisk(book.title)}</dd></div>
+                <div><dt className="text-xs font-bold text-emerald-300">前三章怎么留人</dt><dd>{openingMove(book.title)}</dd></div>
+                <div><dt className="text-xs font-bold text-slate-500">哪里不能照抄</dt><dd>{copyRisk(book.title)}</dd></div>
               </dl>
               {book.sourceUrl && <a href={book.sourceUrl} target="_blank" rel="noreferrer noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-theme-700 hover:text-theme-950">查看榜单来源 <ExternalLink size={12} /></a>}
             </article>
@@ -259,7 +259,7 @@ export default function TodayDecisions({
         </div>
       </section>
 
-      <section className="mt-14" aria-labelledby="writing-title">
+      <section className="mt-20" aria-labelledby="writing-title">
         <EditorialTitle id="writing-title" title="书名和简介怎么写" hint={`今日参考随 ${updatedAt ?? '最新'} 榜单更新，写作方法保持稳定`} />
         <div className="mt-7 grid gap-5 lg:grid-cols-2">
           {[
@@ -274,7 +274,7 @@ export default function TodayDecisions({
               avoid: '避免先写世界观沿革、能力等级表和长段身份介绍。',
             },
             {
-              channel: '女频表达公式', icon: Feather, tone: 'text-[#174c43]', formula: '身份落差 + 关系越界 + 情绪后果',
+              channel: '女频表达公式', icon: Feather, tone: 'text-emerald-300', formula: '身份落差 + 关系越界 + 情绪后果',
               dailyWords: femaleDailyWords,
               dailyBooks: femaleBoard?.books.slice(0, 2).map((book) => book.title) ?? [],
               dailyAdvice: `今天女频常见的是“${femaleDailyWords[0] ?? crowded.name}”。书名先写人物处境或关系变化，简介再说明谁先做选择、带来什么后果。`,
@@ -286,35 +286,35 @@ export default function TodayDecisions({
           ].map((item) => {
             const Icon = item.icon
             return (
-              <article key={item.channel} className="border border-stone-300 bg-white/60 p-6">
+              <article key={item.channel} className="glass rounded-2xl p-6">
                 <div className={`flex items-center gap-2 ${item.tone}`}><Icon size={19} /><h3 className="font-serif text-xl font-bold">{item.channel}</h3></div>
-                <p className="mt-4 border-y border-stone-200 py-3 font-serif text-lg font-bold leading-8 text-theme-950">{item.formula}</p>
-                <div className="mt-4 border-l-2 border-theme-500 bg-theme-50/70 px-4 py-3">
+                <p className="mt-4 border-y border-white/10 py-3 font-serif text-lg font-bold leading-8 text-theme-950">{item.formula}</p>
+                <div className="mt-4 border-l-2 border-theme-500 bg-white/5 px-4 py-3">
                   <p className="text-xs font-bold tracking-[0.12em] text-theme-700">今天榜单里常见</p>
                   <p className="mt-2 text-sm font-semibold leading-6 text-theme-950">{item.dailyWords.join(' · ') || '等待今日数据更新'}</p>
-                  <p className="mt-2 text-xs leading-6 text-stone-600">{item.dailyAdvice}</p>
+                  <p className="mt-2 text-xs leading-6 text-slate-400">{item.dailyAdvice}</p>
                 </div>
                 <div className="mt-4 grid gap-5 sm:grid-cols-2">
-                  <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">书名模板</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{item.titles.map((line, index) => <li key={line}>{index + 1}. {line}</li>)}</ol></div>
-                  <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">简介前三句</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{item.intro.map((line) => <li key={line}>{line}</li>)}</ol></div>
+                  <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">书名模板</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-slate-300">{item.titles.map((line, index) => <li key={line}>{index + 1}. {line}</li>)}</ol></div>
+                  <div><h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">简介前三句</h4><ol className="mt-2 space-y-2 text-sm leading-6 text-slate-300">{item.intro.map((line) => <li key={line}>{line}</li>)}</ol></div>
                 </div>
-                <div className="mt-5 border-t border-stone-200 pt-4">
+                <div className="mt-5 border-t border-white/10 pt-4">
                   <h4 className="text-xs font-bold tracking-[0.12em] text-theme-700">今天榜首书名参考</h4>
-                  <ul className="mt-2 space-y-1 text-sm leading-6 text-stone-700">
+                  <ul className="mt-2 space-y-1 text-sm leading-6 text-slate-300">
                     {item.dailyBooks.map((title) => <li key={title}>· {title}</li>)}
                   </ul>
                 </div>
-                <div className="mt-5 border-l-2 border-[#174c43] pl-4"><h4 className="text-xs font-bold tracking-[0.12em] text-[#174c43]">前三章结构</h4><ul className="mt-2 space-y-1 text-sm leading-6 text-stone-700">{item.chapters.map((line) => <li key={line}>· {line}</li>)}</ul></div>
-                <p className="mt-4 text-xs leading-6 text-stone-500"><b>避坑：</b>{item.avoid}</p>
+                <div className="mt-5 border-l-2 border-emerald-400/60 pl-4"><h4 className="text-xs font-bold tracking-[0.12em] text-emerald-300">前三章结构</h4><ul className="mt-2 space-y-1 text-sm leading-6 text-slate-300">{item.chapters.map((line) => <li key={line}>· {line}</li>)}</ul></div>
+                <p className="mt-4 text-xs leading-6 text-slate-400"><b>避坑：</b>{item.avoid}</p>
               </article>
             )
           })}
         </div>
       </section>
 
-      <section className="mt-14" aria-labelledby="action-title">
+      <section className="mt-20" aria-labelledby="action-title">
         <EditorialTitle id="action-title" title="今天具体做什么" hint="用 7 天看看这个想法值不值得继续写" />
-        <div className="mt-7 grid gap-px bg-stone-300 md:grid-cols-2">
+        <div className="mt-7 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
           {[
             { icon: Sparkles, label: '今天就做', text: `围绕“${opportunity.name}”写 3 个一句话故事，删掉那些只换题材名也成立的版本。` },
             { icon: BookOpenText, label: '前三章', text: '第一章告诉读者会看到什么，第二章让事情更难，第三章给一次结果并带出更大的问题。' },
@@ -322,13 +322,13 @@ export default function TodayDecisions({
             { icon: ListChecks, label: '7 天试写', text: '先写 1.5—3 万字；点击、三章追读、有效评论至少两项不错，再多准备存稿。' },
           ].map((item) => {
             const Icon = item.icon
-            return <article key={item.label} className="bg-theme-bg p-6"><div className="flex items-center gap-2 text-theme-700"><Icon size={18} /><h3 className="font-serif text-lg font-bold">{item.label}</h3></div><p className="mt-3 text-sm leading-7 text-stone-700">{item.text}</p></article>
+            return <article key={item.label} className="bg-theme-bg p-6"><div className="flex items-center gap-2 text-theme-700"><Icon size={18} /><h3 className="font-serif text-lg font-bold">{item.label}</h3></div><p className="mt-3 text-sm leading-7 text-slate-300">{item.text}</p></article>
           })}
         </div>
       </section>
 
-      <aside className="mt-10 border-l-2 border-stone-300 bg-stone-100/70 px-5 py-4 text-xs leading-6 text-stone-600">
-        <p><b className="text-stone-800">数据怎么来的：</b>题材热度来自站内每日数据；记录不到 4 天的题材还看不准，只展示，不参加推荐排序。</p>
+      <aside className="mt-10 border-l-2 border-white/20 bg-white/5 px-5 py-4 text-xs leading-6 text-slate-400">
+        <p><b className="text-theme-950">数据怎么来的：</b>题材热度来自站内每日数据；记录不到 4 天的题材还看不准，只展示，不参加推荐排序。</p>
         <p>趋势截止 {updatedAt ?? '—'}；新书榜来源截止 {sourceDate ?? boards.map((board) => board.dataDate).filter(Boolean).sort().at(-1) ?? '—'}。所有结论仅作创作研究参考。</p>
       </aside>
     </div>

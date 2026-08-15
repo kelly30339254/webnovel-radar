@@ -104,13 +104,13 @@ export default function TrendChart({
   }
 
   const toggle = (
-    <span className="inline-flex overflow-hidden rounded-full border border-theme-200 text-xs">
+    <span className="inline-flex overflow-hidden rounded-full border border-white/15 text-xs">
       {([7, 30] as const).map((r) => (
         <button
           key={r}
           onClick={() => setRange(r)}
           className={`px-3 py-1 transition-colors ${
-            range === r ? 'bg-gradient-to-r from-theme-500 to-pink-400 text-white' : 'bg-white text-theme-700 hover:bg-theme-50'
+            range === r ? 'bg-gradient-to-r from-theme-500 to-pink-400 text-white' : 'bg-white/5 text-theme-700 hover:bg-white/10'
           }`}
         >
           近{r}天
@@ -136,14 +136,14 @@ export default function TrendChart({
       />
 
       {days.length < 2 ? (
-        <div className="mt-6 rounded-2xl border border-dashed border-theme-300 bg-white/80 p-8 text-center">
-          <p className="font-medium text-theme-900">趋势数据积累中</p>
+        <div className="mt-6 rounded-2xl border border-dashed border-white/15 bg-white/5 p-8 text-center">
+          <p className="font-medium text-theme-950">趋势数据积累中</p>
           <p className="mt-1 text-sm text-theme-700">
             题材热度归档积累 2 天以上后，将自动绘制题材热度曲线。
           </p>
         </div>
       ) : (
-        <div className="card-pink mt-6 rounded-2xl border border-theme-200/70 bg-white/90 p-4 shadow-sm shadow-theme-100/60">
+        <div className="card-pink glass mt-6 rounded-2xl p-4">
           <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
             <span className="text-xs text-theme-700">
               当前显示 {activeVisible.size} / {allSeries.length} 个题材
@@ -158,7 +158,7 @@ export default function TrendChart({
               className={`rounded-full px-3 py-1 text-xs transition-colors ${
                 compareMode
                   ? 'bg-theme-500 text-white'
-                  : 'border border-theme-200 bg-white text-theme-500 hover:bg-theme-50'
+                  : 'border border-white/10 bg-white/5 text-slate-400 hover:bg-white/10'
               }`}
             >
               {compareMode ? '退出对比' : '对比模式'}
@@ -169,8 +169,8 @@ export default function TrendChart({
             <svg viewBox={`0 0 ${W} ${H}`} className="w-full min-w-[320px]" role="img" aria-label="题材热度趋势图">
               {[0, 25, 50, 75, 100].map((v) => (
                 <g key={v}>
-                  <line x1={PAD.left} x2={W - PAD.right} y1={yOf(v)} y2={yOf(v)} stroke="#fce7f3" strokeWidth="1" />
-                  <text x={PAD.left - 8} y={yOf(v) + 4} textAnchor="end" fontSize="10" fill="#f9a8d4" fontFamily="monospace">
+                  <line x1={PAD.left} x2={W - PAD.right} y1={yOf(v)} y2={yOf(v)} stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+                  <text x={PAD.left - 8} y={yOf(v) + 4} textAnchor="end" fontSize="10" fill="#94a3b8" fontFamily="monospace">
                     {v}
                   </text>
                 </g>
@@ -185,7 +185,7 @@ export default function TrendChart({
                     y={H - 8}
                     textAnchor="middle"
                     fontSize="10"
-                    fill="#f9a8d4"
+                    fill="#94a3b8"
                     fontFamily="monospace"
                   >
                     {d.date.slice(5)}
@@ -223,8 +223,8 @@ export default function TrendChart({
                         opacity="0.5"
                       />
                     )}
-                    <circle cx={last.x} cy={last.y} r="3" fill={s.color} stroke="#fff" strokeWidth="1.5" />
-                    <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="#fff" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
+                    <circle cx={last.x} cy={last.y} r="3" fill={s.color} stroke="#0d0a14" strokeWidth="1.5" />
+                    <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="#0d0a14" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
                       {last.v}
                     </text>
                   </g>
@@ -242,12 +242,12 @@ export default function TrendChart({
                   onClick={() => toggleSeries(s.name)}
                   className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs transition-all ${
                     active
-                      ? 'border-theme-200 bg-white text-theme-700 shadow-sm'
-                      : 'border-transparent bg-theme-50/60 text-theme-600 hover:text-theme-700'
+                      ? 'border-white/15 bg-white/10 text-theme-700 shadow-sm'
+                      : 'border-transparent bg-white/5 text-slate-400 hover:text-theme-700'
                   }`}
                   title={s.name}
                 >
-                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : '#fecdd3' }} />
+                  <span className="h-2 w-2 rounded-full" style={{ backgroundColor: active ? s.color : 'rgba(255,255,255,0.18)' }} />
                   <span className="max-w-[6rem] truncate">{shortName(s.name)}</span>
                 </button>
               )

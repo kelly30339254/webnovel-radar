@@ -10,6 +10,7 @@ import PromptLabPage from './pages/PromptLabPage'
 import TrendsPage from './pages/TrendsPage'
 import ToolsPage from './pages/ToolsPage'
 import SubmissionGuidePage from './pages/SubmissionGuidePage'
+import WorkbenchPage from './pages/WorkbenchPage'
 import Nav from '@/sections/Nav'
 import { trackPageView } from '@/hooks/useAnalytics'
 
@@ -44,6 +45,7 @@ export default function App() {
         <Route path="/boards" element={<BoardsPage />} />
         <Route path="/ip" element={<IpPage />} />
         <Route path="/submissions" element={<SubmissionGuidePage />} />
+        <Route path="/workbench" element={<WorkbenchPage />} />
       </Routes>
     </>
   )

@@ -21,7 +21,7 @@ export default function Announcements({ items }: { items: Announcement[] }) {
               <SourceLink url={a.sourceUrl} />
             </div>
             <p className="mt-2 font-serif font-bold text-theme-950">{a.title}</p>
-            <p className="mt-1 text-sm leading-relaxed text-stone-600">{a.summary}</p>
+            <p className="mt-1 text-sm leading-relaxed text-slate-400">{a.summary}</p>
           </li>
         ))}
       </ol>

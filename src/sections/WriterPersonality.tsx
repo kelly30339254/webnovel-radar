@@ -8,9 +8,9 @@ export default function WriterPersonality() {
       <SectionTitle id="writer-personality" title="网文十六型人格" hint="沙雕版 NBTI 测试" />
       <Link
         to="/nbti"
-        className="card-pink mt-4 flex items-center gap-5 rounded-2xl border border-theme-100 bg-white/70 p-5 shadow-sm backdrop-blur-sm transition-all hover:border-theme-200 hover:bg-white"
+        className="card-pink glass glass-sheen mt-4 flex items-center gap-5 rounded-2xl p-5 transition-all"
       >
-        <div className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-gradient-to-br from-theme-100 to-pink-100 text-3xl shadow-inner">
+        <div className="flex h-16 w-16 flex-none items-center justify-center rounded-full bg-gradient-to-br from-white/15 to-rose-400/20 text-3xl shadow-inner">
           📝
         </div>
         <div className="min-w-0 flex-1">

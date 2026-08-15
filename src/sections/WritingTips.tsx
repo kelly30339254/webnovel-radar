@@ -21,14 +21,14 @@ type TipsData = {
 const CATEGORY_STYLE: Record<string, string> = {
   节奏: 'border-theme-500 text-theme-700',
   结构: 'border-theme-500 text-theme-700',
-  套路: 'border-[#174c43] text-[#174c43]',
-  开头: 'border-amber-600 text-amber-800',
-  人物: 'border-[#174c43] text-[#174c43]',
+  套路: 'border-teal-400/50 text-teal-300',
+  开头: 'border-amber-400/60 text-amber-300',
+  人物: 'border-teal-400/50 text-teal-300',
   情绪: 'border-theme-500 text-theme-700',
-  悬念: 'border-stone-500 text-stone-700',
-  设定: 'border-[#174c43] text-[#174c43]',
-  爽点: 'border-amber-600 text-amber-800',
-  描写: 'border-stone-500 text-stone-700',
+  悬念: 'border-white/20 text-slate-400',
+  设定: 'border-teal-400/50 text-teal-300',
+  爽点: 'border-amber-400/60 text-amber-300',
+  描写: 'border-white/20 text-slate-400',
   创新: 'border-theme-500 text-theme-700',
 }
 
@@ -55,7 +55,7 @@ export default function WritingTips() {
             href={TIPS_GUIDE_URL}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex min-h-9 items-center gap-1.5 border border-theme-400 bg-white/70 px-3 py-1.5 text-xs font-semibold text-theme-700 transition-colors hover:bg-theme-50 hover:text-theme-950"
+            className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-theme-700 transition-colors hover:bg-white/10 hover:text-theme-950"
           >
             完整技巧文档 <ExternalLink size={13} />
           </a>
@@ -71,7 +71,7 @@ export default function WritingTips() {
         {data.tips.map((tip, i) => (
           <div
             key={tip.id}
-            className="flex flex-col border border-stone-300 bg-white/65 p-5"
+            className="glass flex flex-col rounded-2xl p-5"
             style={{ animationDelay: `${i * 0.04}s` }}
           >
             <div className="mb-3 flex items-center gap-2">
@@ -84,10 +84,10 @@ export default function WritingTips() {
               </span>
               <h3 className="font-serif text-lg font-bold text-theme-950">{tip.title}</h3>
             </div>
-            <p className="text-sm leading-relaxed text-stone-700">{tip.summary}</p>
-            <div className="mt-4 border-l-2 border-theme-500 bg-stone-50/70 p-3">
-              <p className="text-xs leading-relaxed text-stone-600">
-                <span className="font-semibold text-theme-800">用法：</span>
+            <p className="text-sm leading-relaxed text-slate-300">{tip.summary}</p>
+            <div className="mt-4 border-l-2 border-theme-500 bg-white/5 p-3">
+              <p className="text-xs leading-relaxed text-slate-400">
+                <span className="font-semibold text-theme-700">用法：</span>
                 {tip.usage}
               </p>
             </div>

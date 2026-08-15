@@ -15,7 +15,7 @@ export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
         {items.map((it) => (
           <li
             key={it.title}
-            className="border border-stone-300 bg-white/65 p-5"
+            className="glass rounded-2xl p-5"
           >
             <div className="flex items-start gap-2.5">
               <div className="min-w-0 flex-1">
@@ -23,7 +23,7 @@ export default function AdaptWatch({ items }: { items: AdaptWatchItem[] }) {
                   {it.date && <span className="font-mono text-xs text-theme-600">{it.date}</span>}
                   <p className="font-serif font-bold leading-snug text-theme-950">{it.title}</p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-stone-600">{it.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-400">{it.summary}</p>
               </div>
               <SourceLink url={it.sourceUrl} />
             </div>

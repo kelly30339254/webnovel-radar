@@ -19,7 +19,7 @@ export default function GenreBoard({ genres, history, boards, updatedAt }: { gen
           </>
         }
       />
-      <ol className="mt-4 divide-y divide-theme-100 border-y border-theme-100 bg-white/60">
+      <ol className="glass-soft mt-4 divide-y divide-white/10 overflow-hidden rounded-2xl">
         {signals.map((signal, index) => (
           <li key={signal.name} className="px-2 py-4 sm:px-3">
             <div className="grid grid-cols-[2rem_minmax(0,1fr)_3.2rem] items-start gap-2 sm:grid-cols-[2rem_minmax(10rem,1.2fr)_minmax(8rem,1fr)_4rem_4.5rem_4rem] sm:items-center sm:gap-3">
@@ -32,17 +32,17 @@ export default function GenreBoard({ genres, history, boards, updatedAt }: { gen
                 <p className="mt-1 text-xs leading-relaxed text-theme-500">{signal.advice}</p>
               </div>
               <div className="hidden items-center gap-2 sm:flex">
-                <span className="h-2 flex-1 overflow-hidden rounded-full bg-theme-100" role="img" aria-label={`热度 ${signal.heat}`}>
+                <span className="h-2 flex-1 overflow-hidden rounded-full bg-white/10" role="img" aria-label={`热度 ${signal.heat}`}>
                   <span className="block h-full rounded-full bg-theme-500" style={{ width: `${signal.heat}%` }} />
                 </span>
               </div>
-              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-theme-900">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日</p></div>
-              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
+              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-theme-950">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日</p></div>
+              <div className="hidden text-center sm:block"><p className="font-mono text-sm font-semibold text-amber-400">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
               <div className="text-right"><p className="font-mono text-base font-bold text-theme-700">{signal.heat}</p><p className="text-[10px] text-theme-700">有多火</p></div>
-              <div className="col-start-2 col-end-[-1] mt-2 grid grid-cols-3 gap-px bg-theme-100 sm:hidden">
-                <div className="bg-white py-2"><p className="font-mono text-sm font-semibold text-emerald-700">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日变化</p></div>
-                <div className="bg-white py-2 text-center"><p className="font-mono text-sm font-semibold text-blue-700">{formatDelta(signal.acceleration)}</p><p className="text-[10px] text-theme-700">最近还在涨吗</p></div>
-                <div className="bg-white py-2 text-right"><p className="font-mono text-sm font-semibold text-amber-700">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
+              <div className="col-start-2 col-end-[-1] mt-2 grid grid-cols-3 gap-px bg-white/10 sm:hidden">
+                <div className="bg-white/5 py-2"><p className="font-mono text-sm font-semibold text-emerald-400">{formatDelta(signal.delta7)}</p><p className="text-[10px] text-theme-700">7 日变化</p></div>
+                <div className="bg-white/5 py-2 text-center"><p className="font-mono text-sm font-semibold text-blue-400">{formatDelta(signal.acceleration)}</p><p className="text-[10px] text-theme-700">最近还在涨吗</p></div>
+                <div className="bg-white/5 py-2 text-right"><p className="font-mono text-sm font-semibold text-amber-400">{signal.crowding}</p><p className="text-[10px] text-theme-700">同类书</p></div>
               </div>
             </div>
           </li>
