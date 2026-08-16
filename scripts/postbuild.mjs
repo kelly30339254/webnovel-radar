@@ -25,6 +25,7 @@ const routes = [
   { path: '/ip', title: 'IP 改编热点', description: '红果短剧、漫剧与 AI 剧热点及网文改编风向。' },
   { path: '/workbench', title: '奶龙作者工作台', description: '以画布为核心的网文写作工作台：灵感画布多视图、AI 辅助、写作工具一体，数据保存在本机。' },
   { path: '/assistant', title: '奶龙投稿助手', description: '邮箱批量自动投稿软件：多邮箱轮投、回信自动判定、内置 2481 位收稿编辑库，数据只保存在本机。' },
+  { path: '/revision', title: '奶龙修稿器', description: '在线修稿工具：错别字检查、语句润色与排版校对。' },
   ...Object.entries(resultNames).map(([key, name]) => ({
     path: `/nbti/${key}`,
     title: `我的网文创作人格是「${name}」`,

@@ -10,6 +10,7 @@ const LINKS = [
   { to: '/boards', label: '新书榜', mobileLabel: '榜单', summary: '男频与女频热门新书' },
   { to: '/tips', label: '写作技巧', mobileLabel: '技巧', summary: '结构、节奏与爽点' },
   { to: '/tools', label: '创作工具', mobileLabel: '工具', summary: '雷达、盲盒与创作人格' },
+  { to: '/revision', label: '修稿器', mobileLabel: '修稿', summary: '错别字与语句在线检查' },
   { to: '/submissions', label: '投稿导航', mobileLabel: '投稿', summary: '编辑、平台与收稿要求' },
   { to: '/ip', label: '改编观察', mobileLabel: '改编', summary: '短剧与官方信号' },
   { to: '/assistant', label: '投稿助手', mobileLabel: '助手', summary: '邮箱批量自动投稿软件' },
