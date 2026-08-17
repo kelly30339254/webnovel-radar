@@ -11,6 +11,7 @@ import {
 import { trackEvent } from '@/hooks/useAnalytics'
 
 const DOWNLOAD_URL = 'https://pan.quark.cn/s/4281c66844d0'
+const BAIDU_URL = 'https://pan.baidu.com/s/1BQE9mhYLDtd9kc49qmzghw?pwd=spmv'
 const WECHAT_ID = 'nailong327'
 
 const assurances = [
@@ -94,6 +95,23 @@ export default function DownloadSection() {
               <Download size={18} />
               免费下载奶龙投稿助手
             </a>
+
+            <div className="mt-4">
+              <a
+                href={BAIDU_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                onClick={() =>
+                  trackEvent('click_assistant_download', {
+                    placement: 'assistant_bottom_baidu',
+                  })
+                }
+                className="glass glass-sheen inline-flex min-h-10 items-center gap-2 rounded-xl px-5 text-xs font-semibold text-slate-200 transition-transform motion-safe:hover:-translate-y-0.5"
+              >
+                <Download size={14} />
+                百度网盘下载（提取码 spmv）
+              </a>
+            </div>
 
             {/* 卡密购买区 */}
             <div className="mx-auto mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3 text-sm text-slate-300">

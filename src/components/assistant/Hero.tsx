@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react'
 import { useAnalytics } from '@/hooks/useAnalytics'
 
 const DOWNLOAD_URL = 'https://pan.quark.cn/s/4281c66844d0'
+const BAIDU_URL = 'https://pan.baidu.com/s/1BQE9mhYLDtd9kc49qmzghw?pwd=spmv'
 
 interface StatItem {
   icon: LucideIcon
@@ -89,6 +90,20 @@ export default function Hero() {
           >
             <Download className="h-4 w-4" />
             免费下载
+          </a>
+          <a
+            href={BAIDU_URL}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() =>
+              trackEvent('click_assistant_download', {
+                placement: 'assistant_hero_baidu',
+              })
+            }
+            className="glass glass-sheen inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-sm font-medium text-slate-200 transition-transform duration-200 motion-safe:hover:-translate-y-0.5"
+          >
+            <Download className="h-4 w-4" />
+            百度网盘（提取码 spmv）
           </a>
           <a
             href="#flow-demo"
