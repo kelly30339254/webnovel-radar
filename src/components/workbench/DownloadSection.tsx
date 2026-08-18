@@ -42,7 +42,7 @@ export default function DownloadSection() {
             <Package size={14} className="text-rose-400" />
             奶龙作者工作台
           </p>
-          <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
             现在就开始，把故事放进画布
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
@@ -68,7 +68,7 @@ export default function DownloadSection() {
                 className="glass-soft rounded-2xl p-4"
               >
                 <item.icon size={18} className="text-rose-400" />
-                <p className="mt-2 text-sm font-semibold text-white">{item.title}</p>
+                <p className="mt-2 text-sm font-semibold text-theme-950">{item.title}</p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-400">{item.description}</p>
               </div>
             ))}

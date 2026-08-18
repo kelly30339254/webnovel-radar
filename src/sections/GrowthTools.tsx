@@ -10,9 +10,9 @@ const SECONDARY_TOOLS = [
     icon: Dices,
     title: '今日开书命题盲盒',
     description: '从当天热榜抽题材、人设、爽点和前三章钩子。',
-    surface: 'border-emerald-300/25 bg-emerald-400/10 text-white backdrop-blur-xl',
-    iconTone: 'border-white/35 bg-white/10 text-white',
-    muted: 'text-white/75',
+    surface: 'border-emerald-300/25 bg-emerald-400/10 text-theme-950 backdrop-blur-xl',
+    iconTone: 'border-white/35 bg-white/10 text-theme-950',
+    muted: 'text-theme-950/65',
     divider: 'border-white/25',
     foot: '书名 · 人物 · 前三章',
     event: 'home_tool_prompt',
@@ -36,9 +36,9 @@ const SECONDARY_TOOLS = [
     icon: SpellCheck,
     title: '奶龙修稿器',
     description: '在线检查错别字、语句与排版，写完直接过一遍。',
-    surface: 'border-sky-300/25 bg-sky-400/10 text-white backdrop-blur-xl',
-    iconTone: 'border-white/35 bg-white/10 text-white',
-    muted: 'text-white/75',
+    surface: 'border-sky-300/25 bg-sky-400/10 text-theme-950 backdrop-blur-xl',
+    iconTone: 'border-white/35 bg-white/10 text-theme-950',
+    muted: 'text-theme-950/65',
     divider: 'border-white/25',
     foot: '错别字 · 语句 · 排版',
     event: 'home_tool_revision',
@@ -53,12 +53,12 @@ export default function GrowthTools() {
         <Link
           to="/radar"
           onClick={() => trackEvent('home_tool_radar')}
-          className="glass glass-sheen group relative flex min-h-72 flex-col overflow-hidden rounded-2xl p-7 text-white transition-all hover:-translate-y-1 hover:shadow-[0_18px_44px_-14px] hover:shadow-rose-500/25 lg:col-span-12"
+          className="glass glass-sheen group relative flex min-h-72 flex-col overflow-hidden rounded-2xl p-7 text-theme-950 transition-all hover:-translate-y-1 hover:shadow-[0_18px_44px_-14px] hover:shadow-rose-500/25 lg:col-span-12"
         >
           <span className="absolute inset-y-0 left-0 w-2 bg-theme-500" aria-hidden="true" />
-          <span className="absolute right-7 top-5 font-serif text-7xl font-black text-white/[0.07]" aria-hidden="true">01</span>
+          <span className="absolute right-7 top-5 font-serif text-7xl font-black text-theme-950/10" aria-hidden="true">01</span>
           <div className="flex items-start justify-between gap-4">
-            <span className="inline-flex items-center gap-2 border border-white/35 px-3 py-1.5 text-xs font-semibold text-white">
+            <span className="inline-flex items-center gap-2 border border-white/35 px-3 py-1.5 text-xs font-semibold text-theme-950">
               <Target size={15} /> 首选工具
             </span>
             <span className="flex h-11 w-11 items-center justify-center border border-white/20 text-theme-300">
@@ -68,7 +68,7 @@ export default function GrowthTools() {
           <div className="mt-auto max-w-lg pt-8">
             <p className="text-xs font-semibold tracking-[0.2em] text-theme-700">开书前先判断 · BOOK CHECK</p>
             <h3 className="mt-3 font-serif text-4xl font-black">生成我的开书雷达</h3>
-            <p className="mt-4 text-sm leading-7 text-white/75">结合最近题材热度、你的更新速度和准备写多长，告诉你这本书现在值不值得写，以及接下来 7 天怎么试。</p>
+            <p className="mt-4 text-sm leading-7 text-theme-950/70">结合最近题材热度、你的更新速度和准备写多长，告诉你这本书现在值不值得写，以及接下来 7 天怎么试。</p>
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/20 pt-4 text-xs font-bold text-theme-300">
               <span>适不适合写</span><span>怎么写出不同</span><span>容易踩什么坑</span>
             </div>

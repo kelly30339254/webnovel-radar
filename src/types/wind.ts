@@ -91,7 +91,7 @@ export interface UpdateStatusBoard {
 export interface UpdateStatusModule {
   key: string
   label: string
-  status: 'updated' | 'static'
+  status: 'updated' | 'static' | 'stale'
   dataDate: string
   itemCount?: number
   sourceUrl?: string

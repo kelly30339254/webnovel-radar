@@ -131,14 +131,14 @@ export default function PromptLabPage() {
               </fieldset>
 
               <label className="block text-sm font-semibold">题材
-                <select value={genre} onChange={(event) => { setGenre(event.target.value); setSeed((value) => value + 1); setPosterError('') }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
+                <select value={genre} onChange={(event) => { setGenre(event.target.value); setSeed((value) => value + 1); setPosterError('') }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-theme-950 outline-none focus:border-theme-400">
                   <option value="auto">跟随今日风向</option>
                   {availableGenres.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}
                 </select>
               </label>
 
               <label className="block text-sm font-semibold">核心关键词
-                <select value={keyword} onChange={(event) => { setKeyword(event.target.value); setSeed((value) => value + 1); setPosterError('') }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
+                <select value={keyword} onChange={(event) => { setKeyword(event.target.value); setSeed((value) => value + 1); setPosterError('') }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-theme-950 outline-none focus:border-theme-400">
                   <option value="auto">从热词中抽取</option>
                   {availableKeywords.slice(0, 12).map((item) => <option key={item.word} value={item.word}>{item.word}</option>)}
                 </select>

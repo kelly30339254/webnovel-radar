@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* 主标题 */}
-        <h1 className="mt-6 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 className="mt-6 font-serif text-4xl font-bold leading-[1.15] tracking-tight text-theme-950 sm:text-5xl lg:text-6xl">
           投稿这件事，
           <br />
           交给
@@ -121,7 +121,7 @@ export default function Hero() {
               className="glass glass-sheen rounded-2xl px-5 py-4"
             >
               <stat.icon className="h-4 w-4 text-rose-400" />
-              <p className="mt-2.5 text-sm font-medium text-white">{stat.label}</p>
+              <p className="mt-2.5 text-sm font-medium text-theme-950">{stat.label}</p>
               <p className="mt-1 text-xs text-slate-400">{stat.detail}</p>
             </div>
           ))}

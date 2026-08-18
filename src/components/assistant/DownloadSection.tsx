@@ -75,7 +75,7 @@ export default function DownloadSection() {
               <ShieldCheck size={14} className="text-rose-400" />
               奶龙投稿助手
             </p>
-            <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
               让每一次投稿，都准时出发
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
@@ -140,7 +140,7 @@ export default function DownloadSection() {
                   className="glass-soft rounded-2xl p-4"
                 >
                   <item.icon size={18} className="text-rose-400" />
-                  <p className="mt-2 text-sm font-semibold text-white">{item.title}</p>
+                  <p className="mt-2 text-sm font-semibold text-theme-950">{item.title}</p>
                   <p className="mt-1 text-xs leading-relaxed text-slate-400">{item.description}</p>
                 </div>
               ))}

@@ -179,14 +179,14 @@ npm run preview    # 预览 dist/ 产物
   - 新板块优先复用 `SectionTitle`（玫瑰闪光图标 + hint + 右侧槽位）。
   - 任何展示外部数据的模块都要提供 `sourceUrl`，并通过 `SourceLink` 渲染可点击来源。
 - **样式**：
-  - 全站为**深色玻璃拟态**设计，主题固定、无换肤功能：`--theme-*` CSS 变量（`src/index.css`）为深色档，页面底为深紫黑（`--theme-bg` ≈ `#0d0a14`），主文本 `--theme-950` 为近白色，强调色为 rose 系（`--theme-700` 亮玫瑰文本、`--theme-800` 实心按钮底配白字）。站点 logo 为手绘 SVG `public/assets/nailong-logo.svg`（奶龙形象，导航 / 海报共用）。
-  - 玻璃卡片统一使用 `.glass` / `.glass-soft` 工具类（需自并 `rounded-2xl` 等圆角），hover 反光掠过用 `.glass-sheen`，均定义在 `src/index.css`；body 自带固定的玫瑰/紫环境光晕。
+  - 全站为**玻璃拟态**设计，支持深色 / 浅色切换（`next-themes`，`storageKey: nailong-theme`，默认深色）。`--theme-*` CSS 变量在 `:root` / `html.dark` 为深色档，`html.light` 为浅色档。深色页底为深紫黑（`--theme-bg` ≈ `#0d0a14`），主文本 `--theme-950` 为近白色；浅色页底为淡粉纸色（≈ `#fff5f7`），主文本 `--theme-950` 为深玫褐。强调色为 rose 系（`--theme-700` 为强调文本、`--theme-800` 实心按钮底配白字）。站点 logo 为手绘 SVG `public/assets/nailong-logo.svg`（奶龙形象，导航 / 海报共用）。主题开关在导航栏，组件为 `src/components/ThemeToggle.tsx`。
+  - 玻璃卡片统一使用 `.glass` / `.glass-soft` 工具类（需自并 `rounded-2xl` 等圆角），hover 反光掠过用 `.glass-sheen`，均定义在 `src/index.css`（浅色下有对应覆盖）；body 自带固定的玫瑰/紫环境光晕。
   - 卡片悬停统一使用 `card-pink` 类（玫瑰辉光投影，定义在 `src/index.css`）。
   - 入场动画使用 `rise-in` 类，并配合 `animationDelay` 形成错落。
   - 动态效果必须适配 `prefers-reduced-motion: reduce`（已有 `@media` 覆盖；新动画用 `motion-safe:` 前缀）。
-  - 禁止新增硬编码浅色类（`bg-white`、`text-stone-*`、`border-stone-*` 等）；深色下的映射约定：卡片底用 `.glass`/`bg-white/5`，正文次要文本用 `text-slate-300/400`，边框用 `border-white/10`。
-- **SVG 趋势图**：`TrendChart` 手写 SVG，右侧标签需保留：短名 ≤8 字、两行排列、纵向防重叠算法、描边光晕（深底下描边色为 `#0d0a14`）。重绘时不要丢失这些特性。
-- **路由**：多页应用，路由集中在 `src/App.tsx`（`/`、`/trends`、`/boards`、`/tips`、`/tools`、`/submissions`、`/ip`、`/nbti`、`/radar`、`/prompt-lab`、`/workbench`、`/assistant`、`/revision`）。`/workbench` 是「奶龙作者工作台」宣传页（`src/pages/WorkbenchPage.tsx` + `src/components/workbench/`），`/assistant` 是「奶龙投稿助手」宣传页（`src/pages/AssistantPage.tsx` + `src/components/assistant/`，含自动投稿流程动画与卡密购买微信引导），均为深色玻璃风产品介绍页，不消费 wind.json。`/revision` 是「奶龙修稿器」——自包含静态 HTML 工具（`public/revision-app/index.html`，勿改），`src/pages/RevisionPage.tsx` 只是按导航高度自适应的 iframe 壳。**新增路由必须同步登记 `scripts/postbuild.mjs` 的 routes 数组**，否则线上直连该路径会 404。
+  - 禁止新增硬编码浅色类（`bg-white`、`text-stone-*`、`border-stone-*` 等）；映射约定：卡片底用 `.glass`/`bg-white/5`，正文次要文本用 `text-slate-300/400`，边框用 `border-white/10`。浅色模式由 `src/index.css` 的 `html.light` 覆盖这些深色专用类。主文案优先用 `text-theme-950`，不要把标题写成死的 `text-white`。
+- **SVG 趋势图**：`TrendChart` 手写 SVG，右侧标签需保留：短名 ≤8 字、两行排列、纵向防重叠算法、描边光晕（颜色走 `--chart-halo`，深色为 `#0d0a14`，浅色为纸色）。重绘时不要丢失这些特性。
+- **路由**：多页应用，路由集中在 `src/App.tsx`（`/`、`/trends`、`/boards`、`/tips`、`/tools`、`/ip`、`/nbti`、`/radar`、`/prompt-lab`、`/workbench`、`/assistant`、`/revision`）。`/workbench` 是「奶龙作者工作台」宣传页（`src/pages/WorkbenchPage.tsx` + `src/components/workbench/`），`/assistant` 是「奶龙投稿助手」宣传页（`src/pages/AssistantPage.tsx` + `src/components/assistant/`，含自动投稿流程动画与卡密购买微信引导），均为产品介绍页，不消费 wind.json。`/revision` 是「奶龙修稿器」——自包含静态 HTML 工具（`public/revision-app/index.html`，勿改），`src/pages/RevisionPage.tsx` 只是按导航高度自适应的 iframe 壳。旧路径 `/submissions`（投稿导航）已下线，重定向到 `/assistant`。**新增路由必须同步登记 `scripts/postbuild.mjs` 的 routes 数组**，否则线上直连该路径会 404。
 
 ## 测试策略
 

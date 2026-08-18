@@ -75,7 +75,7 @@ function StageShell({ step, title, subtitle, icon: Icon, children }: StageShellP
           <Icon size={16} />
         </span>
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold text-white">
+          <p className="truncate text-sm font-semibold text-theme-950">
             <span className="mr-1.5 text-rose-400">{step}</span>
             {title}
           </p>
@@ -118,7 +118,7 @@ export default function FlowDemo() {
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="text-center">
         <p className="text-xs font-semibold tracking-[0.3em] text-rose-400">AUTO FLOW</p>
-        <h2 className="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="mt-3 font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
           自动投稿，一目了然
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
@@ -133,14 +133,14 @@ export default function FlowDemo() {
               <div className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/5 p-2.5">
                 <FileText size={18} className="flex-none text-rose-300" />
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-medium text-white">《海雾灯塔》</p>
+                  <p className="truncate text-xs font-medium text-theme-950">《海雾灯塔》</p>
                   <p className="text-[11px] text-slate-400">12,400 字 · txt 导入</p>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/5 p-2.5">
                 <Mail size={18} className="flex-none text-violet-300" />
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-medium text-white">投稿信 · 致陈编辑</p>
+                  <p className="truncate text-xs font-medium text-theme-950">投稿信 · 致陈编辑</p>
                   <p className="text-[11px] text-slate-400">已按刊物自动套用称呼</p>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function FlowDemo() {
                 >
                   <Mail size={16} className="flex-none text-rose-300" />
                   <p className="min-w-0 flex-1 truncate text-xs text-slate-300">
-                    <span className="font-medium text-white">{box.name}</span>
+                    <span className="font-medium text-theme-950">{box.name}</span>
                     <span className="ml-1.5 text-slate-400">{box.host}</span>
                   </p>
                   <span className="flex-none text-[11px] text-slate-500">轮投中</span>
@@ -180,7 +180,7 @@ export default function FlowDemo() {
                 >
                   <Inbox size={16} className="flex-none text-violet-300" />
                   <p className="min-w-0 flex-1 truncate text-xs text-slate-300">
-                    <span className="font-medium text-white">{item.magazine}</span>
+                    <span className="font-medium text-theme-950">{item.magazine}</span>
                     <span className="ml-1.5 text-slate-400">{item.editor} · 来信</span>
                   </p>
                 </div>

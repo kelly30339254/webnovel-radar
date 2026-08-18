@@ -339,10 +339,45 @@ function buildFanqieDebut(board, rawRows) {
 
 function routerPage(html, expectedKey) {
   const routerData = extractBalancedJson(html, 'window._ROUTER_DATA')
+    ?? extractBalancedJson(html, '_ROUTER_DATA =')
+    ?? extractBalancedJson(html, '_ROUTER_DATA=')
   const loaderData = routerData?.loaderData
   if (!loaderData || typeof loaderData !== 'object') return null
   if (expectedKey && loaderData[expectedKey]) return loaderData[expectedKey]
   return Object.values(loaderData).find((value) => value && typeof value === 'object') ?? null
+}
+
+function parseHongguoHtml(html) {
+  const escapedIndex = html.indexOf('&quot;videoList&quot;:')
+  if (escapedIndex >= 0) {
+    const decoded = html
+      .slice(escapedIndex)
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, '&')
+    const list = extractBalancedJson(decoded, '"videoList":', '[', ']')
+    if (Array.isArray(list) && list.length) return list
+  }
+
+  const items = []
+  const seen = new Set()
+  const blockRe = /href="\/detail\?series_id=\d+"[\s\S]{0,1200}?(?:全(\d+)集)/g
+  for (const match of html.matchAll(blockRe)) {
+    const chunk = match[0]
+    const title = stripHtml(chunk.match(/alt="([^"]+)"/)?.[1] ?? '')
+      .replace(/(短剧海报|短剧封面|剧名)$/g, '')
+      .trim()
+    if (!title || seen.has(title)) continue
+    seen.add(title)
+    const tags = [...chunk.matchAll(/>([\u4e00-\u9fff]{2,8})</g)]
+      .map((item) => item[1])
+      .filter((tag) => !/查看更多|播放正片|热门短剧/.test(tag))
+    items.push({
+      series_name: title,
+      episode_right_text: match[1] ? `全${match[1]}集` : '官网推荐',
+      tags,
+    })
+  }
+  return items
 }
 
 function stripHtml(value) {
@@ -432,14 +467,22 @@ function pickDramas(items, matcher, limit = 8) {
 
 async function fetchHongguo() {
   const html = await fetchText(SOURCES.hongguo)
-  const page = routerPage(html, 'page')
-  const videoList = page?.videoList
-  if (!Array.isArray(videoList) || videoList.length < 20) throw new Error('红果官网推荐列表解析失败')
+  const videoList = (() => {
+    const fromRouter = routerPage(html, 'page')?.videoList
+    if (Array.isArray(fromRouter) && fromRouter.length >= 8) return fromRouter
+    const fromHtml = parseHongguoHtml(html)
+    if (Array.isArray(fromHtml) && fromHtml.length >= 8) return fromHtml
+    return []
+  })()
+  if (videoList.length < 8) throw new Error('红果官网推荐列表解析失败')
 
   const featured = videoList.slice(0, 8).map((item, index) => toDramaItem(item, index + 1))
   const female = pickDramas(videoList, (tags) => Array.isArray(tags) && tags.some((tag) => /女性成长|女强|大女主|爱情|宫斗宅斗/.test(tag)))
-  const male = pickDramas(videoList, (tags) => Array.isArray(tags) && tags.some((tag) => /大男主|都市脑洞|超凡逆袭|朝堂权谋|强者回归/.test(tag)))
-  if (featured.length < 6 || female.length < 6 || male.length < 6) throw new Error('红果官网分类推荐数量不足')
+  const male = pickDramas(videoList, (tags) => Array.isArray(tags) && tags.some((tag) => /大男主|都市脑洞|超凡逆袭|朝堂权谋|强者回归|逆袭|战神|历史古代/.test(tag)))
+  if (featured.length < 6) throw new Error('红果官网分类推荐数量不足')
+  if (female.length < 4 || male.length < 4) {
+    console.warn(`红果分类推荐偏少：女频 ${female.length} / 男频 ${male.length}，按实际数量更新`)
+  }
 
   return {
     updatedAt: today(),
@@ -473,11 +516,37 @@ async function main() {
   ])
   if (!existingWind || !Array.isArray(existingWind.genres)) throw new Error('wind.json 结构异常')
 
-  const [{ boards, maleRows }, official, hongguo] = await Promise.all([
+  const [boardResult, officialResult, hongguoResult] = await Promise.allSettled([
     updateFanqieBoards(),
     fetchOfficialContent(),
     fetchHongguo(),
   ])
+  if (boardResult.status === 'rejected') throw boardResult.reason
+  if (officialResult.status === 'rejected') throw officialResult.reason
+
+  const { boards, maleRows } = boardResult.value
+  const official = officialResult.value
+  const existingHongguo = await readJson('hongguo-hot.json')
+  let hongguoData
+  let ipHot = Array.isArray(existingWind.ipHot) ? existingWind.ipHot : []
+  let hongguoStatus = 'stale'
+  let hongguoDate = existingHongguo?.updatedAt ?? ''
+  let hongguoCount = Array.isArray(existingHongguo?.categories)
+    ? existingHongguo.categories.flatMap((category) => category.items).length
+    : ipHot.length
+
+  if (hongguoResult.status === 'fulfilled') {
+    const { rawFeatured: _rawFeatured, ...freshHongguo } = hongguoResult.value
+    hongguoData = freshHongguo
+    ipHot = buildIpHot(hongguoResult.value)
+    hongguoStatus = 'updated'
+    hongguoDate = freshHongguo.updatedAt
+    hongguoCount = freshHongguo.categories.flatMap((category) => category.items).length
+  } else {
+    console.warn(`红果抓取失败，沿用上一份改编数据：${errorMessage(hongguoResult.reason)}`)
+    if (!existingHongguo) throw hongguoResult.reason
+    hongguoData = existingHongguo
+  }
 
   const sourceDate = boards[0].dataDate
   const genres = deriveGenres(boards, existingWind.genres)
@@ -488,13 +557,12 @@ async function main() {
     genres,
     keywords,
     boards,
-    ipHot: buildIpHot(hongguo),
+    ipHot,
     announcements: official.announcements,
     adaptWatch: official.adaptWatch,
   }
   const history = updateHistory(existingHistory, sourceDate, genres)
   const debut = buildFanqieDebut(boards[0], maleRows)
-  const { rawFeatured: _rawFeatured, ...hongguoData } = hongguo
   const updateStatus = {
     checkedAt: today(),
     sourceDate,
@@ -509,7 +577,7 @@ async function main() {
       { key: 'trends', label: '题材、关键词与趋势', status: 'updated', dataDate: sourceDate, itemCount: genres.length + keywords.male.tags.length + keywords.female.tags.length },
       { key: 'daily-analysis', label: '首页分析、热门书解析与书名简介参考', status: 'updated', dataDate: sourceDate, itemCount: genres.length + boards.flatMap((board) => board.books).length + keywords.male.tags.length + keywords.female.tags.length },
       { key: 'debut', label: '首秀观察', status: 'updated', dataDate: sourceDate, itemCount: debut.books.length, sourceUrl: debut.sourceUrl },
-      { key: 'hongguo', label: '红果改编热点', status: 'updated', dataDate: hongguoData.updatedAt, itemCount: hongguoData.categories.flatMap((category) => category.items).length, sourceUrl: SOURCES.hongguo },
+      { key: 'hongguo', label: '红果改编热点', status: hongguoStatus, dataDate: hongguoDate, itemCount: hongguoCount, sourceUrl: SOURCES.hongguo },
       { key: 'official', label: '官方公告与改编风向', status: 'updated', dataDate: today(), itemCount: official.announcements.length + official.adaptWatch.length, sourceUrl: SOURCES.notices },
       { key: 'tools', label: '开书雷达与命题盲盒输入', status: 'updated', dataDate: sourceDate, itemCount: genres.length + keywords.male.tags.length + keywords.female.tags.length },
       { key: 'writing-tips', label: '写作技巧', status: 'static', dataDate: existingTips?.updatedAt ?? '' },

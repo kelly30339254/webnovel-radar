@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  html.dark {
+    color-scheme: dark;
     --theme-bg: 252 35% 5%;
     --theme-50: 251 30% 8%;
     --theme-100: 250 26% 11%;
@@ -46,36 +48,67 @@
     --sidebar-accent-foreground: 35 30% 96%;
     --sidebar-border: 248 20% 18%;
     --sidebar-ring: 348 78% 54%;
+    --chart-halo: #0d0a14;
+    --chart-grid: rgb(255 255 255 / 0.08);
+    --chart-axis: #94a3b8;
+    --poster-wash: linear-gradient(to top, hsl(var(--theme-900) / 0.6), #171223, transparent);
+    --poster-grid: rgb(255 255 255 / 0.06);
+    --glow-a: radial-gradient(64rem 32rem at 12% -6%, hsl(var(--theme-800) / 0.16), transparent 62%);
+    --glow-b: radial-gradient(52rem 28rem at 92% -2%, hsl(265 80% 58% / 0.12), transparent 62%);
+    --glow-c: radial-gradient(70rem 36rem at 50% 115%, hsl(var(--theme-800) / 0.10), transparent 65%);
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+  html.light {
+    color-scheme: light;
+    --theme-bg: 350 100% 98%;
+    --theme-50: 350 100% 99%;
+    --theme-100: 356 100% 97%;
+    --theme-200: 348 45% 88%;
+    --theme-300: 346 42% 46%;
+    --theme-400: 347 58% 38%;
+    --theme-500: 347 72% 34%;
+    --theme-600: 347 77% 30%;
+    --theme-700: 345 80% 26%;
+    --theme-800: 344 80% 24%;
+    --theme-900: 343 75% 20%;
+    --theme-950: 342 55% 16%;
+    --theme-accent: 168 50% 32%;
+    --theme-accent-soft: 350 80% 96%;
+    --background: var(--theme-bg);
+    --foreground: var(--theme-950);
+    --card: 0 0% 100%;
+    --card-foreground: var(--theme-950);
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--theme-950);
+    --primary: var(--theme-800);
+    --primary-foreground: 0 0% 98%;
+    --secondary: var(--theme-100);
+    --secondary-foreground: var(--theme-950);
+    --muted: 348 40% 94%;
+    --muted-foreground: 345 16% 42%;
+    --accent: var(--theme-accent-soft);
+    --accent-foreground: var(--theme-950);
+    --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 345 28% 86%;
+    --input: 345 28% 86%;
+    --ring: var(--theme-600);
+    --sidebar-background: 350 100% 98%;
+    --sidebar-foreground: 342 55% 16%;
+    --sidebar-primary: 344 80% 34%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 356 100% 97%;
+    --sidebar-accent-foreground: 342 55% 16%;
+    --sidebar-border: 348 45% 88%;
+    --sidebar-ring: 347 77% 46%;
+    --chart-halo: #fff5f7;
+    --chart-grid: rgb(76 20 36 / 0.08);
+    --chart-axis: #7a4a56;
+    --poster-wash: linear-gradient(to top, hsl(var(--theme-200) / 0.95), hsl(var(--theme-100) / 0.82), transparent);
+    --poster-grid: rgb(76 20 36 / 0.08);
+    --glow-a: radial-gradient(64rem 32rem at 12% -6%, hsl(var(--theme-500) / 0.12), transparent 62%);
+    --glow-b: radial-gradient(52rem 28rem at 92% -2%, hsl(265 70% 70% / 0.08), transparent 62%);
+    --glow-c: radial-gradient(70rem 36rem at 50% 115%, hsl(var(--theme-500) / 0.08), transparent 65%);
   }
 }
 
@@ -88,10 +121,7 @@
     min-width: 320px;
     font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
     transition: background-color 180ms ease, color 180ms ease;
-    background-image:
-      radial-gradient(64rem 32rem at 12% -6%, hsl(var(--theme-800) / 0.16), transparent 62%),
-      radial-gradient(52rem 28rem at 92% -2%, hsl(265 80% 58% / 0.12), transparent 62%),
-      radial-gradient(70rem 36rem at 50% 115%, hsl(var(--theme-800) / 0.10), transparent 65%);
+    background-image: var(--glow-a), var(--glow-b), var(--glow-c);
     background-attachment: fixed;
     background-repeat: no-repeat;
   }
@@ -192,6 +222,66 @@
 .glass-sheen:hover::after {
   transform: translateX(75%);
 }
+
+html.light .glass {
+  background: linear-gradient(135deg, rgb(255 255 255 / 0.78), rgb(255 255 255 / 0.48) 45%, rgb(255 248 250 / 0.64));
+  border: 1px solid rgb(76 20 36 / 0.10);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.92),
+    inset 0 -1px 0 rgb(255 255 255 / 0.35),
+    0 20px 48px -28px rgb(190 18 60 / 0.18);
+}
+
+html.light .glass-soft {
+  background: linear-gradient(135deg, rgb(255 255 255 / 0.62), rgb(255 248 250 / 0.40));
+  border: 1px solid rgb(76 20 36 / 0.08);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.80),
+    0 14px 32px -22px rgb(190 18 60 / 0.14);
+}
+
+html.light .glass-sheen::after {
+  background: linear-gradient(115deg, transparent 42%, rgb(255 255 255 / 0.45) 50%, transparent 58%);
+}
+
+html.light .text-slate-200 { color: hsl(345 28% 24%); }
+html.light .text-slate-300 { color: hsl(345 22% 28%); }
+html.light .text-slate-400 { color: hsl(345 16% 32%); }
+html.light .text-slate-500 { color: hsl(345 12% 36%); }
+html.light .placeholder\:text-slate-500::placeholder { color: hsl(345 12% 40%); }
+html.light .text-emerald-300,
+html.light .text-emerald-400 { color: hsl(160 72% 24%); }
+html.light .text-amber-200,
+html.light .text-amber-300,
+html.light .text-amber-400 { color: hsl(28 78% 28%); }
+html.light .text-teal-300,
+html.light .text-teal-400 { color: hsl(173 70% 22%); }
+html.light .text-blue-300,
+html.light .text-blue-400 { color: hsl(217 72% 30%); }
+html.light .text-rose-200,
+html.light .text-rose-300 { color: hsl(345 72% 30%); }
+
+html.light .bg-white\/5 { background-color: rgb(255 255 255 / 0.58); }
+html.light .bg-white\/10 { background-color: rgb(255 255 255 / 0.74); }
+html.light .bg-white\/15 { background-color: rgb(255 255 255 / 0.86); }
+html.light .hover\:bg-white\/5:hover { background-color: rgb(255 248 250 / 0.82); }
+html.light .hover\:bg-white\/10:hover { background-color: rgb(255 241 244 / 0.92); }
+html.light .hover\:bg-white\/15:hover { background-color: rgb(255 241 244 / 0.96); }
+html.light .hover\:bg-white\/20:hover { background-color: rgb(255 228 232 / 0.95); }
+
+html.light .border-white\/10 { border-color: rgb(76 20 36 / 0.10); }
+html.light .border-white\/15 { border-color: rgb(76 20 36 / 0.12); }
+html.light .border-white\/20 { border-color: rgb(76 20 36 / 0.14); }
+html.light .border-white\/25 { border-color: rgb(76 20 36 / 0.16); }
+html.light .border-white\/35 { border-color: rgb(76 20 36 / 0.20); }
+html.light .hover\:border-white\/25:hover { border-color: rgb(76 20 36 / 0.22); }
+html.light .divide-white\/10 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(76 20 36 / 0.10); }
+
+html.light .text-white\/75 { color: rgb(76 20 36 / 0.68); }
+html.light .text-white\/85 { color: rgb(76 20 36 / 0.78); }
+html.light .text-white\/90 { color: rgb(76 20 36 / 0.86); }
+html.light .text-white\/20 { color: rgb(76 20 36 / 0.16); }
+html.light .text-white\/\[0\.07\] { color: rgb(76 20 36 / 0.08); }
 
 .nav-scrollbar-hidden {
   -ms-overflow-style: none;

@@ -182,7 +182,7 @@ export default function BookRadarPage() {
 
               <label className="block text-sm font-semibold">
                 想写的题材
-                <select value={selectedName} onChange={(event) => { setGenreName(event.target.value); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
+                <select value={selectedName} onChange={(event) => { setGenreName(event.target.value); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-theme-950 outline-none focus:border-theme-400">
                   {channelGenres.map((signal) => <option key={signal.name} value={signal.name}>{signal.name}</option>)}
                 </select>
               </label>
@@ -200,7 +200,7 @@ export default function BookRadarPage() {
 
               <label className="block text-sm font-semibold">
                 计划篇幅
-                <select value={length} onChange={(event) => { setLength(event.target.value as RadarLength); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-white outline-none focus:border-theme-400">
+                <select value={length} onChange={(event) => { setLength(event.target.value as RadarLength); resetReport() }} className="mt-2 min-h-11 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-sm font-normal text-theme-950 outline-none focus:border-theme-400">
                   <option value="short">中短篇 / 快速验证</option>
                   <option value="medium">50-100 万字</option>
                   <option value="long">百万字长篇</option>

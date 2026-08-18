@@ -27,6 +27,8 @@ module.exports = {
           800: "hsl(var(--theme-800) / <alpha-value>)",
           900: "hsl(var(--theme-900) / <alpha-value>)",
           950: "hsl(var(--theme-950) / <alpha-value>)",
+          accent: "hsl(var(--theme-accent) / <alpha-value>)",
+          "accent-soft": "hsl(var(--theme-accent-soft) / <alpha-value>)",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

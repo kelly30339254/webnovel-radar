@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Routes, Route, useLocation } from 'react-router'
+import { Navigate, Routes, Route, useLocation } from 'react-router'
 import Home from './pages/Home'
 import NbtiPage from './pages/NbtiPage'
 import TipsPage from './pages/TipsPage'
@@ -9,7 +9,6 @@ import BookRadarPage from './pages/BookRadarPage'
 import PromptLabPage from './pages/PromptLabPage'
 import TrendsPage from './pages/TrendsPage'
 import ToolsPage from './pages/ToolsPage'
-import SubmissionGuidePage from './pages/SubmissionGuidePage'
 import WorkbenchPage from './pages/WorkbenchPage'
 import AssistantPage from './pages/AssistantPage'
 import RevisionPage from './pages/RevisionPage'
@@ -46,7 +45,7 @@ export default function App() {
         <Route path="/tips" element={<TipsPage />} />
         <Route path="/boards" element={<BoardsPage />} />
         <Route path="/ip" element={<IpPage />} />
-        <Route path="/submissions" element={<SubmissionGuidePage />} />
+        <Route path="/submissions" element={<Navigate to="/assistant" replace />} />
         <Route path="/workbench" element={<WorkbenchPage />} />
         <Route path="/assistant" element={<AssistantPage />} />
         <Route path="/revision" element={<RevisionPage />} />

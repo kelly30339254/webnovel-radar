@@ -70,7 +70,7 @@ export default function FeatureGrid() {
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="text-center">
         <p className="text-xs font-semibold tracking-[0.3em] text-rose-400">FEATURES</p>
-        <h2 className="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="mt-3 font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
           投稿的每一步，都有人替你把关
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
@@ -87,7 +87,7 @@ export default function FeatureGrid() {
             <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-rose-500/20 to-violet-500/20 text-rose-400 transition-colors group-hover:text-rose-300">
               <Icon size={20} />
             </span>
-            <h3 className="mt-4 text-base font-semibold text-white">{title}</h3>
+            <h3 className="mt-4 text-base font-semibold text-theme-950">{title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-slate-400">{description}</p>
           </div>
         ))}

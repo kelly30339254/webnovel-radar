@@ -169,8 +169,8 @@ export default function TrendChart({
             <svg viewBox={`0 0 ${W} ${H}`} className="w-full min-w-[320px]" role="img" aria-label="题材热度趋势图">
               {[0, 25, 50, 75, 100].map((v) => (
                 <g key={v}>
-                  <line x1={PAD.left} x2={W - PAD.right} y1={yOf(v)} y2={yOf(v)} stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-                  <text x={PAD.left - 8} y={yOf(v) + 4} textAnchor="end" fontSize="10" fill="#94a3b8" fontFamily="monospace">
+                  <line x1={PAD.left} x2={W - PAD.right} y1={yOf(v)} y2={yOf(v)} stroke="var(--chart-grid)" strokeWidth="1" />
+                  <text x={PAD.left - 8} y={yOf(v) + 4} textAnchor="end" fontSize="10" fill="var(--chart-axis)" fontFamily="monospace">
                     {v}
                   </text>
                 </g>
@@ -185,7 +185,7 @@ export default function TrendChart({
                     y={H - 8}
                     textAnchor="middle"
                     fontSize="10"
-                    fill="#94a3b8"
+                    fill="var(--chart-axis)"
                     fontFamily="monospace"
                   >
                     {d.date.slice(5)}
@@ -223,8 +223,8 @@ export default function TrendChart({
                         opacity="0.5"
                       />
                     )}
-                    <circle cx={last.x} cy={last.y} r="3" fill={s.color} stroke="#0d0a14" strokeWidth="1.5" />
-                    <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="#0d0a14" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
+                    <circle cx={last.x} cy={last.y} r="3" fill={s.color} stroke="var(--chart-halo)" strokeWidth="1.5" />
+                    <text x={labelX} y={ly} fontSize="11" fontWeight="600" fill={s.color} stroke="var(--chart-halo)" strokeWidth="3.5" paintOrder="stroke" fontFamily="monospace">
                       {last.v}
                     </text>
                   </g>

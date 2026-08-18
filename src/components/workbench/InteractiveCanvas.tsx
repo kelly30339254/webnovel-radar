@@ -337,7 +337,7 @@ export default function InteractiveCanvas() {
       {/* 头部：标题 + 视图切换 */}
       <div className="flex flex-wrap items-center justify-between gap-3 px-5 pt-5">
         <div>
-          <h3 className="font-serif text-lg text-white">灵感画布 · 在线体验</h3>
+          <h3 className="font-serif text-lg text-theme-950">灵感画布 · 在线体验</h3>
           <p className="mt-0.5 text-xs text-slate-400">
             奶龙作者工作台核心功能的微缩演示
           </p>

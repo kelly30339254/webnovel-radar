@@ -157,13 +157,12 @@ export default function Hero({
                   aria-hidden="true"
                   className="relative mt-auto h-[42%] w-full flex-none overflow-hidden"
                 >
-                  {/* 深色渐变 + 网格 + 光晕装饰，替代原浅色水墨插画 */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-theme-900/60 via-[#171223] to-transparent" />
+                  <div className="absolute inset-0" style={{ backgroundImage: 'var(--poster-wash)' }} />
                   <div
                     className="absolute inset-0 opacity-60"
                     style={{
                       backgroundImage:
-                        'linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)',
+                        'linear-gradient(var(--poster-grid) 1px, transparent 1px), linear-gradient(90deg, var(--poster-grid) 1px, transparent 1px)',
                       backgroundSize: '26px 26px',
                     }}
                   />

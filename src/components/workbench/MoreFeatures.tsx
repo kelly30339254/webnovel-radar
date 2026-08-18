@@ -54,7 +54,7 @@ function FeaturePanel({
 }) {
   return (
     <div className="glass glass-sheen rounded-2xl p-6 sm:p-8">
-      <h3 className="font-serif text-xl font-bold text-white">{title}</h3>
+      <h3 className="font-serif text-xl font-bold text-theme-950">{title}</h3>
       <p className="mt-1 text-sm text-slate-400">{subtitle}</p>
       <ul className="mt-6 space-y-3.5">
         {items.map(({ icon: Icon, text }) => (
@@ -81,7 +81,7 @@ export default function MoreFeatures() {
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="text-center">
         <p className="text-xs font-semibold tracking-[0.3em] text-rose-400">WORKFLOW</p>
-        <h2 className="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="mt-3 font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
           从灵感落地，到完本交付
         </h2>
       </div>

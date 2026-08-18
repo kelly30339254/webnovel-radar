@@ -13,7 +13,7 @@ export default function AssistantPage() {
   })
 
   return (
-    <div className="min-h-screen bg-[#0a0a12] text-white">
+    <div className="min-h-screen bg-theme-bg text-theme-950">
       {/* 顶部深色渐变光晕 */}
       <div
         aria-hidden
@@ -25,7 +25,7 @@ export default function AssistantPage() {
 
         <section id="flow-demo" className="mx-auto max-w-6xl scroll-mt-20 px-6 py-28 sm:py-32">
           <div className="mb-10 text-center">
-            <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="font-serif text-3xl font-bold text-theme-950 sm:text-4xl">
               自动投稿，是这样跑起来的
             </h2>
             <p className="mt-3 text-sm text-slate-400 sm:text-base">
