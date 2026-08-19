@@ -1,29 +1,29 @@
 {
-  "updatedAt": "2026-08-18",
+  "updatedAt": "2026-08-19",
   "verdict": "男频传统玄幻领跑，都市脑洞提供突围切口；女频豪门总裁居前，豪门信号集中",
   "genres": [
     {
       "name": "豪门总裁",
       "heat": 100,
       "trend": "flat",
-      "note": "女频新书榜出现 7 本，最高第 1；平均在读 36.4万"
+      "note": "女频新书榜出现 7 本，最高第 1；平均在读 36.7万"
     },
     {
       "name": "都市脑洞",
-      "heat": 65,
-      "trend": "down",
-      "note": "男频新书榜出现 3 本，最高第 5；平均在读 40.1万"
+      "heat": 66,
+      "trend": "flat",
+      "note": "男频新书榜出现 3 本，最高第 5；平均在读 43.8万"
     },
     {
       "name": "都市高武",
-      "heat": 61,
-      "trend": "down",
+      "heat": 60,
+      "trend": "flat",
       "note": "男频新书榜出现 2 本，最高第 4；平均在读 44.4万"
     },
     {
       "name": "传统玄幻",
       "heat": 56,
-      "trend": "new",
+      "trend": "flat",
       "note": "男频新书榜出现 1 本，最高第 1；平均在读 1002.3万"
     },
     {
@@ -41,14 +41,14 @@
     {
       "name": "现言脑洞",
       "heat": 54,
-      "trend": "new",
+      "trend": "flat",
       "note": "女频新书榜出现 1 本，最高第 3；平均在读 33.7万"
     },
     {
-      "name": "历史脑洞",
+      "name": "青春甜宠",
       "heat": 51,
       "trend": "new",
-      "note": "男频新书榜出现 1 本，最高第 8；平均在读 35.0万"
+      "note": "女频新书榜出现 1 本，最高第 8；平均在读 31.0万"
     }
   ],
   "keywords": {
@@ -61,59 +61,59 @@
         },
         {
           "word": "都市高武",
-          "weight": 93
+          "weight": 84
         },
         {
           "word": "都市",
-          "weight": 80
+          "weight": 77
         },
         {
           "word": "传统玄幻",
-          "weight": 78
+          "weight": 74
         },
         {
           "word": "脑洞",
-          "weight": 76
+          "weight": 72
         },
         {
           "word": "玄幻脑洞",
-          "weight": 75
-        },
-        {
-          "word": "男频衍生",
           "weight": 71
         },
         {
+          "word": "男频衍生",
+          "weight": 68
+        },
+        {
           "word": "玄幻",
-          "weight": 63
+          "weight": 60
         },
         {
           "word": "重生",
-          "weight": 57
+          "weight": 55
         },
         {
           "word": "高武",
-          "weight": 54
-        },
-        {
-          "word": "历史脑洞",
-          "weight": 53
-        },
-        {
-          "word": "衍生",
-          "weight": 47
+          "weight": 51
         },
         {
           "word": "都市日常",
+          "weight": 48
+        },
+        {
+          "word": "衍生",
           "weight": 46
         },
         {
-          "word": "历史",
-          "weight": 41
+          "word": "历史脑洞",
+          "weight": 45
         },
         {
           "word": "日常",
           "weight": 39
+        },
+        {
+          "word": "历史",
+          "weight": 38
         }
       ]
     },
@@ -173,7 +173,7 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-08-18",
+      "dataDate": "2026-08-19",
       "books": [
         {
           "rank": 1,
@@ -212,38 +212,38 @@
         },
         {
           "rank": 6,
+          "title": "抑郁少女总想自杀？那就恶堕吧！",
+          "author": "零林吃不饱",
+          "genre": "都市脑洞",
+          "heat": "45.4万在读"
+        },
+        {
+          "rank": 7,
           "title": "每天属性翻一倍，我黑化爆杀一切",
           "author": "我真是祝某某啊",
           "genre": "都市高武",
           "heat": "38.8万在读"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "title": "人在潮汕，开局连抛十八圣杯",
           "author": "九月十三",
           "genre": "都市脑洞",
           "heat": "36.5万在读"
         },
         {
-          "rank": 8,
+          "rank": 9,
+          "title": "入学第一天，千金学姐成了我老婆",
+          "author": "苏辰逸",
+          "genre": "都市日常",
+          "heat": "35.9万在读"
+        },
+        {
+          "rank": 10,
           "title": "天幕盘点开国，红色华夏震撼千古",
           "author": "流年沐言",
           "genre": "历史脑洞",
           "heat": "35.0万在读"
-        },
-        {
-          "rank": 9,
-          "title": "只想躺平开民宿，咋就活成顶流了",
-          "author": "今月曾经照故人",
-          "genre": "都市脑洞",
-          "heat": "34.3万在读"
-        },
-        {
-          "rank": 10,
-          "title": "入学第一天，千金学姐成了我老婆",
-          "author": "苏辰逸",
-          "genre": "都市日常",
-          "heat": "34.3万在读"
         }
       ]
     },
@@ -252,7 +252,7 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-08-18",
+      "dataDate": "2026-08-19",
       "books": [
         {
           "rank": 1,
@@ -277,31 +277,31 @@
         },
         {
           "rank": 4,
-          "title": "温夜潮湿",
-          "author": "暴富小玲",
+          "title": "说好玩玩而已，怎么追着不放",
+          "author": "聆姜",
           "genre": "豪门总裁",
-          "heat": "31.8万在读"
+          "heat": "33.2万在读"
         },
         {
           "rank": 5,
+          "title": "温夜潮湿",
+          "author": "暴富小玲",
+          "genre": "豪门总裁",
+          "heat": "32.3万在读"
+        },
+        {
+          "rank": 6,
           "title": "春夜难渡",
           "author": "元芍七",
           "genre": "豪门总裁",
           "heat": "31.5万在读"
         },
         {
-          "rank": 6,
+          "rank": 7,
           "title": "吾妻小我十二岁",
           "author": "瀚堡先生",
           "genre": "豪门总裁",
           "heat": "31.3万在读"
-        },
-        {
-          "rank": 7,
-          "title": "说好玩玩而已，怎么追着不放",
-          "author": "聆姜",
-          "genre": "豪门总裁",
-          "heat": "31.1万在读"
         },
         {
           "rank": 8,
@@ -329,45 +329,45 @@
   ],
   "ipHot": [
     {
-      "title": "爸爸醒来，我登临至高",
-      "genre": "都市 / 萌宝",
+      "title": "错嫁少帅宠上瘾",
+      "genre": "爱情 / 女性成长",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 萌宝 · 超凡逆袭",
+      "note": "红果官网首页推荐 · 爱情 · 女性成长 · 逆袭翻身",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "被嫌弃的荣英的新生",
-      "genre": "家庭 / 家庭伦理",
+      "title": "顶级千金被校草当众拒绝后，她不装了",
+      "genre": "成长 / 女性成长",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 家庭 · 家庭伦理 · 女性成长",
+      "note": "红果官网首页推荐 · 成长 · 女性成长 · 马甲文",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "嫡谋，替嫁为后",
-      "genre": "古装 / 宫斗宅斗",
+      "title": "大乾顶流：逃婚驸马爷",
+      "genre": "古装 / 古装传奇",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 古装 · 宫斗宅斗 · 日久生情",
+      "note": "红果官网首页推荐 · 古装 · 古装传奇 · 朝堂权谋",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "人在六零，携妹下乡",
-      "genre": "逆袭 / 奇幻脑洞",
+      "title": "沈总，你又把夫人搞哭了",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 逆袭 · 奇幻脑洞 · 年代创业",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 日久生情",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "SSSSS级镇狱狂龙",
-      "genre": "都市 / 都市玄幻",
+      "title": "嫡女她嫉恶如仇",
+      "genre": "逆袭 / 女性成长",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 都市玄幻 · 逆袭翻身",
+      "note": "红果官网首页推荐 · 逆袭 · 女性成长 · 奇幻脑洞",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "岳父归来，终止他的一切",
-      "genre": "都市 / 都市日常",
+      "title": "净身出户后我转身成为大小姐",
+      "genre": "爱情 / 都市爱情",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 都市日常 · 揭露阴谋",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 追妻",
       "sourceUrl": "https://hongguoduanju.com/"
     }
   ],
@@ -417,16 +417,16 @@
   ],
   "adaptWatch": [
     {
+      "date": "2026-08-19",
+      "title": "改编风向标｜反套路创新×多元素叠加",
+      "summary": "课程内容：短剧、漫剧8月改编风向 适用对象：所有品类 学习时长：10分钟 一、短剧 （一）女频： 近期女频真人短剧改编爆款主要集中在 古言换嫁，现言职场婚恋，年代 等类型。 其中 设定反套路 ， 元素叠加 ， CP反差互补 ， 拉扯有趣…",
+      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7675624914384076862"
+    },
+    {
       "date": "2026-08-11",
       "title": "番茄短故事｜西方题材「哥伦布计划」激励活动上线",
       "summary": "计划介绍 ✨番茄短故事全新 西方题材赛道「哥伦布计划」 激励活动上线！ 250万元+稿费池 等你来瓜分！ ✨征稿方向：以 狼人、吸血鬼、黑手党、西幻 等经典设定为基底，融合 亲情虐、双重背叛、追妻火葬场、倒计时等 短篇热门梗，诚邀你落笔生花…",
       "sourceUrl": "https://fanqienovel.com/writer/zone/article/7672327264322715710"
-    },
-    {
-      "date": "2026-08-07",
-      "title": "短故事作家课堂—四大热门方向爆款拆解与创作指南Tips",
-      "summary": "各位番茄短故事作者大家好，欢迎来到第三十一期的作家课堂~ 本期将聚焦 近期表现亮眼的四大热门方向 出发，结合对应的爆款案例进行拆解，给大家提供创作参考~ 近期热门方向1：重生/弹幕预警+逆袭反转爽文+亲情向（例：萌娃/换子/婴语等） 爆款短…",
-      "sourceUrl": "https://fanqienovel.com/writer/zone/article/7670363158518693950"
     }
   ]
 }
