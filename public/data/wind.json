@@ -1,120 +1,120 @@
 {
-  "updatedAt": "2026-08-23",
-  "verdict": "男频传统玄幻领跑，都市脑洞提供突围切口；女频豪门总裁居前，豪门信号集中",
+  "updatedAt": "2026-08-24",
+  "verdict": "男频传统玄幻领跑，都市脑洞提供突围切口；女频现言脑洞居前，豪门总裁信号集中",
   "genres": [
     {
       "name": "豪门总裁",
       "heat": 100,
       "trend": "flat",
-      "note": "女频新书榜出现 6 本，最高第 1；平均在读 36.7万"
+      "note": "女频新书榜出现 6 本，最高第 2；平均在读 30.8万"
     },
     {
       "name": "都市脑洞",
-      "heat": 74,
-      "trend": "flat",
-      "note": "男频新书榜出现 3 本，最高第 2；平均在读 46.8万"
+      "heat": 68,
+      "trend": "down",
+      "note": "男频新书榜出现 2 本，最高第 2；平均在读 53.8万"
     },
     {
       "name": "玄幻脑洞",
-      "heat": 63,
+      "heat": 61,
       "trend": "flat",
-      "note": "男频新书榜出现 2 本，最高第 4；平均在读 41.1万"
+      "note": "男频新书榜出现 2 本，最高第 7；平均在读 40.3万"
     },
     {
       "name": "传统玄幻",
       "heat": 59,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 1；平均在读 1022.6万"
+      "note": "男频新书榜出现 1 本，最高第 1；平均在读 801.3万"
+    },
+    {
+      "name": "都市高武",
+      "heat": 59,
+      "trend": "new",
+      "note": "男频新书榜出现 2 本，最高第 8；平均在读 37.7万"
     },
     {
       "name": "现言脑洞",
-      "heat": 57,
+      "heat": 58,
       "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 2；平均在读 58.1万"
+      "note": "女频新书榜出现 1 本，最高第 1；平均在读 67.3万"
     },
     {
       "name": "男频衍生",
       "heat": 57,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 3；平均在读 53.9万"
+      "note": "男频新书榜出现 1 本，最高第 3；平均在读 59.0万"
     },
     {
-      "name": "职场婚恋",
+      "name": "快穿",
       "heat": 56,
-      "trend": "flat",
-      "note": "女频新书榜出现 1 本，最高第 4；平均在读 34.3万"
-    },
-    {
-      "name": "都市日常",
-      "heat": 55,
       "trend": "new",
-      "note": "男频新书榜出现 1 本，最高第 5；平均在读 44.4万"
+      "note": "女频新书榜出现 1 本，最高第 3；平均在读 35.3万"
     }
   ],
   "keywords": {
     "male": {
-      "summary": "都市脑洞、玄幻脑洞、传统玄幻、脑洞成为当日新书高频信号",
+      "summary": "都市脑洞、传统玄幻、都市、脑洞成为当日新书高频信号",
       "tags": [
         {
           "word": "都市脑洞",
           "weight": 100
         },
         {
-          "word": "玄幻脑洞",
-          "weight": 76
-        },
-        {
           "word": "传统玄幻",
-          "weight": 70
-        },
-        {
-          "word": "脑洞",
-          "weight": 70
+          "weight": 74
         },
         {
           "word": "都市",
-          "weight": 70
+          "weight": 74
+        },
+        {
+          "word": "脑洞",
+          "weight": 68
         },
         {
           "word": "男频衍生",
-          "weight": 65
+          "weight": 68
         },
         {
-          "word": "玄幻",
-          "weight": 61
+          "word": "玄幻脑洞",
+          "weight": 68
         },
         {
           "word": "都市日常",
-          "weight": 59
+          "weight": 61
         },
         {
           "word": "都市高武",
-          "weight": 53
+          "weight": 61
         },
         {
-          "word": "重生",
-          "weight": 47
-        },
-        {
-          "word": "衍生",
-          "weight": 45
+          "word": "玄幻",
+          "weight": 59
         },
         {
           "word": "抗战谍战",
-          "weight": 44
+          "weight": 58
+        },
+        {
+          "word": "衍生",
+          "weight": 46
         },
         {
           "word": "日常",
-          "weight": 43
+          "weight": 44
         },
         {
           "word": "高武",
-          "weight": 41
+          "weight": 44
+        },
+        {
+          "word": "重生",
+          "weight": 42
         }
       ]
     },
     "female": {
-      "summary": "豪门总裁、豪门、总裁、现言脑洞成为当日新书高频信号",
+      "summary": "豪门总裁、豪门、总裁、快穿成为当日新书高频信号",
       "tags": [
         {
           "word": "豪门总裁",
@@ -129,36 +129,40 @@
           "weight": 57
         },
         {
-          "word": "现言脑洞",
-          "weight": 52
-        },
-        {
           "word": "快穿",
-          "weight": 49
+          "weight": 56
         },
         {
-          "word": "职场婚恋",
-          "weight": 49
+          "word": "现言脑洞",
+          "weight": 54
         },
         {
           "word": "财阀",
-          "weight": 46
+          "weight": 47
         },
         {
-          "word": "科幻末世",
-          "weight": 44
+          "word": "职场婚恋",
+          "weight": 47
         },
         {
-          "word": "末世",
-          "weight": 41
+          "word": "直播",
+          "weight": 43
+        },
+        {
+          "word": "战神",
+          "weight": 43
         },
         {
           "word": "脑洞",
           "weight": 41
         },
         {
-          "word": "科幻",
-          "weight": 38
+          "word": "女频衍生",
+          "weight": 40
+        },
+        {
+          "word": "衍生",
+          "weight": 37
         }
       ]
     }
@@ -169,77 +173,77 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-08-23",
+      "dataDate": "2026-08-24",
       "books": [
         {
           "rank": 1,
           "title": "神通者",
           "author": "天蚕土豆",
           "genre": "传统玄幻",
-          "heat": "1022.6万在读"
+          "heat": "801.3万在读"
         },
         {
           "rank": 2,
           "title": "抑郁少女总想自杀？那就恶堕吧！",
           "author": "零林吃不饱",
           "genre": "都市脑洞",
-          "heat": "59.2万在读"
+          "heat": "61.5万在读"
         },
         {
           "rank": 3,
           "title": "名义：开局我举报我自己",
           "author": "诸天殿的天者",
           "genre": "男频衍生",
-          "heat": "53.9万在读"
+          "heat": "59.0万在读"
         },
         {
           "rank": 4,
-          "title": "刚证道混沌天帝，让我身化禁区？",
-          "author": "钰珏玉予",
-          "genre": "玄幻脑洞",
-          "heat": "44.7万在读"
+          "title": "我老婆有白月光？她怎么不知道",
+          "author": "加把",
+          "genre": "都市脑洞",
+          "heat": "46.0万在读"
         },
         {
           "rank": 5,
           "title": "狂野表嫂",
           "author": "严大妮儿",
           "genre": "都市日常",
-          "heat": "44.4万在读"
+          "heat": "45.5万在读"
         },
         {
           "rank": 6,
-          "title": "我老婆有白月光？她怎么不知道",
-          "author": "加把",
-          "genre": "都市脑洞",
-          "heat": "44.0万在读"
+          "title": "别人穿四合院，我为啥上战场",
+          "author": "中兵",
+          "genre": "抗战谍战",
+          "heat": "41.5万在读"
         },
         {
           "rank": 7,
-          "title": "努力就变强的我，被重生者曝光了",
-          "author": "一叶墨白",
+          "title": "刚证道混沌天帝，让我身化禁区？",
+          "author": "钰珏玉予",
+          "genre": "玄幻脑洞",
+          "heat": "41.2万在读"
+        },
+        {
+          "rank": 8,
+          "title": "猎魔人小姐，我真不是血族",
+          "author": "爱收集邮票的飞鸟",
           "genre": "都市高武",
           "heat": "39.8万在读"
         },
         {
-          "rank": 8,
+          "rank": 9,
           "title": "站中间抽两边，什么叫霸之意志呀",
           "author": "吃的给我掰点",
           "genre": "玄幻脑洞",
-          "heat": "37.5万在读"
-        },
-        {
-          "rank": 9,
-          "title": "说好造桥游戏，打穿天山什么鬼？",
-          "author": "天选红中",
-          "genre": "都市脑洞",
-          "heat": "37.2万在读"
+          "heat": "39.4万在读"
         },
         {
           "rank": 10,
-          "title": "别人穿四合院，我为啥上战场",
-          "author": "中兵",
-          "genre": "抗战谍战",
-          "heat": "36.0万在读"
+          "title": "努力就变强的我，被重生者曝光了",
+          "author": "一叶墨白",
+          "genre": "都市高武",
+          "heat": "35.6万在读"
         }
       ]
     },
@@ -248,82 +252,103 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-08-23",
+      "dataDate": "2026-08-24",
       "books": [
         {
           "rank": 1,
-          "title": "妹宝假装被催眠，阴湿哥哥上瘾了",
-          "author": "三樱里",
-          "genre": "豪门总裁",
-          "heat": "63.5万在读"
-        },
-        {
-          "rank": 2,
           "title": "我在韩国贵族高中假装财阀二代",
           "author": "一树挽歌",
           "genre": "现言脑洞",
-          "heat": "58.1万在读"
+          "heat": "67.3万在读"
         },
         {
-          "rank": 3,
+          "rank": 2,
           "title": "说好玩玩而已，怎么追着不放",
           "author": "聆姜",
           "genre": "豪门总裁",
-          "heat": "40.8万在读"
+          "heat": "42.8万在读"
         },
         {
-          "rank": 4,
-          "title": "全网骂我杀人犯时，我在守国门",
-          "author": "摊饼时思考人生",
-          "genre": "职场婚恋",
-          "heat": "34.3万在读"
-        },
-        {
-          "rank": 5,
-          "title": "温夜潮湿",
-          "author": "暴富小玲",
-          "genre": "豪门总裁",
-          "heat": "32.7万在读"
-        },
-        {
-          "rank": 6,
+          "rank": 3,
           "title": "吃软饭！是人设",
           "author": "心心负心心",
           "genre": "快穿",
-          "heat": "32.4万在读"
+          "heat": "35.3万在读"
         },
         {
-          "rank": 7,
-          "title": "穿进末世，我靠装弱，苟成最强",
-          "author": "金妞妞",
-          "genre": "科幻末世",
-          "heat": "29.0万在读"
-        },
-        {
-          "rank": 8,
-          "title": "春夜难渡",
-          "author": "元芍七",
+          "rank": 4,
+          "title": "温夜潮湿",
+          "author": "暴富小玲",
           "genre": "豪门总裁",
-          "heat": "28.8万在读"
+          "heat": "34.6万在读"
         },
         {
-          "rank": 9,
+          "rank": 5,
+          "title": "全网骂了六年，直播发现我是战神",
+          "author": "摊饼时思考人生",
+          "genre": "职场婚恋",
+          "heat": "34.2万在读"
+        },
+        {
+          "rank": 6,
           "title": "人前禁欲，夜里沉溺",
           "author": "洛汀序",
           "genre": "豪门总裁",
-          "heat": "28.5万在读"
+          "heat": "28.4万在读"
+        },
+        {
+          "rank": 7,
+          "title": "春夜难渡",
+          "author": "元芍七",
+          "genre": "豪门总裁",
+          "heat": "27.3万在读"
+        },
+        {
+          "rank": 8,
+          "title": "玩玩而已，太子爷怎么集体破防了",
+          "author": "苏晚安",
+          "genre": "豪门总裁",
+          "heat": "26.0万在读"
+        },
+        {
+          "rank": 9,
+          "title": "金丝雀守则，别拆穿大佬装瞎",
+          "author": "橦肆",
+          "genre": "豪门总裁",
+          "heat": "25.6万在读"
         },
         {
           "rank": 10,
-          "title": "网恋骗了太子爷，四胞胎瞒不住了",
-          "author": "慌慌",
-          "genre": "豪门总裁",
-          "heat": "26.0万在读"
+          "title": "宜修换嫁年羹尧，摆烂躺赢了",
+          "author": "桂魄西沉",
+          "genre": "女频衍生",
+          "heat": "24.9万在读"
         }
       ]
     }
   ],
   "ipHot": [
+    {
+      "title": "她本是女娇娥",
+      "genre": "爱情 / 古风爱情",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 爱情 · 古风爱情 · 朝堂权谋",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "陆先生，余生不再见",
+      "genre": "成长 / 女性成长",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 成长 · 女性成长 · 逆袭翻身",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
+    {
+      "title": "好孕出逃：司少你认错夫人了",
+      "genre": "爱情 / 都市爱情",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 日久生情",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
     {
       "title": "秘色临界",
       "genre": "爱情 / 都市爱情",
@@ -332,38 +357,17 @@
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "昨夜星辰昨夜风",
-      "genre": "爱情 / 都市爱情",
+      "title": "天才医生：从心术开始",
+      "genre": "都市 / 逆袭翻身",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 追妻",
+      "note": "红果官网首页推荐 · 都市 · 逆袭翻身 · 打脸反派",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "夫人才是白月光",
-      "genre": "爱情 / 都市爱情",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 先婚后爱",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "契约倒数，爱已兑换他人",
+      "title": "旧缘碎梦",
       "genre": "都市 / 都市日常",
       "form": "短剧",
-      "note": "红果官网首页推荐 · 都市 · 都市日常 · 马甲文",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "我靠腹中萌宝，成为人间富贵花",
-      "genre": "爱情 / 都市爱情",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 爱情 · 都市爱情 · 萌宝助攻",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "陆先生，余生不再见",
-      "genre": "成长 / 女性成长",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · 成长 · 女性成长 · 逆袭翻身",
+      "note": "红果官网首页推荐 · 都市 · 都市日常 · 隐藏大佬",
       "sourceUrl": "https://hongguoduanju.com/"
     }
   ],
