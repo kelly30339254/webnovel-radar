@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-27",
+  "updatedAt": "2026-08-30",
   "sourceUrl": "https://hongguoduanju.com/",
   "officialBase": "https://hongguoduanju.com/",
   "categories": [
@@ -8,176 +8,69 @@
       "items": [
         {
           "rank": 1,
-          "title": "月染星辰",
-          "heat": "全82集",
-          "note": "爱情 · 都市爱情 · 女性成长",
+          "title": "老公的工资，婆婆的账",
+          "heat": "全65集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 2,
-          "title": "亲爱的，我要结婚了",
-          "heat": "全50集",
-          "note": "爱情 · 都市爱情 · 女性成长",
+          "title": "聚宝仙盆之杂灵根才是真BOSS第十季",
+          "heat": "全200集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 3,
-          "title": "影帝夫人又穷又凶",
-          "heat": "全126集",
-          "note": "成长 · 逆袭翻身 · 都市爱情",
+          "title": "好雨知时节",
+          "heat": "全89集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 4,
-          "title": "十年劫",
-          "heat": "全80集",
-          "note": "成长 · 宫斗宅斗 · 女性成长",
+          "title": "凡人百世书第六季",
+          "heat": "全130集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 5,
-          "title": "分手后，程医生哭出鼻涕泡",
-          "heat": "全86集",
-          "note": "爱情 · 都市爱情 · 日久生情",
+          "title": "谁说纨绔不能当状元",
+          "heat": "全788集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 6,
-          "title": "只愿卿卿意逍遥",
-          "heat": "全69集",
-          "note": "爱情 · 都市爱情 · 萌宝助攻",
+          "title": "糯糯下山，师兄们都慌了",
+          "heat": "全63集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 7,
-          "title": "她超好哄",
-          "heat": "全101集",
-          "note": "爱情 · 都市爱情 · 先婚后爱",
+          "title": "谁说纨绔不能当状元第二季",
+          "heat": "全316集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         },
         {
           "rank": 8,
-          "title": "总裁，那对双胞胎好像你",
-          "heat": "全96集",
-          "note": "爱情 · 萌宝 · 都市爱情",
+          "title": "都重生了，谁还装富二代啊第十一季",
+          "heat": "全93集",
+          "note": "",
           "playUrl": "https://hongguoduanju.com/"
         }
       ]
     },
     {
       "name": "女频改编",
-      "items": [
-        {
-          "rank": 1,
-          "title": "月染星辰",
-          "heat": "全82集",
-          "note": "爱情 · 都市爱情 · 女性成长",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 2,
-          "title": "亲爱的，我要结婚了",
-          "heat": "全50集",
-          "note": "爱情 · 都市爱情 · 女性成长",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 3,
-          "title": "影帝夫人又穷又凶",
-          "heat": "全126集",
-          "note": "成长 · 逆袭翻身 · 都市爱情",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 4,
-          "title": "十年劫",
-          "heat": "全80集",
-          "note": "成长 · 宫斗宅斗 · 女性成长",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 5,
-          "title": "分手后，程医生哭出鼻涕泡",
-          "heat": "全86集",
-          "note": "爱情 · 都市爱情 · 日久生情",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 6,
-          "title": "只愿卿卿意逍遥",
-          "heat": "全69集",
-          "note": "爱情 · 都市爱情 · 萌宝助攻",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 7,
-          "title": "她超好哄",
-          "heat": "全101集",
-          "note": "爱情 · 都市爱情 · 先婚后爱",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 8,
-          "title": "总裁，那对双胞胎好像你",
-          "heat": "全96集",
-          "note": "爱情 · 萌宝 · 都市爱情",
-          "playUrl": "https://hongguoduanju.com/"
-        }
-      ]
+      "items": []
     },
     {
       "name": "男频改编",
-      "items": [
-        {
-          "rank": 1,
-          "title": "影帝夫人又穷又凶",
-          "heat": "全126集",
-          "note": "成长 · 逆袭翻身 · 都市爱情",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 2,
-          "title": "人间自有真情在",
-          "heat": "全93集",
-          "note": "剧情 · 逆袭翻身 · 打脸反派",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 3,
-          "title": "闪婚嫁绝嗣：给我五个葫芦娃",
-          "heat": "全81集",
-          "note": "年代 · 年代爱情 · 逆袭翻身",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 4,
-          "title": "我家娘子，不对劲2",
-          "heat": "全90集",
-          "note": "古装 · 古装传奇 · 穿越",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 5,
-          "title": "参加兄弟婚礼后我笑了",
-          "heat": "全40集",
-          "note": "都市 · 都市日常 · 隐藏大佬",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 6,
-          "title": "错嫁少帅宠上瘾",
-          "heat": "全80集",
-          "note": "爱情 · 女性成长 · 逆袭翻身",
-          "playUrl": "https://hongguoduanju.com/"
-        },
-        {
-          "rank": 7,
-          "title": "青云直上，闪婚超级白富美",
-          "heat": "全71集",
-          "note": "都市 · 逆袭翻身 · 先婚后爱",
-          "playUrl": "https://hongguoduanju.com/"
-        }
-      ]
+      "items": []
     }
   ]
 }
