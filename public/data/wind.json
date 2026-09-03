@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-01",
+  "updatedAt": "2026-09-02",
   "verdict": "男频传统玄幻领跑，都市脑洞提供突围切口；女频现言脑洞居前，豪门总裁信号集中",
   "genres": [
     {
@@ -10,21 +10,21 @@
     },
     {
       "name": "都市脑洞",
-      "heat": 71,
-      "trend": "flat",
-      "note": "男频新书榜出现 3 本，最高第 3；平均在读 48.3万"
+      "heat": 67,
+      "trend": "down",
+      "note": "男频新书榜出现 2 本，最高第 3；平均在读 53.9万"
     },
     {
-      "name": "快穿",
-      "heat": 60,
-      "trend": "flat",
-      "note": "女频新书榜出现 2 本，最高第 5；平均在读 25.1万"
+      "name": "玄幻脑洞",
+      "heat": 59,
+      "trend": "new",
+      "note": "男频新书榜出现 2 本，最高第 7；平均在读 42.0万"
     },
     {
       "name": "传统玄幻",
       "heat": 58,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 1；平均在读 257.8万"
+      "note": "男频新书榜出现 1 本，最高第 1；平均在读 248.5万"
     },
     {
       "name": "现言脑洞",
@@ -35,20 +35,20 @@
     {
       "name": "男频衍生",
       "heat": 57,
-      "trend": "down",
+      "trend": "flat",
       "note": "男频新书榜出现 1 本，最高第 2；平均在读 67.3万"
     },
     {
       "name": "悬疑脑洞",
       "heat": 55,
-      "trend": "new",
-      "note": "男频新书榜出现 1 本，最高第 4；平均在读 49.7万"
+      "trend": "flat",
+      "note": "男频新书榜出现 1 本，最高第 5；平均在读 49.7万"
     },
     {
-      "name": "抗战谍战",
+      "name": "快穿",
       "heat": 55,
-      "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 5；平均在读 49.1万"
+      "trend": "down",
+      "note": "女频新书榜出现 1 本，最高第 5；平均在读 31.3万"
     }
   ],
   "keywords": {
@@ -61,55 +61,55 @@
         },
         {
           "word": "传统玄幻",
-          "weight": 74
+          "weight": 76
         },
         {
           "word": "脑洞",
-          "weight": 72
+          "weight": 76
         },
         {
           "word": "男频衍生",
-          "weight": 71
-        },
-        {
-          "word": "悬疑脑洞",
-          "weight": 64
-        },
-        {
-          "word": "都市",
-          "weight": 63
-        },
-        {
-          "word": "抗战谍战",
-          "weight": 61
-        },
-        {
-          "word": "都市高武",
-          "weight": 55
-        },
-        {
-          "word": "玄幻",
-          "weight": 53
+          "weight": 73
         },
         {
           "word": "玄幻脑洞",
-          "weight": 51
+          "weight": 66
         },
         {
-          "word": "科幻末世",
-          "weight": 48
+          "word": "都市",
+          "weight": 62
         },
         {
-          "word": "衍生",
-          "weight": 47
+          "word": "悬疑脑洞",
+          "weight": 62
+        },
+        {
+          "word": "玄幻",
+          "weight": 59
+        },
+        {
+          "word": "抗战谍战",
+          "weight": 59
+        },
+        {
+          "word": "都市高武",
+          "weight": 52
         },
         {
           "word": "修仙",
-          "weight": 46
+          "weight": 49
+        },
+        {
+          "word": "科幻末世",
+          "weight": 49
+        },
+        {
+          "word": "衍生",
+          "weight": 48
         },
         {
           "word": "悬疑",
-          "weight": 45
+          "weight": 44
         },
         {
           "word": "末世",
@@ -117,16 +117,16 @@
         },
         {
           "word": "高武",
-          "weight": 42
+          "weight": 41
         },
         {
           "word": "科幻",
-          "weight": 39
+          "weight": 40
         }
       ]
     },
     "female": {
-      "summary": "豪门总裁、豪门、总裁、快穿成为当日新书高频信号",
+      "summary": "豪门总裁、豪门、总裁、现言脑洞成为当日新书高频信号",
       "tags": [
         {
           "word": "豪门总裁",
@@ -141,12 +141,12 @@
           "weight": 57
         },
         {
-          "word": "快穿",
-          "weight": 56
-        },
-        {
           "word": "现言脑洞",
           "weight": 52
+        },
+        {
+          "word": "快穿",
+          "weight": 50
         },
         {
           "word": "财阀",
@@ -161,7 +161,15 @@
           "weight": 41
         },
         {
+          "word": "年代",
+          "weight": 41
+        },
+        {
           "word": "衍生",
+          "weight": 38
+        },
+        {
+          "word": "重生",
           "weight": 38
         }
       ]
@@ -173,14 +181,14 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-09-01",
+      "dataDate": "2026-09-02",
       "books": [
         {
           "rank": 1,
           "title": "神通者",
           "author": "天蚕土豆",
           "genre": "传统玄幻",
-          "heat": "257.8万在读"
+          "heat": "248.5万在读"
         },
         {
           "rank": 2,
@@ -194,42 +202,42 @@
           "title": "我老婆有白月光？她怎么不知道",
           "author": "加把",
           "genre": "都市脑洞",
-          "heat": "56.4万在读"
+          "heat": "54.9万在读"
         },
         {
           "rank": 4,
+          "title": "抑郁少女总想自杀？那就恶堕吧！",
+          "author": "零林吃不饱",
+          "genre": "都市脑洞",
+          "heat": "52.9万在读"
+        },
+        {
+          "rank": 5,
           "title": "诡舍2",
           "author": "夜来风雨声丶",
           "genre": "悬疑脑洞",
           "heat": "49.7万在读"
         },
         {
-          "rank": 5,
+          "rank": 6,
           "title": "别人穿四合院，我为啥上战场",
           "author": "中兵",
           "genre": "抗战谍战",
           "heat": "49.1万在读"
         },
         {
-          "rank": 6,
-          "title": "抑郁少女总想自杀？那就恶堕吧！",
-          "author": "零林吃不饱",
-          "genre": "都市脑洞",
-          "heat": "49.0万在读"
+          "rank": 7,
+          "title": "轮回修仙：从考科举开始",
+          "author": "海子x",
+          "genre": "玄幻脑洞",
+          "heat": "45.4万在读"
         },
         {
-          "rank": 7,
+          "rank": 8,
           "title": "猎魔人小姐，我真不是血族",
           "author": "爱收集邮票的飞鸟",
           "genre": "都市高武",
           "heat": "44.8万在读"
-        },
-        {
-          "rank": 8,
-          "title": "轮回修仙：从考科举开始",
-          "author": "海子x",
-          "genre": "玄幻脑洞",
-          "heat": "41.9万在读"
         },
         {
           "rank": 9,
@@ -240,10 +248,10 @@
         },
         {
           "rank": 10,
-          "title": "屠城就能回蓝星？兄弟你早说啊！",
-          "author": "皮蛋的蛋皮",
-          "genre": "都市脑洞",
-          "heat": "39.5万在读"
+          "title": "站中间抽两边，什么叫霸之意志呀",
+          "author": "吃的给我掰点",
+          "genre": "玄幻脑洞",
+          "heat": "38.7万在读"
         }
       ]
     },
@@ -252,7 +260,7 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-09-01",
+      "dataDate": "2026-09-02",
       "books": [
         {
           "rank": 1,
@@ -266,7 +274,7 @@
           "title": "说好玩玩而已，怎么追着不放",
           "author": "聆姜",
           "genre": "豪门总裁",
-          "heat": "47.5万在读"
+          "heat": "46.9万在读"
         },
         {
           "rank": 3,
@@ -280,14 +288,14 @@
           "title": "人前禁欲，夜里沉溺",
           "author": "洛汀序",
           "genre": "豪门总裁",
-          "heat": "36.8万在读"
+          "heat": "37.1万在读"
         },
         {
           "rank": 5,
           "title": "糟糕！妹宝又被疯批盯上了",
           "author": "一个小莹",
           "genre": "快穿",
-          "heat": "29.5万在读"
+          "heat": "31.3万在读"
         },
         {
           "rank": 6,
@@ -301,7 +309,7 @@
           "title": "春夜难渡",
           "author": "元芍七",
           "genre": "豪门总裁",
-          "heat": "23.2万在读"
+          "heat": "23.1万在读"
         },
         {
           "rank": 8,
@@ -312,22 +320,29 @@
         },
         {
           "rank": 9,
-          "title": "玩玩而已，太子爷怎么集体破防了",
-          "author": "苏晚安",
+          "title": "网恋骗了太子爷，四胞胎瞒不住了",
+          "author": "慌慌",
           "genre": "豪门总裁",
-          "heat": "21.6万在读"
+          "heat": "22.1万在读"
         },
         {
           "rank": 10,
-          "title": "加载负面BUFF后成了万人迷",
-          "author": "中二大人",
-          "genre": "快穿",
-          "heat": "20.6万在读"
+          "title": "重生七零夺回空间被军区大佬娇宠",
+          "author": "橙子作者",
+          "genre": "年代",
+          "heat": "20.9万在读"
         }
       ]
     }
   ],
   "ipHot": [
+    {
+      "title": "满院亲戚全是上古大妖第二季",
+      "genre": "",
+      "form": "短剧",
+      "note": "红果官网首页推荐 · ",
+      "sourceUrl": "https://hongguoduanju.com/"
+    },
     {
       "title": "糯糯下山，师兄们都慌了",
       "genre": "",
@@ -350,7 +365,7 @@
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "好雨知时节",
+      "title": "以爱为家第四季",
       "genre": "",
       "form": "短剧",
       "note": "红果官网首页推荐 · ",
@@ -358,13 +373,6 @@
     },
     {
       "title": "谁说纨绔不能当状元",
-      "genre": "",
-      "form": "短剧",
-      "note": "红果官网首页推荐 · ",
-      "sourceUrl": "https://hongguoduanju.com/"
-    },
-    {
-      "title": "满院亲戚全是上古大妖第二季",
       "genre": "",
       "form": "短剧",
       "note": "红果官网首页推荐 · ",
