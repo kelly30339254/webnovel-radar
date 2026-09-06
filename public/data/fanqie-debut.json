@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-05",
   "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
   "sourceLabel": "新书榜同步观察",
   "books": [
@@ -8,43 +8,43 @@
       "title": "神通者",
       "author": "天蚕土豆",
       "genre": "传统玄幻",
-      "words": "18.9万字",
-      "readers": "235.7万",
+      "words": "19.4万字",
+      "readers": "230.9万",
       "readUrl": "https://fanqienovel.com/search/%E7%A5%9E%E9%80%9A%E8%80%85"
     },
     {
       "rank": 2,
-      "title": "名义：一开始，我只想当个教书匠",
-      "author": "诸天殿的天者",
-      "genre": "男频衍生",
-      "words": "29.4万字",
-      "readers": "66.7万",
-      "readUrl": "https://fanqienovel.com/search/%E5%90%8D%E4%B9%89%EF%BC%9A%E4%B8%80%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%88%91%E5%8F%AA%E6%83%B3%E5%BD%93%E4%B8%AA%E6%95%99%E4%B9%A6%E5%8C%A0"
-    },
-    {
-      "rank": 3,
       "title": "诡舍2",
       "author": "夜来风雨声丶",
       "genre": "悬疑脑洞",
-      "words": "11.6万字",
-      "readers": "65.5万",
+      "words": "12.1万字",
+      "readers": "72.5万",
       "readUrl": "https://fanqienovel.com/search/%E8%AF%A1%E8%88%8D2"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "title": "轮回修仙：从考科举开始",
       "author": "海子x",
       "genre": "玄幻脑洞",
-      "words": "27.1万字",
-      "readers": "47.8万",
+      "words": "27.6万字",
+      "readers": "50.9万",
       "readUrl": "https://fanqienovel.com/search/%E8%BD%AE%E5%9B%9E%E4%BF%AE%E4%BB%99%EF%BC%9A%E4%BB%8E%E8%80%83%E7%A7%91%E4%B8%BE%E5%BC%80%E5%A7%8B"
+    },
+    {
+      "rank": 4,
+      "title": "抑郁少女总想自杀？那就恶堕吧！",
+      "author": "零林吃不饱",
+      "genre": "都市脑洞",
+      "words": "19.5万字",
+      "readers": "46.5万",
+      "readUrl": "https://fanqienovel.com/search/%E6%8A%91%E9%83%81%E5%B0%91%E5%A5%B3%E6%80%BB%E6%83%B3%E8%87%AA%E6%9D%80%EF%BC%9F%E9%82%A3%E5%B0%B1%E6%81%B6%E5%A0%95%E5%90%A7%EF%BC%81"
     },
     {
       "rank": 5,
       "title": "我老婆有白月光？她怎么不知道",
       "author": "加把",
       "genre": "都市脑洞",
-      "words": "22.5万字",
+      "words": "22.9万字",
       "readers": "44.7万",
       "readUrl": "https://fanqienovel.com/search/%E6%88%91%E8%80%81%E5%A9%86%E6%9C%89%E7%99%BD%E6%9C%88%E5%85%89%EF%BC%9F%E5%A5%B9%E6%80%8E%E4%B9%88%E4%B8%8D%E7%9F%A5%E9%81%93"
     },
@@ -53,7 +53,7 @@
       "title": "打卡双人骑行圈，开局拿捏假名媛",
       "author": "百财不是白菜",
       "genre": "都市脑洞",
-      "words": "16.5万字",
+      "words": "17.1万字",
       "readers": "43.2万",
       "readUrl": "https://fanqienovel.com/search/%E6%89%93%E5%8D%A1%E5%8F%8C%E4%BA%BA%E9%AA%91%E8%A1%8C%E5%9C%88%EF%BC%8C%E5%BC%80%E5%B1%80%E6%8B%BF%E6%8D%8F%E5%81%87%E5%90%8D%E5%AA%9B"
     },
@@ -62,7 +62,7 @@
       "title": "猎魔人小姐，我真不是血族",
       "author": "爱收集邮票的飞鸟",
       "genre": "都市高武",
-      "words": "20.0万字",
+      "words": "20.5万字",
       "readers": "40.0万",
       "readUrl": "https://fanqienovel.com/search/%E7%8C%8E%E9%AD%94%E4%BA%BA%E5%B0%8F%E5%A7%90%EF%BC%8C%E6%88%91%E7%9C%9F%E4%B8%8D%E6%98%AF%E8%A1%80%E6%97%8F"
     },
@@ -71,8 +71,8 @@
       "title": "刚证道混沌天帝，让我身化禁区？",
       "author": "钰珏玉予",
       "genre": "玄幻脑洞",
-      "words": "27.9万字",
-      "readers": "37.0万",
+      "words": "28.3万字",
+      "readers": "36.5万",
       "readUrl": "https://fanqienovel.com/search/%E5%88%9A%E8%AF%81%E9%81%93%E6%B7%B7%E6%B2%8C%E5%A4%A9%E5%B8%9D%EF%BC%8C%E8%AE%A9%E6%88%91%E8%BA%AB%E5%8C%96%E7%A6%81%E5%8C%BA%EF%BC%9F"
     },
     {
@@ -80,8 +80,8 @@
       "title": "屠城就能回蓝星？兄弟你早说啊！",
       "author": "皮蛋的蛋皮",
       "genre": "都市脑洞",
-      "words": "20.6万字",
-      "readers": "35.0万",
+      "words": "21.0万字",
+      "readers": "35.1万",
       "readUrl": "https://fanqienovel.com/search/%E5%B1%A0%E5%9F%8E%E5%B0%B1%E8%83%BD%E5%9B%9E%E8%93%9D%E6%98%9F%EF%BC%9F%E5%85%84%E5%BC%9F%E4%BD%A0%E6%97%A9%E8%AF%B4%E5%95%8A%EF%BC%81"
     },
     {
@@ -89,7 +89,7 @@
       "title": "站中间抽两边，什么叫霸之意志呀",
       "author": "吃的给我掰点",
       "genre": "玄幻脑洞",
-      "words": "23.7万字",
+      "words": "24.1万字",
       "readers": "34.9万",
       "readUrl": "https://fanqienovel.com/search/%E7%AB%99%E4%B8%AD%E9%97%B4%E6%8A%BD%E4%B8%A4%E8%BE%B9%EF%BC%8C%E4%BB%80%E4%B9%88%E5%8F%AB%E9%9C%B8%E4%B9%8B%E6%84%8F%E5%BF%97%E5%91%80"
     }

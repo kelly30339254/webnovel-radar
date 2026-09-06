@@ -1,111 +1,103 @@
 {
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-05",
   "verdict": "男频传统玄幻领跑，都市脑洞提供突围切口；女频现言脑洞居前，豪门总裁信号集中",
   "genres": [
     {
       "name": "豪门总裁",
       "heat": 100,
       "trend": "flat",
-      "note": "女频新书榜出现 8 本，最高第 2；平均在读 29.9万"
+      "note": "女频新书榜出现 7 本，最高第 2；平均在读 31.6万"
     },
     {
       "name": "都市脑洞",
-      "heat": 65,
+      "heat": 76,
       "trend": "up",
-      "note": "男频新书榜出现 3 本，最高第 5；平均在读 41.0万"
+      "note": "男频新书榜出现 4 本，最高第 4；平均在读 42.4万"
     },
     {
       "name": "玄幻脑洞",
-      "heat": 64,
+      "heat": 66,
       "trend": "flat",
-      "note": "男频新书榜出现 3 本，最高第 4；平均在读 39.9万"
+      "note": "男频新书榜出现 3 本，最高第 3；平均在读 40.8万"
     },
     {
       "name": "传统玄幻",
-      "heat": 55,
+      "heat": 56,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 1；平均在读 235.7万"
+      "note": "男频新书榜出现 1 本，最高第 1；平均在读 230.9万"
     },
     {
       "name": "现言脑洞",
-      "heat": 55,
+      "heat": 56,
       "trend": "flat",
       "note": "女频新书榜出现 1 本，最高第 1；平均在读 58.8万"
     },
     {
-      "name": "男频衍生",
-      "heat": 54,
-      "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 2；平均在读 66.7万"
-    },
-    {
       "name": "悬疑脑洞",
-      "heat": 54,
+      "heat": 55,
       "trend": "flat",
-      "note": "男频新书榜出现 1 本，最高第 3；平均在读 65.5万"
+      "note": "男频新书榜出现 1 本，最高第 2；平均在读 72.5万"
     },
     {
       "name": "快穿",
       "heat": 53,
       "trend": "flat",
       "note": "女频新书榜出现 1 本，最高第 5；平均在读 32.6万"
+    },
+    {
+      "name": "都市高武",
+      "heat": 52,
+      "trend": "new",
+      "note": "男频新书榜出现 1 本，最高第 7；平均在读 40.0万"
     }
   ],
   "keywords": {
     "male": {
-      "summary": "都市脑洞、玄幻脑洞、脑洞、传统玄幻成为当日新书高频信号",
+      "summary": "都市脑洞、脑洞、玄幻脑洞、传统玄幻成为当日新书高频信号",
       "tags": [
         {
           "word": "都市脑洞",
           "weight": 100
         },
         {
-          "word": "玄幻脑洞",
-          "weight": 93
+          "word": "脑洞",
+          "weight": 79
         },
         {
-          "word": "脑洞",
-          "weight": 87
+          "word": "玄幻脑洞",
+          "weight": 77
         },
         {
           "word": "传统玄幻",
-          "weight": 76
-        },
-        {
-          "word": "男频衍生",
-          "weight": 73
-        },
-        {
-          "word": "悬疑脑洞",
-          "weight": 69
-        },
-        {
-          "word": "玄幻",
-          "weight": 68
+          "weight": 63
         },
         {
           "word": "都市",
-          "weight": 64
+          "weight": 61
+        },
+        {
+          "word": "悬疑脑洞",
+          "weight": 61
+        },
+        {
+          "word": "玄幻",
+          "weight": 58
         },
         {
           "word": "修仙",
-          "weight": 56
+          "weight": 50
         },
         {
           "word": "都市高武",
-          "weight": 56
-        },
-        {
-          "word": "衍生",
-          "weight": 48
+          "weight": 49
         },
         {
           "word": "悬疑",
-          "weight": 46
+          "weight": 44
         },
         {
           "word": "高武",
-          "weight": 42
+          "weight": 40
         }
       ]
     },
@@ -126,7 +118,7 @@
         },
         {
           "word": "现言脑洞",
-          "weight": 49
+          "weight": 50
         },
         {
           "word": "快穿",
@@ -134,11 +126,23 @@
         },
         {
           "word": "财阀",
-          "weight": 44
+          "weight": 45
         },
         {
           "word": "脑洞",
           "weight": 40
+        },
+        {
+          "word": "科幻末世",
+          "weight": 39
+        },
+        {
+          "word": "末世",
+          "weight": 38
+        },
+        {
+          "word": "科幻",
+          "weight": 36
         }
       ]
     }
@@ -149,35 +153,35 @@
       "channel": "男频",
       "chartName": "男频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=m&list=new",
-      "dataDate": "2026-09-04",
+      "dataDate": "2026-09-05",
       "books": [
         {
           "rank": 1,
           "title": "神通者",
           "author": "天蚕土豆",
           "genre": "传统玄幻",
-          "heat": "235.7万在读"
+          "heat": "230.9万在读"
         },
         {
           "rank": 2,
-          "title": "名义：一开始，我只想当个教书匠",
-          "author": "诸天殿的天者",
-          "genre": "男频衍生",
-          "heat": "66.7万在读"
-        },
-        {
-          "rank": 3,
           "title": "诡舍2",
           "author": "夜来风雨声丶",
           "genre": "悬疑脑洞",
-          "heat": "65.5万在读"
+          "heat": "72.5万在读"
         },
         {
-          "rank": 4,
+          "rank": 3,
           "title": "轮回修仙：从考科举开始",
           "author": "海子x",
           "genre": "玄幻脑洞",
-          "heat": "47.8万在读"
+          "heat": "50.9万在读"
+        },
+        {
+          "rank": 4,
+          "title": "抑郁少女总想自杀？那就恶堕吧！",
+          "author": "零林吃不饱",
+          "genre": "都市脑洞",
+          "heat": "46.5万在读"
         },
         {
           "rank": 5,
@@ -205,14 +209,14 @@
           "title": "刚证道混沌天帝，让我身化禁区？",
           "author": "钰珏玉予",
           "genre": "玄幻脑洞",
-          "heat": "37.0万在读"
+          "heat": "36.5万在读"
         },
         {
           "rank": 9,
           "title": "屠城就能回蓝星？兄弟你早说啊！",
           "author": "皮蛋的蛋皮",
           "genre": "都市脑洞",
-          "heat": "35.0万在读"
+          "heat": "35.1万在读"
         },
         {
           "rank": 10,
@@ -228,7 +232,7 @@
       "channel": "女频",
       "chartName": "女频新书榜",
       "sourceUrl": "https://novelcatch.com/rank?gender=f&list=new",
-      "dataDate": "2026-09-04",
+      "dataDate": "2026-09-05",
       "books": [
         {
           "rank": 1,
@@ -249,14 +253,14 @@
           "title": "切勿操之过急",
           "author": "橦肆",
           "genre": "豪门总裁",
-          "heat": "38.9万在读"
+          "heat": "39.3万在读"
         },
         {
           "rank": 4,
           "title": "人前禁欲，夜里沉溺",
           "author": "洛汀序",
           "genre": "豪门总裁",
-          "heat": "37.0万在读"
+          "heat": "37.1万在读"
         },
         {
           "rank": 5,
@@ -274,31 +278,31 @@
         },
         {
           "rank": 7,
-          "title": "老板是顶级魅魔，我睡一次没事吧",
-          "author": "椒江梁七",
+          "title": "备用联系人",
+          "author": "绒绒冬眠期",
           "genre": "豪门总裁",
-          "heat": "23.5万在读"
+          "heat": "25.7万在读"
         },
         {
           "rank": 8,
+          "title": "老板是顶级魅魔，我睡一次没事吧",
+          "author": "椒江梁七",
+          "genre": "豪门总裁",
+          "heat": "23.4万在读"
+        },
+        {
+          "rank": 9,
           "title": "春夜难渡",
           "author": "元芍七",
           "genre": "豪门总裁",
           "heat": "23.0万在读"
         },
         {
-          "rank": 9,
-          "title": "网恋奔现跑路，被疯批抓起来囚禁",
-          "author": "啊e沁",
-          "genre": "豪门总裁",
-          "heat": "22.4万在读"
-        },
-        {
           "rank": 10,
-          "title": "备用联系人",
-          "author": "绒绒冬眠期",
-          "genre": "豪门总裁",
-          "heat": "22.3万在读"
+          "title": "末世大佬难攀？可他夜夜喊我宝宝",
+          "author": "妩眠夏",
+          "genre": "科幻末世",
+          "heat": "21.6万在读"
         }
       ]
     }
@@ -333,14 +337,14 @@
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "聚宝仙盆之杂灵根才是真BOSS第十季",
+      "title": "好雨知时节",
       "genre": "",
       "form": "短剧",
       "note": "红果官网首页推荐 · ",
       "sourceUrl": "https://hongguoduanju.com/"
     },
     {
-      "title": "好雨知时节",
+      "title": "满院亲戚全是上古大妖第二季",
       "genre": "",
       "form": "短剧",
       "note": "红果官网首页推荐 · ",
